@@ -1,0 +1,494 @@
+{
+  "velora": [
+    {
+      "id": 1,
+      "filename": "velora-01.jpg",
+      "original": "Tana Bana Enhanced  (1).png",
+      "web_path": "assets/images/velora/velora-01.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-01-thumb.jpg",
+      "width": 1433,
+      "height": 1098
+    },
+    {
+      "id": 2,
+      "filename": "velora-02.jpg",
+      "original": "Tana Bana Enhanced  (10).png",
+      "web_path": "assets/images/velora/velora-02.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-02-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 3,
+      "filename": "velora-03.jpg",
+      "original": "Tana Bana Enhanced  (11).png",
+      "web_path": "assets/images/velora/velora-03.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-03-thumb.jpg",
+      "width": 1510,
+      "height": 1041
+    },
+    {
+      "id": 4,
+      "filename": "velora-04.jpg",
+      "original": "Tana Bana Enhanced  (12).png",
+      "web_path": "assets/images/velora/velora-04.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-04-thumb.jpg",
+      "width": 1445,
+      "height": 1088
+    },
+    {
+      "id": 5,
+      "filename": "velora-05.jpg",
+      "original": "Tana Bana Enhanced  (13).png",
+      "web_path": "assets/images/velora/velora-05.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-05-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 6,
+      "filename": "velora-06.jpg",
+      "original": "Tana Bana Enhanced  (14).png",
+      "web_path": "assets/images/velora/velora-06.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-06-thumb.jpg",
+      "width": 1451,
+      "height": 1084
+    },
+    {
+      "id": 7,
+      "filename": "velora-07.jpg",
+      "original": "Tana Bana Enhanced  (15).png",
+      "web_path": "assets/images/velora/velora-07.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-07-thumb.jpg",
+      "width": 1451,
+      "height": 1084
+    },
+    {
+      "id": 8,
+      "filename": "velora-08.jpg",
+      "original": "Tana Bana Enhanced  (16).png",
+      "web_path": "assets/images/velora/velora-08.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-08-thumb.jpg",
+      "width": 1430,
+      "height": 1100
+    },
+    {
+      "id": 9,
+      "filename": "velora-09.jpg",
+      "original": "Tana Bana Enhanced  (18).png",
+      "web_path": "assets/images/velora/velora-09.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-09-thumb.jpg",
+      "width": 1427,
+      "height": 1102
+    },
+    {
+      "id": 10,
+      "filename": "velora-10.jpg",
+      "original": "Tana Bana Enhanced  (2).png",
+      "web_path": "assets/images/velora/velora-10.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-10-thumb.jpg",
+      "width": 1484,
+      "height": 1060
+    },
+    {
+      "id": 11,
+      "filename": "velora-11.jpg",
+      "original": "Tana Bana Enhanced  (3).png",
+      "web_path": "assets/images/velora/velora-11.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-11-thumb.jpg",
+      "width": 1488,
+      "height": 1057
+    },
+    {
+      "id": 12,
+      "filename": "velora-12.jpg",
+      "original": "Tana Bana Enhanced  (4).png",
+      "web_path": "assets/images/velora/velora-12.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-12-thumb.jpg",
+      "width": 1443,
+      "height": 1090
+    },
+    {
+      "id": 13,
+      "filename": "velora-13.jpg",
+      "original": "Tana Bana Enhanced  (5).png",
+      "web_path": "assets/images/velora/velora-13.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-13-thumb.jpg",
+      "width": 1417,
+      "height": 1110
+    },
+    {
+      "id": 14,
+      "filename": "velora-14.jpg",
+      "original": "Tana Bana Enhanced  (6).png",
+      "web_path": "assets/images/velora/velora-14.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-14-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 15,
+      "filename": "velora-15.jpg",
+      "original": "Tana Bana Enhanced  (7).png",
+      "web_path": "assets/images/velora/velora-15.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-15-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 16,
+      "filename": "velora-16.jpg",
+      "original": "Tana Bana Enhanced  (8).png",
+      "web_path": "assets/images/velora/velora-16.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-16-thumb.jpg",
+      "width": 1466,
+      "height": 1073
+    },
+    {
+      "id": 17,
+      "filename": "velora-17.jpg",
+      "original": "Tana Bana Enhanced  (9).png",
+      "web_path": "assets/images/velora/velora-17.jpg",
+      "thumb_path": "assets/images/velora/thumbs/velora-17-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "azura": [
+    {
+      "id": 1,
+      "filename": "azura-01.jpg",
+      "original": "Blue Heaven (1).png",
+      "web_path": "assets/images/azura/azura-01.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-01-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 2,
+      "filename": "azura-02.jpg",
+      "original": "Blue Heaven (10).png",
+      "web_path": "assets/images/azura/azura-02.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-02-thumb.jpg",
+      "width": 1524,
+      "height": 1032
+    },
+    {
+      "id": 3,
+      "filename": "azura-03.jpg",
+      "original": "Blue Heaven (11).png",
+      "web_path": "assets/images/azura/azura-03.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-03-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 4,
+      "filename": "azura-04.jpg",
+      "original": "Blue Heaven (12).png",
+      "web_path": "assets/images/azura/azura-04.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-04-thumb.jpg",
+      "width": 1455,
+      "height": 1081
+    },
+    {
+      "id": 5,
+      "filename": "azura-05.jpg",
+      "original": "Blue Heaven (13).png",
+      "web_path": "assets/images/azura/azura-05.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-05-thumb.jpg",
+      "width": 1634,
+      "height": 963
+    },
+    {
+      "id": 6,
+      "filename": "azura-06.jpg",
+      "original": "Blue Heaven (14).png",
+      "web_path": "assets/images/azura/azura-06.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-06-thumb.jpg",
+      "width": 1607,
+      "height": 979
+    },
+    {
+      "id": 7,
+      "filename": "azura-07.jpg",
+      "original": "Blue Heaven (15).png",
+      "web_path": "assets/images/azura/azura-07.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-07-thumb.jpg",
+      "width": 1596,
+      "height": 986
+    },
+    {
+      "id": 8,
+      "filename": "azura-08.jpg",
+      "original": "Blue Heaven (16).png",
+      "web_path": "assets/images/azura/azura-08.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-08-thumb.jpg",
+      "width": 1623,
+      "height": 969
+    },
+    {
+      "id": 9,
+      "filename": "azura-09.jpg",
+      "original": "Blue Heaven (17).png",
+      "web_path": "assets/images/azura/azura-09.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-09-thumb.jpg",
+      "width": 1592,
+      "height": 988
+    },
+    {
+      "id": 10,
+      "filename": "azura-10.jpg",
+      "original": "Blue Heaven (18).png",
+      "web_path": "assets/images/azura/azura-10.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-10-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 11,
+      "filename": "azura-11.jpg",
+      "original": "Blue Heaven (2).png",
+      "web_path": "assets/images/azura/azura-11.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-11-thumb.jpg",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": 12,
+      "filename": "azura-12.jpg",
+      "original": "Blue Heaven (3).png",
+      "web_path": "assets/images/azura/azura-12.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-12-thumb.jpg",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": 13,
+      "filename": "azura-13.jpg",
+      "original": "Blue Heaven (4).png",
+      "web_path": "assets/images/azura/azura-13.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-13-thumb.jpg",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": 14,
+      "filename": "azura-14.jpg",
+      "original": "Blue Heaven (5).png",
+      "web_path": "assets/images/azura/azura-14.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-14-thumb.jpg",
+      "width": 1484,
+      "height": 1060
+    },
+    {
+      "id": 15,
+      "filename": "azura-15.jpg",
+      "original": "Blue Heaven (6).png",
+      "web_path": "assets/images/azura/azura-15.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-15-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 16,
+      "filename": "azura-16.jpg",
+      "original": "Blue Heaven (7).png",
+      "web_path": "assets/images/azura/azura-16.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-16-thumb.jpg",
+      "width": 1609,
+      "height": 977
+    },
+    {
+      "id": 17,
+      "filename": "azura-17.jpg",
+      "original": "Blue Heaven (8).png",
+      "web_path": "assets/images/azura/azura-17.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-17-thumb.jpg",
+      "width": 1504,
+      "height": 1046
+    },
+    {
+      "id": 18,
+      "filename": "azura-18.jpg",
+      "original": "Blue Heaven (9).png",
+      "web_path": "assets/images/azura/azura-18.jpg",
+      "thumb_path": "assets/images/azura/thumbs/azura-18-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "verde": [
+    {
+      "id": 1,
+      "filename": "verde-01.jpg",
+      "original": "Olive Greens  (1).png",
+      "web_path": "assets/images/verde/verde-01.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-01-thumb.jpg",
+      "width": 1607,
+      "height": 979
+    },
+    {
+      "id": 2,
+      "filename": "verde-02.jpg",
+      "original": "Olive Greens  (10).png",
+      "web_path": "assets/images/verde/verde-02.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-02-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 3,
+      "filename": "verde-03.jpg",
+      "original": "Olive Greens  (11).png",
+      "web_path": "assets/images/verde/verde-03.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-03-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 4,
+      "filename": "verde-04.jpg",
+      "original": "Olive Greens  (12).png",
+      "web_path": "assets/images/verde/verde-04.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-04-thumb.jpg",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": 5,
+      "filename": "verde-05.jpg",
+      "original": "Olive Greens  (13).png",
+      "web_path": "assets/images/verde/verde-05.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-05-thumb.jpg",
+      "width": 1532,
+      "height": 1026
+    },
+    {
+      "id": 6,
+      "filename": "verde-06.jpg",
+      "original": "Olive Greens  (14).png",
+      "web_path": "assets/images/verde/verde-06.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-06-thumb.jpg",
+      "width": 1446,
+      "height": 1087
+    },
+    {
+      "id": 7,
+      "filename": "verde-07.jpg",
+      "original": "Olive Greens  (15).png",
+      "web_path": "assets/images/verde/verde-07.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-07-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 8,
+      "filename": "verde-08.jpg",
+      "original": "Olive Greens  (16).png",
+      "web_path": "assets/images/verde/verde-08.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-08-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 9,
+      "filename": "verde-09.jpg",
+      "original": "Olive Greens  (17).png",
+      "web_path": "assets/images/verde/verde-09.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-09-thumb.jpg",
+      "width": 1402,
+      "height": 1122
+    },
+    {
+      "id": 10,
+      "filename": "verde-10.jpg",
+      "original": "Olive Greens  (18).png",
+      "web_path": "assets/images/verde/verde-10.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-10-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 11,
+      "filename": "verde-11.jpg",
+      "original": "Olive Greens  (2).png",
+      "web_path": "assets/images/verde/verde-11.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-11-thumb.jpg",
+      "width": 1480,
+      "height": 1063
+    },
+    {
+      "id": 12,
+      "filename": "verde-12.jpg",
+      "original": "Olive Greens  (3).png",
+      "web_path": "assets/images/verde/verde-12.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-12-thumb.jpg",
+      "width": 1464,
+      "height": 1074
+    },
+    {
+      "id": 13,
+      "filename": "verde-13.jpg",
+      "original": "Olive Greens  (5).png",
+      "web_path": "assets/images/verde/verde-13.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-13-thumb.jpg",
+      "width": 1472,
+      "height": 1068
+    },
+    {
+      "id": 14,
+      "filename": "verde-14.jpg",
+      "original": "Olive Greens  (6).png",
+      "web_path": "assets/images/verde/verde-14.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-14-thumb.jpg",
+      "width": 1459,
+      "height": 1078
+    },
+    {
+      "id": 15,
+      "filename": "verde-15.jpg",
+      "original": "Olive Greens  (7).png",
+      "web_path": "assets/images/verde/verde-15.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-15-thumb.jpg",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "id": 16,
+      "filename": "verde-16.jpg",
+      "original": "Olive Greens  (8).png",
+      "web_path": "assets/images/verde/verde-16.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-16-thumb.jpg",
+      "width": 1178,
+      "height": 1335
+    },
+    {
+      "id": 17,
+      "filename": "verde-17.jpg",
+      "original": "Olive Greens  (9).png",
+      "web_path": "assets/images/verde/verde-17.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-17-thumb.jpg",
+      "width": 1465,
+      "height": 1073
+    },
+    {
+      "id": 18,
+      "filename": "verde-18.jpg",
+      "original": "Olive Greens (20).png",
+      "web_path": "assets/images/verde/verde-18.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-18-thumb.jpg",
+      "width": 1470,
+      "height": 1070
+    },
+    {
+      "id": 19,
+      "filename": "verde-19.jpg",
+      "original": "olive greens (19).png",
+      "web_path": "assets/images/verde/verde-19.jpg",
+      "thumb_path": "assets/images/verde/thumbs/verde-19-thumb.jpg",
+      "width": 1537,
+      "height": 1023
+    }
+  ]
+}
