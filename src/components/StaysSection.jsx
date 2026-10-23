@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { HOSTAYY_PROPERTIES, HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_PROPERTIES, HOSTAYY_CONFIG, getGuestWhatsAppLink } from '../data/properties';
 import PropertyCard from './PropertyCard';
 import StayShowcase from './StayShowcase';
 
@@ -126,7 +126,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               <span>Azura Airbnb</span>
             </a>
             <a 
-              href={getHostayyWhatsAppLink("Hi Mohit, I'm reaching out directly to book with 0% OTA fees.")} 
+              href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out directly to book with 0% OTA fees. Please share available dates and direct VIP rates." })} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="thm-btn thm-btn-wa" 

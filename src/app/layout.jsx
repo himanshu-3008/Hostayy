@@ -1,5 +1,12 @@
 import './globals.css';
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#191628',
+};
+
 export const metadata = {
   title: "Hostayy | Hospitality, Managed Better — Luxury Stays & Property Management in Delhi",
   description: "Curated boutique private residences in South Delhi and Dwarka. Direct VIP booking rates with zero platform commissions. Managed by Mohit Chaudhary (+91 9217680108).",

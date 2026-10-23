@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink, getGuestWhatsAppLink } from '../data/properties';
 
 export default function Hero({ onSelectStay }) {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -51,14 +51,12 @@ export default function Hero({ onSelectStay }) {
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
-    const msg = `Hi Mohit (Hostayy), I am checking availability from the Hotelux booking bar on your website:
-- Property: ${selectedProperty}
-- Check-In: ${checkIn || 'Flexible'}
-- Check-Out: ${checkOut || 'Flexible'}
-- Guests: ${guestCount}
-
-Please confirm real-time VIP availability and direct booking rates without OTA fees.`;
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    window.open(getGuestWhatsAppLink({
+      property: selectedProperty,
+      checkIn: checkIn || 'Flexible Dates',
+      checkOut: checkOut || 'Flexible Dates',
+      guests: guestCount
+    }), '_blank');
   };
 
   const currentSlide = heroSlides[slideIndex];
@@ -107,7 +105,7 @@ Please confirm real-time VIP availability and direct booking rates without OTA f
                       <i className="fa-solid fa-arrow-right"></i>
                     </a>
                     <a 
-                      href={getHostayyWhatsAppLink("Hi Mohit, I'm inquiring about direct VIP booking rates for Hostayy residences.")} 
+                      href={getGuestWhatsAppLink({ message: "I'm inquiring about direct VIP booking rates for Hostayy residences." })} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="thm-btn thm-btn-wa"

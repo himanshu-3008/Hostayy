@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, getHostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function Calculator() {
   const [activeTab, setActiveTab] = useState('calc');
@@ -20,25 +20,19 @@ export default function Calculator() {
   const annualSaved = otaFeeSaved * 12;
 
   const sendYieldToWhatsApp = () => {
-    const msg = `Hi Mohit (Hostayy), I used the Yield Calculator on your website. Here are my projections:
-- Occupancy: ${nights} Nights / month
-- Nightly Rate: ₹${rate.toLocaleString('en-IN')}
-- Projected Monthly Revenue: ₹${monthlyGross.toLocaleString('en-IN')}
-- Annual Revenue: ₹${annualGross.toLocaleString('en-IN')}
-- Estimated Annual OTA Commission Saved: ₹${annualSaved.toLocaleString('en-IN')}
-
-Please share an official feasibility assessment for my property in Delhi NCR.`;
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    window.open(getOwnerWhatsAppLink({
+      location: "Delhi NCR",
+      monthlyYield: `₹${monthlyGross.toLocaleString('en-IN')}/mo (at ${nights} nights/mo, ₹${rate.toLocaleString('en-IN')}/night)`,
+      message: `Projected Annual Revenue: ₹${annualGross.toLocaleString('en-IN')}, OTA Saved: ₹${annualSaved.toLocaleString('en-IN')}/yr. I would like an official feasibility assessment to register/partner my property.`
+    }), '_blank');
   };
 
   const sendQuickGuestBooking = () => {
-    const msg = `Hi Hostayy, I'd like to check VIP direct availability:
-- Property: ${selectedStay}
-- Guests: ${guestCount}
-- Occasion: ${stayPurpose}
-
-Please share available dates and direct VIP rates.`;
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    window.open(getGuestWhatsAppLink({
+      property: selectedStay,
+      guests: guestCount,
+      purpose: stayPurpose
+    }), '_blank');
   };
 
   return (

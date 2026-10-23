@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function TopBar() {
   return (
@@ -14,13 +14,23 @@ export default function TopBar() {
               <i className="fa-solid fa-phone"></i>
               <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}>{HOSTAYY_CONFIG.displayPhone}</a>
               <a 
-                href={getHostayyWhatsAppLink("Hi Mohit, I'm reaching out directly from Hostayy website.")} 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the website top bar to check luxury stay availability." })} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="top-bar-wa-badge"
-                title="Chat on WhatsApp"
+                title="Guest Booking WhatsApp"
               >
-                <i className="fa-brands fa-whatsapp"></i> WhatsApp
+                <i className="fa-brands fa-whatsapp"></i> Guest VIP
+              </a>
+              <a 
+                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the website top bar to discuss listing my property with Hostayy." })} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="top-bar-wa-badge owner-badge"
+                title="Property Owner WhatsApp"
+                style={{ backgroundColor: '#191628', border: '1px solid var(--hotelux-base)', color: 'var(--hotelux-base)' }}
+              >
+                <i className="fa-solid fa-key"></i> List Property
               </a>
             </li>
             <li>

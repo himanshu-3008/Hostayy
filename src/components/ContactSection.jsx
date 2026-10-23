@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function ContactSection() {
   const [activeFormTab, setActiveFormTab] = useState('owner');
@@ -31,33 +31,24 @@ export default function ContactSection() {
 
   const handleOwnerSubmit = (e) => {
     e.preventDefault();
-    const msg = `Hi Mohit (Hostayy), I would like to request an official Property Yield Assessment:
-- Owner Name: ${ownerData.name}
-- Phone: ${ownerData.phone}
-- Email: ${ownerData.email}
-- Location: ${ownerData.location}
-- Configuration: ${ownerData.config}
-- Furnishing: ${ownerData.furnishing}
-- Current Arrangement: ${ownerData.arrangement}
-- Notes: ${ownerData.notes || 'None'}
-
-Please share revenue feasibility and next steps.`;
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    window.open(getOwnerWhatsAppLink({
+      name: `${ownerData.name} (Phone: ${ownerData.phone}, Email: ${ownerData.email})`,
+      location: ownerData.location,
+      propertyType: ownerData.furnishing,
+      bedrooms: ownerData.config,
+      message: `Current Arrangement: ${ownerData.arrangement}. Additional Notes: ${ownerData.notes || 'None'}. I would like to register my property with Hostayy.`
+    }), '_blank');
   };
 
   const handleGuestSubmit = (e) => {
     e.preventDefault();
-    const msg = `Hi Hostayy, I'd like to book a stay:
-- Guest Name: ${guestData.name}
-- Phone: ${guestData.phone}
-- Preferred Stay: ${guestData.stay}
-- Check-in Date: ${guestData.checkin || 'Flexible'}
-- Stay Duration: ${guestData.nights} Nights
-- Guest Count: ${guestData.guests}
-- Notes: ${guestData.notes || 'None'}
-
-Please confirm VIP availability and direct rates.`;
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    window.open(getGuestWhatsAppLink({
+      property: guestData.stay,
+      checkIn: guestData.checkin || 'Flexible Dates',
+      guests: guestData.guests,
+      purpose: `${guestData.nights} Nights duration`,
+      message: `Guest: ${guestData.name} (${guestData.phone}). Special requests: ${guestData.notes || 'None'}`
+    }), '_blank');
   };
 
   return (

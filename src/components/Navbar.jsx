@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="container">
         <div className="main-menu-two__wrapper-inner">
           {/* Official Hostayy Luxury Brand Logo with Breathing Room */}
-          <a href="#home" className="brand-logo-hotelux" aria-label="Hostayy - Feel like home" style={{ marginRight: '36px', flexShrink: 0 }}>
+          <a href="#home" className="brand-logo-hotelux" aria-label="Hostayy - Feel like home" style={{ marginRight: '24px', flexShrink: 0 }}>
             <div className="brand-emblem-wrap">
               <img 
                 src="/assets/images/hostayy-logo-transparent.png" 
@@ -35,7 +35,7 @@ export default function Navbar() {
           </a>
 
           {/* Navigation Menu List (Spacious & Clean) */}
-          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '26px' }}>
+          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '24px' }}>
             <li>
               <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
             </li>
@@ -57,17 +57,50 @@ export default function Navbar() {
             <li>
               <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
             </li>
+
+            {/* Mobile Drawer Dedicated Action Buttons */}
+            <li className="mobile-drawer-actions">
+              <a 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to book a luxury residence." })} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="mobile-drawer-btn guest-btn"
+                onClick={() => setMobileOpen(false)}
+              >
+                <i className="fa-brands fa-whatsapp"></i> Book a Stay (Guest VIP)
+              </a>
+              <a 
+                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the mobile menu to register/list my property." })} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="mobile-drawer-btn owner-btn"
+                onClick={() => setMobileOpen(false)}
+              >
+                <i className="fa-solid fa-key"></i> Register Property (Owner)
+              </a>
+              <a 
+                href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
+                className="mobile-drawer-btn call-btn"
+                onClick={() => setMobileOpen(false)}
+              >
+                <i className="fa-solid fa-phone"></i> Call Host: {HOSTAYY_CONFIG.displayPhone}
+              </a>
+            </li>
           </ul>
 
           {/* Right Action Block: Phone Call & Host Concierge */}
           <div className="main-menu-two__right" style={{ flexShrink: 0 }}>
-            <div className="main-menu-two__call" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: 'var(--hotelux-primary)', border: '1.5px solid var(--hotelux-base)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--hotelux-base)' }}>
+            <div className="main-menu-two__call" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <a 
+                href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
+                aria-label={`Call Host ${HOSTAYY_CONFIG.displayPhone}`}
+                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--hotelux-primary)', border: '1.5px solid var(--hotelux-base)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--hotelux-base)', textDecoration: 'none' }}
+              >
                 <i className="fa-solid fa-phone"></i>
-              </div>
-              <div style={{ lineHeight: 1.25 }}>
+              </a>
+              <div className="nav-call-text" style={{ lineHeight: 1.25 }}>
                 <span style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--hotelux-base)', fontWeight: 700, letterSpacing: '0.08em', display: 'block' }}>Host Concierge</span>
-                <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ display: 'block', fontSize: '15px', fontWeight: 700, color: 'var(--hotelux-black)' }}>
+                <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ display: 'block', fontSize: '14.5px', fontWeight: 700, color: 'var(--hotelux-black)' }}>
                   {HOSTAYY_CONFIG.displayPhone}
                 </a>
               </div>

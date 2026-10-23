@@ -2334,3 +2334,377 @@ ul {
   -webkit-transform: translatex(0px);
   transform: translatex(0px);
 }
+
+/* ==========================================================================
+   HOTELUX MOBILE VIEW & RESPONSIVE PERFECTION
+   ========================================================================== */
+
+/* Mobile Bottom Bar (Sticky on Mobile Phones) */
+.mobile-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+
+  .mobile-bottom-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9998;
+    background-color: rgba(25, 22, 40, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1.5px solid rgba(185, 156, 135, 0.45);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.28);
+    padding: 6px 12px calc(6px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-bottom-bar__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .mobile-bar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-bar-item:active {
+    transform: scale(0.95);
+  }
+
+  .mobile-bar-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .call-action {
+    color: #ffffff;
+  }
+  .call-action .mobile-bar-icon {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .guest-action {
+    color: #25D366;
+  }
+  .guest-action .mobile-bar-icon {
+    background-color: #25D366;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.4);
+  }
+
+  .owner-action {
+    color: var(--hotelux-base);
+  }
+  .owner-action .mobile-bar-icon {
+    background-color: var(--hotelux-base);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(185, 156, 135, 0.4);
+  }
+
+  /* Reposition Floating WhatsApp button above mobile bottom bar */
+  .floating-wa-wrapper {
+    bottom: 76px !important;
+    right: 14px !important;
+  }
+
+  .wa-choice-popup {
+    width: calc(100vw - 32px) !important;
+    max-width: 330px !important;
+    right: -4px !important;
+    bottom: 68px !important;
+  }
+
+  .wa-tooltip {
+    display: none !important;
+  }
+}
+
+/* Mobile Drawer Actions inside Navbar */
+.mobile-drawer-actions {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .mobile-drawer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(25, 22, 40, 0.08);
+    width: 100%;
+  }
+
+  .mobile-drawer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 44px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-drawer-btn.guest-btn {
+    background-color: #25D366;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+  }
+
+  .mobile-drawer-btn.owner-btn {
+    background-color: #191628;
+    color: var(--hotelux-base) !important;
+    border: 1px solid var(--hotelux-base);
+  }
+
+  .mobile-drawer-btn.call-btn {
+    background-color: #f1f0f5;
+    color: #191628 !important;
+  }
+
+  .main-menu__list {
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+  }
+}
+
+/* Header & TopBar Mobile Optimizations */
+@media (max-width: 768px) {
+  .main-menu-two__top {
+    padding: 6px 0;
+  }
+
+  .main-menu-two__top-inner {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .main-menu-two__top-right {
+    display: none;
+  }
+
+  .main-menu-two__contact-list {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .d-none-sm {
+    display: none !important;
+  }
+
+  .nav-call-text {
+    display: none !important;
+  }
+
+  .brand-logo-hotelux {
+    margin-right: 12px !important;
+  }
+
+  .brand-logo-hotelux .brand-emblem-wrap {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-logo-hotelux .brand-text-hotelux h2 {
+    font-size: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .brand-logo-hotelux .brand-text-hotelux .brand-slogan {
+    font-size: 11px;
+  }
+}
+
+/* Hero Section Mobile Optimization */
+@media (max-width: 768px) {
+  .banner-one {
+    padding: 30px 0 50px;
+  }
+
+  .banner-one__sub-title {
+    font-size: 13.5px;
+  }
+
+  .banner-one__title {
+    font-size: clamp(26px, 7vw, 36px);
+    line-height: 1.22em;
+    margin-bottom: 16px;
+  }
+
+  .banner-one__text {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 22px;
+  }
+
+  .banner-one__btn-and-review-box {
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .banner-one__slider-outer {
+    height: 270px;
+    margin-top: 24px;
+    border-radius: 14px;
+  }
+
+  .banner-one__slider-caption {
+    padding: 16px;
+  }
+
+  .banner-one__slider-caption h3 {
+    font-size: 18px;
+  }
+
+  .banner-one__slider-caption p {
+    font-size: 12px;
+  }
+
+  .banner-ota-links {
+    margin-top: 16px;
+    gap: 8px;
+  }
+
+  .banner-ota-pill {
+    padding: 5px 10px;
+    font-size: 11.5px;
+  }
+
+  /* Booking bar mobile optimization */
+  .about-two__booking {
+    margin-top: 15px;
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .about-two__booking .row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+  }
+
+  .about-two__booking [class*="col-"] {
+    padding: 0;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .about-two-booking__title {
+    font-size: 18px;
+  }
+
+  .about-two-booking__input-field {
+    font-size: 15px;
+    border-radius: 6px;
+    height: 46px;
+  }
+
+  .about-two__booking button[type="submit"] {
+    border-radius: 6px;
+    height: 48px !important;
+  }
+}
+
+/* Sections & Cards Mobile Optimizations */
+@media (max-width: 768px) {
+  .section-pad,
+  .services-two,
+  .about-two,
+  .our-rooms-two,
+  .why-choose-one,
+  .gallery-two,
+  .contact-two {
+    padding: 50px 0 !important;
+  }
+
+  .section-title__title {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+
+  .section-title {
+    margin-bottom: 28px !important;
+  }
+
+  .why-choose-one__right {
+    padding-left: 0 !important;
+    margin-top: 36px;
+  }
+
+  .why-choose-one__img-2 {
+    width: 150px !important;
+    bottom: -20px !important;
+    left: 10px !important;
+    border-width: 4px !important;
+  }
+
+  .why-choose-one__hotel-info {
+    padding: 12px 18px !important;
+    top: 15px !important;
+    right: 15px !important;
+  }
+
+  .why-choose-one__hotel-name {
+    font-size: 18px !important;
+  }
+
+  .our-rooms-actions-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .btn-hotelux-room-wa {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .tab-bar {
+    flex-direction: column;
+  }
+
+  .tab-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-footer-two {
+    padding: 50px 0 80px;
+  }
+
+  .site-footer-two__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+}

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { getHostayyWhatsAppLink } from '../data/properties';
+import { getGuestWhatsAppLink } from '../data/properties';
 
 export default function ServicesSection() {
   const services = [
@@ -55,7 +55,7 @@ export default function ServicesSection() {
             </p>
             <div style={{ marginTop: '24px' }}>
               <a 
-                href={getHostayyWhatsAppLink("Hi Mohit, I'd like to learn more about the amenities and services at Hostayy residences.")}
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'd like to learn more about the luxury amenities, chef services, and availability at Hostayy residences." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="thm-btn thm-btn-black"

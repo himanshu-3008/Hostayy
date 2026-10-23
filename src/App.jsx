@@ -20,6 +20,7 @@ import ContactSection from './components/ContactSection';
 import PropertyModal from './components/PropertyModal';
 import Lightbox from './components/Lightbox';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import MobileBottomBar from './components/MobileBottomBar';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -127,6 +128,9 @@ export default function App() {
 
       {/* Floating 24/7 WhatsApp Concierge */}
       <FloatingWhatsApp />
+
+      {/* Sticky Bottom Quick Action Bar for Mobile Devices */}
+      <MobileBottomBar />
 
       {/* Interactive Property Modal & Fullscreen Photo Lightbox */}
       <PropertyModal 

@@ -42,9 +42,42 @@ export function getHostayyWhatsAppLink(customMsg = "") {
   return `${base}?text=${encodeURIComponent(customMsg)}`;
 }
 
+/**
+ * Generates a pre-filled WhatsApp link clearly tagged for GUEST BOOKINGS
+ */
+export function getGuestWhatsAppLink({ property = "", checkIn = "", checkOut = "", guests = "", purpose = "", message = "" } = {}) {
+  let text = `🏨 [GUEST BOOKING INQUIRY - HOSTAYY]\nHello Mohit, I am a prospective guest reaching out to book a stay with Hostayy:`;
+
+  if (property) text += `\n• Property: ${property}`;
+  if (checkIn) text += `\n• Check-In: ${checkIn}`;
+  if (checkOut) text += `\n• Check-Out: ${checkOut}`;
+  if (guests) text += `\n• Number of Guests: ${guests}`;
+  if (purpose) text += `\n• Purpose / Occasion: ${purpose}`;
+  if (message) text += `\n• Note: ${message}`;
+
+  text += `\n\nPlease share live availability, photos, and direct VIP rates (0% OTA platform fees).`;
+  return getHostayyWhatsAppLink(text);
+}
+
+/**
+ * Generates a pre-filled WhatsApp link clearly tagged for PROPERTY OWNERS looking to register/partner
+ */
+export function getOwnerWhatsAppLink({ name = "", location = "", propertyType = "", bedrooms = "", monthlyYield = "", message = "" } = {}) {
+  let text = `🔑 [PROPERTY OWNER / PARTNERSHIP INQUIRY - HOSTAYY]\nHello Mohit, I am a property owner and I want to register/list my residence with Hostayy:`;
+
+  if (name) text += `\n• Owner Name: ${name}`;
+  if (location) text += `\n• Property Location: ${location}`;
+  if (propertyType) text += `\n• Property Type: ${propertyType}`;
+  if (bedrooms) text += `\n• Configuration: ${bedrooms}`;
+  if (monthlyYield) text += `\n• Projected Monthly Target: ${monthlyYield}`;
+  if (message) text += `\n• Note: ${message}`;
+
+  text += `\n\nPlease share an official feasibility assessment and onboarding details for Delhi NCR.`;
+  return getHostayyWhatsAppLink(text);
+}
+
 export function getGuestPropertyWhatsAppLink(propertyName) {
-  const msg = `Hi Hostayy, I'm interested in booking ${propertyName}. Please share current availability, direct rates, and details.`;
-  return getHostayyWhatsAppLink(msg);
+  return getGuestWhatsAppLink({ property: propertyName });
 }
 
 export const HOSTAYY_PROPERTIES = [

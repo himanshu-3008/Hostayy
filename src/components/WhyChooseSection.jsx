@@ -1,19 +1,21 @@
 'use client';
 
 import React from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, getGuestWhatsAppLink } from '../data/properties';
 
 export default function WhyChooseSection() {
   const handleConsultation = () => {
-    window.open(getHostayyWhatsAppLink("Hi Mohit (Hostayy), I'm exploring luxury stays in Delhi NCR. I'd love to learn more about Hostayy's bespoke services."), '_blank');
+    window.open(getGuestWhatsAppLink({
+      message: "Hello Mohit, I'm exploring luxury stays in Delhi NCR. I'd love to learn more about Hostayy's bespoke residences."
+    }), '_blank');
   };
 
   return (
     <section className="why-choose-one" id="why-choose">
       <div className="container">
-        <div className="row" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '30px 0' }}>
+        <div className="row" style={{ alignItems: 'center' }}>
           {/* Left Column: Text & Features */}
-          <div className="col-xl-6 col-lg-6" style={{ flex: '0 0 50%', maxWidth: '50%' }}>
+          <div className="col-xl-6 col-lg-6">
             <div className="why-choose-one__left" style={{ paddingRight: '30px' }}>
               <div className="section-title text-left sec-title-animation animation-style2">
                 <div className="section-title__tagline-box">
@@ -94,8 +96,8 @@ export default function WhyChooseSection() {
           </div>
 
           {/* Right Column: Hotelux Images & Floating Emblem */}
-          <div className="col-xl-6 col-lg-6" style={{ flex: '0 0 50%', maxWidth: '50%' }}>
-            <div className="why-choose-one__right" style={{ position: 'relative', paddingLeft: '40px' }}>
+          <div className="col-xl-6 col-lg-6">
+            <div className="why-choose-one__right">
               <div className="why-choose-one__img" style={{ position: 'relative', overflow: 'hidden', borderRadius: '0px', boxShadow: '0 20px 50px rgba(0,0,0,0.1)' }}>
                 <img 
                   src="/assets/images/hotelux/resources_why-choose-one-img-1.jpg" 
