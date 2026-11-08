@@ -79,12 +79,12 @@ export default function Calculator() {
           <div className="tab-panel-wrap">
             {/* Tab 1: Yield & Commission Calculator (For Owners) */}
             {activeTab === 'calc' && (
-              <div className="tab-panel active" style={{ padding: '30px' }}>
+              <div className="tab-panel active calc-tab-panel">
                 <div style={{ marginBottom: '22px' }}>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#191628', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     Select Property Configuration
                   </label>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '10px' }}>
+                  <div className="bhk-calc-selector-grid" style={{ gap: '10px' }}>
                     {[
                       { label: '1 BHK Suite', gross: 85000 },
                       { label: '2 BHK Executive', gross: 140000 },
@@ -171,7 +171,7 @@ export default function Calculator() {
 
             {/* Tab 2: Long-Term Quotation for Guests */}
             {activeTab === 'book' && (
-              <div className="tab-panel active" style={{ padding: '30px' }}>
+              <div className="tab-panel active calc-tab-panel">
                 <div style={{ marginBottom: '18px' }}>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#191628', marginBottom: '6px' }}>
                     Select Residence Configuration

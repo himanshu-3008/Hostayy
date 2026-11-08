@@ -104,11 +104,11 @@ export default function WhyChooseSection() {
             <div className="why-choose-one__right" style={{ position: 'relative' }}>
               {/* Landmark Connectivity Grid Card */}
               <div 
+                className="why-choose-connectivity-card"
                 style={{
                   background: '#ffffff',
                   border: '2px solid var(--hotelux-border)',
                   borderRadius: '12px',
-                  padding: '30px',
                   boxShadow: '0 20px 50px rgba(25, 22, 40, 0.1)',
                   marginBottom: '25px'
                 }}
@@ -123,7 +123,7 @@ export default function WhyChooseSection() {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px' }}>
+                <div className="why-choose-connectivity-grid">
                   {landmarkItems.map((lm, idx) => (
                     <div key={idx} style={{ background: '#fbf9f7', border: '1px solid #eee8e2', padding: '12px 14px', borderRadius: '8px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
@@ -142,10 +142,10 @@ export default function WhyChooseSection() {
 
               {/* Host Profile & Rating Strip */}
               <div 
+                className="why-choose-host-strip"
                 style={{
                   background: 'rgba(25, 22, 40, 0.95)',
                   color: '#ffffff',
-                  padding: '20px 24px',
                   borderRadius: '10px',
                   border: '1px solid var(--hotelux-base)',
                   display: 'flex',

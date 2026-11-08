@@ -29,7 +29,6 @@ export default function BrandBannerSection() {
             className="brand-experience-visual"
             style={{
               flex: '1 1 500px',
-              padding: '30px',
               backgroundColor: '#fff7f7',
               display: 'flex',
               flexDirection: 'column',
@@ -91,15 +90,14 @@ export default function BrandBannerSection() {
           <div 
             className="brand-experience-content"
             style={{
-              flex: '1 1 450px',
-              padding: '45px 40px'
+              flex: '1 1 450px'
             }}
           >
             <div className="section-title text-left sec-title-animation" style={{ marginBottom: '22px' }}>
               <div className="section-title__tagline-box">
                 <span className="section-title__tagline">The Hostayy Philosophy</span>
               </div>
-              <h2 className="section-title__title" style={{ fontSize: '34px', lineHeight: '1.25' }}>
+              <h2 className="section-title__title brand-experience-title" style={{ lineHeight: '1.25' }}>
                 Every Stay Should Truly <br />
                 <span>Feel Like Home.</span>
               </h2>

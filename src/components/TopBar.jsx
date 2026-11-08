@@ -10,7 +10,7 @@ export default function TopBar() {
         <div className="main-menu-two__top-inner">
           {/* Left contact info */}
           <ul className="main-menu-two__contact-list">
-            <li>
+            <li className="topbar-phone-item">
               <i className="fa-solid fa-phone"></i>
               <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}>{HOSTAYY_CONFIG.displayPhone}</a>
               <a 
@@ -23,7 +23,7 @@ export default function TopBar() {
                 <i className="fa-brands fa-whatsapp"></i> WhatsApp Concierge
               </a>
             </li>
-            <li>
+            <li className="topbar-email-item">
               <i className="fa-solid fa-envelope"></i>
               <a href={`mailto:${HOSTAYY_CONFIG.email}`}>{HOSTAYY_CONFIG.email}</a>
             </li>

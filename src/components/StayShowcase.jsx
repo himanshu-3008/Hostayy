@@ -131,7 +131,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
           </div>
 
           {/* Long-Term Tariff / Quotation Box */}
-          <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="showcase-quotation-box" style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--hotelux-base)', display: 'block', fontWeight: 700 }}>
                 Long-Term &amp; Monthly Quotation

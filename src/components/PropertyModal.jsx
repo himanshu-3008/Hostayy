@@ -21,7 +21,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           <i className="fa-solid fa-xmark"></i>
         </button>
 
-        <div style={{ padding: '36px' }}>
+        <div className="property-modal-body">
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap' }}>
             <span className="showcase-badge">{prop.badge}</span>
             <span className="showcase-former-tag" style={{ background: '#191628', color: 'var(--hotelux-base)', border: '1px solid var(--hotelux-base)' }}>
@@ -32,7 +32,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
             </span>
           </div>
 
-          <h2 style={{ fontSize: '2.2rem', color: 'var(--text-primary)', marginBottom: '6px' }}>
+          <h2 className="property-modal-title">
             {prop.name}
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', marginBottom: '14px' }}>
@@ -119,22 +119,21 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           </div>
 
           {/* Action Row */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-subtle)', paddingTop: '24px', flexWrap: 'wrap', gap: '16px' }}>
+          <div className="property-modal-action-row">
             <div>
               <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block' }}>Stay Arrangement</span>
-              <strong style={{ fontSize: '1.45rem', color: 'var(--text-primary)' }}>Monthly &amp; Long-Term Quotation</strong>
+              <strong className="property-modal-quote-val">Monthly &amp; Long-Term Quotation</strong>
               <span style={{ fontSize: '0.82rem', color: '#64748b', display: 'block', marginTop: '2px' }}>
                 All-inclusive utilities, 300 Mbps Wi-Fi, housekeeping &amp; 0% brokerage
               </span>
             </div>
 
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <div className="property-modal-btns">
               <a 
                 href={getGuestPropertyWhatsAppLink(prop.name)} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="btn-coral"
-                style={{ padding: '11px 22px' }}
+                className="btn-coral property-modal-quote-btn"
               >
                 <i className="fa-brands fa-whatsapp"></i> Request Quotation on WhatsApp
               </a>
@@ -143,7 +142,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-outline-charcoal"
-                style={{ padding: '11px 18px' }}
+                style={{ padding: '11px 18px', textAlign: 'center' }}
               >
                 <i className="fa-brands fa-google-drive"></i> Drive Photos
               </a>

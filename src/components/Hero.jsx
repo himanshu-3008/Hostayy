@@ -178,7 +178,7 @@ export default function Hero({ onSelectStay }) {
                       <h3>{currentSlide.name}</h3>
                       <p>{currentSlide.sub}</p>
                     </div>
-                    <span style={{ background: 'var(--hotelux-base)', color: '#ffffff', padding: '8px 16px', fontWeight: 700, fontSize: '13px', borderRadius: '4px' }}>
+                    <span className="banner-slider-tariff-badge">
                       {currentSlide.tariff}
                     </span>
                   </div>

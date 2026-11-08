@@ -84,7 +84,15 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
         </div>
 
         {/* Corporate & Long-Term Extended Stay Privileges Banner */}
-        <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '36px 30px', marginTop: '30px', textAlign: 'center' }}>
+        <div 
+          className="corporate-privileges-banner"
+          style={{ 
+            background: 'var(--hotelux-primary)', 
+            border: '1px solid var(--hotelux-border)', 
+            marginTop: '30px', 
+            textAlign: 'center' 
+          }}
+        >
           <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '24px', marginBottom: '8px', color: 'var(--hotelux-black)' }}>
             Exhibition Delegates, Expat Relocations &amp; Extended Corporate Stays
           </h3>
