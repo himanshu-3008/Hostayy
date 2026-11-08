@@ -24,7 +24,9 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
         <div style={{ padding: '36px' }}>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap' }}>
             <span className="showcase-badge">{prop.badge}</span>
-            <span className="showcase-former-tag">Formerly {prop.formerName}</span>
+            <span className="showcase-former-tag" style={{ background: '#191628', color: 'var(--hotelux-base)', border: '1px solid var(--hotelux-base)' }}>
+              <i className="fa-solid fa-door-open"></i> {prop.bhk} Serviced Apartment
+            </span>
             <span style={{ fontSize: '0.85rem', color: '#B45309', fontWeight: 700 }}>
               <i className="fa-solid fa-star" style={{ color: '#F59E0B' }}></i> {prop.rating} ★ ({prop.reviewsCount} verified reviews)
             </span>
@@ -33,14 +35,22 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           <h2 style={{ fontSize: '2.2rem', color: 'var(--text-primary)', marginBottom: '6px' }}>
             {prop.name}
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', marginBottom: '14px' }}>
             <i className="fa-solid fa-location-dot text-coral" style={{ marginRight: '6px' }}></i>
-            {prop.location} • {prop.nearbyLandmarks}
+            {prop.location}
           </p>
 
-          {/* 5-Photo Strip */}
+          {/* Landmarks Box */}
+          <div style={{ background: '#f8f6f3', border: '1px solid #eee8df', padding: '10px 14px', borderRadius: '8px', marginBottom: '24px', fontSize: '13px', color: '#4b5563' }}>
+            <strong style={{ color: 'var(--hotelux-base)', display: 'block', marginBottom: '2px', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em' }}>
+              <i className="fa-solid fa-compass" style={{ marginRight: '4px' }}></i> Proximity &amp; Landmarks:
+            </strong>
+            {prop.nearbyLandmarks}
+          </div>
+
+          {/* 6-Photo Strip */}
           <div className="modal-photos-strip">
-            {prop.images.slice(0, 5).map((img, idx) => (
+            {prop.images.slice(0, 6).map((img, idx) => (
               <div 
                 key={img.id} 
                 className="modal-photo-thumb"
@@ -77,7 +87,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           {/* Room Breakdown */}
           <div style={{ marginBottom: '28px' }}>
             <h4 style={{ fontSize: '1.15rem', color: 'var(--text-primary)', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <i className="fa-solid fa-door-closed text-coral"></i> Bedroom Suite Breakdown
+              <i className="fa-solid fa-door-closed text-coral"></i> Detailed Room &amp; Living Breakdown
             </h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
               {prop.roomBreakdown.map((room, idx) => (
@@ -111,8 +121,11 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           {/* Action Row */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-subtle)', paddingTop: '24px', flexWrap: 'wrap', gap: '16px' }}>
             <div>
-              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block' }}>Direct VIP Tariff</span>
-              <strong style={{ fontSize: '1.8rem', color: 'var(--text-primary)' }}>{prop.tariffPerNight} <span style={{ fontSize: '0.9rem', fontWeight: 400, color: 'var(--text-muted)' }}>/ night</span></strong>
+              <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase', display: 'block' }}>Stay Arrangement</span>
+              <strong style={{ fontSize: '1.45rem', color: 'var(--text-primary)' }}>Monthly &amp; Long-Term Quotation</strong>
+              <span style={{ fontSize: '0.82rem', color: '#64748b', display: 'block', marginTop: '2px' }}>
+                All-inclusive utilities, 300 Mbps Wi-Fi, housekeeping &amp; 0% brokerage
+              </span>
             </div>
 
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
@@ -123,29 +136,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
                 className="btn-coral"
                 style={{ padding: '11px 22px' }}
               >
-                <i className="fa-brands fa-whatsapp"></i> WhatsApp VIP
-              </a>
-              {prop.airbnbUrl && (
-                <a 
-                  href={prop.airbnbUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="btn-outline-charcoal"
-                  style={{ padding: '11px 18px' }}
-                  title={`Book ${prop.name} on Airbnb`}
-                >
-                  <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F' }}></i> Airbnb
-                </a>
-              )}
-              <a 
-                href={prop.bookingUrl || "https://www.booking.com/Share-OrxZmT"} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-outline-charcoal"
-                style={{ padding: '11px 18px' }}
-                title={`Book ${prop.name} on Booking.com`}
-              >
-                <i className="fa-solid fa-hotel" style={{ color: '#003580' }}></i> Booking.com
+                <i className="fa-brands fa-whatsapp"></i> Request Quotation on WhatsApp
               </a>
               <a 
                 href={prop.driveFolderUrl} 

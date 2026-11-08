@@ -8,41 +8,41 @@ export default function ProcessAndFaq() {
   const steps = [
     {
       num: '01',
-      title: 'Property Inspection & Feasibility',
-      desc: 'Mohit Chaudhary conducts an on-site walkthrough of your residence, analyzes neighbourhood demand dynamics, and provides a clear monthly revenue projection.'
+      title: 'Consultation & Feasibility',
+      desc: 'Mohit Chaudhary conducts an on-site evaluation of your apartment or estate in Delhi NCR, reviews Yashobhoomi and corporate demand trends, and provides a clear monthly revenue projection.'
     },
     {
       num: '02',
-      title: '5-Star Styling & Photoshoot',
-      desc: 'Our interior team stages your space with boutique aesthetics, high-thread-count linens, and commissions professional HDR architectural photography.'
+      title: 'Styling & Professional Photography',
+      desc: 'Our hospitality team styles your space to high-end serviced standards, installs high-thread-count linens, and commissions professional HDR architectural photography.'
     },
     {
       num: '03',
-      title: 'Global Launch & Passive Income',
-      desc: 'We publish your home across Airbnb, Booking.com, and our direct VIP channels, vet every guest, manage daily cleaning, and wire your profits on the 1st of every month.'
+      title: 'Corporate Onboarding & Monthly Payouts',
+      desc: 'We place your property across direct corporate networks, exhibition delegates, and global platforms, manage daily housekeeping, and wire your net payouts directly on the 1st of every month.'
     }
   ];
 
   const faqs = [
     {
-      q: 'How does Hostayy generate higher rental income than traditional 11-month leases?',
-      a: 'Short-term and executive corporate rentals operate on dynamic nightly pricing rather than fixed monthly rents. By targeting corporate travelers, wedding groups, transit flyers, and attendees of exhibitions at Yashobhoomi IICC, Hostayy achieves significantly higher effective revenue per square foot while maintaining high occupancy.'
+      q: 'How close are Hostayy serviced residences to Yashobhoomi (IICC)?',
+      a: 'All our residences are located in Dwarka Sector 23, situated just 3 to 5 minutes by car or short walk from Yashobhoomi (IICC - India International Convention & Expo Centre) in Sector 25, and only 10 minutes from IGI Airport Terminal 3.'
     },
     {
-      q: 'How are prospective guests screened before they check in?',
-      a: 'Safety and property preservation are our highest priorities. All guests must provide valid government identification (Aadhaar, Passport) prior to receiving access codes. We screen guest profiles on Airbnb, verify the exact purpose of stay, enforce strict noise curfews, and reject unauthorized local parties.'
+      q: 'Are Hostayy apartments available for monthly and long-term corporate leases?',
+      a: 'Yes! We specialize in flexible monthly, multi-month, and annual corporate leases for 1, 2, and 3 BHK apartments. All-inclusive quotations cover modular kitchen appliances, 300 Mbps mesh Wi-Fi, regular housekeeping, power backup, and utility management with zero brokerage.'
     },
     {
-      q: 'Can I use my property for personal stay or family visits?',
-      a: 'Yes, absolutely! Unlike traditional 11-month leases where your property is locked away, as a Hostayy partner you can block dates for personal or family usage whenever needed with advance notice.'
+      q: 'Can companies receive GST invoices for corporate tax and input credit?',
+      a: 'Yes, absolutely. We issue formal GST-compliant business invoices for all corporate and business stays so your organization can claim full input tax credit (ITC) and process company reimbursements smoothly.'
     },
     {
-      q: 'How do I enquire about booking a stay for my family or group?',
-      a: 'Simply click the "Enquire on WhatsApp" button on any property card or use our contact form. Our direct WhatsApp concierge will immediately confirm real-time availability, share configuration photos, and offer direct booking rates without OTA service fees.'
+      q: 'Are the kitchens fully equipped for daily self-catering and cooking?',
+      a: 'Every 1, 2, and 3 BHK residence features a fully functional modular kitchen complete with induction/gas stoves, microwave oven, refrigerator, RO drinking water purifier, cookware, and dinnerware.'
     },
     {
-      q: 'What if something breaks or needs maintenance during a stay?',
-      a: 'Our on-ground maintenance team in Delhi conducts preventative inspections before each check-in. If an unexpected issue arises, our local technicians resolve it promptly. Minor routine repairs are managed seamlessly within our service package.'
+      q: 'How do I request a custom long-stay quotation?',
+      a: 'Simply click "Request Long-Stay Quote" on any residence or message Mohit Chaudhary on WhatsApp at +91 9217680108 with your move-in date, expected duration, and team size. We share real-time quotations, floor layouts, and photos within minutes.'
     }
   ];
 
@@ -52,13 +52,13 @@ export default function ProcessAndFaq() {
         {/* Process Header */}
         <div className="section-title text-center sec-title-animation animation-style1" style={{ marginBottom: '45px' }}>
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">Operational Process</span>
+            <span className="section-title__tagline">OPERATIONAL PROCESS</span>
           </div>
           <h2 className="section-title__title title-animation">
             The Three-Step <span>Onboarding Journey</span>
           </h2>
           <p style={{ maxWidth: '680px', margin: '15px auto 0', color: 'var(--hotelux-gray)', fontSize: '15.5px', lineHeight: '1.7' }}>
-            From initial feasibility to your first monthly payout, we make onboarding seamless, transparent, and completely hands-off.
+            From initial property feasibility to hands-off monthly payouts, we ensure transparent, high-performance property management.
           </p>
         </div>
 
@@ -76,12 +76,14 @@ export default function ProcessAndFaq() {
         {/* FAQ Section */}
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           <div className="section-head" style={{ marginBottom: '30px' }}>
-            <span className="section-tag">Common Enquiries</span>
-            <h3 style={{ fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '8px' }}>
+            <span className="section-tag" style={{ color: 'var(--hotelux-base)', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, fontSize: '12px' }}>
+              Common Enquiries
+            </span>
+            <h3 style={{ fontSize: '2rem', color: 'var(--text-primary)', marginBottom: '8px', fontFamily: 'var(--hotelux-font-two)' }}>
               Frequently Asked Questions
             </h3>
-            <p className="section-subtitle">
-              Everything you need to know about reserving a residence or partnering your property with Hostayy.
+            <p className="section-subtitle" style={{ color: 'var(--hotelux-gray)', fontSize: '15px' }}>
+              Everything you need to know about reserving a 1, 2, or 3 BHK residence near Yashobhoomi or partnering your property with Hostayy.
             </p>
           </div>
 
@@ -89,18 +91,19 @@ export default function ProcessAndFaq() {
             {faqs.map((faq, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div key={idx} className={`faq-item ${isOpen ? 'active' : ''}`}>
+                <div key={idx} className={`faq-item ${isOpen ? 'active' : ''}`} style={{ marginBottom: '14px', border: '1px solid #e2e8f0', borderRadius: '8px', overflow: 'hidden' }}>
                   <button 
                     className="faq-question" 
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     aria-expanded={isOpen}
+                    style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 22px', background: isOpen ? '#fcfbfa' : '#ffffff', border: 'none', cursor: 'pointer', textAlign: 'left', fontWeight: 600, fontSize: '15.5px', color: '#191628' }}
                   >
                     <span>{faq.q}</span>
-                    <i className="fa-solid fa-chevron-down"></i>
+                    <i className={`fa-solid ${isOpen ? 'fa-chevron-up' : 'fa-chevron-down'}`} style={{ color: 'var(--hotelux-base)', fontSize: '14px' }}></i>
                   </button>
                   {isOpen && (
-                    <div className="faq-answer" style={{ display: 'block' }}>
-                      <p>{faq.a}</p>
+                    <div className="faq-answer" style={{ padding: '16px 22px 22px', backgroundColor: '#fcfbfa', borderTop: '1px solid #f1f5f9', color: '#475569', fontSize: '14.5px', lineHeight: '1.7' }}>
+                      <p style={{ margin: 0 }}>{faq.a}</p>
                     </div>
                   )}
                 </div>

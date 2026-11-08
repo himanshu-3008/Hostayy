@@ -7,20 +7,23 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
 
   const photos = prop.images;
-  const top5Photos = photos.slice(0, 5);
-  const currentPhoto = top5Photos[activePhotoIndex] || top5Photos[0];
+  const previewPhotos = photos.slice(0, 6);
+  const currentPhoto = photos[activePhotoIndex] || photos[0];
 
   return (
     <div className="stay-showcase-card compact-showcase-card">
       {/* Top Header Row with Close Button */}
       <div className="compact-showcase-header">
-        <div className="showcase-badge-row" style={{ margin: 0 }}>
-          <span className="showcase-badge">{prop.badge}</span>
-          <span className="showcase-tag-rooms">
-            <i className="fa-solid fa-door-open"></i> {prop.roomsCount} Luxury En-Suite Rooms
+        <div className="showcase-badge-row" style={{ margin: 0, display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <span className="showcase-badge" style={{ background: 'var(--hotelux-base)', color: '#ffffff', padding: '4px 12px', fontSize: '12px', fontWeight: 700 }}>
+            {prop.badge}
           </span>
-          <span className="showcase-former-tag">
-            <i className="fa-solid fa-clock-rotate-left"></i> Formerly {prop.formerName}
+          <span className="showcase-tag-rooms" style={{ background: '#191628', color: '#ffffff', padding: '4px 10px', fontSize: '12px' }}>
+            <i className="fa-solid fa-door-open" style={{ marginRight: '5px', color: 'var(--hotelux-base)' }}></i>
+            {prop.bhk} Serviced Residence
+          </span>
+          <span style={{ fontSize: '12px', color: '#059669', background: '#ecfdf5', padding: '4px 10px', border: '1px solid #a7f3d0', fontWeight: 600 }}>
+            <i className="fa-solid fa-bolt" style={{ marginRight: '4px' }}></i> Long-Term &amp; Monthly Quotes Available
           </span>
         </div>
 
@@ -50,14 +53,14 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 {currentPhoto.title}
               </span>
               <span className="compact-expand-pill">
-                <i className="fa-solid fa-expand"></i> Fullscreen
+                <i className="fa-solid fa-expand"></i> Fullscreen Lightbox
               </span>
             </div>
           </div>
 
-          {/* 5-Photo Mini Preview Strip */}
+          {/* Mini Preview Strip (Showing 6 photos including modular kitchen) */}
           <div className="compact-thumbs-row">
-            {top5Photos.map((photo, idx) => (
+            {previewPhotos.map((photo, idx) => (
               <button 
                 key={photo.id}
                 type="button"
@@ -72,9 +75,9 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
           </div>
 
           {/* View All Photos Button */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '6px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
             <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              Showing curated 5 of {photos.length} verified estate photos
+              Showing {previewPhotos.length} of {photos.length} verified apartment photos
             </span>
             <button 
               type="button"
@@ -94,10 +97,14 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
             <h2 style={{ fontSize: '1.75rem', color: 'var(--text-primary)', marginBottom: '4px', lineHeight: 1.2 }}>
               {prop.name}
             </h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '14px' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: '8px' }}>
               <i className="fa-solid fa-location-dot text-coral" style={{ marginRight: '5px' }}></i>
               {prop.location}
             </p>
+            {/* Proximity / Landmarks Pill */}
+            <div style={{ background: '#fdf8f4', border: '1px solid #fde7d7', padding: '8px 12px', borderRadius: '4px', marginBottom: '14px', fontSize: '12px', color: '#7c2d12', lineHeight: 1.4 }}>
+              <strong><i className="fa-solid fa-compass"></i> Proximity:</strong> {prop.nearbyLandmarks}
+            </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '16px' }}>
               {prop.shortDescription}
             </p>
@@ -106,12 +113,12 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
           {/* Quick Specs Chips */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
             <div className="spec-pill" style={{ justifyContent: 'center' }}>
-              <i className="fa-solid fa-bed text-coral"></i>
-              <span>{prop.roomsCount} En-Suite Rooms</span>
+              <i className="fa-solid fa-door-open text-coral"></i>
+              <span>{prop.bhk} Configuration</span>
             </div>
             <div className="spec-pill" style={{ justifyContent: 'center' }}>
-              <i className="fa-solid fa-users text-coral"></i>
-              <span>Up to {prop.maxGuests} Guests</span>
+              <i className="fa-solid fa-kitchen-set text-coral"></i>
+              <span>Modular Kitchen</span>
             </div>
             <div className="spec-pill" style={{ justifyContent: 'center' }}>
               <i className="fa-solid fa-vector-square text-coral"></i>
@@ -123,15 +130,18 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
             </div>
           </div>
 
-          {/* Tariff Box */}
-          <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '18px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          {/* Long-Term Tariff / Quotation Box */}
+          <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--hotelux-base)', display: 'block', fontWeight: 700 }}>
-                Direct VIP Tariff (0% OTA Fees)
+                Long-Term &amp; Monthly Quotation
               </span>
-              <strong style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '1.75rem', color: 'var(--hotelux-black)', lineHeight: 1.1 }}>
-                {prop.tariffPerNight} <span style={{ fontSize: '0.85rem', fontWeight: 400, color: 'var(--hotelux-gray)' }}>/ night</span>
+              <strong style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '1.45rem', color: 'var(--hotelux-black)', lineHeight: 1.15 }}>
+                Custom Quote on Request
               </strong>
+              <span style={{ fontSize: '11.5px', color: '#64748b', display: 'block', marginTop: '3px' }}>
+                0% Brokerage • 0% Platform Fees • GST Invoicing
+              </span>
             </div>
             <span style={{ fontSize: '13px', color: '#B45309', fontWeight: 700, background: 'rgba(245, 158, 11, 0.12)', padding: '5px 12px', border: '1px solid rgba(245, 158, 11, 0.25)' }}>
               <i className="fa-solid fa-star" style={{ color: '#F59E0B' }}></i> {prop.rating} Superhost
@@ -148,7 +158,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
               style={{ width: '100%', justifyContent: 'center', padding: '13px 20px', fontSize: '13px' }}
             >
               <i className="fa-brands fa-whatsapp" style={{ fontSize: '1.2rem' }}></i>
-              <span>WhatsApp Mohit ({HOSTAYY_CONFIG.displayPhone})</span>
+              <span>Request Long-Stay Quote ({HOSTAYY_CONFIG.displayPhone})</span>
             </a>
 
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -167,36 +177,8 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 style={{ padding: '10px 16px', fontSize: '12px' }}
                 onClick={() => onOpenLightbox(photos, 0)}
               >
-                <i className="fa-solid fa-expand"></i> All Photos
+                <i className="fa-solid fa-expand"></i> All {photos.length} Photos
               </button>
-            </div>
-
-            {/* Direct Booking Platform Redirect Options */}
-            <div style={{ display: 'flex', gap: '8px', marginTop: '2px' }}>
-              {prop.airbnbUrl && (
-                <a 
-                  href={prop.airbnbUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="thm-btn thm-btn-outline"
-                  style={{ flex: 1, justifyContent: 'center', padding: '9px 10px', fontSize: '12px' }}
-                  title={`Book ${prop.name} on Airbnb`}
-                >
-                  <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F', fontSize: '14px' }}></i>
-                  <span>Airbnb</span>
-                </a>
-              )}
-              <a 
-                href={prop.bookingUrl || HOSTAYY_CONFIG.bookingUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="thm-btn thm-btn-outline"
-                style={{ flex: 1, justifyContent: 'center', padding: '9px 10px', fontSize: '12px' }}
-                title={`Book ${prop.name} on Booking.com`}
-              >
-                <i className="fa-solid fa-hotel" style={{ color: '#003580', fontSize: '14px' }}></i>
-                <span>Booking.com</span>
-              </a>
             </div>
           </div>
         </div>

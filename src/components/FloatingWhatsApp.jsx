@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
 
   const handleGuestClick = () => {
     window.open(getGuestWhatsAppLink({
-      message: "I am reaching out via your 24/7 WhatsApp concierge to check luxury stay availability in Delhi NCR."
+      message: "Hello Mohit, I am reaching out via your 24/7 WhatsApp concierge to request a long-term / monthly serviced stay quotation near Yashobhoomi IICC."
     }), '_blank');
     setIsOpen(false);
   };
@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
   const handleOwnerClick = () => {
     window.open(getOwnerWhatsAppLink({
       location: "Delhi NCR",
-      message: "I am a property owner and I want to register/list my residence with Hostayy for turnkey short-term rental management."
+      message: "Hello Mohit, I am a property owner and I want to discuss partnering my property with Hostayy for turnkey short-term / corporate rental management."
     }), '_blank');
     setIsOpen(false);
   };
@@ -99,14 +99,14 @@ export default function FloatingWhatsApp() {
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
               <div style={{ width: '38px', height: '38px', borderRadius: '50%', backgroundColor: '#25D366', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '16px', flexShrink: 0 }}>
-                <i className="fas fa-bed"></i>
+                <i className="fas fa-building"></i>
               </div>
               <div>
                 <strong style={{ display: 'block', fontSize: '14px', color: '#14532d', fontWeight: 700 }}>
-                  🏨 I Want To Book A Stay
+                  🏨 Request Long-Stay Quote
                 </strong>
                 <span style={{ fontSize: '12px', color: '#166534' }}>
-                  Guest Booking · Direct 0% OTA Fees
+                  1, 2 &amp; 3 BHK &bull; 0% Brokerage
                 </span>
               </div>
             </button>
@@ -136,10 +136,10 @@ export default function FloatingWhatsApp() {
               </div>
               <div>
                 <strong style={{ display: 'block', fontSize: '14px', color: '#191628', fontWeight: 700 }}>
-                  🔑 I Want To Register My Property
+                  🔑 Partner Your Property
                 </strong>
                 <span style={{ fontSize: '12px', color: '#78716c' }}>
-                  Property Owner · Turnkey Yield Partnership
+                  Property Owner &bull; 15% Ops Model
                 </span>
               </div>
             </button>
@@ -162,7 +162,7 @@ export default function FloatingWhatsApp() {
       {!isOpen && (
         <div className="wa-tooltip">
           <strong>24/7 WhatsApp Concierge</strong>
-          <span>Guests & Property Owners</span>
+          <span>Long-Stay Quotes &amp; Host Support</span>
         </div>
       )}
     </div>

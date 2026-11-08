@@ -21,16 +21,16 @@ export default function MobileBottomBar() {
 
         {/* Guest Booking WhatsApp */}
         <a 
-          href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a luxury stay with Hostayy directly." })}
+          href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to request a long-term / monthly serviced stay quotation near Yashobhoomi with Hostayy." })}
           target="_blank"
           rel="noopener noreferrer"
           className="mobile-bar-item guest-action"
-          title="Book Luxury Residence (Guest)"
+          title="Request Long-Stay Quote (Guest)"
         >
           <div className="mobile-bar-icon wa-icon">
             <i className="fa-brands fa-whatsapp"></i>
           </div>
-          <span>Book Stay</span>
+          <span>Get Quote</span>
         </a>
 
         {/* Property Owner WhatsApp */}
@@ -39,12 +39,12 @@ export default function MobileBottomBar() {
           target="_blank"
           rel="noopener noreferrer"
           className="mobile-bar-item owner-action"
-          title="Register Property (Owner)"
+          title="Partner Property (Owner)"
         >
           <div className="mobile-bar-icon owner-icon">
             <i className="fa-solid fa-key"></i>
           </div>
-          <span>List Property</span>
+          <span>Partner</span>
         </a>
       </div>
     </aside>

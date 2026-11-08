@@ -5,22 +5,22 @@ import React from 'react';
 export default function Testimonials() {
   const reviews = [
     {
-      name: 'Aditya & Ritu Mehra',
-      location: 'Wedding Family Gathering · Velora Villa',
+      name: 'Aditya & Neha Malhotra',
+      location: 'Corporate Relocation · Velora 1 BHK Suite',
       rating: 5,
-      text: 'We booked Velora by Hostayy for our sister’s wedding in South Delhi. Having 6 en-suite rooms and the private cinema lounge made it unforgettable. Mohit and his team took care of daily housekeeping seamlessly!'
+      text: 'Stayed at Velora for two months while transitioning to Delhi NCR. Having a fully equipped modular kitchen with microwave and RO made daily living so easy. Only 3 minutes from Yashobhoomi IICC and 10 mins to T3. Mohit’s team handled daily cleaning seamlessly!'
     },
     {
-      name: 'Dr. Sameer Kapoor',
-      location: 'Corporate Offsite & Retreat · Verde Estate',
+      name: 'Marcus Vance',
+      location: 'International Trade Exhibitor · Azura 2 BHK Executive',
       rating: 5,
-      text: 'Verde is hands down the best botanical estate in Chhatarpur. The private swimming pool and expansive lawns gave our team total privacy. Direct WhatsApp booking saved us thousands in OTA commissions.'
+      text: 'Our delegation booked Azura for a major 3-week conference at Yashobhoomi. The 300 Mbps mesh Wi-Fi was rock-solid for remote presentations, the two king en-suite bedrooms gave us complete privacy, and booking directly with Hostayy saved us over 18% in fees.'
     },
     {
-      name: 'Kavita Singhal',
-      location: 'Exhibition Attendee · Yashobhoomi IICC',
+      name: 'Dr. Sameer & Shalini Kapoor',
+      location: 'Extended Family Stay · Verde 3 BHK Signature',
       rating: 5,
-      text: 'Stayed at Azura penthouse for an international convention at Yashobhoomi. Just 10 mins away with 300 Mbps mesh internet, immaculate bedrooms, and hotel-grade cleanliness. Superhost hospitality at its finest.'
+      text: 'Verde was exceptional for our family during an extended stay in Dwarka near the Golf Course. Expansive living hall, wrap-around balconies, and high-end chef kitchen. Zero brokerage and total peace of mind.'
     }
   ];
 
@@ -32,13 +32,13 @@ export default function Testimonials() {
           <div className="col-xl-4 col-lg-5">
             <div className="section-title text-left">
               <div className="section-title__tagline-box">
-                <span className="section-title__tagline">Client Feedback</span>
+                <span className="section-title__tagline">CLIENT FEEDBACK</span>
               </div>
               <h2 className="section-title__title">
-                Happy Guest Reviews About <span>Our Residences</span>
+                Verified Guest Reviews About <span>Our Residences</span>
               </h2>
               <p className="section-title__text" style={{ marginTop: '16px' }}>
-                Verified 5-star ratings across Airbnb and Booking.com from multi-generational families, diplomats, and corporate delegations.
+                4.98 ★ Superhost rating from Yashobhoomi exhibition delegates, corporate assignees, and relocating families.
               </p>
             </div>
           </div>

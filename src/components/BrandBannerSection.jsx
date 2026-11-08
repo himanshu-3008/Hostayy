@@ -5,7 +5,7 @@ import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
 
 export default function BrandBannerSection() {
   const handleWhatsAppInquiry = () => {
-    const msg = "Hi Mohit (Hostayy), I love the '(feel like home)' philosophy. I'd like to inquire about booking a private residence for my upcoming trip to Delhi NCR.";
+    const msg = "Hi Mohit (Hostayy), I love the '(feel like home)' philosophy. I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
     window.open(getHostayyWhatsAppLink(msg), '_blank');
   };
 
@@ -87,7 +87,7 @@ export default function BrandBannerSection() {
             </div>
           </div>
 
-          {/* Right Column: Brand Philosophy & VIP Booking */}
+          {/* Right Column: Brand Philosophy & Long-Stay Booking */}
           <div 
             className="brand-experience-content"
             style={{
@@ -106,7 +106,7 @@ export default function BrandBannerSection() {
             </div>
 
             <p style={{ fontSize: '15.5px', color: 'var(--hotelux-gray)', lineHeight: '1.75', marginBottom: '25px' }}>
-              True luxury is more than gilded fixtures — it is the comforting peace of an entire residence where you and your loved ones can relax without compromise. From intimate family weddings to executive corporate retreats, Hostayy blends total estate seclusion with discreet five-star hospitality.
+              True hospitality is more than a room — it is the comforting peace of an entire residence where you can cook your own meals, work seamlessly on high-speed mesh Wi-Fi, and rest with total privacy. From corporate assignments near Yashobhoomi IICC to extended family visits, Hostayy blends genuine home warmth with five-star hotel care.
             </p>
 
             {/* Value Highlights */}
@@ -116,8 +116,8 @@ export default function BrandBannerSection() {
                   <i className="fas fa-home" style={{ fontSize: '15px' }}></i>
                 </div>
                 <div>
-                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>100% Private Turnkey Estates</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>No shared lobbies or noisy corridors. Exclusive multi-room residences with private cinema lounges and private pools.</p>
+                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>100% Private Serviced Apartments</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>Independent 1, 2, and 3 BHK apartments with private modular kitchens, dedicated work desks, and quiet bedrooms.</p>
                 </div>
               </div>
 
@@ -126,8 +126,8 @@ export default function BrandBannerSection() {
                   <i className="fas fa-concierge-bell" style={{ fontSize: '15px' }}></i>
                 </div>
                 <div>
-                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>24/7 Dedicated Concierge & Butler</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>Personalized welcomes, on-demand gourmet chef, grocery pre-stocking, and seamless airport transit across Delhi NCR.</p>
+                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>24/7 Dedicated Concierge &amp; Care</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>Personalized welcomes, regular housekeeping, grocery pre-stocking assistance, and 3-minute transit to Yashobhoomi IICC.</p>
                 </div>
               </div>
 
@@ -136,8 +136,8 @@ export default function BrandBannerSection() {
                   <i className="fas fa-percentage" style={{ fontSize: '15px' }}></i>
                 </div>
                 <div>
-                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>0% OTA Service Commissions</h4>
-                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>Save up to 18% compared to third-party travel platforms with our direct VIP booking guarantee.</p>
+                  <h4 style={{ margin: '0 0 3px', fontSize: '16px', color: '#191628', fontWeight: 700 }}>Zero Brokerage &amp; Direct Monthly Quotations</h4>
+                  <p style={{ margin: 0, fontSize: '14px', color: '#686a78', lineHeight: '1.5' }}>Save on broker fees and OTA surcharges with direct transparent monthly lease quotations and official GST invoices.</p>
                 </div>
               </div>
             </div>
@@ -151,10 +151,10 @@ export default function BrandBannerSection() {
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
               >
                 <i className="fab fa-whatsapp" style={{ fontSize: '18px' }}></i>
-                <span>Reserve On WhatsApp</span>
+                <span>Request Long-Stay Quote</span>
               </button>
               <a href="#room" className="thm-btn">
-                <span>View All Residences</span>
+                <span>View All 1, 2 &amp; 3 BHK Stays</span>
               </a>
             </div>
           </div>

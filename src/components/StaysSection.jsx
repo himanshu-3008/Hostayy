@@ -14,13 +14,13 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
         {/* Hotelux Section Title */}
         <div className="section-title text-center">
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">OUR SIGNATURE RESIDENCES</span>
+            <span className="section-title__tagline">SERVICED APARTMENTS NEAR YASHOBHOOMI (IICC)</span>
           </div>
           <h2 className="section-title__title">
-            Our Rooms & <span>Suites</span>
+            1, 2 &amp; 3 BHK <span>Furnished Long-Term Stays</span>
           </h2>
-          <p className="section-title__text" style={{ maxWidth: '680px', margin: '14px auto 0' }}>
-            Handcrafted cinema villas, botanical farm retreats, and executive penthouses across South Delhi and Chhatarpur. Direct VIP bookings save 10–15% OTA commissions with zero platform surcharges.
+          <p className="section-title__text" style={{ maxWidth: '720px', margin: '14px auto 0' }}>
+            Fully furnished luxury serviced apartments located in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps mesh Wi-Fi, and 0% brokerage for monthly &amp; corporate leasing.
           </p>
         </div>
 
@@ -39,26 +39,26 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               className={`our-rooms-tab-btn ${selectedStayId === 'velora' ? 'active' : ''}`}
               onClick={() => setSelectedStayId('velora')}
             >
-              <i className="fa-solid fa-clapperboard" style={{ marginRight: '6px' }}></i> Velora (6 BHK • 17 Photos)
-            </button>
-            <button 
-              type="button"
-              className={`our-rooms-tab-btn ${selectedStayId === 'verde' ? 'active' : ''}`}
-              onClick={() => setSelectedStayId('verde')}
-            >
-              <i className="fa-solid fa-tree" style={{ marginRight: '6px' }}></i> Verde (8 BHK • 19 Photos)
+              <i className="fa-solid fa-door-open" style={{ marginRight: '6px' }}></i> 1 BHK Suite (Velora · 3 Mins Yashobhoomi)
             </button>
             <button 
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'azura' ? 'active' : ''}`}
               onClick={() => setSelectedStayId('azura')}
             >
-              <i className="fa-solid fa-gem" style={{ marginRight: '6px' }}></i> Azura (4 BHK • 18 Photos)
+              <i className="fa-solid fa-building" style={{ marginRight: '6px' }}></i> 2 BHK Residence (Azura · Aerocity Corridor)
+            </button>
+            <button 
+              type="button"
+              className={`our-rooms-tab-btn ${selectedStayId === 'verde' ? 'active' : ''}`}
+              onClick={() => setSelectedStayId('verde')}
+            >
+              <i className="fa-solid fa-gem" style={{ marginRight: '6px' }}></i> 3 BHK Signature (Verde · Prime Golf Belt)
             </button>
           </div>
         </div>
 
-        {/* Dynamic 5-Photo Luxury Showcase Container */}
+        {/* Dynamic Photo Luxury Showcase Container */}
         {activeProp && (
           <div id="stay-showcase-container" style={{ marginBottom: '45px' }}>
             <StayShowcase 
@@ -69,10 +69,10 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
           </div>
         )}
 
-        {/* 3-Property Card Grid in Hotelux Layout */}
+        {/* 3-Property Card Grid in Hotelux Layout (1 BHK, 2 BHK, 3 BHK) */}
         <div className="row">
           {HOSTAYY_PROPERTIES.map(prop => (
-            <div key={prop.id} className="col-xl-4 col-lg-4 col-md-6">
+            <div key={prop.id} className="col-xl-4 col-lg-4 col-md-6" style={{ marginBottom: '30px' }}>
               <PropertyCard 
                 prop={prop} 
                 onSelectStay={(id) => setSelectedStayId(id)}
@@ -83,58 +83,33 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
           ))}
         </div>
 
-        {/* Verified Global OTA Badges Banner */}
-        <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '36px 30px', marginTop: '40px', textAlign: 'center' }}>
-          <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '22px', marginBottom: '8px', color: 'var(--hotelux-black)' }}>
-            Also Listed Across Major Global Booking Platforms
+        {/* Corporate & Long-Term Extended Stay Privileges Banner */}
+        <div style={{ background: 'var(--hotelux-primary)', border: '1px solid var(--hotelux-border)', padding: '36px 30px', marginTop: '30px', textAlign: 'center' }}>
+          <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '24px', marginBottom: '8px', color: 'var(--hotelux-black)' }}>
+            Exhibition Delegates, Expat Relocations &amp; Extended Corporate Stays
           </h3>
-          <p style={{ color: 'var(--hotelux-gray)', fontSize: '14.5px', maxWidth: '660px', margin: '0 auto 20px' }}>
-            Prefer booking through an Online Travel Agency? Our residences are active on Airbnb and Booking.com with verified guest reviews. For best rates without OTA platform fees, book directly with Mohit Chaudhary on WhatsApp.
+          <p style={{ color: 'var(--hotelux-gray)', fontSize: '15px', maxWidth: '720px', margin: '0 auto 20px', lineHeight: '1.6' }}>
+            Attending an exhibition or conference at Yashobhoomi (IICC)? Relocating to Delhi NCR? Hostayy offers flexible monthly and multi-month serviced apartments with zero brokerage, GST input credit, daily housekeeping, and 24/7 dedicated host assistance.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <a 
-              href={HOSTAYY_CONFIG.bookingUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="thm-btn thm-btn-outline" 
-              style={{ padding: '12px 24px', fontSize: '12px' }}
-              title="Open Hostayy on Booking.com"
-            >
-              <i className="fa-solid fa-hotel" style={{ color: '#003580', fontSize: '15px' }}></i>
-              <span>Booking.com</span>
-            </a>
-            <a 
-              href={HOSTAYY_CONFIG.airbnbVeloraUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="thm-btn thm-btn-outline" 
-              style={{ padding: '12px 24px', fontSize: '12px' }}
-              title="Open Velora on Airbnb"
-            >
-              <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F', fontSize: '15px' }}></i>
-              <span>Velora Airbnb</span>
-            </a>
-            <a 
-              href={HOSTAYY_CONFIG.airbnbAzuraUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="thm-btn thm-btn-outline" 
-              style={{ padding: '12px 24px', fontSize: '12px' }}
-              title="Open Azura on Airbnb"
-            >
-              <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F', fontSize: '15px' }}></i>
-              <span>Azura Airbnb</span>
-            </a>
-            <a 
-              href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out directly to book with 0% OTA fees. Please share available dates and direct VIP rates." })} 
+              href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out directly for a long-term / monthly serviced stay quotation near Yashobhoomi IICC." })} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="thm-btn thm-btn-wa" 
-              style={{ padding: '12px 24px', fontSize: '12px' }}
+              style={{ padding: '14px 28px', fontSize: '13px' }}
               title="Direct WhatsApp with Mohit"
             >
-              <i className="fa-brands fa-whatsapp" style={{ fontSize: '15px' }}></i>
-              <span>WhatsApp Direct VIP (Save 15%)</span>
+              <i className="fa-brands fa-whatsapp" style={{ fontSize: '16px' }}></i>
+              <span>Request Long-Term Quotation on WhatsApp</span>
+            </a>
+            <a 
+              href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
+              className="thm-btn thm-btn-outline" 
+              style={{ padding: '14px 24px', fontSize: '13px' }}
+            >
+              <i className="fa-solid fa-phone" style={{ marginRight: '6px' }}></i>
+              <span>Call Host: {HOSTAYY_CONFIG.displayPhone}</span>
             </a>
           </div>
         </div>

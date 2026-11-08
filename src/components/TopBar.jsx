@@ -1,66 +1,39 @@
 'use client';
 
 import React from 'react';
-import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, getGuestWhatsAppLink } from '../data/properties';
 
 export default function TopBar() {
   return (
     <div className="main-menu-two__top">
       <div className="container">
         <div className="main-menu-two__top-inner">
-          {/* Left contact list */}
+          {/* Left contact info */}
           <ul className="main-menu-two__contact-list">
             <li>
               <i className="fa-solid fa-phone"></i>
               <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}>{HOSTAYY_CONFIG.displayPhone}</a>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the website top bar to check luxury stay availability." })} 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the website top bar to inquire about long-term / monthly serviced stay availability near Yashobhoomi." })} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="top-bar-wa-badge"
-                title="Guest Booking WhatsApp"
+                title="Direct WhatsApp Concierge"
               >
-                <i className="fa-brands fa-whatsapp"></i> Guest VIP
-              </a>
-              <a 
-                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the website top bar to discuss listing my property with Hostayy." })} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="top-bar-wa-badge owner-badge"
-                title="Property Owner WhatsApp"
-                style={{ backgroundColor: '#191628', border: '1px solid var(--hotelux-base)', color: 'var(--hotelux-base)' }}
-              >
-                <i className="fa-solid fa-key"></i> List Property
+                <i className="fa-brands fa-whatsapp"></i> WhatsApp Concierge
               </a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
               <a href={`mailto:${HOSTAYY_CONFIG.email}`}>{HOSTAYY_CONFIG.email}</a>
             </li>
-            <li className="d-none-sm">
-              <i className="fa-solid fa-location-dot"></i>
-              <span>{HOSTAYY_CONFIG.address}</span>
-            </li>
           </ul>
 
-          {/* Right timing and OTA links */}
+          {/* Right timing */}
           <div className="main-menu-two__top-right">
             <div className="main-menu-two__top-time">
               <i className="fa-solid fa-clock"></i>
-              <span>Mon - Sun: 24/7 Dedicated Concierge</span>
-            </div>
-            <div className="top-ota-links">
-              <a href={HOSTAYY_CONFIG.bookingUrl} target="_blank" rel="noopener noreferrer" className="top-ota-link" title="Hostayy on Booking.com">
-                <i className="fa-solid fa-hotel" style={{ color: '#003580' }}></i> Booking.com
-              </a>
-              <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-              <a href={HOSTAYY_CONFIG.airbnbVeloraUrl} target="_blank" rel="noopener noreferrer" className="top-ota-link" title="Velora on Airbnb">
-                <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F' }}></i> Velora
-              </a>
-              <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-              <a href={HOSTAYY_CONFIG.airbnbAzuraUrl} target="_blank" rel="noopener noreferrer" className="top-ota-link" title="Azura on Airbnb">
-                <i className="fa-brands fa-airbnb" style={{ color: '#FF5A5F' }}></i> Azura
-              </a>
+              <span>Mon - Sun: 24/7 Dedicated Concierge Support</span>
             </div>
           </div>
         </div>

@@ -8,17 +8,17 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "Hostayy | Hospitality, Managed Better — Luxury Stays & Property Management in Delhi",
-  description: "Curated boutique private residences in South Delhi and Dwarka. Direct VIP booking rates with zero platform commissions. Managed by Mohit Chaudhary (+91 9217680108).",
-  keywords: "Hostayy, property management company in Delhi, Airbnb property management in Delhi, short-term rental management, serviced apartments in Dwarka, stays near Yashobhoomi IICC, accommodation near IGI Airport, holiday home management, Velora by Hostayy, Verde by Hostayy, Azura by Hostayy, Mohit Chaudhary",
+  title: "Hostayy | 1, 2 & 3 BHK Serviced Apartments Near Yashobhoomi (IICC) Dwarka & Delhi — Long Term Stays",
+  description: "Book fully furnished 1, 2 & 3 BHK serviced apartments near Yashobhoomi (IICC) Convention Centre (Sector 25 Dwarka) and IGI Airport Delhi. Tailored for corporate executives, exhibition delegates, and long-term monthly stays with modern modular kitchens, 300 Mbps Wi-Fi, and 0% brokerage.",
+  keywords: "serviced apartments near Yashobhoomi, Yashobhoomi IICC Dwarka accommodation, long term stays Delhi NCR, 1 BHK serviced apartment Dwarka, 2 BHK corporate stay Yashobhoomi, 3 BHK furnished apartment near IGI airport, monthly rental Dwarka Sector 23, corporate housing Yashobhoomi, exhibition stay Dwarka Sector 25, executive serviced residences Delhi, Hostayy long term stays, furnished apartments for rent Dwarka, serviced flats near Yashobhoomi metro, monthly corporate stays Delhi, Mohit Chaudhary Hostayy",
   metadataBase: new URL('https://hostayy.com'),
   icons: {
     icon: '/assets/images/hostayy-logo-transparent.png',
     apple: '/assets/images/hostayy-logo-transparent.png',
   },
   openGraph: {
-    title: "Hostayy — (feel like home) | Luxury Residences Delhi NCR",
-    description: "Feel like home for guests. Turnkey luxury stays and boutique residences in South Delhi and Delhi NCR.",
+    title: "Hostayy — 1, 2 & 3 BHK Serviced Apartments Near Yashobhoomi (IICC) Dwarka",
+    description: "Feel like home in Delhi NCR. Fully furnished 1, 2, and 3 BHK serviced apartments for long-term and monthly corporate stays near Yashobhoomi IICC and IGI Airport.",
     url: "https://hostayy.com",
     siteName: "Hostayy",
     images: [
@@ -26,7 +26,7 @@ export const metadata = {
         url: "/assets/images/hostayy-banner.png",
         width: 1024,
         height: 512,
-        alt: "Hostayy (feel like home) — Luxury Residences",
+        alt: "Hostayy Serviced Apartments near Yashobhoomi IICC Dwarka",
       },
     ],
     locale: "en_IN",
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hostayy — (feel like home)",
-    description: "Curated luxury residences in South Delhi with 5-star hotel care.",
+    title: "Hostayy — 1, 2 & 3 BHK Serviced Apartments Near Yashobhoomi (IICC)",
+    description: "Fully furnished serviced apartments in Dwarka Sector 23 with modular kitchens, 300 Mbps Wi-Fi, and 0% brokerage for monthly & long-term stays.",
     images: ["/assets/images/hostayy-banner.png"],
   },
 };
@@ -45,24 +45,36 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LodgingBusiness",
+        "@type": ["ApartmentComplex", "LodgingBusiness"],
         "@id": "https://hostayy.com/#organization",
-        "name": "Hostayy",
+        "name": "Hostayy Serviced Apartments Near Yashobhoomi",
         "url": "https://hostayy.com",
-        "logo": "https://hostayy.com/assets/images/logo/hostayy-banner-wide.png",
-        "image": "https://hostayy.com/assets/images/logo/hostayy-banner.png",
-        "description": "Boutique private villa rentals, botanical estates, and premier turnkey short-term rental property management in Delhi NCR.",
+        "logo": "https://hostayy.com/assets/images/hostayy-logo-transparent.png",
+        "image": "https://hostayy.com/assets/images/hostayy-banner.png",
+        "description": "Premium 1, 2, and 3 BHK fully furnished serviced residences in Dwarka Sector 23, located 3 minutes from Yashobhoomi (IICC) Convention Centre and 10 minutes from IGI Airport. Tailored for corporate executives, exhibition attendees, and long-term monthly stays.",
         "telephone": "+91-92176-80108",
         "email": "C.mohit@hostayy.com",
-        "priceRange": "₹5,500 - ₹7,000",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Block A, Dwarka Sector 23",
-          "addressLocality": "New Delhi",
+          "streetAddress": "Block A, Dwarka Sector 23 (Near Yashobhoomi IICC)",
+          "addressLocality": "Dwarka, New Delhi",
           "addressRegion": "Delhi",
           "postalCode": "110077",
           "addressCountry": "IN"
-        }
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "28.5615",
+          "longitude": "77.0504"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Fully Equipped Modular Kitchen", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "300 Mbps Enterprise Mesh Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "100% Power Backup", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Proximity to Yashobhoomi IICC (3 Mins)", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Zero Brokerage", "value": true }
+        ]
       }
     ]
   };

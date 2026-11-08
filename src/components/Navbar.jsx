@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className={`main-menu main-menu-two ${scrolled ? 'stricky-fixed' : ''}`}>
       <div className="container">
         <div className="main-menu-two__wrapper-inner">
-          {/* Official Hostayy Luxury Brand Logo with Breathing Room */}
+          {/* Official Hostayy Luxury Brand Logo */}
           <a href="#home" className="brand-logo-hotelux" aria-label="Hostayy - Feel like home" style={{ marginRight: '24px', flexShrink: 0 }}>
             <div className="brand-emblem-wrap">
               <img 
@@ -34,8 +34,8 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* Navigation Menu List (Spacious & Clean) */}
-          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '24px' }}>
+          {/* Navigation Menu List */}
+          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '28px' }}>
             <li>
               <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
             </li>
@@ -44,12 +44,6 @@ export default function Navbar() {
             </li>
             <li>
               <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
-            </li>
-            <li>
-              <a href="#gallery" onClick={() => setMobileOpen(false)}>Gallery</a>
-            </li>
-            <li>
-              <a href="#calculator" onClick={() => setMobileOpen(false)}>Yield</a>
             </li>
             <li>
               <a href="#about" onClick={() => setMobileOpen(false)}>About</a>
@@ -61,22 +55,22 @@ export default function Navbar() {
             {/* Mobile Drawer Dedicated Action Buttons */}
             <li className="mobile-drawer-actions">
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to book a luxury residence." })} 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to request a long-term / monthly quotation for a serviced residence." })} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mobile-drawer-btn guest-btn"
                 onClick={() => setMobileOpen(false)}
               >
-                <i className="fa-brands fa-whatsapp"></i> Book a Stay (Guest VIP)
+                <i className="fa-brands fa-whatsapp"></i> Request Quotation (WhatsApp)
               </a>
               <a 
-                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the mobile menu to register/list my property." })} 
+                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the mobile menu to discuss managing my property with Hostayy." })} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mobile-drawer-btn owner-btn"
                 onClick={() => setMobileOpen(false)}
               >
-                <i className="fa-solid fa-key"></i> Register Property (Owner)
+                <i className="fa-solid fa-key"></i> Partner with Hostayy (Owner)
               </a>
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
