@@ -18,8 +18,8 @@ export default function GallerySection({ onOpenLightbox }) {
     },
     {
       id: 'g-2',
-      src: '/assets/images/azura/azura-06.jpg',
-      title: 'Gourmet Open Kitchen with Induction Hob & Espresso Bar',
+      src: '/assets/images/azura/azura-01.jpg',
+      title: 'Fully Equipped Modular Kitchen with Refrigerator & RO',
       property: 'Azura 2-BHK',
       category: 'kitchen',
       tag: '2 BHK Kitchen'
@@ -42,11 +42,11 @@ export default function GallerySection({ onOpenLightbox }) {
     },
     {
       id: 'g-5',
-      src: '/assets/images/azura/azura-01.jpg',
-      title: 'Sunlit Designer Living Room with Skyline Windows',
+      src: '/assets/images/azura/azura-10.jpg',
+      title: 'Master Bedroom Suite with Royal Blue Velvet King Bed',
       property: 'Azura 2-BHK',
-      category: 'living',
-      tag: 'Azura Living'
+      category: 'bedroom',
+      tag: '2 BHK Master'
     },
     {
       id: 'g-6',

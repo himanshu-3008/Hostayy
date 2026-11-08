@@ -170,44 +170,42 @@ export const HOSTAYY_PROPERTIES = [
     airbnbUrl: "https://www.airbnb.com/h/azurabyhostayy",
     bookingUrl: "https://www.booking.com/Share-OrxZmT",
     driveFolderUrl: "https://drive.google.com/drive/folders/1BMlPKoj5d1ID1WwQNRHDBcwfhLpE7Tto",
-    heroImage: "/assets/images/azura/azura-01.jpg",
+    heroImage: "/assets/images/azura/azura-10.jpg",
     specs: [
       { label: "Configuration", value: "2 BHK Executive Suite", icon: "fa-door-open" },
       { label: "Bathrooms", value: "2.5 En-Suite Baths", icon: "fa-bath" },
       { label: "Living Area", value: "1,850 Sq.Ft.", icon: "fa-vector-square" },
-      { label: "Kitchen", value: "Open-Plan Gourmet Kitchen", icon: "fa-kitchen-set" },
+      { label: "Kitchen", value: "Fully Fitted Modular Kitchen", icon: "fa-kitchen-set" },
       { label: "Connectivity", value: "4 Mins to Yashobhoomi", icon: "fa-location-dot" }
     ],
     features: [
-      "Open-concept gourmet kitchen with espresso bar, microwave, induction hob & full cookware",
-      "Two independent king en-suite bedroom suites with private workstations",
+      "Two independent king en-suite bedroom suites with private wardrobes & ambient lighting",
+      "Fully equipped modular kitchen with refrigerator, RO water purifier, gas hob & cookware",
+      "Designer living room with royal blue velvet sectional and 4K Smart TV",
       "Private sky terrace lounge with open skyline views and morning coffee seating",
       "Enterprise 300 Mbps mesh optical Wi-Fi throughout all rooms and balcony",
       "Individual smart air purifiers with real-time PM2.5 displays in every room",
       "Keyless digital smart lock access & 24/7 building security",
-      "Full automatic laundry machine and ironing infrastructure for extended stays",
       "Official GST tax invoicing for registered corporate entities and businesses"
     ],
     roomBreakdown: [
-      { title: "Master Sky Suite 1", details: "King Bed, Skyline Glass Window, Walk-in Closet, Dedicated Workstation, Ensuite Bath with Rain Shower" },
-      { title: "Executive Bedroom Suite 2", details: "King Bed, Soundproof Double Glazing, Attached Ensuite Bath, Dressing Vanity, Ergonomic Work Desk" },
-      { title: "Designer Living & Dining Hall", details: "Italian Leather Sofas, 65-inch 4K Smart TV, 6-Seater Marble Dining Table, Balcony Sliding Doors" },
-      { title: "Gourmet Open Kitchen", details: "Induction Hob, Convection Microwave, Double Door Fridge, RO Water Filter, Toaster, Wine Rack, Dishware" },
-      { title: "Private Sky Terrace", details: "Outdoor Wicker Seating, Potted Greenery, Sunset Panoramas across Dwarka Skyline" }
+      { title: "Master Sky Suite 1", details: "Royal Blue King Bed, Full-length Mirror, Tripod Lamp, Wardrobe, Air Purifier, Marble Ensuite Bath" },
+      { title: "Executive Bedroom Suite 2", details: "King Bed, Wooden Wardrobes, Soundproof Double Glazing, Attached Ensuite Bath, Vanity" },
+      { title: "Designer Living & Dining Hall", details: "Royal Blue Velvet Sectional, 4K Smart TV, Laptop Work Desk, Balcony Access" },
+      { title: "Modular Kitchen", details: "Refrigerator, RO Drinking Water Purifier, Gas Stove, Microwave, Cookware, Cutlery, Tea/Coffee Bar" },
+      { title: "Private Sky Terrace", details: "Outdoor Seating, Sunset Panoramas across Dwarka Skyline" }
     ],
     images: [
-      { id: 1, src: "/assets/images/azura/azura-01.jpg", thumb: "/assets/images/azura/thumbs/azura-01-thumb.jpg", title: "Azura Sunlit Designer Living Room with Skyline Windows", category: "living", isFeatured: true },
-      { id: 2, src: "/assets/images/azura/azura-06.jpg", thumb: "/assets/images/azura/thumbs/azura-06-thumb.jpg", title: "Gourmet Open Kitchen with Induction Hob, Espresso Bar & Modern Appliances", category: "kitchen", isFeatured: true },
-      { id: 3, src: "/assets/images/azura/azura-03.jpg", thumb: "/assets/images/azura/thumbs/azura-03-thumb.jpg", title: "Master Sky Suite with Floor-to-Ceiling Windows & Ambient Lighting", category: "bedrooms", isFeatured: true },
-      { id: 4, src: "/assets/images/azura/azura-07.jpg", thumb: "/assets/images/azura/thumbs/azura-07-thumb.jpg", title: "Executive Suite 2 with Direct Balcony Sliding Doors", category: "bedrooms", isFeatured: true },
-      { id: 5, src: "/assets/images/azura/azura-05.jpg", thumb: "/assets/images/azura/thumbs/azura-05-thumb.jpg", title: "Contemporary Dining Space & Italian Marble Breakfast Bar", category: "kitchen", isFeatured: true },
+      { id: 1, src: "/assets/images/azura/azura-10.jpg", thumb: "/assets/images/azura/thumbs/azura-10-thumb.jpg", title: "Master Bedroom Suite with Royal Blue Velvet King Bed & Ambient Lighting", category: "bedrooms", isFeatured: true },
+      { id: 2, src: "/assets/images/azura/azura-02.jpg", thumb: "/assets/images/azura/thumbs/azura-02-thumb.jpg", title: "Designer Living Lounge with Royal Blue Sectional & 4K Smart TV", category: "living", isFeatured: true },
+      { id: 3, src: "/assets/images/azura/azura-07.jpg", thumb: "/assets/images/azura/thumbs/azura-07-thumb.jpg", title: "Executive Bedroom Suite 2 with Wooden Wardrobes", category: "bedrooms", isFeatured: true },
+      { id: 4, src: "/assets/images/azura/azura-01.jpg", thumb: "/assets/images/azura/thumbs/azura-01-thumb.jpg", title: "Fully Equipped Modular Kitchen with Refrigerator, RO & Gas Stove", category: "kitchen", isFeatured: true },
+      { id: 5, src: "/assets/images/azura/azura-16.jpg", thumb: "/assets/images/azura/thumbs/azura-16-thumb.jpg", title: "Living Lounge with Work Desk & High-Speed Optical Wi-Fi", category: "living", isFeatured: true },
       { id: 6, src: "/assets/images/azura/azura-04.jpg", thumb: "/assets/images/azura/thumbs/azura-04-thumb.jpg", title: "Private Sky Terrace Lounge & Evening Sunset Deck", category: "outdoor", isFeatured: true },
-      { id: 7, src: "/assets/images/azura/azura-02.jpg", thumb: "/assets/images/azura/thumbs/azura-02-thumb.jpg", title: "Modernist Bathroom with Floating Vanity & Rain Shower", category: "baths", isFeatured: false },
-      { id: 8, src: "/assets/images/azura/azura-11.jpg", thumb: "/assets/images/azura/thumbs/azura-11-thumb.jpg", title: "Dedicated Executive Workstation with High-Speed Mesh Wi-Fi", category: "living", isFeatured: false },
-      { id: 9, src: "/assets/images/azura/azura-12.jpg", thumb: "/assets/images/azura/thumbs/azura-12-thumb.jpg", title: "Ensuite Bathroom with Glass Rain Shower Enclosure", category: "baths", isFeatured: false },
-      { id: 10, src: "/assets/images/azura/azura-15.jpg", thumb: "/assets/images/azura/thumbs/azura-15-thumb.jpg", title: "Breakfast Island with Built-in Wine Cooler", category: "kitchen", isFeatured: false },
-      { id: 11, src: "/assets/images/azura/azura-16.jpg", thumb: "/assets/images/azura/thumbs/azura-16-thumb.jpg", title: "Master Bedroom Walk-in Wardrobe & Dressing Island", category: "bedrooms", isFeatured: false },
-      { id: 12, src: "/assets/images/azura/azura-18.jpg", thumb: "/assets/images/azura/thumbs/azura-18-thumb.jpg", title: "Private Penthouse Entrance Lobby & Smart Lock", category: "living", isFeatured: false }
+      { id: 7, src: "/assets/images/azura/azura-11.jpg", thumb: "/assets/images/azura/thumbs/azura-11-thumb.jpg", title: "Spa-Grade Marble Ensuite Bathroom with Vanity", category: "baths", isFeatured: false },
+      { id: 8, src: "/assets/images/azura/azura-08.jpg", thumb: "/assets/images/azura/thumbs/azura-08-thumb.jpg", title: "Master Bedroom Suite Closet & Ambient Mood Lighting", category: "bedrooms", isFeatured: false },
+      { id: 9, src: "/assets/images/azura/azura-09.jpg", thumb: "/assets/images/azura/thumbs/azura-09-thumb.jpg", title: "Bedside Reading Alcove & Vanity Mirror", category: "bedrooms", isFeatured: false },
+      { id: 10, src: "/assets/images/azura/azura-03.jpg", thumb: "/assets/images/azura/thumbs/azura-03-thumb.jpg", title: "Living Room Cinema Entertainment Display", category: "living", isFeatured: false }
     ]
   },
   {

@@ -24,7 +24,7 @@ export default function Hero({ onSelectStay }) {
       name: 'Azura by Hostayy',
       bhk: '2 BHK',
       sub: '2-BHK Executive Residence · 4 mins to Yashobhoomi & Aerocity Corridor',
-      src: '/assets/images/azura/azura-01.jpg',
+      src: '/assets/images/azura/azura-10.jpg',
       tariff: 'Corporate Long-Stay Quote'
     },
     {
