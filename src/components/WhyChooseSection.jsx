@@ -25,7 +25,7 @@ export default function WhyChooseSection() {
         <div className="row" style={{ alignItems: 'center' }}>
           {/* Left Column: Text & Features */}
           <div className="col-xl-6 col-lg-6">
-            <div className="why-choose-one__left" style={{ paddingRight: '20px' }}>
+            <div className="why-choose-one__left">
               <div className="section-title text-left sec-title-animation animation-style2">
                 <div className="section-title__tagline-box">
                   <span className="section-title__tagline">STRATEGIC LOCATION &amp; ADVANTAGES</span>
@@ -101,7 +101,7 @@ export default function WhyChooseSection() {
 
           {/* Right Column: Strategic Landmark Proximity Card & Images */}
           <div className="col-xl-6 col-lg-6">
-            <div className="why-choose-one__right" style={{ position: 'relative' }}>
+            <div className="why-choose-one__right" style={{ position: 'relative', marginLeft: 0 }}>
               {/* Landmark Connectivity Grid Card */}
               <div 
                 className="why-choose-connectivity-card"
@@ -110,31 +110,33 @@ export default function WhyChooseSection() {
                   border: '2px solid var(--hotelux-border)',
                   borderRadius: '12px',
                   boxShadow: '0 20px 50px rgba(25, 22, 40, 0.1)',
-                  marginBottom: '25px'
+                  marginBottom: '20px'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', borderBottom: '1px solid #f1ece7', paddingBottom: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF4D4D', fontSize: '18px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #f1ece7', paddingBottom: '14px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF4D4D', fontSize: '18px', flexShrink: 0 }}>
                     <i className="fa-solid fa-map-location-dot"></i>
                   </div>
                   <div>
-                    <h4 style={{ margin: 0, fontSize: '18px', color: '#191628', fontWeight: 700 }}>Dwarka Sector 23 Connectivity Matrix</h4>
+                    <h4 style={{ margin: 0, fontSize: '17px', color: '#191628', fontWeight: 700 }}>Dwarka Sector 23 Connectivity Matrix</h4>
                     <span style={{ fontSize: '12px', color: '#64748b' }}>Strategic Proximity to Major Delhi NCR Hubs</span>
                   </div>
                 </div>
 
                 <div className="why-choose-connectivity-grid">
                   {landmarkItems.map((lm, idx) => (
-                    <div key={idx} style={{ background: '#fbf9f7', border: '1px solid #eee8e2', padding: '12px 14px', borderRadius: '8px' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                        <i className={`fa-solid ${lm.icon}`} style={{ color: 'var(--hotelux-base)', fontSize: '16px' }}></i>
-                        <span style={{ fontSize: '12px', fontWeight: 800, color: '#191628', background: '#ffffff', padding: '2px 8px', borderRadius: '12px', border: '1px solid #e2dcd5' }}>
-                          {lm.time}
+                    <div key={idx} className="why-choose-connectivity-item">
+                      <div className="why-choose-lm-left" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(185, 156, 135, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`fa-solid ${lm.icon}`} style={{ color: 'var(--hotelux-base)', fontSize: '13px' }}></i>
+                        </div>
+                        <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155', lineHeight: 1.3 }}>
+                          {lm.name}
                         </span>
                       </div>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#334155', lineHeight: 1.35 }}>
-                        {lm.name}
-                      </div>
+                      <span className="why-choose-lm-time" style={{ fontSize: '11.5px', fontWeight: 800, color: '#191628', background: '#ffffff', padding: '3px 8px', borderRadius: '12px', border: '1px solid #e2dcd5', flexShrink: 0, whiteSpace: 'nowrap' }}>
+                        {lm.time}
+                      </span>
                     </div>
                   ))}
                 </div>

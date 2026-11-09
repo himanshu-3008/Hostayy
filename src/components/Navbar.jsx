@@ -46,7 +46,7 @@ export default function Navbar() {
               <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
             </li>
             <li>
-              <a href="#about" onClick={() => setMobileOpen(false)}>About</a>
+              <a href="#why-choose" onClick={() => setMobileOpen(false)}>Why Us</a>
             </li>
             <li>
               <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>

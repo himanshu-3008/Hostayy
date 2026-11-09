@@ -5,7 +5,6 @@ import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
-import AboutSection from './components/AboutSection';
 import StaysSection from './components/StaysSection';
 import WhyChooseSection from './components/WhyChooseSection';
 import GallerySection from './components/GallerySection';
@@ -76,9 +75,6 @@ export default function App() {
 
         {/* Hotelux Services Two */}
         <ServicesSection />
-
-        {/* Hotelux About Two */}
-        <AboutSection />
 
         {/* Hotelux Our Rooms Two (Residences Showcase & Cards) */}
         <StaysSection 

@@ -44,7 +44,7 @@ export default function Footer({ onSelectStay }) {
                 <li><a href="#home">Home</a></li>
                 <li><a href="#room">1, 2 &amp; 3 BHK Stays</a></li>
                 <li><a href="#services">Services &amp; Amenities</a></li>
-                <li><a href="#about">About Hostayy</a></li>
+                <li><a href="#why-choose">Why Hostayy</a></li>
                 <li><a href="#contact">Contact &amp; Quotations</a></li>
               </ul>
             </div>

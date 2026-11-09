@@ -1734,8 +1734,35 @@ ul {
 .why-choose-one__right {
   position: relative;
   display: block;
-  margin-left: 230px;
+  margin-left: 0;
 }
+
+.why-choose-connectivity-card {
+  background: #ffffff;
+  border: 2px solid var(--hotelux-border);
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(25, 22, 40, 0.08);
+  margin-bottom: 22px;
+  width: 100%;
+}
+
+.why-choose-connectivity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.why-choose-connectivity-item {
+  background: #fbf9f7;
+  border: 1px solid #eee8e2;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 
 
 
@@ -2876,20 +2903,54 @@ ul {
     font-size: 19px !important;
   }
 
-  /* Why Choose Section & Connectivity Matrix */
+  /* Why Choose Section & Connectivity Matrix Phone View */
+  .why-choose-one__left {
+    padding-right: 0 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .why-choose-one__right {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .why-choose-connectivity-card {
-    padding: 18px 14px !important;
+    padding: 16px 14px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
   }
 
   .why-choose-connectivity-grid {
+    display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .why-choose-connectivity-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+    width: 100% !important;
   }
 
   .why-choose-host-strip {
-    padding: 14px 16px !important;
+    padding: 16px 14px !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .why-choose-host-strip .thm-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .why-choose-one__list li {
@@ -3064,4 +3125,18 @@ ul {
     padding: 10px 8px !important;
     font-size: 12px !important;
   }
+  .why-choose-one__btn-box {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .why-choose-one__btn-box .thm-btn,
+  .why-choose-one__btn-box .thm-btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
 }
