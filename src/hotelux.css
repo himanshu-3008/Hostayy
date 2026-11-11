@@ -3682,3 +3682,99 @@ ul {
     display: none;
   }
 }
+
+
+/* ==========================================================================
+   CLEAN & SMOOTH AESTHETICS & PROPER TEXT COLORING
+   ========================================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #374151;
+  background-color: #ffffff;
+}
+
+/* Proper Text Coloring for Headings & Paragraphs */
+h1, h2, h3, h4, h5, h6 {
+  color: #191628;
+  letter-spacing: -0.015em;
+}
+
+p {
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* Clean, Sleek Upper Top Bar */
+.main-menu-two__top {
+  background: #13111f !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding: 8px 0 !important;
+}
+
+.main-menu-two__top-inner {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.main-menu-two__contact-list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.main-menu-two__contact-list li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #cbd5e1 !important;
+  font-size: 13px !important;
+}
+
+.main-menu-two__contact-list li a {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.main-menu-two__top-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.main-menu-two__top-time {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #cbd5e1 !important;
+  font-size: 12.5px !important;
+}
+
+/* Hero Room Options Hover */
+.hero-room-option-item {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.hero-room-option-item:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  transform: translateX(4px) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Room Card Clean Header */
+.room-card-clean-header {
+  transition: all 0.25s ease !important;
+}
+
+.room-card-clean-header:hover {
+  background: linear-gradient(135deg, #1f1a32 0%, #302a4b 100%) !important;
+}

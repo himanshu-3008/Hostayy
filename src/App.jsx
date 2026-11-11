@@ -7,12 +7,9 @@ import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import StaysSection from './components/StaysSection';
 import WhyChooseSection from './components/WhyChooseSection';
-import GallerySection from './components/GallerySection';
 import SlidingText from './components/SlidingText';
 import Counters from './components/Counters';
-import BrandBannerSection from './components/BrandBannerSection';
 import PatronSection from './components/PatronSection';
-import Testimonials from './components/Testimonials';
 import ProcessAndFaq from './components/ProcessAndFaq';
 import ContactSection from './components/ContactSection';
 import PropertyModal from './components/PropertyModal';
@@ -86,23 +83,14 @@ export default function App() {
         {/* Hotelux Why Choose One */}
         <WhyChooseSection />
 
-        {/* Hotelux Gallery Two with Photo Categories & Lightbox */}
-        <GallerySection onOpenLightbox={handleOpenLightbox} />
-
         {/* Hotelux Sliding Text Marquee */}
         <SlidingText />
 
         {/* Hotelux Counter One */}
         <Counters />
 
-        {/* Official Hostayy "Feel Like Home" Brand Experience & Banner Showcase */}
-        <BrandBannerSection />
-
         {/* Hostayy Patron: Property Owner Partnership Portal (Modelled on patron.oyorooms.com) */}
         <PatronSection />
-
-        {/* Hotelux Testimonial Two */}
-        <Testimonials />
 
         {/* Onboarding Process & FAQ */}
         <ProcessAndFaq />

@@ -8,25 +8,37 @@ import StayShowcase from './StayShowcase';
 export default function StaysSection({ selectedStayId, setSelectedStayId, onOpenModal, onOpenLightbox }) {
   const activeProp = HOSTAYY_PROPERTIES.find(p => p.id === selectedStayId);
 
+  const handleSelectStay = (id) => {
+    setSelectedStayId(id);
+    if (id) {
+      setTimeout(() => {
+        const el = document.getElementById('stay-showcase-container') || document.getElementById('room');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  };
+
   return (
-    <section className="our-rooms-two" id="room">
+    <section className="our-rooms-two" id="room" style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
       <div className="container">
-        {/* Hotelux Section Title */}
-        <div className="section-title text-center">
+        {/* Section Title */}
+        <div className="section-title text-center" style={{ marginBottom: '32px' }}>
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">VERIFIED FLATS · DWARKA SECTOR 23 NEAR YASHOBHOOMI</span>
+            <span className="section-title__tagline" style={{ color: '#FF4D4D', fontWeight: 800, letterSpacing: '0.08em' }}>
+              VERIFIED FLATS &bull; DWARKA SECTOR 23 NEAR YASHOBHOOMI
+            </span>
           </div>
-          <h2 className="section-title__title">
-            1, 2 &amp; 3 BHK <span>Serviced Flats Available for Booking</span>
+          <h2 className="section-title__title" style={{ color: '#191628', fontSize: '32px', margin: '8px 0 12px' }}>
+            1, 2 &amp; 3 BHK <span style={{ color: '#FF4D4D' }}>Serviced Residences</span>
           </h2>
-          <p className="section-title__text" style={{ maxWidth: '740px', margin: '14px auto 0' }}>
-            Sanitised, 100% private turnkey residences located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps Wi-Fi, work desks, and instant WhatsApp booking with zero brokerage.
+          <p className="section-title__text" style={{ maxWidth: '720px', margin: '0 auto', color: '#4b5563', fontSize: '15px', lineHeight: 1.7 }}>
+            Sanitised, 100% private turnkey residences located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps Wi-Fi, work desks, and instant WhatsApp booking with zero brokerage. Click any room option below to explore verified photos and floor specifications.
           </p>
         </div>
 
-        {/* Hotelux Category Filter Tabs */}
-        <div className="our-rooms-filter-wrap">
-          <div className="our-rooms-tabs">
+        {/* Room Option Filter Tabs */}
+        <div className="our-rooms-filter-wrap" style={{ marginBottom: '36px' }}>
+          <div className="our-rooms-tabs" style={{ display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <button 
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === null ? 'active' : ''}`}
@@ -37,30 +49,30 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             <button 
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'velora' ? 'active' : ''}`}
-              onClick={() => setSelectedStayId('velora')}
+              onClick={() => handleSelectStay('velora')}
             >
-              <i className="fa-solid fa-door-open" style={{ marginRight: '6px' }}></i> 1 BHK Suite (Velora · 3 Mins Yashobhoomi)
+              <i className="fa-solid fa-door-open" style={{ marginRight: '6px' }}></i> 1 BHK Suite (Velora &bull; 3 Mins Yashobhoomi)
             </button>
             <button 
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'azura' ? 'active' : ''}`}
-              onClick={() => setSelectedStayId('azura')}
+              onClick={() => handleSelectStay('azura')}
             >
-              <i className="fa-solid fa-building" style={{ marginRight: '6px' }}></i> 2 BHK Residence (Azura · Aerocity Corridor)
+              <i className="fa-solid fa-building" style={{ marginRight: '6px' }}></i> 2 BHK Residence (Azura &bull; Aerocity Corridor)
             </button>
             <button 
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'verde' ? 'active' : ''}`}
-              onClick={() => setSelectedStayId('verde')}
+              onClick={() => handleSelectStay('verde')}
             >
-              <i className="fa-solid fa-gem" style={{ marginRight: '6px' }}></i> 3 BHK Signature (Verde · Prime Golf Belt)
+              <i className="fa-solid fa-gem" style={{ marginRight: '6px' }}></i> 3 BHK Signature (Verde &bull; Prime Golf Belt)
             </button>
           </div>
         </div>
 
-        {/* Dynamic Photo Luxury Showcase Container */}
+        {/* Dynamic Photo Luxury Showcase Container (Appears when room option is clicked) */}
         {activeProp && (
-          <div id="stay-showcase-container" style={{ marginBottom: '45px' }}>
+          <div id="stay-showcase-container" style={{ marginBottom: '45px', scrollMarginTop: '100px' }}>
             <StayShowcase 
               prop={activeProp} 
               onOpenLightbox={onOpenLightbox} 
@@ -69,13 +81,13 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
           </div>
         )}
 
-        {/* 3-Property Card Grid in Hotelux Layout (1 BHK, 2 BHK, 3 BHK) */}
+        {/* 3-Property Card Grid (1 BHK, 2 BHK, 3 BHK) */}
         <div className="row">
           {HOSTAYY_PROPERTIES.map(prop => (
-            <div key={prop.id} className="col-xl-4 col-lg-4 col-md-6" style={{ marginBottom: '30px' }}>
+            <div key={prop.id} className="col-12 col-lg-4 col-md-6" style={{ marginBottom: '30px' }}>
               <PropertyCard 
                 prop={prop} 
-                onSelectStay={(id) => setSelectedStayId(id)}
+                onSelectStay={handleSelectStay}
                 onOpenModal={onOpenModal}
                 onOpenLightbox={onOpenLightbox}
               />
@@ -87,16 +99,18 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
         <div 
           className="corporate-privileges-banner"
           style={{ 
-            background: 'var(--hotelux-primary)', 
-            border: '1px solid var(--hotelux-border)', 
-            marginTop: '30px', 
+            background: '#faf8f5', 
+            border: '1px solid #e8e2dc', 
+            borderRadius: '12px',
+            padding: '32px 24px',
+            marginTop: '20px', 
             textAlign: 'center' 
           }}
         >
-          <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '24px', marginBottom: '8px', color: 'var(--hotelux-black)' }}>
+          <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '22px', marginBottom: '8px', color: '#191628' }}>
             Exhibition Delegates, Expat Relocations &amp; Extended Corporate Stays
           </h3>
-          <p style={{ color: 'var(--hotelux-gray)', fontSize: '15px', maxWidth: '720px', margin: '0 auto 20px', lineHeight: '1.6' }}>
+          <p style={{ color: '#4b5563', fontSize: '14.5px', maxWidth: '720px', margin: '0 auto 20px', lineHeight: 1.6 }}>
             Attending an exhibition or conference at Yashobhoomi (IICC)? Relocating to Delhi NCR? Hostayy offers flexible monthly and multi-month serviced apartments with zero brokerage, GST input credit, daily housekeeping, and 24/7 dedicated host assistance.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
@@ -105,7 +119,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               target="_blank" 
               rel="noopener noreferrer" 
               className="thm-btn thm-btn-wa" 
-              style={{ padding: '14px 28px', fontSize: '13px' }}
+              style={{ padding: '12px 24px', fontSize: '13px' }}
               title="Direct WhatsApp with Mohit"
             >
               <i className="fa-brands fa-whatsapp" style={{ fontSize: '16px' }}></i>
@@ -114,7 +128,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             <a 
               href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
               className="thm-btn thm-btn-outline" 
-              style={{ padding: '14px 24px', fontSize: '13px' }}
+              style={{ padding: '12px 22px', fontSize: '13px', borderColor: '#191628', color: '#191628' }}
             >
               <i className="fa-solid fa-phone" style={{ marginRight: '6px' }}></i>
               <span>Call Host: {HOSTAYY_CONFIG.displayPhone}</span>
