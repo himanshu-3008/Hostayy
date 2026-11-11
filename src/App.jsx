@@ -7,8 +7,6 @@ import Hero from './components/Hero';
 import ServicesSection from './components/ServicesSection';
 import StaysSection from './components/StaysSection';
 import WhyChooseSection from './components/WhyChooseSection';
-import SlidingText from './components/SlidingText';
-import Counters from './components/Counters';
 import PatronSection from './components/PatronSection';
 import ProcessAndFaq from './components/ProcessAndFaq';
 import ContactSection from './components/ContactSection';
@@ -86,12 +84,6 @@ export default function App() {
 
         {/* Hotelux Why Choose One */}
         <WhyChooseSection />
-
-        {/* Hotelux Sliding Text Marquee */}
-        <SlidingText />
-
-        {/* Hotelux Counter One */}
-        <Counters />
 
         {/* Hostayy Patron: Property Owner Partnership Portal (Modelled on patron.oyorooms.com) */}
         <PatronSection />
