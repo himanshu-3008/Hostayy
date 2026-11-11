@@ -3,125 +3,261 @@
 import React, { useState, useEffect } from 'react';
 import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+export default function Navbar({ onSelectStay }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('stays');
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleRoomTab = (id, tabName) => {
+    setActiveTab(tabName);
+    if (onSelectStay) {
+      onSelectStay(id);
+    }
+    const el = document.getElementById('stay-showcase-container') || document.getElementById('room');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
-    <nav className={`main-menu main-menu-two ${scrolled ? 'stricky-fixed' : ''}`}>
-      <div className="container">
-        <div className="main-menu-two__wrapper-inner">
-          {/* Official Hostayy Luxury Brand Logo */}
-          <a href="#home" className="brand-logo-hotelux" aria-label="Hostayy - Feel like home" style={{ marginRight: '24px', flexShrink: 0 }}>
-            <div className="brand-emblem-wrap">
-              <img 
-                src="/assets/images/hostayy-logo-transparent.png" 
-                alt="Hostayy Logo" 
-                className="brand-logo-img"
-              />
-            </div>
-            <div className="brand-text-hotelux">
-              <h2>hostayy</h2>
-              <span className="brand-slogan">(feel like home)</span>
-            </div>
-          </a>
-
-          {/* Navigation Menu List */}
-          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '24px' }}>
-            <li>
-              <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
-            </li>
-            <li>
-              <a href="#room" onClick={() => setMobileOpen(false)}>Book Flats</a>
-            </li>
-            <li>
-              <a href="#services" onClick={() => setMobileOpen(false)}>Amenities</a>
-            </li>
-            <li>
-              <a href="#why-choose" onClick={() => setMobileOpen(false)}>Landmarks</a>
-            </li>
-            <li>
-              <a href="#patron" onClick={() => setMobileOpen(false)} style={{ color: 'var(--coral-primary)', fontWeight: 700 }}>Hostayy Patron</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
-            </li>
-
-            {/* Mobile Drawer Dedicated Action Buttons */}
-            <li className="mobile-drawer-actions">
-              <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to book / request a quote for a serviced flat near Yashobhoomi." })} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="mobile-drawer-btn guest-btn"
-                onClick={() => setMobileOpen(false)}
-              >
-                <i className="fa-brands fa-whatsapp"></i> Book a Flat (WhatsApp)
-              </a>
-              <a 
-                href="#patron" 
-                className="mobile-drawer-btn owner-btn"
-                onClick={() => setMobileOpen(false)}
-              >
-                <i className="fa-solid fa-house-chimney-user"></i> List Your Property (Patron)
-              </a>
-              <a 
-                href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
-                className="mobile-drawer-btn call-btn"
-                onClick={() => setMobileOpen(false)}
-              >
-                <i className="fa-solid fa-phone"></i> Call Host: {HOSTAYY_CONFIG.displayPhone}
-              </a>
-            </li>
-          </ul>
-
-          {/* Right Action Block: Phone Call & Host Concierge */}
-          <div className="main-menu-two__right" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <a 
-              href="#patron" 
-              className="navbar-patron-btn d-none-sm"
-              title="List your property with Hostayy Patron"
-            >
-              <i className="fa-solid fa-house-chimney-user"></i>
-              <span>List Property</span>
+    <header className="bcom-header" id="booking-header">
+      {/* Top Tier: Logo & User Utility Bar (Modeled on Booking.com) */}
+      <div className="bcom-header-top">
+        <div className="container">
+          <div className="bcom-top-inner">
+            {/* Left: Hostayy Logo */}
+            <a href="#home" className="bcom-brand-logo" aria-label="Hostayy.com">
+              <div className="bcom-logo-emblem">
+                <img 
+                  src="/assets/images/hostayy-logo-transparent.png" 
+                  alt="Hostayy Logo" 
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                />
+              </div>
+              <div className="bcom-logo-text-wrap">
+                <span className="bcom-logo-text">
+                  Hostayy<span className="bcom-logo-dot">.com</span>
+                </span>
+                <span className="bcom-logo-slogan">(feel like home)</span>
+              </div>
             </a>
 
-            <div className="main-menu-two__call" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            {/* Right: Booking.com Style Utility Items */}
+            <div className="bcom-utility-row">
+              {/* Currency Pill */}
+              <button type="button" className="bcom-util-btn" title="Currency: Indian Rupee">
+                <span className="bcom-currency-tag">INR</span>
+              </button>
+
+              {/* Country Flag */}
+              <div className="bcom-flag-wrap" title="India (Dwarka Sector 23 / Delhi NCR)">
+                <span className="bcom-flag-icon" role="img" aria-label="India Flag">🇮🇳</span>
+              </div>
+
+              {/* Help & 24/7 Support */}
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
-                aria-label={`Call Host ${HOSTAYY_CONFIG.displayPhone}`}
-                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--hotelux-primary)', border: '1.5px solid var(--hotelux-base)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--hotelux-base)', textDecoration: 'none' }}
+                className="bcom-util-btn bcom-help-btn"
+                title={`24/7 Concierge Support: ${HOSTAYY_CONFIG.displayPhone}`}
               >
-                <i className="fa-solid fa-phone"></i>
+                <i className="fa-regular fa-circle-question"></i>
               </a>
-              <div className="nav-call-text" style={{ lineHeight: 1.25 }}>
-                <span style={{ fontSize: '11px', textTransform: 'uppercase', color: 'var(--hotelux-base)', fontWeight: 700, letterSpacing: '0.08em', display: 'block' }}>Host Concierge</span>
-                <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ display: 'block', fontSize: '14.5px', fontWeight: 700, color: 'var(--hotelux-black)' }}>
-                  {HOSTAYY_CONFIG.displayPhone}
-                </a>
-              </div>
-            </div>
 
-            {/* Mobile Hamburger Toggle */}
-            <button 
-              type="button" 
-              className="mobile-nav-toggle"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
-            </button>
+              {/* List Your Property (Hostayy Patron) */}
+              <a 
+                href="#patron" 
+                className="bcom-list-prop-link"
+                title="List your apartment with Hostayy Patron"
+              >
+                <span>List your property</span>
+              </a>
+
+              {/* Booking CTA Button (Booking.com Sign in / Register style) */}
+              <a 
+                href="#room" 
+                className="bcom-action-btn register-btn"
+                title="Explore 1, 2 &amp; 3 BHK Serviced Flats"
+              >
+                Book Flat
+              </a>
+
+              {/* Direct WhatsApp Concierge CTA */}
+              <a 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bcom-action-btn wa-btn"
+                title="Chat with Mohit on WhatsApp"
+              >
+                <i className="fa-brands fa-whatsapp"></i>
+                <span className="d-none-sm">WhatsApp</span>
+              </a>
+
+              {/* Mobile Hamburger Toggle */}
+              <button 
+                type="button" 
+                className="bcom-mobile-toggle"
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle navigation menu"
+              >
+                <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
+
+      {/* Sub-Navigation Tier: Booking.com Icon Pills Strip */}
+      <div className="bcom-subnav-strip">
+        <div className="container">
+          <div className="bcom-pills-row">
+            {/* Stays / All Flats */}
+            <a 
+              href="#room" 
+              className={`bcom-pill ${activeTab === 'stays' ? 'active' : ''}`}
+              onClick={() => { setActiveTab('stays'); if (onSelectStay) onSelectStay(null); }}
+            >
+              <i className="fa-solid fa-bed"></i>
+              <span>Serviced Flats</span>
+            </a>
+
+            {/* 1 BHK Suite (Velora) */}
+            <button 
+              type="button" 
+              className={`bcom-pill ${activeTab === 'velora' ? 'active' : ''}`}
+              onClick={() => handleRoomTab('velora', 'velora')}
+            >
+              <i className="fa-solid fa-door-open"></i>
+              <span>1 BHK Suite (Velora)</span>
+            </button>
+
+            {/* 2 BHK Executive (Azura) */}
+            <button 
+              type="button" 
+              className={`bcom-pill ${activeTab === 'azura' ? 'active' : ''}`}
+              onClick={() => handleRoomTab('azura', 'azura')}
+            >
+              <i className="fa-solid fa-building"></i>
+              <span>2 BHK Executive (Azura)</span>
+            </button>
+
+            {/* 3 BHK Signature (Verde) */}
+            <button 
+              type="button" 
+              className={`bcom-pill ${activeTab === 'verde' ? 'active' : ''}`}
+              onClick={() => handleRoomTab('verde', 'verde')}
+            >
+              <i className="fa-solid fa-gem"></i>
+              <span>3 BHK Signature (Verde)</span>
+            </button>
+
+            {/* Strategic Location / Yashobhoomi IICC */}
+            <a 
+              href="#why-choose" 
+              className={`bcom-pill ${activeTab === 'location' ? 'active' : ''}`}
+              onClick={() => setActiveTab('location')}
+            >
+              <i className="fa-solid fa-landmark"></i>
+              <span>3 Mins Yashobhoomi IICC</span>
+            </a>
+
+            {/* Amenities & Services */}
+            <a 
+              href="#services" 
+              className={`bcom-pill ${activeTab === 'amenities' ? 'active' : ''}`}
+              onClick={() => setActiveTab('amenities')}
+            >
+              <i className="fa-solid fa-kitchen-set"></i>
+              <span>Amenities</span>
+            </a>
+
+            {/* Hostayy Patron (Owners) */}
+            <a 
+              href="#patron" 
+              className={`bcom-pill ${activeTab === 'patron' ? 'active' : ''}`}
+              onClick={() => setActiveTab('patron')}
+            >
+              <i className="fa-solid fa-house-chimney-user"></i>
+              <span>Hostayy Patron</span>
+            </a>
+
+            {/* Contact Host */}
+            <a 
+              href="#contact" 
+              className={`bcom-pill ${activeTab === 'contact' ? 'active' : ''}`}
+              onClick={() => setActiveTab('contact')}
+            >
+              <i className="fa-solid fa-phone"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileOpen && (
+        <div className="bcom-mobile-drawer">
+          <div className="bcom-mobile-drawer-inner">
+            <div className="bcom-mobile-links">
+              <a href="#home" onClick={() => setMobileOpen(false)}>
+                <i className="fa-solid fa-house"></i> Home
+              </a>
+              <a href="#room" onClick={() => { setMobileOpen(false); if (onSelectStay) onSelectStay(null); }}>
+                <i className="fa-solid fa-bed"></i> Book Serviced Flats
+              </a>
+              <button 
+                type="button" 
+                onClick={() => { setMobileOpen(false); handleRoomTab('velora', 'velora'); }}
+                className="mobile-sublink"
+              >
+                &bull; 1 BHK Suite (Velora)
+              </button>
+              <button 
+                type="button" 
+                onClick={() => { setMobileOpen(false); handleRoomTab('azura', 'azura'); }}
+                className="mobile-sublink"
+              >
+                &bull; 2 BHK Executive (Azura)
+              </button>
+              <button 
+                type="button" 
+                onClick={() => { setMobileOpen(false); handleRoomTab('verde', 'verde'); }}
+                className="mobile-sublink"
+              >
+                &bull; 3 BHK Signature (Verde)
+              </button>
+              <a href="#services" onClick={() => setMobileOpen(false)}>
+                <i className="fa-solid fa-kitchen-set"></i> Amenities &amp; Standards
+              </a>
+              <a href="#why-choose" onClick={() => setMobileOpen(false)}>
+                <i className="fa-solid fa-map-location-dot"></i> Yashobhoomi Connectivity
+              </a>
+              <a href="#patron" onClick={() => setMobileOpen(false)} style={{ color: '#FFD700', fontWeight: 700 }}>
+                <i className="fa-solid fa-house-chimney-user"></i> Hostayy Patron (List Property)
+              </a>
+              <a href="#contact" onClick={() => setMobileOpen(false)}>
+                <i className="fa-solid fa-envelope"></i> Contact Concierge
+              </a>
+            </div>
+
+            <div className="bcom-mobile-actions">
+              <a 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bcom-drawer-btn wa-drawer-btn"
+                onClick={() => setMobileOpen(false)}
+              >
+                <i className="fa-brands fa-whatsapp"></i> Book Flat on WhatsApp
+              </a>
+              <a 
+                href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
+                className="bcom-drawer-btn call-drawer-btn"
+                onClick={() => setMobileOpen(false)}
+              >
+                <i className="fa-solid fa-phone"></i> Call Host ({HOSTAYY_CONFIG.displayPhone})
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

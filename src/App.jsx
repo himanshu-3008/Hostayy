@@ -57,9 +57,13 @@ export default function App() {
 
   return (
     <div className="hostayy-app">
-      {/* Hotelux Header Two: Top Bar & Sticky Navbar */}
+      {/* Booking.com Style Luxury Header & Navigation */}
       <TopBar />
-      <Navbar />
+      <Navbar onSelectStay={(id) => {
+        setSelectedStayId(id);
+        const el = document.getElementById('stay-showcase-container') || document.getElementById('room');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }} />
 
       <main>
         {/* Hotelux Banner One (Hero) + Horizontal Booking Bar */}

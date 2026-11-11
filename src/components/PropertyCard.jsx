@@ -1,24 +1,28 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { getGuestPropertyWhatsAppLink } from '../data/properties';
 
 export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLightbox }) {
+  const [photoIndex, setPhotoIndex] = useState(0);
   const photos = prop.images;
   const totalPhotos = photos.length;
 
-  const handleRoomClick = () => {
-    if (onSelectStay) {
-      onSelectStay(prop.id);
-      const el = document.getElementById('room');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
+  const nextPhoto = (e) => {
+    e.stopPropagation();
+    setPhotoIndex((prev) => (prev + 1) % totalPhotos);
   };
 
-  const handlePhotosClick = (e) => {
+  const prevPhoto = (e) => {
     e.stopPropagation();
-    if (onOpenModal) {
-      onOpenModal(prop);
+    setPhotoIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos);
+  };
+
+  const currentPhoto = photos[photoIndex] || photos[0];
+
+  const handlePhotoClick = () => {
+    if (onOpenLightbox) {
+      onOpenLightbox(photos, photoIndex);
     } else if (onSelectStay) {
       onSelectStay(prop.id);
     }
@@ -26,87 +30,69 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
 
   return (
     <div className="our-rooms-two__single oyo-property-card" data-estate-id={prop.id}>
-      {/* Clean Room Header Strip (No photos on home page, photos appear on click) */}
+      {/* High-Resolution Photo Box with Carousel Controls */}
       <div 
-        className="room-card-clean-header" 
-        onClick={handleRoomClick}
-        title="Click to view verified room photos & specifications"
-        style={{
-          background: 'linear-gradient(135deg, #191628 0%, #29243f 100%)',
-          padding: '24px 20px',
-          color: '#ffffff',
-          position: 'relative',
-          cursor: 'pointer',
-          borderRadius: '12px 12px 0 0',
-          borderBottom: '3px solid var(--hotelux-base)'
-        }}
+        className="our-rooms-two__img-box" 
+        onClick={handlePhotoClick}
+        title="Click to view full photo gallery"
+        style={{ position: 'relative', height: '240px', overflow: 'hidden', cursor: 'pointer', borderRadius: '12px 12px 0 0' }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-          <div className="oyo-sanitised-badge" style={{ position: 'static' }}>
-            <i className="fa-solid fa-shield-virus"></i> Sanitised Stay
-          </div>
-          <span 
-            onClick={handlePhotosClick}
-            style={{ 
-              fontSize: '11.5px', 
-              background: 'rgba(255, 255, 255, 0.14)', 
-              color: '#ffffff', 
-              padding: '4px 10px', 
-              borderRadius: '20px', 
-              fontWeight: 600,
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '5px',
-              border: '1px solid rgba(255, 255, 255, 0.25)'
-            }}
-          >
-            <i className="fa-solid fa-camera" style={{ color: '#FF4D4D' }}></i>
-            {totalPhotos} Photos
-          </span>
+        <img 
+          src={currentPhoto.src} 
+          alt={currentPhoto.title || prop.name} 
+          loading="lazy" 
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.04)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+        />
+        
+        {/* Sanitised Stay Badge */}
+        <div className="oyo-sanitised-badge">
+          <i className="fa-solid fa-shield-virus"></i> Sanitised Stay
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div>
-            <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--hotelux-base)', fontWeight: 700, display: 'block' }}>
-              SERVICED APARTMENT
-            </span>
-            <h3 style={{ margin: '2px 0 0', fontSize: '22px', color: '#ffffff', fontFamily: 'var(--hotelux-font-two)' }}>
-              {prop.name}
-            </h3>
-          </div>
-
-          <div style={{ textAlign: 'right' }}>
-            <span style={{ display: 'inline-block', background: 'rgba(185, 156, 135, 0.2)', border: '1px solid var(--hotelux-base)', color: 'var(--hotelux-base)', padding: '5px 12px', borderRadius: '6px', fontSize: '13px', fontWeight: 700 }}>
-              {prop.bhk}
-            </span>
-          </div>
+        {/* BHK Configuration Tag */}
+        <div className="our-rooms-former-badge" style={{ backgroundColor: 'rgba(25, 22, 40, 0.92)', color: 'var(--hotelux-base)', border: '1px solid var(--hotelux-base)' }}>
+          <i className="fa-solid fa-door-open" style={{ marginRight: '5px' }}></i> {prop.bhk} Serviced Flat
         </div>
 
-        {/* Click Prompt */}
-        <div 
-          style={{
-            marginTop: '16px',
-            background: 'rgba(255, 255, 255, 0.08)',
-            borderRadius: '6px',
-            padding: '8px 12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            fontSize: '12px',
-            color: '#cbd5e1'
-          }}
+        {/* Photo Counter Pill */}
+        <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(25, 22, 40, 0.85)', color: '#ffffff', fontSize: '11px', padding: '3px 8px', zIndex: 2, borderRadius: '4px' }}>
+          <i className="fa-solid fa-camera" style={{ marginRight: '4px', color: 'var(--hotelux-base)' }}></i> {photoIndex + 1} / {totalPhotos}
+        </div>
+
+        {/* Prev / Next Photo Arrow Buttons */}
+        <button 
+          type="button"
+          onClick={prevPhoto}
+          style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', width: '32px', height: '32px', background: 'rgba(255,255,255,0.9)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+          aria-label="Previous Photo"
         >
-          <span><i className="fa-solid fa-images" style={{ color: '#FF4D4D', marginRight: '6px' }}></i> Click room to view photo tour</span>
-          <i className="fa-solid fa-arrow-right" style={{ color: 'var(--hotelux-base)', fontSize: '11px' }}></i>
-        </div>
+          <i className="fa-solid fa-chevron-left" style={{ fontSize: '12px' }}></i>
+        </button>
+        <button 
+          type="button"
+          onClick={nextPhoto}
+          style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', width: '32px', height: '32px', background: 'rgba(255,255,255,0.9)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+          aria-label="Next Photo"
+        >
+          <i className="fa-solid fa-chevron-right" style={{ fontSize: '12px' }}></i>
+        </button>
       </div>
 
-      {/* Hotelux Room Body with Specs & Booking Actions */}
-      <div className="our-rooms-two__body" style={{ padding: '22px 20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
+      {/* Hotelux Room Body with Specs & Actions */}
+      <div className="our-rooms-two__body" style={{ padding: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
           <div>
-            <div className="our-rooms-location" style={{ fontSize: '13px', color: '#475569', fontWeight: 600 }}>
-              <i className="fa-solid fa-location-dot" style={{ color: '#FF4D4D', marginRight: '5px' }}></i> {prop.location}
+            <h3 
+              className="our-rooms-two__title" 
+              onClick={() => onSelectStay && onSelectStay(prop.id)} 
+              style={{ marginBottom: '3px', fontSize: '18px', color: '#191628', cursor: 'pointer', fontWeight: 800 }}
+            >
+              {prop.name}
+            </h3>
+            <div className="our-rooms-location" style={{ fontSize: '12.5px', color: '#475569', fontWeight: 600 }}>
+              <i className="fa-solid fa-location-dot" style={{ color: '#FF4D4D', marginRight: '4px' }}></i> {prop.location}
             </div>
           </div>
           <div style={{ textAlign: 'right', flexShrink: 0 }}>
@@ -122,35 +108,15 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         {/* Proximity Pill */}
         <div style={{ background: '#fff7ed', border: '1px solid #ffedd5', padding: '6px 10px', borderRadius: '6px', marginBottom: '12px', fontSize: '11.5px', color: '#c2410c', display: 'flex', alignItems: 'center', gap: '6px' }}>
           <i className="fa-solid fa-location-arrow" style={{ color: '#ea580c' }}></i>
-          <span><strong>{prop.bhk === '1 BHK' ? '3 Mins' : prop.bhk === '2 BHK' ? '4 Mins' : '3 Mins'}</strong> to Yashobhoomi (IICC) &bull; 10 Mins to IGI Airport (T3)</span>
+          <span><strong>{prop.bhk === '1 BHK' ? '3 Mins' : prop.bhk === '2 BHK' ? '4 Mins' : '3 Mins'}</strong> to Yashobhoomi (IICC) &bull; 10 Mins to Airport T3</span>
         </div>
 
-        <p className="our-rooms-desc" style={{ marginBottom: '14px', fontSize: '13.5px', color: '#4b5563', lineHeight: 1.6 }}>{prop.shortDescription}</p>
-
-        {/* Specs Highlights */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px', fontSize: '12px', color: '#334155' }}>
-          <div style={{ background: '#f8fafc', padding: '6px 10px', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
-            <i className="fa-solid fa-vector-square" style={{ color: 'var(--hotelux-base)', marginRight: '6px' }}></i>
-            <span>{prop.areaSqFt}</span>
-          </div>
-          <div style={{ background: '#f8fafc', padding: '6px 10px', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
-            <i className="fa-solid fa-kitchen-set" style={{ color: '#ea580c', marginRight: '6px' }}></i>
-            <span>Private Modular Kitchen</span>
-          </div>
-          <div style={{ background: '#f8fafc', padding: '6px 10px', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
-            <i className="fa-solid fa-wifi" style={{ color: '#3b82f6', marginRight: '6px' }}></i>
-            <span>300 Mbps Mesh Wi-Fi</span>
-          </div>
-          <div style={{ background: '#f8fafc', padding: '6px 10px', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
-            <i className="fa-solid fa-bolt" style={{ color: '#10b981', marginRight: '6px' }}></i>
-            <span>100% Power Backup</span>
-          </div>
-        </div>
+        <p className="our-rooms-desc" style={{ marginBottom: '14px', fontSize: '13px', color: '#4b5563', lineHeight: 1.6 }}>{prop.shortDescription}</p>
 
         {/* OYO-Style Amenities Row */}
         <div className="oyo-amenities-row">
           <span className="oyo-amenity-chip" title="Air Conditioning"><i className="fa-solid fa-snowflake"></i> AC</span>
-          <span className="oyo-amenity-chip" title="300 Mbps Wi-Fi"><i className="fa-solid fa-wifi"></i> Wi-Fi</span>
+          <span className="oyo-amenity-chip" title="300 Mbps Wi-Fi"><i className="fa-solid fa-wifi"></i> 300 Mbps Wi-Fi</span>
           <span className="oyo-amenity-chip" title="Modular Kitchen"><i className="fa-solid fa-kitchen-set"></i> Kitchen</span>
           <span className="oyo-amenity-chip" title="Power Backup"><i className="fa-solid fa-bolt"></i> Power Backup</span>
           <span className="oyo-amenity-chip" title="Daily Housekeeping"><i className="fa-solid fa-broom"></i> Housekeeping</span>
@@ -189,27 +155,26 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
 
         {/* Action Buttons Row */}
         <div className="our-rooms-actions-row" style={{ marginTop: '14px', display: 'flex', gap: '10px' }}>
-          <button 
-            type="button" 
-            className="btn-hotelux-details" 
-            onClick={handleRoomClick}
-            title="Click to view verified room photos & layout"
-            style={{ flex: 1, justifyContent: 'center', background: '#191628', color: '#ffffff', border: '1px solid #191628' }}
-          >
-            <i className="fa-solid fa-images" style={{ color: '#FF4D4D' }}></i>
-            <span>View Photos</span>
-          </button>
-
           <a 
             href={getGuestPropertyWhatsAppLink(prop.name)} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-hotelux-room-wa oyo-btn-book"
             title="Book this flat on WhatsApp"
-            style={{ flex: 1.3, justifyContent: 'center' }}
+            style={{ flex: 1.4, justifyContent: 'center' }}
           >
-            <i className="fa-brands fa-whatsapp"></i> Book Flat
+            <i className="fa-brands fa-whatsapp"></i> Book Flat on WhatsApp
           </a>
+
+          <button 
+            type="button" 
+            className="btn-hotelux-details" 
+            onClick={() => onOpenModal ? onOpenModal(prop) : onSelectStay && onSelectStay(prop.id)}
+            title="View full apartment specifications, photos and amenities"
+            style={{ flex: 0.9, justifyContent: 'center' }}
+          >
+            <i className="fa-solid fa-images"></i> Photos &amp; Specs
+          </button>
         </div>
       </div>
     </div>

@@ -3778,3 +3778,304 @@ p {
 .room-card-clean-header:hover {
   background: linear-gradient(135deg, #1f1a32 0%, #302a4b 100%) !important;
 }
+
+
+/* ==========================================================================
+   BOOKING.COM STYLE HEADER & SUBNAV STRIP (EXACT MATCH TO USER PHOTO)
+   ========================================================================== */
+.bcom-header {
+  position: relative;
+  background-color: #003580;
+  color: #ffffff;
+  z-index: 999;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bcom-header-top {
+  padding: 12px 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bcom-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bcom-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.bcom-logo-emblem {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bcom-logo-text-wrap {
+  line-height: 1.15;
+}
+
+.bcom-logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  font-family: var(--hotelux-font-two), sans-serif;
+}
+
+.bcom-logo-dot {
+  color: #00BAF2;
+}
+
+.bcom-logo-slogan {
+  display: block;
+  font-size: 11px;
+  color: #cbd5e1;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.bcom-utility-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bcom-util-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  text-decoration: none;
+}
+
+.bcom-util-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.bcom-currency-tag {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.bcom-flag-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: default;
+}
+
+.bcom-help-btn {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.bcom-list-prop-link {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.bcom-list-prop-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.bcom-action-btn {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.bcom-action-btn.register-btn {
+  background: #ffffff;
+  color: #003580;
+  border: 1px solid #ffffff;
+}
+
+.bcom-action-btn.register-btn:hover {
+  background: #f0f7ff;
+}
+
+.bcom-action-btn.wa-btn {
+  background: #16a34a;
+  color: #ffffff;
+  border: 1px solid #16a34a;
+}
+
+.bcom-action-btn.wa-btn:hover {
+  background: #15803d;
+}
+
+.bcom-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* Sub-Navigation Strip with Pills (Booking.com style) */
+.bcom-subnav-strip {
+  padding: 10px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.bcom-subnav-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.bcom-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.bcom-pill {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.bcom-pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.bcom-pill.active {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 700;
+}
+
+.bcom-pill i {
+  font-size: 14px;
+}
+
+/* Mobile Drawer */
+.bcom-mobile-drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #00224f;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  padding: 20px;
+}
+
+.bcom-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.bcom-mobile-links a {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-sublink {
+  background: none;
+  border: none;
+  color: #93c5fd;
+  text-align: left;
+  font-size: 14px;
+  padding: 4px 0 4px 20px;
+  cursor: pointer;
+}
+
+.bcom-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bcom-drawer-btn {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.bcom-drawer-btn.wa-drawer-btn {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.bcom-drawer-btn.call-drawer-btn {
+  background: #ffffff;
+  color: #003580;
+}
+
+@media (max-width: 991px) {
+  .bcom-list-prop-link,
+  .bcom-currency-tag,
+  .bcom-flag-wrap,
+  .bcom-help-btn {
+    display: none;
+  }
+  .bcom-mobile-toggle {
+    display: block;
+  }
+}
