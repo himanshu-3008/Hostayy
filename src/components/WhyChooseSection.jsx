@@ -24,7 +24,7 @@ export default function WhyChooseSection() {
       <div className="container">
         <div className="row" style={{ alignItems: 'center' }}>
           {/* Left Column: Text & Features */}
-          <div className="col-xl-6 col-lg-6">
+          <div className="col-12 col-lg-6 col-xl-6">
             <div className="why-choose-one__left">
               <div className="section-title text-left sec-title-animation animation-style2">
                 <div className="section-title__tagline-box">
@@ -100,7 +100,7 @@ export default function WhyChooseSection() {
           </div>
 
           {/* Right Column: Strategic Landmark Proximity Card & Images */}
-          <div className="col-xl-6 col-lg-6">
+          <div className="col-12 col-lg-6 col-xl-6">
             <div className="why-choose-one__right" style={{ position: 'relative', marginLeft: 0 }}>
               {/* Landmark Connectivity Grid Card */}
               <div 

@@ -29,11 +29,18 @@ export default function TopBar() {
             </li>
           </ul>
 
-          {/* Right timing */}
+          {/* Right timing & Patron link */}
           <div className="main-menu-two__top-right">
+            <a 
+              href="#patron" 
+              className="topbar-patron-badge"
+              title="List your property with Hostayy Patron"
+            >
+              <i className="fa-solid fa-house-chimney-user"></i> List Your Property (Hostayy Patron)
+            </a>
             <div className="main-menu-two__top-time">
               <i className="fa-solid fa-clock"></i>
-              <span>Mon - Sun: 24/7 Dedicated Concierge Support</span>
+              <span>24/7 Concierge Support</span>
             </div>
           </div>
         </div>

@@ -11,8 +11,7 @@ import GallerySection from './components/GallerySection';
 import SlidingText from './components/SlidingText';
 import Counters from './components/Counters';
 import BrandBannerSection from './components/BrandBannerSection';
-import Calculator from './components/Calculator';
-import Comparison from './components/Comparison';
+import PatronSection from './components/PatronSection';
 import Testimonials from './components/Testimonials';
 import ProcessAndFaq from './components/ProcessAndFaq';
 import ContactSection from './components/ContactSection';
@@ -99,11 +98,8 @@ export default function App() {
         {/* Official Hostayy "Feel Like Home" Brand Experience & Banner Showcase */}
         <BrandBannerSection />
 
-        {/* Yield & Savings Calculator */}
-        <Calculator />
-
-        {/* Traditional Leasing vs Hostayy Management Comparison */}
-        <Comparison />
+        {/* Hostayy Patron: Property Owner Partnership Portal (Modelled on patron.oyorooms.com) */}
+        <PatronSection />
 
         {/* Hotelux Testimonial Two */}
         <Testimonials />

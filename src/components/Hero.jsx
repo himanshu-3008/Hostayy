@@ -90,32 +90,32 @@ export default function Hero({ onSelectStay }) {
                       style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
                     />
                   </div>
-                  <span><strong>hostayy</strong> <em style={{ color: '#FF4D4D', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</em> · 0% Brokerage · 0% OTA Fees</span>
+                  <span><strong>hostayy</strong> <em style={{ color: '#FF4D4D', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</em> · Instant Flat Booking · 0% Brokerage</span>
                 </div>
 
                 <h1 className="banner-one__title">
-                  1, 2 &amp; 3 BHK <span>Serviced Apartments Near Yashobhoomi (IICC)</span> With Five-Star Care.
+                  Book 1, 2 &amp; 3 BHK <span>Serviced Flats Near Yashobhoomi (IICC)</span> With Zero Brokerage.
                 </h1>
 
                 <p className="banner-one__text">
-                  Handcrafted private serviced residences in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully furnished with modern modular kitchens, 300 Mbps Wi-Fi, and personalized concierge care for monthly corporate and extended residential stays.
+                  Handcrafted private serviced apartments in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully furnished with modern modular kitchens, 300 Mbps Wi-Fi, sanitized hotel-grade bedding, and instant WhatsApp booking with Superhost Mohit Chaudhary.
                 </p>
 
                 {/* Hotelux Action Buttons & Review Strip */}
                 <div className="banner-one__btn-and-review-box">
                   <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                     <a href="#room" className="thm-btn">
-                      <span>Explore 1, 2 &amp; 3 BHK</span>
+                      <span>Book a Flat Now</span>
                       <i className="fa-solid fa-arrow-right"></i>
                     </a>
                     <a 
-                      href={getGuestWhatsAppLink({ message: "Hello Mohit, I am inquiring about a monthly / long-term quotation for a serviced apartment near Yashobhoomi IICC." })} 
+                      href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="thm-btn thm-btn-wa"
                     >
                       <i className="fa-brands fa-whatsapp"></i>
-                      <span>Request Long-Stay Quote</span>
+                      <span>Instant WhatsApp Booking</span>
                     </a>
                   </div>
 
@@ -196,14 +196,17 @@ export default function Hero({ onSelectStay }) {
         </div>
       </section>
 
-      {/* Horizontal Long-Term Quotation & Availability Bar */}
+      {/* Horizontal OYO-Style Flat Search & Instant Booking Bar */}
       <div className="container">
         <div className="about-two__booking">
           <form onSubmit={handleBookingSubmit}>
             <div className="row" style={{ alignItems: 'flex-end' }}>
               <div className="col-xl-2 col-lg-3 col-md-6">
                 <div className="about-two-booking__left">
-                  <h3 className="about-two-booking__title">Request Long-Stay Quote</h3>
+                  <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#16a34a', fontWeight: 800, display: 'block' }}>
+                    <i className="fa-solid fa-circle-check"></i> Instant Booking
+                  </span>
+                  <h3 className="about-two-booking__title" style={{ fontSize: '18px', margin: '2px 0 0' }}>Search Flats</h3>
                   <span style={{ fontSize: '12px', color: 'var(--hotelux-base)', fontWeight: 600 }}>0% Brokerage · Direct Host</span>
                 </div>
               </div>
@@ -244,7 +247,7 @@ export default function Hero({ onSelectStay }) {
               <div className="col-xl-3 col-lg-3 col-md-6">
                 <div className="about-two-booking__input-box">
                   <p className="about-two-booking__input-title">
-                    <i className="fa-solid fa-hotel"></i> Select Apartment
+                    <i className="fa-solid fa-hotel"></i> Select Flat / BHK
                   </p>
                   <select 
                     className="about-two-booking__input-field"
@@ -254,6 +257,7 @@ export default function Hero({ onSelectStay }) {
                     <option value="Velora (1-BHK Luxury Suite · 3 mins Yashobhoomi)">Velora · 1 BHK (3 mins to Yashobhoomi IICC)</option>
                     <option value="Azura (2-BHK Executive Residence · Aerocity Corridor)">Azura · 2 BHK (Aerocity / Yashobhoomi Corridor)</option>
                     <option value="Verde (3-BHK Signature Residence · Prime Golf Belt)">Verde · 3 BHK (Dwarka Sector 23 Prime / Golf Course)</option>
+                    <option value="All Flats (Flexible Availability)">All Flats (Suggest Best Available)</option>
                   </select>
                 </div>
               </div>
@@ -261,11 +265,106 @@ export default function Hero({ onSelectStay }) {
               <div className="col-xl-2 col-lg-12 col-md-12">
                 <button type="submit" className="thm-btn" style={{ width: '100%', height: '48px', padding: '0 16px', fontSize: '13px', justifyContent: 'center' }}>
                   <i className="fa-brands fa-whatsapp" style={{ fontSize: '16px' }}></i>
-                  <span>Get Quotation</span>
+                  <span>Book on WhatsApp</span>
                 </button>
               </div>
             </div>
           </form>
+        </div>
+
+        {/* OYO-Style Quick Filter Pills Row */}
+        <div className="hero-quick-filters" style={{ marginTop: '16px', display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            Popular:
+          </span>
+          <a href="#room" className="quick-filter-chip">
+            <i className="fa-solid fa-layer-group"></i> All Flats (3)
+          </a>
+          <a href="#room" onClick={() => onSelectStay && onSelectStay('velora')} className="quick-filter-chip">
+            <i className="fa-solid fa-door-open"></i> 1 BHK Suite (Velora)
+          </a>
+          <a href="#room" onClick={() => onSelectStay && onSelectStay('azura')} className="quick-filter-chip">
+            <i className="fa-solid fa-building"></i> 2 BHK Executive (Azura)
+          </a>
+          <a href="#room" onClick={() => onSelectStay && onSelectStay('verde')} className="quick-filter-chip">
+            <i className="fa-solid fa-gem"></i> 3 BHK Signature (Verde)
+          </a>
+          <a href="#why-choose" className="quick-filter-chip">
+            <i className="fa-solid fa-location-dot" style={{ color: '#ef4444' }}></i> 3 Mins to Yashobhoomi IICC
+          </a>
+          <span className="quick-filter-chip" style={{ background: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}>
+            <i className="fa-solid fa-shield-virus"></i> Sanitised Stays
+          </span>
+          <span className="quick-filter-chip" style={{ background: '#fef3c7', color: '#b45309', borderColor: '#fde68a' }}>
+            <i className="fa-solid fa-badge-percent"></i> 0% Brokerage
+          </span>
+        </div>
+
+        {/* OYO-Style Consumer Assurance Trust Bar */}
+        <div 
+          className="oyo-trust-bar" 
+          style={{ 
+            marginTop: '22px', 
+            background: '#ffffff', 
+            border: '1px solid #e2dcd5', 
+            borderRadius: '12px', 
+            padding: '16px 20px',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
+            gap: '16px',
+            alignItems: 'center'
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#ecfdf5', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#10b981', flexShrink: 0, fontSize: '15px' }}>
+              <i className="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '13px', color: '#191628' }}>Sanitised Stays</strong>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>Hospital-grade hygiene &amp; fresh linens</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', flexShrink: 0, fontSize: '15px' }}>
+              <i className="fa-solid fa-kitchen-set"></i>
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '13px', color: '#191628' }}>Private Kitchens</strong>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>Cook your own meals with gas &amp; RO</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#3b82f6', flexShrink: 0, fontSize: '15px' }}>
+              <i className="fa-solid fa-wifi"></i>
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '13px', color: '#191628' }}>300 Mbps Wi-Fi</strong>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>Optical mesh fiber &amp; work desks</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fdf2f8', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#db2777', flexShrink: 0, fontSize: '15px' }}>
+              <i className="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '13px', color: '#191628' }}>Zero Brokerage</strong>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>No 15-day broker fee or OTA fee</span>
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#f5f3ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#7c3aed', flexShrink: 0, fontSize: '15px' }}>
+              <i className="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+            <div>
+              <strong style={{ display: 'block', fontSize: '13px', color: '#191628' }}>GST Corporate Billing</strong>
+              <span style={{ fontSize: '11px', color: '#64748b' }}>Tax credit invoices for business</span>
+            </div>
+          </div>
         </div>
       </div>
     </>

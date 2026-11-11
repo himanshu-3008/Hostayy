@@ -42,9 +42,10 @@ export default function Footer({ onSelectStay }) {
               <h4 className="footer-widget-title">Quick Links</h4>
               <ul className="footer-links-list">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#room">1, 2 &amp; 3 BHK Stays</a></li>
+                <li><a href="#room">Book Serviced Flats</a></li>
                 <li><a href="#services">Services &amp; Amenities</a></li>
                 <li><a href="#why-choose">Why Hostayy</a></li>
+                <li><a href="#patron" style={{ color: '#FF4D4D', fontWeight: 700 }}>Hostayy Patron (List Property)</a></li>
                 <li><a href="#contact">Contact &amp; Quotations</a></li>
               </ul>
             </div>

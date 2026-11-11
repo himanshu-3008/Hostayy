@@ -14,13 +14,13 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
         {/* Hotelux Section Title */}
         <div className="section-title text-center">
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">SERVICED APARTMENTS NEAR YASHOBHOOMI (IICC)</span>
+            <span className="section-title__tagline">VERIFIED FLATS · DWARKA SECTOR 23 NEAR YASHOBHOOMI</span>
           </div>
           <h2 className="section-title__title">
-            1, 2 &amp; 3 BHK <span>Furnished Long-Term Stays</span>
+            1, 2 &amp; 3 BHK <span>Serviced Flats Available for Booking</span>
           </h2>
-          <p className="section-title__text" style={{ maxWidth: '720px', margin: '14px auto 0' }}>
-            Fully furnished luxury serviced apartments located in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps mesh Wi-Fi, and 0% brokerage for monthly &amp; corporate leasing.
+          <p className="section-title__text" style={{ maxWidth: '740px', margin: '14px auto 0' }}>
+            Sanitised, 100% private turnkey residences located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps Wi-Fi, work desks, and instant WhatsApp booking with zero brokerage.
           </p>
         </div>
 

@@ -35,18 +35,21 @@ export default function Navbar() {
           </a>
 
           {/* Navigation Menu List */}
-          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '28px' }}>
+          <ul className={`main-menu__list ${mobileOpen ? 'mobile-open' : ''}`} style={{ gap: '24px' }}>
             <li>
               <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
             </li>
             <li>
-              <a href="#room" onClick={() => setMobileOpen(false)}>Residences</a>
+              <a href="#room" onClick={() => setMobileOpen(false)}>Book Flats</a>
             </li>
             <li>
-              <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
+              <a href="#services" onClick={() => setMobileOpen(false)}>Amenities</a>
             </li>
             <li>
-              <a href="#why-choose" onClick={() => setMobileOpen(false)}>Why Us</a>
+              <a href="#why-choose" onClick={() => setMobileOpen(false)}>Landmarks</a>
+            </li>
+            <li>
+              <a href="#patron" onClick={() => setMobileOpen(false)} style={{ color: 'var(--coral-primary)', fontWeight: 700 }}>Hostayy Patron</a>
             </li>
             <li>
               <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
@@ -55,22 +58,20 @@ export default function Navbar() {
             {/* Mobile Drawer Dedicated Action Buttons */}
             <li className="mobile-drawer-actions">
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to request a long-term / monthly quotation for a serviced residence." })} 
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the mobile menu to book / request a quote for a serviced flat near Yashobhoomi." })} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="mobile-drawer-btn guest-btn"
                 onClick={() => setMobileOpen(false)}
               >
-                <i className="fa-brands fa-whatsapp"></i> Request Quotation (WhatsApp)
+                <i className="fa-brands fa-whatsapp"></i> Book a Flat (WhatsApp)
               </a>
               <a 
-                href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I'm reaching out from the mobile menu to discuss managing my property with Hostayy." })} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="#patron" 
                 className="mobile-drawer-btn owner-btn"
                 onClick={() => setMobileOpen(false)}
               >
-                <i className="fa-solid fa-key"></i> Partner with Hostayy (Owner)
+                <i className="fa-solid fa-house-chimney-user"></i> List Your Property (Patron)
               </a>
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
@@ -83,7 +84,16 @@ export default function Navbar() {
           </ul>
 
           {/* Right Action Block: Phone Call & Host Concierge */}
-          <div className="main-menu-two__right" style={{ flexShrink: 0 }}>
+          <div className="main-menu-two__right" style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <a 
+              href="#patron" 
+              className="navbar-patron-btn d-none-sm"
+              title="List your property with Hostayy Patron"
+            >
+              <i className="fa-solid fa-house-chimney-user"></i>
+              <span>List Property</span>
+            </a>
+
             <div className="main-menu-two__call" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 

@@ -19,32 +19,30 @@ export default function MobileBottomBar() {
           <span>Call Host</span>
         </a>
 
-        {/* Guest Booking WhatsApp */}
+        {/* Guest Flat Booking WhatsApp */}
         <a 
-          href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to request a long-term / monthly serviced stay quotation near Yashobhoomi with Hostayy." })}
+          href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book / request a quote for a 1, 2, or 3 BHK serviced flat near Yashobhoomi with Hostayy." })}
           target="_blank"
           rel="noopener noreferrer"
           className="mobile-bar-item guest-action"
-          title="Request Long-Stay Quote (Guest)"
+          title="Book Flat on WhatsApp"
         >
           <div className="mobile-bar-icon wa-icon">
             <i className="fa-brands fa-whatsapp"></i>
           </div>
-          <span>Get Quote</span>
+          <span>Book Flat</span>
         </a>
 
-        {/* Property Owner WhatsApp */}
+        {/* Property Owner Patron Portal */}
         <a 
-          href={getOwnerWhatsAppLink({ location: "Delhi NCR", message: "Hello Mohit, I am a property owner and I want to list/register my residence with Hostayy." })}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#patron" 
           className="mobile-bar-item owner-action"
-          title="Partner Property (Owner)"
+          title="List Property with Hostayy Patron"
         >
           <div className="mobile-bar-icon owner-icon">
-            <i className="fa-solid fa-key"></i>
+            <i className="fa-solid fa-house-chimney-user"></i>
           </div>
-          <span>Partner</span>
+          <span>List Property</span>
         </a>
       </div>
     </aside>
