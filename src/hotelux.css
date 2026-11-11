@@ -4287,3 +4287,136 @@ p {
 .site-footer-two .footer-widget-title::after {
   background-color: #ea580c !important;
 }
+
+/* ==========================================================================
+   PHONE VIEW COMPREHENSIVE RESPONSIVE ENHANCEMENTS (< 768px & < 480px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Header Mobile Compact Tuning */
+  .bcom-util-btn {
+    display: none !important;
+  }
+  .bcom-header-top {
+    padding: 8px 0 !important;
+  }
+  .bcom-logo-emblem {
+    width: 34px !important;
+    height: 34px !important;
+    padding: 3px !important;
+  }
+  .bcom-logo-text {
+    font-size: 21px !important;
+  }
+  .bcom-logo-slogan {
+    font-size: 10px !important;
+  }
+  .bcom-action-btn.register-btn {
+    padding: 6px 12px !important;
+    font-size: 12.5px !important;
+  }
+  .bcom-action-btn.wa-btn {
+    padding: 6px 10px !important;
+    font-size: 12.5px !important;
+  }
+
+  /* Banner & Hero Overview Mobile Spacing */
+  .banner-one {
+    padding: 35px 0 25px !important;
+  }
+  .banner-ota-links {
+    margin-top: 14px !important;
+    gap: 6px !important;
+  }
+  .banner-ota-pill {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
+  .hero-residences-card {
+    padding: 18px 14px !important;
+    margin-top: 24px !important;
+    border-radius: 12px !important;
+  }
+  .hero-room-option-item {
+    padding: 10px 10px !important;
+  }
+  .hero-room-option-item img {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Site Footer Mobile Layout & Spacing */
+  .site-footer-two {
+    padding: 44px 0 115px !important; /* Extra bottom clearance for fixed mobile bar */
+  }
+  .site-footer-two__top {
+    padding-bottom: 24px !important;
+  }
+  .footer-col {
+    margin-bottom: 24px !important;
+  }
+  .site-footer-two .footer-widget-title {
+    font-size: 17.5px !important;
+    margin-bottom: 14px !important;
+    padding-bottom: 8px !important;
+  }
+  .site-footer-two p {
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+    color: #ffffff !important;
+  }
+  .site-footer-two .footer-links-list li a {
+    font-size: 13.5px !important;
+    padding: 3px 0 !important;
+    display: inline-block !important;
+    color: #ffffff !important;
+  }
+  .site-footer-two .footer-wa-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 18px !important;
+    font-size: 13.5px !important;
+  }
+  .site-footer-two__bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 8px !important;
+    padding-top: 18px !important;
+  }
+  .footer-bottom-left,
+  .footer-bottom-right {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .footer-bottom-left p,
+  .footer-bottom-right p {
+    text-align: center !important;
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra Small Phone (< 480px) Room Card Action Stacking */
+  .our-rooms-actions-row {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .our-rooms-actions-row .btn-hotelux-room-wa,
+  .our-rooms-actions-row .btn-hotelux-details {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 11px 14px !important;
+    font-size: 13px !important;
+  }
+  .bcom-subnav-strip {
+    padding: 6px 0 !important;
+  }
+  .bcom-pill {
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+  }
+}
