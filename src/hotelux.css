@@ -9,17 +9,17 @@
 :root {
   --hotelux-font: "Plus Jakarta Sans", "Roboto", -apple-system, sans-serif;
   --hotelux-font-two: "Playfair Display", Georgia, serif;
-  --hotelux-gray: #585b6b;
-  --hotelux-gray-rgb: 88, 91, 107;
-  --hotelux-base: #b99c87;          /* Hotelux Signature Gold Sand Dune */
-  --hotelux-base-rgb: 185, 156, 135;
+  --hotelux-gray: #374151;
+  --hotelux-gray-rgb: 55, 65, 81;
+  --hotelux-base: #ea580c;          /* Hotelux Signature Gold Sand Dune */
+  --hotelux-base-rgb: 234, 88, 12;
   --hotelux-primary: #f6f3ee;       /* Hotelux Warm Linen Surface */
   --hotelux-primary-rgb: 246, 243, 238;
-  --hotelux-black: #191628;         /* Hotelux Deep Royal Midnight Charcoal */
-  --hotelux-black-rgb: 25, 22, 40;
+  --hotelux-black: #111827;         /* Hotelux Deep Royal Midnight Charcoal */
+  --hotelux-black-rgb: 17, 24, 39;
   --hotelux-white: #ffffff;
   --hotelux-white-rgb: 255, 255, 255;
-  --hotelux-border: #e6e0da;
+  --hotelux-border: #fed7aa;
   --hotelux-border-light: rgba(185, 156, 135, 0.28);
   --hotelux-gold-glow: rgba(185, 156, 135, 0.35);
   --wa-green: #25D366;
@@ -429,7 +429,7 @@ ul {
   height: 48px;
   border-radius: 50%;
   background-color: #ffffff;
-  box-shadow: 0 4px 14px rgba(255, 77, 77, 0.18);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1314,7 +1314,9 @@ ul {
 .sliding-text {
   position: relative;
   display: block;
-  background-color: var(--hotelux-black);
+  background-color: #ea580c;
+  border-top: 2px solid #fed7aa;
+  border-bottom: 2px solid #fed7aa;
   padding: 24px 0;
   overflow: hidden;
   border-top: 2px solid var(--hotelux-base);
@@ -1357,7 +1359,9 @@ ul {
 .counter-one {
   position: relative;
   display: block;
-  background-color: var(--hotelux-black);
+  background-color: #ea580c;
+  border-top: 2px solid #fed7aa;
+  border-bottom: 2px solid #fed7aa;
   padding: 85px 0;
   color: var(--hotelux-white);
 }
@@ -3314,7 +3318,8 @@ ul {
 }
 
 .patron-hero-card {
-  background: linear-gradient(135deg, #191628 0%, #2a223f 100%);
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  border: 1px solid #fdba74;
   border-radius: 16px;
   padding: 44px 40px;
   color: #ffffff;
@@ -3328,9 +3333,9 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 77, 77, 0.18);
-  border: 1px solid rgba(255, 77, 77, 0.4);
-  color: #ff6b6b;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -3348,7 +3353,7 @@ ul {
 }
 
 .patron-hero-title span {
-  color: #FF4D4D;
+  color: #fed7aa;
 }
 
 .patron-hero-desc {
@@ -3377,7 +3382,7 @@ ul {
 .patron-metric-box strong {
   display: block;
   font-size: 22px;
-  color: #FF4D4D;
+  color: #ffffff;
   font-weight: 800;
   margin-bottom: 4px;
 }
@@ -3486,7 +3491,7 @@ ul {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: #FF4D4D;
+  background: #ea580c;
   color: #ffffff;
   font-weight: 800;
   font-size: 16px;
@@ -3785,7 +3790,7 @@ p {
    ========================================================================== */
 .bcom-header {
   position: relative;
-  background-color: #003580;
+  background-color: #ea580c;
   color: #ffffff;
   z-index: 999;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
@@ -3834,7 +3839,7 @@ p {
 }
 
 .bcom-logo-dot {
-  color: #00BAF2;
+  color: #fed7aa;
 }
 
 .bcom-logo-slogan {
@@ -3919,7 +3924,7 @@ p {
 
 .bcom-action-btn.register-btn {
   background: #ffffff;
-  color: #003580;
+  color: #ea580c;
   border: 1px solid #ffffff;
 }
 
@@ -4003,7 +4008,7 @@ p {
   top: 100%;
   left: 0;
   right: 0;
-  background: #00224f;
+  background: #9a3412;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   z-index: 1000;
@@ -4065,7 +4070,7 @@ p {
 
 .bcom-drawer-btn.call-drawer-btn {
   background: #ffffff;
-  color: #003580;
+  color: #ea580c;
 }
 
 @media (max-width: 991px) {
@@ -4077,5 +4082,161 @@ p {
   }
   .bcom-mobile-toggle {
     display: block;
+  }
+}
+
+
+/* ==========================================================================
+   ORANGE & WHITE THEME ENFORCEMENT & HIGH CONTRAST TEXT RULES
+   User Rule: Theme in orange & white. Text is WHITE on orange, BLACK elsewhere.
+   ========================================================================== */
+.bcom-header {
+  background-color: #ea580c !important;
+  color: #ffffff !important;
+}
+.bcom-header a, 
+.bcom-header button, 
+.bcom-header span, 
+.bcom-header i {
+  color: #ffffff !important;
+}
+.bcom-header .bcom-action-btn.register-btn {
+  background: #ffffff !important;
+  color: #ea580c !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 800 !important;
+}
+.bcom-header .bcom-action-btn.register-btn:hover {
+  background: #fff7ed !important;
+  color: #c2410c !important;
+}
+.bcom-header .bcom-action-btn.wa-btn {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border: 1px solid #16a34a !important;
+}
+.bcom-header .bcom-pill.active {
+  border: 1.5px solid #ffffff !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+.bcom-header .bcom-mobile-drawer {
+  background: #9a3412 !important;
+}
+
+/* Primary Theme Buttons - Solid Orange with Pure White Text */
+.thm-btn {
+  background-color: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+}
+.thm-btn:hover {
+  background-color: #c2410c !important;
+  border-color: #c2410c !important;
+  color: #ffffff !important;
+}
+.thm-btn-black {
+  background-color: #111827 !important;
+  border-color: #111827 !important;
+  color: #ffffff !important;
+}
+.thm-btn-black:hover {
+  background-color: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+}
+
+/* High Contrast Headings and Text On Light Surfaces */
+body, html {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  color: #111827;
+  background-color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #111827 !important;
+  letter-spacing: -0.015em;
+}
+p {
+  color: #374151 !important;
+}
+
+/* Orange containers with White Text */
+.patron-hero-card,
+.patron-hero-card h2,
+.patron-hero-card h2 span,
+.patron-hero-card p,
+.patron-hero-card strong,
+.patron-hero-card span,
+.sliding-text,
+.sliding-text li,
+.sliding-text span,
+.counter-one,
+.counter-one h3,
+.counter-one p,
+.counter-one i,
+.counter-one span {
+  color: #ffffff !important;
+}
+
+/* Patron BHK Buttons */
+.patron-bhk-btn.active {
+  background: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+}
+.patron-bhk-btn {
+  color: #111827 !important;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+}
+
+/* Room filter tabs */
+.our-rooms-tab-btn.active {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  border-color: #ea580c !important;
+}
+.our-rooms-tab-btn {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1.5px solid #fed7aa !important;
+  font-weight: 700 !important;
+}
+.our-rooms-tab-btn:hover {
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+}
+
+/* Sticky Mobile Bottom Bar */
+@media (max-width: 768px) {
+  .mobile-bottom-bar {
+    background-color: #ffffff !important;
+    border-top: 1.5px solid #fed7aa !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+  }
+  .call-action {
+    color: #111827 !important;
+  }
+  .call-action .mobile-bar-icon {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  .guest-action {
+    color: #15803d !important;
+  }
+  .guest-action .mobile-bar-icon {
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+  }
+  .owner-action {
+    color: #ea580c !important;
+  }
+  .owner-action .mobile-bar-icon {
+    background-color: #ea580c !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35) !important;
   }
 }

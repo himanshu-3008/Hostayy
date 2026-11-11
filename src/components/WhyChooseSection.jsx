@@ -28,27 +28,27 @@ export default function WhyChooseSection() {
             <div className="why-choose-one__left">
               <div className="section-title text-left sec-title-animation animation-style2">
                 <div className="section-title__tagline-box">
-                  <span className="section-title__tagline">STRATEGIC LOCATION &amp; ADVANTAGES</span>
+                  <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>STRATEGIC LOCATION &amp; ADVANTAGES</span>
                 </div>
-                <h2 className="section-title__title title-animation">
+                <h2 className="section-title__title title-animation" style={{ color: '#111827' }}>
                   The Preferred Choice Near <br />
-                  <span>Yashobhoomi (IICC)</span>
+                  <span style={{ color: '#ea580c' }}>Yashobhoomi (IICC)</span>
                 </h2>
               </div>
-              <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: 'var(--hotelux-gray)', marginBottom: '28px' }}>
+              <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: '#374151', marginBottom: '28px' }}>
                 Located in prime Dwarka Sector 23, Hostayy provides turnkey 1, 2, and 3 BHK serviced residences engineered for corporate executives, exhibition delegates, and relocating families seeking extended stays without hotel constraints.
               </p>
 
               <ul className="why-choose-one__list list-unstyled" style={{ listStyle: 'none', padding: 0, margin: '0 0 28px' }}>
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-location-dot" style={{ color: 'var(--hotelux-base)', fontSize: '26px' }}></i>
+                    <i className="fas fa-location-dot" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
-                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: 'var(--hotelux-black)', marginBottom: '6px' }}>
+                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
                       3 Minutes to Yashobhoomi IICC &amp; 10 Mins to Airport
                     </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--hotelux-gray)', lineHeight: '1.6', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: '#374151', lineHeight: '1.6', margin: 0 }}>
                       Skip the chaotic Delhi traffic. Quick seamless access to Asia's largest convention centre, IGI Airport (T3), and the Airport Express Metro Line.
                     </p>
                   </div>
@@ -56,13 +56,13 @@ export default function WhyChooseSection() {
 
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-percent" style={{ color: 'var(--hotelux-base)', fontSize: '26px' }}></i>
+                    <i className="fas fa-percent" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
-                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: 'var(--hotelux-black)', marginBottom: '6px' }}>
+                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
                       Zero Brokerage &amp; Direct Corporate Quotations
                     </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--hotelux-gray)', lineHeight: '1.6', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: '#374151', lineHeight: '1.6', margin: 0 }}>
                       No 15-day broker commission and no 18% OTA markups. Transparent all-inclusive monthly billing with GST input tax credit for businesses.
                     </p>
                   </div>
@@ -70,13 +70,13 @@ export default function WhyChooseSection() {
 
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-kitchen-set" style={{ color: 'var(--hotelux-base)', fontSize: '26px' }}></i>
+                    <i className="fas fa-kitchen-set" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
-                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: 'var(--hotelux-black)', marginBottom: '6px' }}>
+                    <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
                       Home Comfort: Kitchens, 300 Mbps Wi-Fi &amp; Laundry
                     </h3>
-                    <p style={{ fontSize: '14px', color: 'var(--hotelux-gray)', lineHeight: '1.6', margin: 0 }}>
+                    <p style={{ fontSize: '14px', color: '#374151', lineHeight: '1.6', margin: 0 }}>
                       Fully equipped modular kitchens, automatic washing machines, ergonomic work desks, and regular housekeeping tailored for 1-12 month stays.
                     </p>
                   </div>
@@ -84,7 +84,7 @@ export default function WhyChooseSection() {
               </ul>
 
               <div className="why-choose-one__btn-box" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                <a href="#room" className="thm-btn">
+                <a href="#room" className="thm-btn" style={{ background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
                   Explore 1, 2 &amp; 3 BHK Stays
                 </a>
                 <button 
@@ -107,34 +107,34 @@ export default function WhyChooseSection() {
                 className="why-choose-connectivity-card"
                 style={{
                   background: '#ffffff',
-                  border: '2px solid var(--hotelux-border)',
+                  border: '1.5px solid #fed7aa',
                   borderRadius: '12px',
-                  boxShadow: '0 20px 50px rgba(25, 22, 40, 0.1)',
+                  boxShadow: '0 20px 50px rgba(234, 88, 12, 0.08)',
                   marginBottom: '20px'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #f1ece7', paddingBottom: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff0f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF4D4D', fontSize: '18px', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #fed7aa', paddingBottom: '14px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', fontSize: '18px', flexShrink: 0 }}>
                     <i className="fa-solid fa-map-location-dot"></i>
                   </div>
                   <div>
-                    <h4 style={{ margin: 0, fontSize: '17px', color: '#191628', fontWeight: 700 }}>Dwarka Sector 23 Connectivity Matrix</h4>
-                    <span style={{ fontSize: '12px', color: '#64748b' }}>Strategic Proximity to Major Delhi NCR Hubs</span>
+                    <h4 style={{ margin: 0, fontSize: '17px', color: '#111827', fontWeight: 800 }}>Dwarka Sector 23 Connectivity Matrix</h4>
+                    <span style={{ fontSize: '12px', color: '#374151', fontWeight: 500 }}>Strategic Proximity to Major Delhi NCR Hubs</span>
                   </div>
                 </div>
 
                 <div className="why-choose-connectivity-grid">
                   {landmarkItems.map((lm, idx) => (
-                    <div key={idx} className="why-choose-connectivity-item">
+                    <div key={idx} className="why-choose-connectivity-item" style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '8px', padding: '10px 12px' }}>
                       <div className="why-choose-lm-left" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(185, 156, 135, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                          <i className={`fa-solid ${lm.icon}`} style={{ color: 'var(--hotelux-base)', fontSize: '13px' }}></i>
+                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`fa-solid ${lm.icon}`} style={{ color: '#ea580c', fontSize: '13px' }}></i>
                         </div>
-                        <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155', lineHeight: 1.3 }}>
+                        <span style={{ fontSize: '13px', fontWeight: 700, color: '#111827', lineHeight: 1.3 }}>
                           {lm.name}
                         </span>
                       </div>
-                      <span className="why-choose-lm-time" style={{ fontSize: '11.5px', fontWeight: 800, color: '#191628', background: '#ffffff', padding: '3px 8px', borderRadius: '12px', border: '1px solid #e2dcd5', flexShrink: 0, whiteSpace: 'nowrap' }}>
+                      <span className="why-choose-lm-time" style={{ fontSize: '11.5px', fontWeight: 800, color: '#ffffff', background: '#ea580c', padding: '4px 10px', borderRadius: '12px', border: '1px solid #ea580c', flexShrink: 0, whiteSpace: 'nowrap' }}>
                         {lm.time}
                       </span>
                     </div>
@@ -142,35 +142,37 @@ export default function WhyChooseSection() {
                 </div>
               </div>
 
-              {/* Host Profile & Rating Strip */}
+              {/* Host Profile & Rating Strip (Solid Orange with Pure White Text) */}
               <div 
                 className="why-choose-host-strip"
                 style={{
-                  background: 'rgba(25, 22, 40, 0.95)',
+                  background: '#ea580c',
                   color: '#ffffff',
                   borderRadius: '10px',
-                  border: '1px solid var(--hotelux-base)',
+                  border: '1px solid #c2410c',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
-                  gap: '12px'
+                  gap: '12px',
+                  padding: '16px 20px',
+                  boxShadow: '0 8px 24px rgba(234, 88, 12, 0.25)'
                 }}
               >
                 <div>
-                  <h4 style={{ margin: '0 0 3px', color: '#ffffff', fontSize: '16px', fontWeight: 700 }}>
+                  <h4 style={{ margin: '0 0 3px', color: '#ffffff', fontSize: '16px', fontWeight: 800 }}>
                     Mohit Chaudhary &bull; Hostayy
                   </h4>
-                  <p style={{ margin: 0, fontSize: '12.5px', color: '#cbd5e1' }}>
+                  <p style={{ margin: 0, fontSize: '12.5px', color: '#fff7ed', fontWeight: 600 }}>
                     4.98 ★ Superhost &bull; Serving Yashobhoomi Delegates &amp; Expats
                   </p>
                 </div>
                 <a 
                   href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
-                  className="thm-btn thm-btn-outline"
-                  style={{ padding: '8px 16px', fontSize: '12px', color: 'var(--hotelux-base)', borderColor: 'var(--hotelux-base)' }}
+                  className="thm-btn"
+                  style={{ padding: '8px 18px', fontSize: '12px', background: '#ffffff', color: '#ea580c', borderColor: '#ffffff', fontWeight: 800 }}
                 >
-                  <i className="fa-solid fa-phone" style={{ marginRight: '6px' }}></i>
+                  <i className="fa-solid fa-phone" style={{ marginRight: '6px', color: '#ea580c' }}></i>
                   <span>Call {HOSTAYY_CONFIG.displayPhone}</span>
                 </a>
               </div>

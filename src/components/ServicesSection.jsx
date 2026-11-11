@@ -55,28 +55,28 @@ export default function ServicesSection() {
           <div className="col-xl-4 col-lg-5">
             <div className="section-title text-left" style={{ marginBottom: '20px' }}>
               <div className="section-title__tagline-box">
-                <span className="section-title__tagline">COMPREHENSIVE SERVICES</span>
+                <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>COMPREHENSIVE SERVICES</span>
               </div>
-              <h2 className="section-title__title">
-                Turnkey Living For <span>Long-Term &amp; Corporate Stays</span>
+              <h2 className="section-title__title" style={{ color: '#111827' }}>
+                Turnkey Living For <span style={{ color: '#ea580c' }}>Long-Term &amp; Corporate Stays</span>
               </h2>
             </div>
-            <p className="services-two__text-1" style={{ fontSize: '15px', color: 'var(--hotelux-gray)', lineHeight: '1.75' }}>
+            <p className="services-two__text-1" style={{ fontSize: '15px', color: '#374151', lineHeight: '1.75' }}>
               Hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Experience fully serviced 1, 2, and 3 BHK residences with complete home comfort, five-star hotel hygiene, and 0% brokerage.
             </p>
 
             {/* Quick Benefits Bullet Points */}
             <div style={{ marginTop: '20px', marginBottom: '25px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--hotelux-black)', fontWeight: 600 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: 'var(--hotelux-base)' }}></i>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
                 <span>Zero Brokerage &amp; Zero Hidden Fees</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--hotelux-black)', fontWeight: 600 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: 'var(--hotelux-base)' }}></i>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
                 <span>Flexible Leases (1 to 12+ Months)</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: 'var(--hotelux-black)', fontWeight: 600 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: 'var(--hotelux-base)' }}></i>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
                 <span>Walking/Short Drive to Yashobhoomi IICC</span>
               </div>
             </div>
@@ -100,12 +100,12 @@ export default function ServicesSection() {
             <div className="row">
               {services.map((srv, idx) => (
                 <div key={idx} className="col-md-6" style={{ marginBottom: '24px' }}>
-                  <div className="services-two__single" style={{ height: '100%' }}>
-                    <div className="services-two__icon">
+                  <div className="services-two__single" style={{ height: '100%', background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '12px', padding: '28px 24px' }}>
+                    <div className="services-two__icon" style={{ background: '#fff7ed', color: '#ea580c', border: '1.5px solid #fed7aa' }}>
                       <i className={srv.icon}></i>
                     </div>
-                    <h3 className="services-two__title" style={{ fontSize: '18px', marginBottom: '8px' }}>{srv.title}</h3>
-                    <p className="services-two__desc" style={{ fontSize: '13.5px', lineHeight: '1.6' }}>{srv.desc}</p>
+                    <h3 className="services-two__title" style={{ fontSize: '18px', marginBottom: '8px', color: '#111827', fontWeight: 800 }}>{srv.title}</h3>
+                    <p className="services-two__desc" style={{ fontSize: '13.5px', lineHeight: '1.6', color: '#374151' }}>{srv.desc}</p>
                   </div>
                 </div>
               ))}

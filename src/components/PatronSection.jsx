@@ -133,76 +133,76 @@ Please arrange a free property audit and revenue feasibility report.`;
 
         {/* 4 Core Pillars of Hostayy Patron */}
         <div className="patron-pillars-header">
-          <span className="section-title__tagline">WHY PROPERTY OWNERS CHOOSE HOSTAYY PATRON</span>
-          <h3>Engineered to Maximize Returns While Protecting Your Asset</h3>
+          <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>WHY PROPERTY OWNERS CHOOSE HOSTAYY PATRON</span>
+          <h3 style={{ color: '#111827', fontWeight: 800 }}>Engineered to Maximize Returns While Protecting Your Asset</h3>
         </div>
 
         <div className="patron-pillars-grid">
-          <div className="patron-pillar-card">
+          <div className="patron-pillar-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
             <div className="pillar-icon-box" style={{ background: '#ecfdf5', color: '#10b981' }}>
               <i className="fa-solid fa-chart-line-up"></i>
             </div>
-            <h4>Higher Revenue &amp; Dynamic Pricing</h4>
-            <p>
+            <h4 style={{ color: '#111827', fontWeight: 800 }}>Higher Revenue &amp; Dynamic Pricing</h4>
+            <p style={{ color: '#374151' }}>
               Unlike traditional fixed leases, our dynamic pricing algorithms capture premium nightly &amp; monthly corporate demand driven by Yashobhoomi IICC conventions and airport proximity.
             </p>
           </div>
 
-          <div className="patron-pillar-card">
+          <div className="patron-pillar-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
             <div className="pillar-icon-box" style={{ background: '#fff7ed', color: '#ea580c' }}>
               <i className="fa-solid fa-wand-magic-sparkles"></i>
             </div>
-            <h4>100% Hands-Off Operations</h4>
-            <p>
+            <h4 style={{ color: '#111827', fontWeight: 800 }}>100% Hands-Off Operations</h4>
+            <p style={{ color: '#374151' }}>
               No more tenant phone calls or maintenance headaches. We manage 400TC linen turnover, daily housekeeping, 24/7 guest check-in, key handover, and proactive repairs.
             </p>
           </div>
 
-          <div className="patron-pillar-card">
+          <div className="patron-pillar-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
             <div className="pillar-icon-box" style={{ background: '#eff6ff', color: '#3b82f6' }}>
               <i className="fa-solid fa-user-shield"></i>
             </div>
-            <h4>Strict ID Vetting &amp; Asset Safety</h4>
-            <p>
+            <h4 style={{ color: '#111827', fontWeight: 800 }}>Strict ID Vetting &amp; Asset Safety</h4>
+            <p style={{ color: '#374151' }}>
               Mandatory government ID verification (Aadhaar/Passport), corporate guest profiles, zero-party tolerance, and a comprehensive property damage protection guarantee.
             </p>
           </div>
 
-          <div className="patron-pillar-card">
-            <div className="pillar-icon-box" style={{ background: '#fdf2f8', color: '#db2777' }}>
+          <div className="patron-pillar-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
+            <div className="pillar-icon-box" style={{ background: '#fff7ed', color: '#ea580c' }}>
               <i className="fa-solid fa-vault"></i>
             </div>
-            <h4>Guaranteed 1st-of-Month Payouts</h4>
-            <p>
+            <h4 style={{ color: '#111827', fontWeight: 800 }}>Guaranteed 1st-of-Month Payouts</h4>
+            <p style={{ color: '#374151' }}>
               Earn with total peace of mind. Receive automated direct bank deposits by the 1st of every calendar month accompanied by a fully transparent digital performance ledger.
             </p>
           </div>
         </div>
 
         {/* 3-Step Simple Onboarding Process (OYO Patron Pattern) */}
-        <div className="patron-onboarding-wrap">
+        <div className="patron-onboarding-wrap" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
           <div className="patron-pillars-header text-center" style={{ marginBottom: '32px' }}>
-            <span className="section-title__tagline">3-STEP SIMPLE ONBOARDING</span>
-            <h3>From Registration to First Monthly Payout in 48 Hours</h3>
+            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>3-STEP SIMPLE ONBOARDING</span>
+            <h3 style={{ color: '#111827', fontWeight: 800 }}>From Registration to First Monthly Payout in 48 Hours</h3>
           </div>
 
           <div className="patron-steps-grid">
-            <div className="patron-step-card">
-              <div className="step-num-badge">1</div>
-              <h4>Share Property Details</h4>
-              <p>Tell us your apartment location in Delhi NCR/Dwarka and BHK configuration via WhatsApp or our online form.</p>
+            <div className="patron-step-card" style={{ background: '#fffaf5', border: '1px solid #fed7aa' }}>
+              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff' }}>1</div>
+              <h4 style={{ color: '#111827', fontWeight: 800 }}>Share Property Details</h4>
+              <p style={{ color: '#374151' }}>Tell us your apartment location in Delhi NCR/Dwarka and BHK configuration via WhatsApp or our online form.</p>
             </div>
 
-            <div className="patron-step-card">
-              <div className="step-num-badge">2</div>
-              <h4>Free On-Site Audit &amp; Projection</h4>
-              <p>Superhost Mohit Chaudhary conducts a personalized property audit and provides an exact revenue feasibility report.</p>
+            <div className="patron-step-card" style={{ background: '#fffaf5', border: '1px solid #fed7aa' }}>
+              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff' }}>2</div>
+              <h4 style={{ color: '#111827', fontWeight: 800 }}>Free On-Site Audit &amp; Projection</h4>
+              <p style={{ color: '#374151' }}>Superhost Mohit Chaudhary conducts a personalized property audit and provides an exact revenue feasibility report.</p>
             </div>
 
-            <div className="patron-step-card">
-              <div className="step-num-badge">3</div>
-              <h4>Go Live &amp; Start Earning</h4>
-              <p>We stage your flat, take architectural photography, onboard corporate clients, and transfer your first payout on the 1st.</p>
+            <div className="patron-step-card" style={{ background: '#fffaf5', border: '1px solid #fed7aa' }}>
+              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff' }}>3</div>
+              <h4 style={{ color: '#111827', fontWeight: 800 }}>Go Live &amp; Start Earning</h4>
+              <p style={{ color: '#374151' }}>We stage your flat, take architectural photography, onboard corporate clients, and transfer your first payout on the 1st.</p>
             </div>
           </div>
         </div>
@@ -210,20 +210,20 @@ Please arrange a free property audit and revenue feasibility report.`;
         {/* Dynamic Yield Estimator & Owner Lead Form Grid */}
         <div className="patron-calculator-lead-grid">
           {/* Left Column: Interactive Yield Estimator */}
-          <div className="patron-calc-card">
+          <div className="patron-calc-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255, 77, 77, 0.1)', color: '#FF4D4D', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' }}>
+              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', color: '#ea580c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' }}>
                 <i className="fa-solid fa-calculator"></i>
               </div>
               <div>
-                <h4 style={{ margin: 0, fontSize: '18px', color: '#191628', fontWeight: 800 }}>Hostayy Patron Yield Estimator</h4>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>Calculate your projected monthly net earnings</span>
+                <h4 style={{ margin: 0, fontSize: '18px', color: '#111827', fontWeight: 800 }}>Hostayy Patron Yield Estimator</h4>
+                <span style={{ fontSize: '12px', color: '#374151', fontWeight: 500 }}>Calculate your projected monthly net earnings</span>
               </div>
             </div>
 
             {/* BHK Selector */}
             <div style={{ marginBottom: '18px' }}>
-              <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#191628', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <label style={{ display: 'block', fontSize: '12px', fontWeight: 800, color: '#111827', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 Select Configuration
               </label>
               <div className="patron-bhk-pills">
@@ -248,8 +248,8 @@ Please arrange a free property audit and revenue feasibility report.`;
             {/* Range Slider */}
             <div style={{ marginBottom: '22px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '8px' }}>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155' }}>Estimated Monthly Gross Revenue</span>
-                <span style={{ fontSize: '17px', fontWeight: 800, color: '#FF4D4D' }}>
+                <span style={{ fontSize: '13px', fontWeight: 700, color: '#374151' }}>Estimated Monthly Gross Revenue</span>
+                <span style={{ fontSize: '17px', fontWeight: 800, color: '#ea580c' }}>
                   ₹{estMonthlyGross.toLocaleString('en-IN')} / mo
                 </span>
               </div>
@@ -261,9 +261,9 @@ Please arrange a free property audit and revenue feasibility report.`;
                 step="5000" 
                 className="tabcalc-slider"
                 onChange={(e) => setEstMonthlyGross(Number(e.target.value))}
-                style={{ width: '100%' }}
+                style={{ width: '100%', accentColor: '#ea580c' }}
               />
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#64748B', marginTop: '6px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#374151', marginTop: '6px' }}>
                 <span>₹60,000 (Min)</span>
                 <span>₹1,80,000 (Avg)</span>
                 <span>₹4,50,000 (Prime)</span>
@@ -272,27 +272,27 @@ Please arrange a free property audit and revenue feasibility report.`;
 
             {/* Output Metric Cards */}
             <div className="patron-calc-results">
-              <div className="patron-result-item highlight">
-                <span className="res-label">Monthly Net Bank Payout</span>
-                <strong className="res-val" style={{ color: '#10b981' }}>₹{netOwnerPayout.toLocaleString('en-IN')}</strong>
-                <span className="res-note">Direct transfer on 1st of every month</span>
+              <div className="patron-result-item highlight" style={{ background: '#ea580c', border: '1px solid #c2410c', color: '#ffffff' }}>
+                <span className="res-label" style={{ color: '#ffffff', opacity: 0.95, fontWeight: 700 }}>Monthly Net Bank Payout</span>
+                <strong className="res-val" style={{ color: '#ffffff', fontWeight: 800 }}>₹{netOwnerPayout.toLocaleString('en-IN')}</strong>
+                <span className="res-note" style={{ color: '#fff7ed', fontWeight: 500 }}>Direct transfer on 1st of every month</span>
               </div>
 
-              <div className="patron-result-item">
-                <span className="res-label">Annual Net Projection</span>
-                <strong className="res-val" style={{ color: '#191628' }}>₹{annualNet.toLocaleString('en-IN')}</strong>
-                <span className="res-note">Zero broker fees or vacancy loss</span>
+              <div className="patron-result-item" style={{ background: '#fffaf5', border: '1px solid #fed7aa' }}>
+                <span className="res-label" style={{ color: '#374151', fontWeight: 700 }}>Annual Net Projection</span>
+                <strong className="res-val" style={{ color: '#111827', fontWeight: 800 }}>₹{annualNet.toLocaleString('en-IN')}</strong>
+                <span className="res-note" style={{ color: '#374151' }}>Zero broker fees or vacancy loss</span>
               </div>
             </div>
 
             {/* Extra Net Income vs Traditional Rent */}
-            <div className="patron-surplus-banner">
+            <div className="patron-surplus-banner" style={{ background: '#fff7ed', border: '1px solid #fed7aa' }}>
               <div>
-                <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#b45309', fontWeight: 800 }}>
+                <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#ea580c', fontWeight: 800 }}>
                   PATRON ADVANTAGE
                 </span>
-                <p style={{ margin: '2px 0 0', fontSize: '13.5px', color: '#78350f', fontWeight: 700 }}>
-                  You earn approx. <span style={{ color: '#047857', fontWeight: 800 }}>+₹{annualNetSurplus.toLocaleString('en-IN')} extra/year</span> vs traditional lease!
+                <p style={{ margin: '2px 0 0', fontSize: '13.5px', color: '#111827', fontWeight: 700 }}>
+                  You earn approx. <span style={{ color: '#16a34a', fontWeight: 800 }}>+₹{annualNetSurplus.toLocaleString('en-IN')} extra/year</span> vs traditional lease!
                 </p>
               </div>
             </div>
@@ -309,20 +309,20 @@ Please arrange a free property audit and revenue feasibility report.`;
           </div>
 
           {/* Right Column: Fast Callback & Property Registration Form */}
-          <div className="patron-lead-card">
+          <div className="patron-lead-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px' }}>
-              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#ecfdf5', color: '#10b981', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' }}>
+              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', color: '#ea580c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' }}>
                 <i className="fa-solid fa-file-signature"></i>
               </div>
               <div>
-                <h4 style={{ margin: 0, fontSize: '18px', color: '#191628', fontWeight: 800 }}>List Your Property (Patron)</h4>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>Request a free feasibility inspection &amp; earnings plan</span>
+                <h4 style={{ margin: 0, fontSize: '18px', color: '#111827', fontWeight: 800 }}>List Your Property (Patron)</h4>
+                <span style={{ fontSize: '12px', color: '#374151', fontWeight: 500 }}>Request a free feasibility inspection &amp; earnings plan</span>
               </div>
             </div>
 
             <form onSubmit={handleLeadFormSubmit} className="patron-lead-form">
               <div className="form-group" style={{ marginBottom: '14px' }}>
-                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 700, color: '#191628', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 800, color: '#111827', marginBottom: '6px' }}>
                   Your Full Name
                 </label>
                 <input 
@@ -331,12 +331,13 @@ Please arrange a free property audit and revenue feasibility report.`;
                   value={ownerName} 
                   onChange={(e) => setOwnerName(e.target.value)}
                   className="patron-input"
+                  style={{ border: '1px solid #fed7aa', color: '#111827' }}
                   required
                 />
               </div>
 
               <div className="form-group" style={{ marginBottom: '14px' }}>
-                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 700, color: '#191628', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 800, color: '#111827', marginBottom: '6px' }}>
                   Phone / WhatsApp Number
                 </label>
                 <input 
@@ -345,12 +346,13 @@ Please arrange a free property audit and revenue feasibility report.`;
                   value={ownerPhone} 
                   onChange={(e) => setOwnerPhone(e.target.value)}
                   className="patron-input"
+                  style={{ border: '1px solid #fed7aa', color: '#111827' }}
                   required
                 />
               </div>
 
               <div className="form-group" style={{ marginBottom: '14px' }}>
-                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 700, color: '#191628', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 800, color: '#111827', marginBottom: '6px' }}>
                   Property Location in Delhi NCR
                 </label>
                 <input 
@@ -359,18 +361,20 @@ Please arrange a free property audit and revenue feasibility report.`;
                   value={ownerLocation} 
                   onChange={(e) => setOwnerLocation(e.target.value)}
                   className="patron-input"
+                  style={{ border: '1px solid #fed7aa', color: '#111827' }}
                   required
                 />
               </div>
 
               <div className="form-group" style={{ marginBottom: '18px' }}>
-                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 700, color: '#191628', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '12.5px', fontWeight: 800, color: '#111827', marginBottom: '6px' }}>
                   Apartment Configuration
                 </label>
                 <select 
                   value={ownerConfig} 
                   onChange={(e) => setOwnerConfig(e.target.value)}
                   className="patron-input"
+                  style={{ border: '1px solid #fed7aa', color: '#111827' }}
                 >
                   <option value="1 BHK Serviced Apartment">1 BHK Serviced Apartment</option>
                   <option value="2 BHK Executive Flat">2 BHK Executive Flat</option>
@@ -380,15 +384,15 @@ Please arrange a free property audit and revenue feasibility report.`;
                 </select>
               </div>
 
-              <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '12px 14px', borderRadius: '8px', marginBottom: '18px', fontSize: '12px', color: '#475569', lineHeight: 1.5 }}>
-                <i className="fa-solid fa-lock" style={{ color: '#10b981', marginRight: '6px' }}></i>
+              <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', padding: '12px 14px', borderRadius: '8px', marginBottom: '18px', fontSize: '12px', color: '#374151', lineHeight: 1.5 }}>
+                <i className="fa-solid fa-lock" style={{ color: '#16a34a', marginRight: '6px' }}></i>
                 Strict owner privacy. Your details are shared only with founder Mohit Chaudhary for direct consultation.
               </div>
 
               <button 
                 type="submit" 
                 className="thm-btn" 
-                style={{ width: '100%', justifyContent: 'center', padding: '14px 20px', fontSize: '14px' }}
+                style={{ width: '100%', justifyContent: 'center', padding: '14px 20px', fontSize: '14px', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}
               >
                 <i className="fa-solid fa-paper-plane"></i>
                 <span>Submit &amp; Schedule Free Audit</span>
@@ -400,26 +404,26 @@ Please arrange a free property audit and revenue feasibility report.`;
         {/* Traditional 11-Month Lease vs Hostayy Patron Comparison Table */}
         <div className="patron-comparison-wrap">
           <div className="patron-pillars-header text-center" style={{ marginBottom: '28px' }}>
-            <span className="section-title__tagline">PERFORMANCE BENCHMARK</span>
-            <h3>Traditional 11-Month Lease vs. Hostayy Patron Partnership</h3>
+            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>PERFORMANCE BENCHMARK</span>
+            <h3 style={{ color: '#111827', fontWeight: 800 }}>Traditional 11-Month Lease vs. Hostayy Patron Partnership</h3>
           </div>
 
           <div className="compare-wrap">
-            <div className="compare-row head">
-              <div className="compare-cell">Operational Dimension</div>
-              <div className="compare-cell without">Traditional 11-Month Tenant Lease</div>
-              <div className="compare-cell with">Hostayy Patron Partnership</div>
+            <div className="compare-row head" style={{ background: '#ea580c', color: '#ffffff' }}>
+              <div className="compare-cell" style={{ color: '#ffffff' }}>Operational Dimension</div>
+              <div className="compare-cell without" style={{ color: '#ffffff' }}>Traditional 11-Month Tenant Lease</div>
+              <div className="compare-cell with" style={{ color: '#ffffff' }}>Hostayy Patron Partnership</div>
             </div>
 
             {comparisonRows.map((row, idx) => (
               <div key={idx} className="compare-row">
-                <div className="compare-cell label">{row.dimension}</div>
-                <div className="compare-cell without">
+                <div className="compare-cell label" style={{ color: '#111827', fontWeight: 700 }}>{row.dimension}</div>
+                <div className="compare-cell without" style={{ color: '#374151' }}>
                   <span className="compare-x">✕</span>
                   <span>{row.traditional}</span>
                 </div>
-                <div className="compare-cell with">
-                  <span className="compare-check">✓</span>
+                <div className="compare-cell with" style={{ color: '#111827' }}>
+                  <span className="compare-check" style={{ color: '#16a34a' }}>✓</span>
                   <span><strong>{row.hostayy}</strong></span>
                 </div>
               </div>
@@ -428,16 +432,16 @@ Please arrange a free property audit and revenue feasibility report.`;
         </div>
 
         {/* Owner Personal Stays Privilege Strip */}
-        <div className="patron-owner-stay-strip">
+        <div className="patron-owner-stay-strip" style={{ background: '#fffaf5', border: '1.5px solid #fed7aa' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#fff0f0', color: '#FF4D4D', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', flexShrink: 0 }}>
+            <div style={{ width: '44px', height: '44px', borderRadius: '50%', background: '#fff7ed', color: '#ea580c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', flexShrink: 0 }}>
               <i className="fa-solid fa-umbrella-beach"></i>
             </div>
             <div>
-              <h4 style={{ margin: 0, fontSize: '16px', color: '#191628', fontWeight: 800 }}>
+              <h4 style={{ margin: 0, fontSize: '16px', color: '#111827', fontWeight: 800 }}>
                 Unlimited Personal Stays for Property Owners
               </h4>
-              <p style={{ margin: '3px 0 0', fontSize: '13px', color: '#64748b' }}>
+              <p style={{ margin: '3px 0 0', fontSize: '13px', color: '#374151' }}>
                 Visiting Delhi with your family? Enjoy free personal stays in your own apartment anytime it isn't booked. Simply message Mohit on WhatsApp to block your dates.
               </p>
             </div>

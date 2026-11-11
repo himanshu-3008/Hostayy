@@ -33,12 +33,12 @@
   --charcoal-light: #2E2E34;
 
   /* Refined Editorial Palette */
-  --coral-primary: #C35E3B;    /* Warm Saffron Terracotta — grounded Indian luxury */
-  --coral-hover: #AF4F2E;
+  --coral-primary: #ea580c;    /* Warm Saffron Terracotta — grounded Indian luxury */
+  --coral-hover: #c2410c;
   --coral-light: rgba(195, 94, 59, 0.08);
   --coral-subtle: rgba(195, 94, 59, 0.04);
   --coral-glow: rgba(195, 94, 59, 0.20);
-  --coral-gradient: linear-gradient(135deg, #D46B47 0%, #C35E3B 100%);
+  --coral-gradient: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
   --indigo-gradient: linear-gradient(135deg, #C35E3B 0%, #6366F1 100%);
 
   /* Warm Brass / Champagne Accents */
@@ -52,14 +52,14 @@
   --wa-glow: rgba(37, 211, 102, 0.25);
 
   /* High Contrast Editorial Typography */
-  --text-primary: #121316;     /* Deep Architectural Noir */
-  --text-secondary: #3D3D45;   /* Refined Slate Graphite */
-  --text-muted: #73727A;       /* Warm Stone Grey */
+  --text-primary: #111827;     /* Deep Architectural Noir */
+  --text-secondary: #374151;   /* Refined Slate Graphite */
+  --text-muted: #64748b;       /* Warm Stone Grey */
   --text-dark: #121316;
 
   /* Whispering Architectural Borders */
-  --border-subtle: #EAE6DF;    /* Fine Limestone Hairline */
-  --border-medium: #DCD6CC;    /* Structural Divider */
+  --border-subtle: #fed7aa;    /* Fine Limestone Hairline */
+  --border-medium: #fdba74;    /* Structural Divider */
   --border-glow: rgba(195, 94, 59, 0.22);
   --border-gold: #E2CFB4;
 
@@ -4097,4 +4097,35 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 11.5px !important;
     padding: 6px 8px !important;
   }
+}
+
+
+/* Orange & White Theme Enforcements */
+.btn-primary, 
+.btn-coral, 
+.btn-hotelux-room-wa.oyo-btn-book {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+}
+.btn-hotelux-details {
+  background-color: #ea580c !important;
+  color: #ffffff !important;
+  border-color: #ea580c !important;
+}
+.btn-hotelux-details:hover {
+  background-color: #c2410c !important;
+  border-color: #c2410c !important;
+}
+.text-coral {
+  color: #ea580c !important;
+}
+.compare-row.head {
+  background: #ea580c !important;
+  color: #ffffff !important;
+}
+.compare-row.head .compare-cell {
+  color: #ffffff !important;
+}
+.compare-cell.with strong {
+  color: #111827 !important;
 }

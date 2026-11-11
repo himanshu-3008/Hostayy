@@ -53,27 +53,36 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="contact-two section-pad" id="contact" style={{ backgroundColor: 'var(--hotelux-primary)' }}>
+    <section className="contact-two section-pad" id="contact" style={{ backgroundColor: '#ffffff', padding: '90px 0' }}>
       <div className="container" style={{ maxWidth: '960px' }}>
         <div className="section-title text-center">
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline">CONNECT &amp; INQUIRE</span>
+            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>CONNECT &amp; INQUIRE</span>
           </div>
-          <h2 className="section-title__title">
-            Connect With Our <span>Concierge</span>
+          <h2 className="section-title__title" style={{ color: '#111827' }}>
+            Connect With Our <span style={{ color: '#ea580c' }}>Concierge</span>
           </h2>
-          <p className="section-title__text" style={{ maxWidth: '640px', margin: '14px auto 0' }}>
+          <p className="section-title__text" style={{ maxWidth: '640px', margin: '14px auto 0', color: '#374151' }}>
             Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? Mohit Chaudhary responds directly on WhatsApp.
           </p>
         </div>
 
         {/* Dual Tab Toggle */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '36px' }}>
-          <div className="our-rooms-tabs" style={{ background: 'var(--hotelux-white)' }}>
+          <div className="our-rooms-tabs" style={{ background: '#ffffff', border: '1px solid #fed7aa', borderRadius: '30px', padding: '4px' }}>
             <button 
               type="button" 
               className={`our-rooms-tab-btn ${activeFormTab === 'guest' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('guest')}
+              style={{
+                background: activeFormTab === 'guest' ? '#ea580c' : 'transparent',
+                color: activeFormTab === 'guest' ? '#ffffff' : '#111827',
+                border: 'none',
+                fontWeight: 700,
+                padding: '8px 18px',
+                borderRadius: '30px',
+                cursor: 'pointer'
+              }}
             >
               <i className="fa-solid fa-suitcase" style={{ marginRight: '6px' }}></i> Long-Stay Quotation (Guest)
             </button>
@@ -81,6 +90,15 @@ export default function ContactSection() {
               type="button" 
               className={`our-rooms-tab-btn ${activeFormTab === 'owner' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('owner')}
+              style={{
+                background: activeFormTab === 'owner' ? '#ea580c' : 'transparent',
+                color: activeFormTab === 'owner' ? '#ffffff' : '#111827',
+                border: 'none',
+                fontWeight: 700,
+                padding: '8px 18px',
+                borderRadius: '30px',
+                cursor: 'pointer'
+              }}
             >
               <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i> Partner Property (Owner)
             </button>
@@ -89,15 +107,15 @@ export default function ContactSection() {
 
         {/* Guest Long-Stay Form */}
         {activeFormTab === 'guest' && (
-          <div className="form-box">
+          <div className="form-box" style={{ background: '#fffaf5', border: '1.5px solid #fed7aa', borderRadius: '16px', padding: '32px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <span style={{ color: 'var(--coral-primary)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <span style={{ color: '#ea580c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 For Corporate Guests &amp; Relocating Families
               </span>
-              <h3 style={{ fontSize: '1.6rem', color: 'var(--text-primary)', marginTop: '4px' }}>
+              <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
                 Request Custom Long-Stay Quotation
               </h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
+              <p style={{ color: '#374151', fontSize: '0.92rem' }}>
                 Select your preferred 1, 2, or 3 BHK residence near Yashobhoomi. We will prepare an all-inclusive monthly quotation with zero brokerage and send photos directly to your WhatsApp.
               </p>
             </div>
@@ -191,7 +209,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <button type="submit" className="btn-coral" style={{ padding: '14px 34px', fontSize: '1rem', cursor: 'pointer' }}>
+              <button type="submit" className="thm-btn" style={{ padding: '14px 34px', fontSize: '1rem', cursor: 'pointer', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
                 <i className="fa-brands fa-whatsapp"></i> Request Custom Quotation on WhatsApp
               </button>
             </form>
@@ -200,15 +218,15 @@ export default function ContactSection() {
 
         {/* Owner Form */}
         {activeFormTab === 'owner' && (
-          <div className="form-box">
+          <div className="form-box" style={{ background: '#fffaf5', border: '1.5px solid #fed7aa', borderRadius: '16px', padding: '32px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <span style={{ color: 'var(--coral-primary)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <span style={{ color: '#ea580c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 For Property Owners
               </span>
-              <h3 style={{ fontSize: '1.6rem', color: 'var(--text-primary)', marginTop: '4px' }}>
+              <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
                 List Your Property for Turnkey Hospitality
               </h3>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
+              <p style={{ color: '#374151', fontSize: '0.92rem' }}>
                 Partner your 1, 2, 3 BHK or luxury villa with Hostayy. Enjoy performance-based 15% revenue share, 0% fixed setup fees, and 40%–80% higher net yield than traditional tenants.
               </p>
             </div>
@@ -304,7 +322,7 @@ export default function ContactSection() {
               </div>
 
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-                <button type="submit" className="btn-coral" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer' }}>
+                <button type="submit" className="thm-btn" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
                   <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to Mohit
                 </button>
               </div>

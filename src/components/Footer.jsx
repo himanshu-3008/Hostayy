@@ -21,14 +21,14 @@ export default function Footer({ onSelectStay }) {
                 </div>
                 <div className="brand-text-hotelux">
                   <h2 style={{ color: '#ffffff' }}>hostayy</h2>
-                  <span className="brand-slogan" style={{ color: '#FF6B6B' }}>(feel like home)</span>
+                  <span className="brand-slogan" style={{ color: '#fed7aa' }}>(feel like home)</span>
                 </div>
               </a>
               <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#c4c2cb', marginBottom: '20px' }}>
                 Curated 1, 2, and 3 BHK serviced apartments located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Managed with five-star turnkey hotel operations and zero brokerage for long-term and corporate monthly stays.
               </p>
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '12px', background: 'rgba(185, 156, 135, 0.15)', border: '1px solid var(--hotelux-base)', padding: '5px 12px', color: 'var(--hotelux-base)', fontWeight: 700 }}>
+                <span style={{ fontSize: '12px', background: 'rgba(234, 88, 12, 0.2)', border: '1px solid #ea580c', padding: '5px 12px', color: '#ea580c', fontWeight: 700 }}>
                   <i className="fa-solid fa-award" style={{ marginRight: '5px' }}></i> Superhost Hospitality 4.98★
                 </span>
                 <span style={{ fontSize: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.2)', padding: '5px 12px', color: '#ffffff', fontWeight: 600 }}>
@@ -45,7 +45,7 @@ export default function Footer({ onSelectStay }) {
                 <li><a href="#room">Book Serviced Flats</a></li>
                 <li><a href="#services">Services &amp; Amenities</a></li>
                 <li><a href="#why-choose">Why Hostayy</a></li>
-                <li><a href="#patron" style={{ color: '#FF4D4D', fontWeight: 700 }}>Hostayy Patron (List Property)</a></li>
+                <li><a href="#patron" style={{ color: '#ea580c', fontWeight: 700 }}>Hostayy Patron (List Property)</a></li>
                 <li><a href="#contact">Contact &amp; Quotations</a></li>
               </ul>
             </div>
