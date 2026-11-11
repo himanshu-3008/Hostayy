@@ -5,7 +5,7 @@ import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink, getOwnerWhats
 
 export default function Footer({ onSelectStay }) {
   return (
-    <footer className="site-footer-two">
+    <footer className="site-footer-two" style={{ backgroundColor: '#111827', color: '#ffffff' }}>
       <div className="container">
         <div className="site-footer-two__top">
           <div className="row">
@@ -20,39 +20,39 @@ export default function Footer({ onSelectStay }) {
                   />
                 </div>
                 <div className="brand-text-hotelux">
-                  <h2 style={{ color: '#ffffff' }}>hostayy</h2>
-                  <span className="brand-slogan" style={{ color: '#fed7aa' }}>(feel like home)</span>
+                  <h2 style={{ color: '#ffffff', fontWeight: 800 }}>hostayy</h2>
+                  <span className="brand-slogan" style={{ color: '#fed7aa', fontWeight: 600 }}>(feel like home)</span>
                 </div>
               </a>
-              <p style={{ fontSize: '14px', lineHeight: '1.7', color: '#c4c2cb', marginBottom: '20px' }}>
+              <p style={{ fontSize: '14.5px', lineHeight: '1.75', color: '#ffffff', marginBottom: '20px', fontWeight: 400 }}>
                 Curated 1, 2, and 3 BHK serviced apartments located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Managed with five-star turnkey hotel operations and zero brokerage for long-term and corporate monthly stays.
               </p>
               <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '12px', background: 'rgba(234, 88, 12, 0.2)', border: '1px solid #ea580c', padding: '5px 12px', color: '#ea580c', fontWeight: 700 }}>
-                  <i className="fa-solid fa-award" style={{ marginRight: '5px' }}></i> Superhost Hospitality 4.98★
+                <span style={{ fontSize: '12px', background: 'rgba(234, 88, 12, 0.25)', border: '1px solid #ea580c', padding: '6px 14px', color: '#ffffff', fontWeight: 700, borderRadius: '4px' }}>
+                  <i className="fa-solid fa-award" style={{ marginRight: '6px', color: '#fed7aa' }}></i> Superhost Hospitality 4.98★
                 </span>
-                <span style={{ fontSize: '12px', background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.2)', padding: '5px 12px', color: '#ffffff', fontWeight: 600 }}>
-                  <i className="fa-solid fa-shield-halved" style={{ marginRight: '5px' }}></i> 0% Brokerage
+                <span style={{ fontSize: '12px', background: 'rgba(255, 255, 255, 0.12)', border: '1px solid rgba(255, 255, 255, 0.3)', padding: '6px 14px', color: '#ffffff', fontWeight: 700, borderRadius: '4px' }}>
+                  <i className="fa-solid fa-shield-halved" style={{ marginRight: '6px', color: '#ffffff' }}></i> 0% Brokerage
                 </span>
               </div>
             </div>
 
             {/* Column 2: Quick Links */}
             <div className="col-xl-2 col-lg-2 col-md-6" style={{ marginBottom: '30px' }}>
-              <h4 className="footer-widget-title">Quick Links</h4>
+              <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Quick Links</h4>
               <ul className="footer-links-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#room">Book Serviced Flats</a></li>
-                <li><a href="#services">Services &amp; Amenities</a></li>
-                <li><a href="#why-choose">Why Hostayy</a></li>
+                <li><a href="#home" style={{ color: '#ffffff', fontWeight: 500 }}>Home</a></li>
+                <li><a href="#room" style={{ color: '#ffffff', fontWeight: 500 }}>Book Serviced Flats</a></li>
+                <li><a href="#services" style={{ color: '#ffffff', fontWeight: 500 }}>Services &amp; Amenities</a></li>
+                <li><a href="#why-choose" style={{ color: '#ffffff', fontWeight: 500 }}>Why Hostayy</a></li>
                 <li><a href="#patron" style={{ color: '#ea580c', fontWeight: 700 }}>Hostayy Patron (List Property)</a></li>
-                <li><a href="#contact">Contact &amp; Quotations</a></li>
+                <li><a href="#contact" style={{ color: '#ffffff', fontWeight: 500 }}>Contact &amp; Quotations</a></li>
               </ul>
             </div>
 
             {/* Column 3: Our Residences */}
             <div className="col-xl-3 col-lg-3 col-md-6" style={{ marginBottom: '30px' }}>
-              <h4 className="footer-widget-title">Residences Near Yashobhoomi</h4>
+              <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Residences Near Yashobhoomi</h4>
               <ul className="footer-links-list">
                 {HOSTAYY_PROPERTIES.map(prop => (
                   <li key={prop.id}>
@@ -61,16 +61,17 @@ export default function Footer({ onSelectStay }) {
                       onClick={(e) => {
                         if (onSelectStay) onSelectStay(prop.id);
                       }}
+                      style={{ color: '#ffffff', fontWeight: 500 }}
                     >
                       {prop.name} ({prop.bhk})
                     </a>
                   </li>
                 ))}
-                <li style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                  <span style={{ fontSize: '12px', color: 'var(--hotelux-base)', display: 'block', marginBottom: '6px' }}>
-                    <i className="fa-solid fa-location-dot" style={{ marginRight: '6px' }}></i> Prime Connectivity
+                <li style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
+                  <span style={{ fontSize: '12px', color: '#ea580c', display: 'block', marginBottom: '6px', fontWeight: 700 }}>
+                    <i className="fa-solid fa-location-dot" style={{ marginRight: '6px', color: '#ea580c' }}></i> Prime Connectivity
                   </span>
-                  <span style={{ fontSize: '12px', color: '#94a3b8', lineHeight: 1.5, display: 'block' }}>
+                  <span style={{ fontSize: '12.5px', color: '#ffffff', lineHeight: 1.5, display: 'block', fontWeight: 500 }}>
                     3 mins to Yashobhoomi IICC • 10 mins to IGI Airport (T3)
                   </span>
                 </li>
@@ -79,27 +80,27 @@ export default function Footer({ onSelectStay }) {
 
             {/* Column 4: Official Host Contact */}
             <div className="col-xl-3 col-lg-3 col-md-6" style={{ marginBottom: '30px' }}>
-              <h4 className="footer-widget-title">Official Contact</h4>
+              <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Official Contact</h4>
               <div className="footer-contact-item-hotelux">
-                <i className="fa-solid fa-user-tie"></i>
+                <i className="fa-solid fa-user-tie" style={{ color: '#ea580c' }}></i>
                 <div>
-                  <strong style={{ color: '#ffffff', display: 'block', fontSize: '15px' }}>{HOSTAYY_CONFIG.contactName}</strong>
-                  <span style={{ fontSize: '12px', color: 'var(--hotelux-base)' }}>Founder &amp; Chief Hospitality Operator</span>
+                  <strong style={{ color: '#ffffff', display: 'block', fontSize: '15px', fontWeight: 700 }}>{HOSTAYY_CONFIG.contactName}</strong>
+                  <span style={{ fontSize: '12px', color: '#fed7aa', fontWeight: 600 }}>Founder &amp; Chief Hospitality Operator</span>
                 </div>
               </div>
 
               <div className="footer-contact-item-hotelux">
-                <i className="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone" style={{ color: '#ea580c' }}></i>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                  <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ color: '#ffffff', fontSize: '14px', fontWeight: 600 }}>
+                  <a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700 }}>
                     {HOSTAYY_CONFIG.displayPhone}
                   </a>
                 </div>
               </div>
 
               <div className="footer-contact-item-hotelux">
-                <i className="fa-solid fa-envelope"></i>
-                <a href={`mailto:${HOSTAYY_CONFIG.email}`} style={{ color: '#c4c2cb', fontSize: '13.5px' }}>
+                <i className="fa-solid fa-envelope" style={{ color: '#ea580c' }}></i>
+                <a href={`mailto:${HOSTAYY_CONFIG.email}`} style={{ color: '#ffffff', fontSize: '13.5px', fontWeight: 600 }}>
                   {HOSTAYY_CONFIG.email}
                 </a>
               </div>
@@ -109,10 +110,10 @@ export default function Footer({ onSelectStay }) {
                   href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the website footer to inquire about monthly stay rates near Yashobhoomi." })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="thm-btn thm-btn-wa"
-                  style={{ padding: '8px 16px', fontSize: '12px', display: 'inline-flex' }}
+                  className="thm-btn"
+                  style={{ padding: '9px 18px', fontSize: '12.5px', display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#ea580c', color: '#ffffff', borderColor: '#ea580c', fontWeight: 800, borderRadius: '4px' }}
                 >
-                  <i className="fa-brands fa-whatsapp"></i>
+                  <i className="fa-brands fa-whatsapp" style={{ fontSize: '14px', color: '#ffffff' }}></i>
                   <span>WhatsApp Concierge</span>
                 </a>
               </div>
@@ -121,15 +122,15 @@ export default function Footer({ onSelectStay }) {
         </div>
 
         {/* Footer Bottom Strip */}
-        <div className="site-footer-two__bottom">
-          <div className="row" style={{ alignItems: 'center' }}>
+        <div className="site-footer-two__bottom" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.12)', paddingTop: '24px', marginTop: '10px' }}>
+          <div className="row" style={{ alignItems: 'center', width: '100%' }}>
             <div className="col-md-6">
-              <p style={{ margin: 0, fontSize: '13px', color: '#94a3b8' }}>
+              <p style={{ margin: 0, fontSize: '13px', color: '#ffffff', fontWeight: 500 }}>
                 &copy; {new Date().getFullYear()} Hostayy Hospitality. All rights reserved. Serviced Apartments near Yashobhoomi IICC &amp; Delhi NCR.
               </p>
             </div>
-            <div className="col-md-6" style={{ textAlign: 'right' }}>
-              <p style={{ margin: 0, fontSize: '13px', color: '#94a3b8' }}>
+            <div className="col-md-6 text-md-end" style={{ textAlign: 'right' }}>
+              <p style={{ margin: 0, fontSize: '13px', color: '#ffffff', fontWeight: 500 }}>
                 Managed by Mohit Chaudhary &bull; Zero Brokerage Guarantee
               </p>
             </div>

@@ -321,7 +321,7 @@ ul {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #c4c2cb;
+  color: #ffffff;
 }
 
 .main-menu-two__contact-list li i {
@@ -370,7 +370,7 @@ ul {
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  color: #c4c2cb;
+  color: #ffffff;
 }
 
 .main-menu-two__top-time i {
@@ -920,7 +920,7 @@ ul {
 }
 
 .services-two__single:hover .services-two__desc {
-  color: #c4c2cb;
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -1410,7 +1410,7 @@ ul {
 
 .counter-one__text {
   font-size: 14px;
-  color: #c4c2cb;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-top: 8px;
@@ -1483,7 +1483,7 @@ ul {
 .site-footer-two {
   position: relative;
   background-color: var(--hotelux-black);
-  color: #c4c2cb;
+  color: #ffffff;
   padding: 90px 0 30px;
   border-top: 3px solid var(--hotelux-base);
 }
@@ -1519,7 +1519,7 @@ ul {
 }
 
 .footer-links-list li a {
-  color: #c4c2cb;
+  color: #ffffff;
   font-size: 14px;
   transition: all var(--transition-fast);
 }
@@ -4239,4 +4239,51 @@ p {
     color: #ffffff !important;
     box-shadow: 0 2px 8px rgba(234, 88, 12, 0.35) !important;
   }
+}
+
+
+/* ==========================================================================
+   FOOTER HIGH-CONTRAST PURE WHITE TEXT (NO DARK MUTED TEXT)
+   ========================================================================== */
+.site-footer-two {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+.site-footer-two,
+.site-footer-two p,
+.site-footer-two a,
+.site-footer-two span,
+.site-footer-two li,
+.site-footer-two h2,
+.site-footer-two h4,
+.site-footer-two strong,
+.site-footer-two .footer-widget-title,
+.site-footer-two .footer-links-list li a,
+.site-footer-two__bottom,
+.site-footer-two__bottom p,
+.site-footer-two__bottom a {
+  color: #ffffff !important;
+}
+
+.site-footer-two .footer-links-list li a {
+  color: #ffffff !important;
+  opacity: 0.95;
+}
+
+.site-footer-two .footer-links-list li a:hover {
+  color: #ea580c !important;
+  opacity: 1;
+}
+
+.site-footer-two .brand-slogan {
+  color: #fed7aa !important;
+}
+
+.site-footer-two .footer-contact-item-hotelux i {
+  color: #ea580c !important;
+}
+
+.site-footer-two .footer-widget-title::after {
+  background-color: #ea580c !important;
 }
