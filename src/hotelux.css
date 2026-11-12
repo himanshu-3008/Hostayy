@@ -4968,3 +4968,214 @@ p {
     padding: 24px 20px !important;
   }
 }
+
+/* ==========================================================================
+   LUXURY AMBIENT BACKGROUND ANIMATIONS & SMOOTH DESIGNER ELEMENTS
+   ========================================================================== */
+
+/* 1. Ambient Moving Mesh Light Orbs */
+.ambient-glow-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.ambient-glow-wrapper::before,
+.ambient-glow-wrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.55;
+  will-change: transform, opacity;
+}
+
+.ambient-glow-wrapper::before {
+  top: -10%;
+  left: -5%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.16) 0%, rgba(254, 215, 170, 0.05) 70%, transparent 100%);
+  animation: hostayyFloatOrb 14s ease-in-out infinite alternate;
+}
+
+.ambient-glow-wrapper::after {
+  bottom: 0%;
+  right: -5%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(254, 215, 170, 0.35) 0%, rgba(234, 88, 12, 0.08) 60%, transparent 100%);
+  animation: hostayyFloatOrbAlt 18s ease-in-out infinite alternate;
+}
+
+@keyframes hostayyFloatOrb {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.45; }
+  50% { transform: translate3d(60px, 40px, 0) scale(1.15); opacity: 0.65; }
+  100% { transform: translate3d(-30px, 70px, 0) scale(0.95); opacity: 0.5; }
+}
+
+@keyframes hostayyFloatOrbAlt {
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate3d(-50px, -40px, 0) scale(1.12); opacity: 0.7; }
+  100% { transform: translate3d(40px, -60px, 0) scale(0.9); opacity: 0.45; }
+}
+
+/* 2. Delicate Architectural Background Grid Pattern */
+.luxury-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(254, 215, 170, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(254, 215, 170, 0.16) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* 3. Live Pulsing Indicator Dot */
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #16a34a;
+  box-shadow: 0 0 0 rgba(22, 163, 74, 0.4);
+  animation: pulseDotGreen 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.pulse-dot-orange {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ea580c;
+  box-shadow: 0 0 0 rgba(234, 88, 12, 0.4);
+  animation: pulseDotOrange 2s infinite cubic-bezier(0.66, 0, 0, 1);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+@keyframes pulseDotGreen {
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+@keyframes pulseDotOrange {
+  0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(234, 88, 12, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
+}
+
+/* 4. Shimmering Gradient Top Accent on Cards */
+.card-accent-bar-orange {
+  height: 5px;
+  background: linear-gradient(90deg, #ea580c 0%, #fdba74 50%, #ea580c 100%);
+  background-size: 200% 100%;
+  animation: shimmerGradient 4s linear infinite;
+  border-radius: 20px 20px 0 0;
+  margin: -36px -30px 24px;
+}
+
+.card-accent-bar-dark {
+  height: 5px;
+  background: linear-gradient(90deg, #111827 0%, #ea580c 50%, #111827 100%);
+  background-size: 200% 100%;
+  animation: shimmerGradient 4s linear infinite;
+  border-radius: 20px 20px 0 0;
+  margin: -36px -30px 24px;
+}
+
+@media (max-width: 768px) {
+  .card-accent-bar-orange,
+  .card-accent-bar-dark {
+    margin: -24px -20px 20px;
+  }
+}
+
+@keyframes shimmerGradient {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* 5. Smooth Floating Badge */
+.badge-float {
+  animation: badgeFloatAnim 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloatAnim {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* 6. Rotating Compass Motif */
+.rotating-compass-icon {
+  animation: compassSubtleSpin 24s linear infinite;
+  display: inline-block;
+}
+
+@keyframes compassSubtleSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 7. Animated Performance Marquee / Ticker Strip */
+.hostayy-ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffff;
+  border-top: 1px solid #fed7aa;
+  border-bottom: 1px solid #fed7aa;
+  padding: 12px 0;
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.05);
+}
+
+.hostayy-ticker-track {
+  display: inline-flex;
+  gap: 36px;
+  animation: tickerSlide 40s linear infinite;
+}
+
+.hostayy-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+}
+
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 8. Showcase Smooth Reveal Animation */
+#stay-showcase-container {
+  animation: showcaseReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes showcaseReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 9. Card Glassmorphic Elevation */
+.luxury-glass-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid #fed7aa !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.luxury-glass-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 16px 40px rgba(234, 88, 12, 0.12) !important;
+}

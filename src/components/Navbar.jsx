@@ -83,10 +83,14 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 title="Explore and book 1, 2 & 3 BHK serviced flats"
                 role="tab"
                 aria-selected={currentPage === 'booking'}
-                style={{ textDecoration: 'none' }}
+                style={{ 
+                  textDecoration: 'none',
+                  background: currentPage === 'booking' ? '#ffffff' : 'transparent',
+                  color: currentPage === 'booking' ? '#ea580c' : '#ffffff'
+                }}
               >
-                <i className="fa-solid fa-bed"></i>
-                <span>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}>Book Flats</span>
               </Link>
               
               <Link
@@ -95,10 +99,14 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 title="List your apartment with Hostayy Patron for guaranteed rental yields"
                 role="tab"
                 aria-selected={currentPage === 'listing'}
-                style={{ textDecoration: 'none' }}
+                style={{ 
+                  textDecoration: 'none',
+                  background: currentPage === 'listing' ? '#ffffff' : 'transparent',
+                  color: currentPage === 'listing' ? '#ea580c' : '#ffffff'
+                }}
               >
-                <i className="fa-solid fa-house-chimney-user"></i>
-                <span>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}>List Property</span>
               </Link>
             </div>
 
@@ -687,19 +695,27 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 href="/book"
                 onClick={() => setMobileOpen(false)}
                 className={`bcom-mobile-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
-                style={{ textDecoration: 'none' }}
+                style={{ 
+                  textDecoration: 'none',
+                  background: currentPage === 'booking' ? '#ffffff' : 'transparent',
+                  color: currentPage === 'booking' ? '#ea580c' : '#ffffff'
+                }}
               >
-                <i className="fa-solid fa-bed" style={{ marginRight: '6px' }}></i>
-                <span>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}>Book Flats</span>
               </Link>
               <Link 
                 href="/list-property"
                 onClick={() => setMobileOpen(false)}
                 className={`bcom-mobile-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
-                style={{ textDecoration: 'none' }}
+                style={{ 
+                  textDecoration: 'none',
+                  background: currentPage === 'listing' ? '#ffffff' : 'transparent',
+                  color: currentPage === 'listing' ? '#ea580c' : '#ffffff'
+                }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i>
-                <span>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}>List Property</span>
               </Link>
             </div>
 
