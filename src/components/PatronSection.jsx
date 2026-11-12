@@ -41,40 +41,61 @@ export default function PatronSection() {
     <section className="patron-section ambient-glow-wrapper luxury-grid-bg" id="patron" style={{ position: 'relative', padding: '65px 0' }}>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Patron Hero Banner modeled on patron.oyorooms.com */}
-        <div className="patron-hero-card luxury-glass-card" style={{ position: 'relative', borderRadius: '24px', padding: '45px 36px', boxShadow: '0 16px 45px rgba(234, 88, 12, 0.08)' }}>
-          <div className="card-accent-bar-dark"></div>
-          
-          <div className="patron-hero-badge" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-            <i className="fa-solid fa-shield-halved badge-float" style={{ color: '#ea580c', fontSize: '15px' }}></i>
-            <span>HOSTAYY PATRON &bull; OYO PATRON BENCHMARK &bull; PROPERTY OWNER PARTNERSHIP</span>
+        <div 
+          className="patron-hero-card" 
+          style={{ 
+            position: 'relative', 
+            borderRadius: '24px', 
+            padding: '48px 36px', 
+            background: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)',
+            border: '2px solid #fed7aa',
+            boxShadow: '0 20px 60px rgba(234, 88, 12, 0.28)',
+            textAlign: 'center'
+          }}
+        >
+          <div 
+            className="patron-hero-badge" 
+            style={{ 
+              display: 'inline-flex', 
+              alignItems: 'center', 
+              gap: '8px',
+              background: 'rgba(255, 255, 255, 0.2)',
+              border: '1px solid rgba(255, 255, 255, 0.4)',
+              color: '#ffffff',
+              padding: '7px 20px',
+              borderRadius: '30px'
+            }}
+          >
+            <i className="fa-solid fa-shield-halved badge-float" style={{ color: '#fed7aa', fontSize: '15px' }}></i>
+            <span style={{ color: '#ffffff', fontWeight: 800 }}>HOSTAYY PATRON &bull; OYO PATRON BENCHMARK &bull; PROPERTY OWNER PARTNERSHIP</span>
           </div>
 
-          <h2 className="patron-hero-title" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.25, margin: '14px 0 16px' }}>
+          <h2 className="patron-hero-title" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.25, margin: '14px 0 16px', color: '#ffffff' }}>
             Partner Your Apartment With Hostayy <br />
-            <span style={{ color: '#ea580c' }}>Earn Up to 2.5x Higher Rental Income</span>
+            <span style={{ color: '#fed7aa' }}>Earn Up to 2.5x Higher Rental Income</span>
           </h2>
 
-          <p className="patron-hero-desc" style={{ color: '#374151', fontSize: '15.5px', lineHeight: 1.7, maxWidth: '780px' }}>
+          <p className="patron-hero-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '15.5px', lineHeight: 1.7, maxWidth: '780px', margin: '0 auto 30px' }}>
             Modelled on the world-class OYO Patron benchmark. Transform your 1, 2, or 3 BHK flat into a premium corporate serviced residence near Yashobhoomi (IICC) and IGI Airport. We handle 100% of guest management, cleaning, and maintenance while you receive guaranteed monthly payouts.
           </p>
 
           {/* Quick Metrics Bar */}
           <div className="patron-metrics-row">
-            <div className="patron-metric-box luxury-glass-card" style={{ borderRadius: '12px' }}>
-              <strong style={{ color: '#ea580c' }}>1.8x – 2.5x</strong>
-              <span>Higher Net Yield vs 11-Mo Lease</span>
+            <div className="patron-metric-box">
+              <strong style={{ color: '#ffffff' }}>1.8x – 2.5x</strong>
+              <span style={{ color: '#fed7aa' }}>Higher Net Yield vs 11-Mo Lease</span>
             </div>
-            <div className="patron-metric-box luxury-glass-card" style={{ borderRadius: '12px' }}>
-              <strong style={{ color: '#16a34a' }}>100%</strong>
-              <span>Hands-Off Turnkey Operations</span>
+            <div className="patron-metric-box">
+              <strong style={{ color: '#ffffff' }}>100%</strong>
+              <span style={{ color: '#fed7aa' }}>Hands-Off Turnkey Operations</span>
             </div>
-            <div className="patron-metric-box luxury-glass-card" style={{ borderRadius: '12px' }}>
-              <strong style={{ color: '#ea580c' }}>0% Squatting</strong>
-              <span>Vetted Corporate &amp; Expat Guests</span>
+            <div className="patron-metric-box">
+              <strong style={{ color: '#ffffff' }}>0% Squatting</strong>
+              <span style={{ color: '#fed7aa' }}>Vetted Corporate &amp; Expat Guests</span>
             </div>
-            <div className="patron-metric-box luxury-glass-card" style={{ borderRadius: '12px' }}>
-              <strong style={{ color: '#111827' }}>1st of Month</strong>
-              <span>Guaranteed Direct Bank Payouts</span>
+            <div className="patron-metric-box">
+              <strong style={{ color: '#ffffff' }}>1st of Month</strong>
+              <span style={{ color: '#fed7aa' }}>Guaranteed Direct Bank Payouts</span>
             </div>
           </div>
         </div>

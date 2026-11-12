@@ -3318,80 +3318,96 @@ ul {
 }
 
 .patron-hero-card {
-  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-  border: 1px solid #fdba74;
-  border-radius: 16px;
-  padding: 44px 40px;
-  color: #ffffff;
-  margin-bottom: 45px;
-  box-shadow: 0 20px 60px rgba(25, 22, 40, 0.15);
-  border: 1px solid rgba(185, 156, 135, 0.3);
-  text-align: center;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  border: 2px solid #fed7aa !important;
+  border-radius: 24px !important;
+  padding: 48px 36px !important;
+  color: #ffffff !important;
+  margin-bottom: 45px !important;
+  box-shadow: 0 20px 60px rgba(234, 88, 12, 0.28) !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .patron-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 6px 16px;
-  border-radius: 30px;
-  margin-bottom: 18px;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  padding: 7px 20px !important;
+  border-radius: 30px !important;
+  margin-bottom: 18px !important;
+}
+
+.patron-hero-badge span,
+.patron-hero-badge i {
+  color: #ffffff !important;
 }
 
 .patron-hero-title {
-  color: #ffffff;
-  font-size: 34px;
-  line-height: 1.25;
-  margin-bottom: 16px;
-  font-family: var(--hotelux-font-two);
+  color: #ffffff !important;
+  font-size: 34px !important;
+  line-height: 1.25 !important;
+  margin-bottom: 16px !important;
+  font-family: var(--hotelux-font-two) !important;
 }
 
 .patron-hero-title span {
-  color: #fed7aa;
+  color: #fed7aa !important;
 }
 
 .patron-hero-desc {
-  color: #cbd5e1;
-  font-size: 16px;
-  line-height: 1.7;
-  max-width: 820px;
-  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  max-width: 820px !important;
+  margin: 0 auto 32px !important;
 }
 
 .patron-metrics-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 28px;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.22) !important;
+  padding-top: 28px !important;
 }
 
 .patron-metric-box {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 16px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.16) !important;
+  padding: 18px 14px !important;
+  border-radius: 14px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  text-align: center !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: transform 0.25s ease, background 0.25s ease !important;
+}
+
+.patron-metric-box:hover {
+  background: rgba(255, 255, 255, 0.22) !important;
+  transform: translateY(-3px) !important;
 }
 
 .patron-metric-box strong {
-  display: block;
-  font-size: 22px;
-  color: #ffffff;
-  font-weight: 800;
-  margin-bottom: 4px;
+  display: block !important;
+  font-size: 26px !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  margin-bottom: 4px !important;
 }
 
 .patron-metric-box span {
-  font-size: 12px;
-  color: #cbd5e1;
-  display: block;
-  line-height: 1.35;
+  font-size: 13px !important;
+  color: #fed7aa !important;
+  display: block !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
 }
 
 /* Patron Pillars */
@@ -4490,10 +4506,8 @@ p {
 /* Orange containers with White Text */
 .patron-hero-card,
 .patron-hero-card h2,
-.patron-hero-card h2 span,
 .patron-hero-card p,
 .patron-hero-card strong,
-.patron-hero-card span,
 .sliding-text,
 .sliding-text li,
 .sliding-text span,
@@ -4503,6 +4517,11 @@ p {
 .counter-one i,
 .counter-one span {
   color: #ffffff !important;
+}
+
+.patron-hero-card h2 span,
+.patron-metric-box span {
+  color: #fed7aa !important;
 }
 
 /* Patron BHK Buttons */
