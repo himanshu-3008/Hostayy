@@ -20,245 +20,110 @@ export default function HostayyHome() {
         {/* =================================================================
             HERO: ABOUT HOSTAYY (Brand Story & Vision)
             ================================================================= */}
-        {/* =================================================================
-            AGODA-INSPIRED SCENIC HERO BANNER & FLOATING SEARCH/BOOKING WIDGET
-            Exact replica of the Agoda layout from user's reference image
-            ================================================================= */}
         <section 
-          className="agoda-scenic-hero" 
+          className="hostayy-home-hero ambient-glow-wrapper luxury-grid-bg" 
           style={{ 
-            backgroundImage: "url('/assets/images/velora/velora-01.jpg')",
-            minHeight: '340px'
+            backgroundColor: '#ffffff', 
+            padding: '65px 0 45px',
+            borderBottom: '1px solid #fed7aa',
+            position: 'relative'
           }}
         >
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-12 col-xl-10 text-center">
-                {/* Gold Micro-Badge */}
-                <div style={{ marginBottom: '14px' }}>
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <div className="row align-items-center">
+              <div className="col-12 col-lg-8 offset-lg-2 text-center">
+                {/* Brand Badge with Live Pulsing Dot */}
+                <div style={{ marginBottom: '16px' }}>
                   <span 
                     style={{ 
-                      fontSize: '11.5px', 
-                      background: 'rgba(255, 255, 255, 0.2)', 
-                      backdropFilter: 'blur(10px)',
-                      color: '#ffffff', 
-                      padding: '6px 16px', 
+                      fontSize: '12px', 
+                      background: 'rgba(255, 247, 237, 0.95)', 
+                      color: '#ea580c', 
+                      padding: '7px 18px', 
                       borderRadius: '30px', 
                       fontWeight: 800, 
                       letterSpacing: '0.08em',
-                      border: '1px solid rgba(255, 255, 255, 0.4)',
+                      border: '1.5px solid #fed7aa',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '8px'
+                      gap: '8px',
+                      boxShadow: '0 4px 14px rgba(234, 88, 12, 0.08)'
                     }}
                   >
-                    <span className="pulse-dot" style={{ background: '#22c55e' }}></span>
+                    <span className="pulse-dot"></span>
                     FEEL LIKE HOME &bull; PRIME DWARKA SECTOR 23 NEAR YASHOBHOOMI (IICC)
                   </span>
                 </div>
 
-                {/* Agoda Bold Centered Uppercase Headline */}
+                {/* Hero Title */}
                 <h1 
                   style={{ 
-                    fontSize: 'clamp(28px, 4.5vw, 48px)', 
-                    color: '#ffffff', 
-                    fontWeight: 900, 
-                    lineHeight: 1.15,
-                    letterSpacing: '0.04em',
-                    textTransform: 'uppercase',
-                    marginBottom: '12px',
-                    textShadow: '0 2px 20px rgba(0, 0, 0, 0.5)'
+                    fontSize: 'clamp(32px, 4.8vw, 50px)', 
+                    color: '#111827', 
+                    fontWeight: 800, 
+                    lineHeight: 1.18,
+                    marginBottom: '18px',
+                    letterSpacing: '-0.02em'
                   }}
                 >
-                  SEE DWARKA &amp; YASHOBHOOMI FOR LESS
+                  Welcome to <span style={{ color: '#ea580c' }}>Hostayy</span>
                 </h1>
 
-                {/* Subtitle */}
+                {/* Mission Subtitle */}
                 <p 
                   style={{ 
-                    fontSize: 'clamp(14px, 1.8vw, 17px)', 
-                    color: 'rgba(255, 255, 255, 0.95)', 
+                    fontSize: 'clamp(15px, 2vw, 18px)', 
+                    color: '#374151', 
+                    lineHeight: 1.7, 
                     fontWeight: 500,
-                    maxWidth: '720px',
-                    margin: '0 auto 10px',
-                    lineHeight: 1.5,
-                    textShadow: '0 1px 10px rgba(0, 0, 0, 0.4)'
+                    maxWidth: '780px',
+                    margin: '0 auto 28px'
                   }}
                 >
-                  Curated 1, 2 &amp; 3 BHK Turnkey Serviced Residences Near Yashobhoomi (IICC) &amp; IGI Airport &bull; 0% Brokerage
+                  Hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Headquartered in Dwarka Sector 23, New Delhi, we engineer five-star turnkey serviced residences for extended stays and deliver guaranteed high-yield property management for residential apartment owners.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* =================================================================
-            AGODA-STYLE FLOATING SEARCH & BOOKING CARD (OVERLAPPING HERO)
-            ================================================================= */}
-        <div className="agoda-search-wrapper">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-12 col-xl-11">
-                
-                {/* Attached Top Tabs */}
-                <div className="agoda-top-tabs">
-                  <Link href="/book" className="agoda-top-tab active">
-                    <i className="fa-solid fa-bed" style={{ color: '#ea580c' }}></i>
-                    <span>Hotels &amp; Homes</span>
-                  </Link>
-
-                  <Link href="/book#velora" className="agoda-top-tab">
-                    <i className="fa-solid fa-door-open" style={{ color: '#ea580c' }}></i>
-                    <span>1 BHK Suite</span>
-                  </Link>
-
-                  <Link href="/book#azura" className="agoda-top-tab">
-                    <i className="fa-solid fa-building" style={{ color: '#ea580c' }}></i>
-                    <span>2 BHK Executive</span>
-                  </Link>
-
-                  <Link href="/book#verde" className="agoda-top-tab">
-                    <i className="fa-solid fa-gem" style={{ color: '#ea580c' }}></i>
-                    <span>3 BHK Signature</span>
-                  </Link>
-
-                  <Link href="/book" className="agoda-top-tab">
-                    <i className="fa-solid fa-briefcase" style={{ color: '#ea580c' }}></i>
-                    <span>Corporate Stays</span>
-                  </Link>
-
-                  <Link href="/list-property" className="agoda-top-tab">
-                    <i className="fa-solid fa-house-chimney-user" style={{ color: '#ea580c' }}></i>
-                    <span>List Property (Patron)</span>
-                  </Link>
-                </div>
-
-                {/* Main White Search Box */}
-                <div className="agoda-search-box">
-                  {/* Sub-Pills (Overnight / Extended Stays) */}
-                  <div className="agoda-sub-pills">
-                    <button type="button" className="agoda-sub-pill active">
-                      Extended / Monthly Stays
-                    </button>
-                    <button type="button" className="agoda-sub-pill">
-                      Exhibition &amp; Short Stays
-                    </button>
-                    <button type="button" className="agoda-sub-pill">
-                      Corporate Relocations
-                    </button>
-                  </div>
-
-                  {/* Destination / Property Input Bar */}
-                  <div className="agoda-dest-row">
-                    <Link href="/book" className="agoda-dest-item" style={{ textDecoration: 'none' }}>
-                      <i className="fa-solid fa-magnifying-glass" style={{ fontSize: '18px', color: '#ea580c', flexShrink: 0 }}></i>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <span className="agoda-input-label">Destination or Residence</span>
-                        <span className="agoda-input-val" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                          Dwarka Sector 23 near Yashobhoomi IICC &amp; Airport (1, 2 &amp; 3 BHK Stays)
-                        </span>
-                      </div>
-                      <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '3px 8px', borderRadius: '4px', fontWeight: 700, flexShrink: 0 }}>
-                        0% Brokerage
-                      </span>
-                    </Link>
-                  </div>
-
-                  {/* 3-Column Dates & Configuration Grid */}
-                  <div className="agoda-dates-grid">
-                    <Link href="/book" className="agoda-input-item" style={{ textDecoration: 'none' }}>
-                      <i className="fa-regular fa-calendar-check" style={{ fontSize: '20px', color: '#ea580c' }}></i>
-                      <div>
-                        <span className="agoda-input-label">Move-In Date</span>
-                        <span className="agoda-input-val">Immediate / Flexible</span>
-                      </div>
-                    </Link>
-
-                    <Link href="/book" className="agoda-input-item" style={{ textDecoration: 'none' }}>
-                      <i className="fa-regular fa-calendar-days" style={{ fontSize: '20px', color: '#ea580c' }}></i>
-                      <div>
-                        <span className="agoda-input-label">Stay Duration</span>
-                        <span className="agoda-input-val">1 to 12+ Months</span>
-                      </div>
-                    </Link>
-
-                    <Link href="/book" className="agoda-input-item" style={{ textDecoration: 'none' }}>
-                      <i className="fa-solid fa-user-group" style={{ fontSize: '20px', color: '#ea580c' }}></i>
-                      <div>
-                        <span className="agoda-input-label">Guests &amp; Suite</span>
-                        <span className="agoda-input-val">1-6 Guests &bull; 1, 2 or 3 BHK</span>
-                      </div>
-                    </Link>
-                  </div>
-
-                  {/* Checkbox and Add Options Row */}
-                  <div className="agoda-checkbox-row">
-                    <label className="agoda-checkbox-label">
-                      <input type="checkbox" defaultChecked />
-                      <span>Show me only 100% private turnkey residences with modular kitchen &amp; 300+ Mbps Wi-Fi</span>
-                    </label>
-
-                    <a 
-                      href={getGuestWhatsAppLink({ message: "Hello Hostayy, I need corporate quotation with GST tax invoice for Yashobhoomi exhibition." })}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: '#ea580c', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
-                    >
-                      <span>+ Need official corporate invoice &amp; GST input credit?</span>
-                    </a>
-                  </div>
-
-                  {/* Agoda Centered Primary Search Button */}
-                  <div className="agoda-search-btn-wrap">
-                    <Link href="/book" className="agoda-cta-btn">
-                      <span>SEARCH AVAILABLE FLATS &amp; VIEW PHOTOS</span>
-                      <i className="fa-solid fa-arrow-right"></i>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* 4 Brand Pillars with Glassmorphism right below the search card */}
+                {/* 4 Brand Pillars with Glassmorphism & Hover Lift */}
                 <div 
                   style={{ 
                     display: 'grid', 
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', 
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', 
                     gap: '14px',
-                    marginTop: '28px'
+                    marginBottom: '36px'
                   }}
                 >
-                  <div className="luxury-glass-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '16px 14px', textAlign: 'center', boxShadow: '0 4px 18px rgba(0,0,0,0.04)' }}>
+                  <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
                     <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-star" style={{ color: '#f59e0b', marginRight: '5px' }}></i>4.98★
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Superhost Hospitality</span>
                   </div>
 
-                  <div className="luxury-glass-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '16px 14px', textAlign: 'center', boxShadow: '0 4px 18px rgba(0,0,0,0.04)' }}>
+                  <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
                     <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-shield-halved" style={{ color: '#ea580c', marginRight: '5px' }}></i>0%
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Brokerage &amp; Hidden Fees</span>
                   </div>
 
-                  <div className="luxury-glass-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '16px 14px', textAlign: 'center', boxShadow: '0 4px 18px rgba(0,0,0,0.04)' }}>
+                  <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
                     <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-location-dot" style={{ color: '#ea580c', marginRight: '5px' }}></i>3 Mins
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>To Yashobhoomi IICC</span>
                   </div>
 
-                  <div className="luxury-glass-card" style={{ background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '14px', padding: '16px 14px', textAlign: 'center', boxShadow: '0 4px 18px rgba(0,0,0,0.04)' }}>
+                  <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
                     <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-money-bill-trend-up" style={{ color: '#16a34a', marginRight: '5px' }}></i>40%+
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Higher Landlord Yield</span>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* =================================================================
             ANIMATED LIVE TRUST MARQUEE RIBBON
