@@ -1,7 +1,8 @@
 'use client';
 
-import App from '../App';
+import React from 'react';
+import HostayyHome from '../components/HostayyHome';
 
 export default function HomePage() {
-  return <App />;
+  return <HostayyHome />;
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function Footer({ onSelectStay }) {
@@ -11,7 +12,7 @@ export default function Footer({ onSelectStay }) {
           <div className="row">
             {/* Column 1: Brand Info & Badges */}
             <div className="col-12 col-md-6 col-lg-4 col-xl-4 footer-col" style={{ marginBottom: '28px' }}>
-              <a href="#home" className="brand-logo-hotelux" style={{ marginBottom: '18px', display: 'inline-flex', textDecoration: 'none' }}>
+              <Link href="/" className="brand-logo-hotelux" style={{ marginBottom: '18px', display: 'inline-flex', textDecoration: 'none' }}>
                 <div className="brand-emblem-wrap" style={{ backgroundColor: '#ffffff', borderRadius: '50%', padding: '6px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <img 
                     src="/assets/images/hostayy-logo-transparent.png" 
@@ -23,7 +24,7 @@ export default function Footer({ onSelectStay }) {
                   <h2 style={{ color: '#ffffff', fontWeight: 800, margin: 0, fontSize: '24px' }}>hostayy</h2>
                   <span className="brand-slogan" style={{ color: '#fed7aa', fontWeight: 600, fontSize: '12px' }}>(feel like home)</span>
                 </div>
-              </a>
+              </Link>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#ffffff', marginBottom: '18px', fontWeight: 400 }}>
                 Curated 1, 2, and 3 BHK serviced apartments located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Managed with five-star turnkey hotel operations and zero brokerage for long-term and corporate monthly stays.
               </p>
@@ -39,14 +40,13 @@ export default function Footer({ onSelectStay }) {
 
             {/* Column 2: Quick Links */}
             <div className="col-12 col-md-6 col-lg-2 col-xl-2 footer-col" style={{ marginBottom: '28px' }}>
-              <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Quick Links</h4>
+              <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Pages &amp; Portals</h4>
               <ul className="footer-links-list">
-                <li><a href="#home" style={{ color: '#ffffff', fontWeight: 500 }}>Home</a></li>
-                <li><a href="#room" style={{ color: '#ffffff', fontWeight: 500 }}>Book Serviced Flats</a></li>
-                <li><a href="#services" style={{ color: '#ffffff', fontWeight: 500 }}>Services &amp; Amenities</a></li>
-                <li><a href="#why-choose" style={{ color: '#ffffff', fontWeight: 500 }}>Why Hostayy</a></li>
-                <li><a href="#patron" style={{ color: '#ea580c', fontWeight: 700 }}>Hostayy Patron (List Property)</a></li>
-                <li><a href="#contact" style={{ color: '#ffffff', fontWeight: 500 }}>Contact &amp; Quotations</a></li>
+                <li><Link href="/" style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>About Hostayy (Home)</Link></li>
+                <li><Link href="/book" style={{ color: '#fed7aa', fontWeight: 700, textDecoration: 'none' }}>Book Serviced Flats &rarr;</Link></li>
+                <li><Link href="/list-property" style={{ color: '#ea580c', fontWeight: 700, textDecoration: 'none' }}>Hostayy Patron (List Property) &rarr;</Link></li>
+                <li><a href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>Dwarka Sector 23 Map</a></li>
+                <li><a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>Concierge Hotline</a></li>
               </ul>
             </div>
 
@@ -56,15 +56,12 @@ export default function Footer({ onSelectStay }) {
               <ul className="footer-links-list">
                 {HOSTAYY_PROPERTIES.map(prop => (
                   <li key={prop.id}>
-                    <a 
-                      href="#room" 
-                      onClick={(e) => {
-                        if (onSelectStay) onSelectStay(prop.id);
-                      }}
-                      style={{ color: '#ffffff', fontWeight: 500 }}
+                    <Link 
+                      href={`/book#${prop.id}`}
+                      style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}
                     >
                       {prop.name} ({prop.bhk})
-                    </a>
+                    </Link>
                   </li>
                 ))}
                 <li style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid rgba(255, 255, 255, 0.15)' }}>
