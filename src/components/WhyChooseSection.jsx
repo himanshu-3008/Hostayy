@@ -20,10 +20,10 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="why-choose-one" id="why-choose" style={{ padding: '80px 0' }}>
+    <section className="why-choose-one" id="why-choose" style={{ padding: '70px 0', backgroundColor: '#fcfbfa' }}>
       <div className="container">
         <div className="row" style={{ alignItems: 'center' }}>
-          {/* Left Column: Text & Features */}
+          {/* Left Column: Text & Features & Physical Address */}
           <div className="col-12 col-lg-6 col-xl-6">
             <div className="why-choose-one__left">
               <div className="section-title text-left sec-title-animation animation-style2">
@@ -35,12 +35,12 @@ export default function WhyChooseSection() {
                   <span style={{ color: '#ea580c' }}>Yashobhoomi (IICC)</span>
                 </h2>
               </div>
-              <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: '#374151', marginBottom: '28px' }}>
+              <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: '#374151', marginBottom: '24px' }}>
                 Located in prime Dwarka Sector 23, Hostayy provides turnkey 1, 2, and 3 BHK serviced residences engineered for corporate executives, exhibition delegates, and relocating families seeking extended stays without hotel constraints.
               </p>
 
-              <ul className="why-choose-one__list list-unstyled" style={{ listStyle: 'none', padding: 0, margin: '0 0 28px' }}>
-                <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
+              <ul className="why-choose-one__list list-unstyled" style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
+                <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
                     <i className="fas fa-location-dot" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
@@ -54,7 +54,7 @@ export default function WhyChooseSection() {
                   </div>
                 </li>
 
-                <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
+                <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
                     <i className="fas fa-percent" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
@@ -68,7 +68,7 @@ export default function WhyChooseSection() {
                   </div>
                 </li>
 
-                <li style={{ display: 'flex', gap: '18px', marginBottom: '22px', alignItems: 'flex-start' }}>
+                <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
                     <i className="fas fa-kitchen-set" style={{ color: '#ea580c', fontSize: '26px' }}></i>
                   </div>
@@ -83,7 +83,7 @@ export default function WhyChooseSection() {
                 </li>
               </ul>
 
-              <div className="why-choose-one__btn-box" style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+              <div className="why-choose-one__btn-box" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '20px' }}>
                 <a href="#room" className="thm-btn" style={{ background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
                   Explore 1, 2 &amp; 3 BHK Stays
                 </a>
@@ -95,6 +95,46 @@ export default function WhyChooseSection() {
                 >
                   <i className="fab fa-whatsapp"></i> Chat with Concierge
                 </button>
+              </div>
+
+              {/* Official Physical Address Card */}
+              <div 
+                className="why-choose-address-card"
+                style={{
+                  background: '#ffffff',
+                  border: '1.5px solid #fed7aa',
+                  borderRadius: '12px',
+                  padding: '16px 18px',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '14px',
+                  boxShadow: '0 6px 18px rgba(234, 88, 12, 0.06)'
+                }}
+              >
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#ea580c', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>
+                  <i className="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div>
+                  <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                    OFFICIAL HOSTAYY RESIDENCE ADDRESS
+                  </span>
+                  <strong style={{ fontSize: '15px', color: '#111827', display: 'block', margin: '3px 0 4px', fontWeight: 800 }}>
+                    {HOSTAYY_CONFIG.address}
+                  </strong>
+                  <p style={{ margin: 0, fontSize: '12.5px', color: '#374151', lineHeight: 1.5 }}>
+                    Dwarka Sector 23, New Delhi &bull; 3 mins to Yashobhoomi (IICC) Sector 25 &bull; 10 mins to IGI Airport (T3/T1) &bull; 5 mins to Dwarka Sector 21 Metro Interchange
+                  </p>
+                  <div style={{ marginTop: '10px' }}>
+                    <a 
+                      href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{ fontSize: '12.5px', color: '#ea580c', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    >
+                      <i className="fa-solid fa-arrow-up-right-from-square"></i> Open Location in Google Maps
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -110,7 +150,8 @@ export default function WhyChooseSection() {
                   border: '1.5px solid #fed7aa',
                   borderRadius: '12px',
                   boxShadow: '0 20px 50px rgba(234, 88, 12, 0.08)',
-                  marginBottom: '20px'
+                  marginBottom: '20px',
+                  padding: '24px 22px'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #fed7aa', paddingBottom: '14px' }}>

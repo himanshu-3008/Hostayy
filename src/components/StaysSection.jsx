@@ -34,6 +34,22 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
           <p className="section-title__text" style={{ maxWidth: '720px', margin: '0 auto', color: '#374151', fontSize: '15px', lineHeight: 1.7 }}>
             Sanitised, 100% private turnkey residences located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps Wi-Fi, work desks, and instant WhatsApp booking with zero brokerage. Click any room option below to explore verified photos and floor specifications.
           </p>
+
+          {/* Prominent Physical Address Strip */}
+          <div style={{ marginTop: '16px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#fffaf5', border: '1.5px solid #fed7aa', padding: '8px 18px', borderRadius: '30px', fontSize: '13px', color: '#111827', boxShadow: '0 2px 8px rgba(234, 88, 12, 0.06)', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <i className="fa-solid fa-map-location-dot" style={{ color: '#ea580c', fontSize: '15px' }}></i>
+              <span><strong>Official Address:</strong> {HOSTAYY_CONFIG.address}</span>
+              <a 
+                href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{ color: '#ea580c', fontWeight: 800, marginLeft: '4px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+              >
+                <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '11px' }}></i> View Map
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Room Option Filter Tabs */}

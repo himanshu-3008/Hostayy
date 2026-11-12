@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
-export default function Navbar({ onSelectStay }) {
+export default function Navbar({ onSelectStay, portalMode = 'booking', setPortalMode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('stays');
   const [staysDropdownOpen, setStaysDropdownOpen] = useState(false);
@@ -32,6 +32,7 @@ export default function Navbar({ onSelectStay }) {
   }, []);
 
   const handleSelectStay = (stayId) => {
+    if (setPortalMode) setPortalMode('booking');
     setActiveTab('stays');
     setStaysDropdownOpen(false);
     if (onSelectStay) {
@@ -46,21 +47,27 @@ export default function Navbar({ onSelectStay }) {
     }, 60);
   };
 
-  const handleRoomTab = (id, tabName) => {
-    setActiveTab(tabName);
-    if (onSelectStay) {
-      onSelectStay(id);
-    }
-    const el = document.getElementById('stay-showcase-container') || document.getElementById('room');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const handleSwitchToBooking = () => {
+    if (setPortalMode) setPortalMode('booking');
+    setActiveTab('stays');
+    setMobileOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSwitchToListing = () => {
+    if (setPortalMode) setPortalMode('listing');
+    setActiveTab('patron');
+    setMobileOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea580c' }}>
-      {/* Top Tier: Logo & User Utility Bar (Orange & White Theme) */}
-      <div className="bcom-header-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.22)', padding: '12px 0 10px' }}>
+      {/* Top Tier: Logo & Dual-Portal Mode Switcher & User Utility Bar */}
+      <div className="bcom-header-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.22)', padding: '10px 0' }}>
         <div className="container">
-          <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
+            
             {/* Left: Hostayy Logo */}
             <a href="#home" className="bcom-brand-logo" aria-label="Hostayy.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
               <div className="bcom-logo-emblem" style={{ width: '38px', height: '38px', borderRadius: '50%', background: '#ffffff', padding: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
@@ -71,7 +78,7 @@ export default function Navbar({ onSelectStay }) {
                 />
               </div>
               <div className="bcom-logo-text-wrap" style={{ lineHeight: 1.15 }}>
-                <span className="bcom-logo-text" style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif' }}>
+                <span className="bcom-logo-text" style={{ fontSize: '25px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif' }}>
                   Hostayy<span className="bcom-logo-dot" style={{ color: '#fed7aa' }}>.com</span>
                 </span>
                 <span className="bcom-logo-slogan" style={{ display: 'block', fontSize: '11px', color: '#ffffff', fontStyle: 'italic', fontWeight: 500, opacity: 0.9 }}>
@@ -80,15 +87,66 @@ export default function Navbar({ onSelectStay }) {
               </div>
             </a>
 
+            {/* Center: Dual-Portal Segment Switcher (Customers/Booking vs Property Listing) */}
+            <div className="bcom-portal-switcher" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.22)', padding: '4px', borderRadius: '30px', border: '1.5px solid rgba(255, 255, 255, 0.4)' }}>
+              <button
+                type="button"
+                onClick={handleSwitchToBooking}
+                title="Explore and book 1, 2 & 3 BHK serviced flats"
+                style={{
+                  padding: '7px 16px',
+                  borderRadius: '24px',
+                  border: 'none',
+                  background: portalMode === 'booking' ? '#ffffff' : 'transparent',
+                  color: portalMode === 'booking' ? '#ea580c' : '#ffffff',
+                  fontWeight: 800,
+                  fontSize: '13px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: portalMode === 'booking' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <i className="fa-solid fa-bed" style={{ color: portalMode === 'booking' ? '#ea580c' : '#ffffff' }}></i>
+                <span>Book Flats</span>
+              </button>
+              
+              <button
+                type="button"
+                onClick={handleSwitchToListing}
+                title="List your apartment with Hostayy Patron for guaranteed rental yields"
+                style={{
+                  padding: '7px 16px',
+                  borderRadius: '24px',
+                  border: 'none',
+                  background: portalMode === 'listing' ? '#ffffff' : 'transparent',
+                  color: portalMode === 'listing' ? '#ea580c' : '#ffffff',
+                  fontWeight: 800,
+                  fontSize: '13px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: portalMode === 'listing' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <i className="fa-solid fa-house-chimney-user" style={{ color: portalMode === 'listing' ? '#ea580c' : '#ffffff' }}></i>
+                <span>List Property</span>
+              </button>
+            </div>
+
             {/* Right: Booking.com Style Utility Items (White on Orange) */}
-            <div className="bcom-utility-row" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            <div className="bcom-utility-row" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
               {/* Currency Pill */}
-              <button type="button" className="bcom-util-btn" title="Currency: Indian Rupee" style={{ background: 'transparent', border: 'none', color: '#ffffff', padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontWeight: 700, fontSize: '14px' }}>
+              <button type="button" className="bcom-util-btn" title="Currency: Indian Rupee" style={{ background: 'transparent', border: 'none', color: '#ffffff', padding: '6px 8px', borderRadius: '4px', cursor: 'pointer', fontWeight: 700, fontSize: '13.5px' }}>
                 <span className="bcom-currency-tag" style={{ color: '#ffffff' }}>INR</span>
               </button>
 
               {/* Country Flag */}
-              <div className="bcom-flag-wrap" title="India (Dwarka Sector 23 / Delhi NCR)" style={{ display: 'inline-flex', alignItems: 'center', fontSize: '20px' }}>
+              <div className="bcom-flag-wrap" title="India (Dwarka Sector 23 / Delhi NCR)" style={{ display: 'inline-flex', alignItems: 'center', fontSize: '19px' }}>
                 <span className="bcom-flag-icon" role="img" aria-label="India Flag">🇮🇳</span>
               </div>
 
@@ -97,30 +155,32 @@ export default function Navbar({ onSelectStay }) {
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
                 className="bcom-util-btn bcom-help-btn"
                 title={`24/7 Concierge Support: ${HOSTAYY_CONFIG.displayPhone}`}
-                style={{ color: '#ffffff', fontSize: '18px', display: 'inline-flex', alignItems: 'center' }}
+                style={{ color: '#ffffff', fontSize: '17px', display: 'inline-flex', alignItems: 'center' }}
               >
                 <i className="fa-regular fa-circle-question"></i>
               </a>
 
-              {/* List Your Property (Hostayy Patron) */}
-              <a 
-                href="#patron" 
+              {/* Toggle to Property Listing (Hostayy Patron) */}
+              <button 
+                type="button" 
+                onClick={handleSwitchToListing}
                 className="bcom-list-prop-link"
                 title="List your apartment with Hostayy Patron"
-                style={{ color: '#ffffff', fontSize: '14px', fontWeight: 700, textDecoration: 'none', padding: '7px 12px', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.4)' }}
+                style={{ background: 'transparent', color: '#ffffff', fontSize: '13.5px', fontWeight: 700, textDecoration: 'none', padding: '6px 12px', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.4)', cursor: 'pointer' }}
               >
                 <span>List your property</span>
-              </a>
+              </button>
 
               {/* Booking CTA Button (Solid White Button with Orange Text) */}
-              <a 
-                href="#room" 
+              <button 
+                type="button"
+                onClick={handleSwitchToBooking}
                 className="bcom-action-btn register-btn"
                 title="Explore 1, 2 &amp; 3 BHK Serviced Flats"
-                style={{ background: '#ffffff', color: '#ea580c', fontWeight: 800, padding: '8px 18px', borderRadius: '4px', textDecoration: 'none', fontSize: '14px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
+                style={{ background: '#ffffff', color: '#ea580c', fontWeight: 800, padding: '7px 16px', borderRadius: '4px', textDecoration: 'none', fontSize: '13.5px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', cursor: 'pointer', border: 'none' }}
               >
                 Book Flat
-              </a>
+              </button>
 
               {/* Direct WhatsApp Concierge CTA */}
               <a 
@@ -129,7 +189,7 @@ export default function Navbar({ onSelectStay }) {
                 rel="noopener noreferrer"
                 className="bcom-action-btn wa-btn"
                 title="Chat with Mohit on WhatsApp"
-                style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '8px 14px', borderRadius: '4px', textDecoration: 'none', fontSize: '14px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 12px', borderRadius: '4px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
               >
                 <i className="fa-brands fa-whatsapp"></i>
                 <span className="d-none-sm">WhatsApp</span>
@@ -151,258 +211,399 @@ export default function Navbar({ onSelectStay }) {
       </div>
 
       {/* Sub-Navigation Tier: Booking.com Style Pills Strip */}
-      <div className={`bcom-subnav-strip ${staysDropdownOpen ? 'dropdown-open' : ''}`} style={{ padding: '10px 0', overflow: staysDropdownOpen ? 'visible' : 'auto', scrollbarWidth: 'none' }}>
+      <div className={`bcom-subnav-strip ${staysDropdownOpen ? 'dropdown-open' : ''}`} style={{ padding: '8px 0', overflow: staysDropdownOpen ? 'visible' : 'auto', scrollbarWidth: 'none' }}>
         <div className="container" style={{ overflow: 'visible' }}>
           <div className="bcom-pills-row" style={{ display: 'flex', alignItems: 'center', gap: '8px', whiteSpace: 'nowrap', overflow: 'visible' }}>
             
-            {/* STAYS OPTION WITH BED SIGN (Dropdown menu for 1, 2 & 3 BHK stays) */}
-            <div className="bcom-stays-dropdown-wrapper" ref={dropdownRef} style={{ position: 'relative', display: 'inline-block' }}>
-              <button 
-                type="button" 
-                className={`bcom-pill bcom-stays-toggle ${activeTab === 'stays' || staysDropdownOpen ? 'active' : ''}`}
-                onClick={() => setStaysDropdownOpen(!staysDropdownOpen)}
-                aria-expanded={staysDropdownOpen}
-                title="Click to view our 1, 2 & 3 BHK Serviced Flats"
-                style={{
-                  color: '#ffffff',
-                  border: (activeTab === 'stays' || staysDropdownOpen) ? '1.5px solid #ffffff' : '1px solid transparent',
-                  background: (activeTab === 'stays' || staysDropdownOpen) ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                  fontWeight: 800,
-                  padding: '8px 18px',
-                  borderRadius: '30px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  cursor: 'pointer',
-                  fontSize: '13.5px',
-                  outline: 'none',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                <i className="fa-solid fa-bed" style={{ fontSize: '14px', color: '#ffffff' }}></i>
-                <span>Stays</span>
-                <i 
-                  className="fa-solid fa-chevron-down" 
-                  style={{ 
-                    fontSize: '11px', 
-                    color: '#ffffff',
-                    transition: 'transform 0.25s ease',
-                    transform: staysDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'
-                  }}
-                ></i>
-              </button>
+            {portalMode === 'booking' ? (
+              <>
+                {/* STAYS OPTION WITH BED SIGN (Dropdown menu for 1, 2 & 3 BHK stays) */}
+                <div className="bcom-stays-dropdown-wrapper" ref={dropdownRef} style={{ position: 'relative', display: 'inline-block' }}>
+                  <button 
+                    type="button" 
+                    className={`bcom-pill bcom-stays-toggle ${activeTab === 'stays' || staysDropdownOpen ? 'active' : ''}`}
+                    onClick={() => setStaysDropdownOpen(!staysDropdownOpen)}
+                    aria-expanded={staysDropdownOpen}
+                    title="Click to view our 1, 2 & 3 BHK Serviced Flats"
+                    style={{
+                      color: '#ffffff',
+                      border: (activeTab === 'stays' || staysDropdownOpen) ? '1.5px solid #ffffff' : '1px solid transparent',
+                      background: (activeTab === 'stays' || staysDropdownOpen) ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                      fontWeight: 800,
+                      padding: '7px 16px',
+                      borderRadius: '30px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      cursor: 'pointer',
+                      fontSize: '13px',
+                      outline: 'none',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    <i className="fa-solid fa-bed" style={{ fontSize: '14px', color: '#ffffff' }}></i>
+                    <span>Stays</span>
+                    <i 
+                      className="fa-solid fa-chevron-down" 
+                      style={{ 
+                        fontSize: '11px', 
+                        color: '#ffffff',
+                        transition: 'transform 0.25s ease',
+                        transform: staysDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+                      }}
+                    ></i>
+                  </button>
 
-              {/* DROPDOWN MENU: List of all 3 Stays */}
-              {staysDropdownOpen && (
-                <div 
-                  className="bcom-stays-dropdown-menu"
+                  {/* DROPDOWN MENU: List of all 3 Stays */}
+                  {staysDropdownOpen && (
+                    <div 
+                      className="bcom-stays-dropdown-menu"
+                      style={{
+                        position: 'absolute',
+                        top: 'calc(100% + 10px)',
+                        left: 0,
+                        zIndex: 9999,
+                        width: '320px',
+                        background: '#ffffff',
+                        borderRadius: '12px',
+                        boxShadow: '0 18px 45px rgba(0, 0, 0, 0.22)',
+                        border: '1.5px solid #fed7aa',
+                        padding: '10px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '6px'
+                      }}
+                    >
+                      <div style={{ padding: '6px 8px 6px', borderBottom: '1px solid #fed7aa', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span className="bcom-dropdown-header-title" style={{ fontSize: '10.5px', fontWeight: 800, color: '#ea580c', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          Select a Flat to Explore
+                        </span>
+                        <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                          0% Brokerage
+                        </span>
+                      </div>
+
+                      {/* Stay 1: Velora 1 BHK */}
+                      <div 
+                        onClick={() => handleSelectStay('velora')}
+                        className="bcom-dropdown-stay-item"
+                        title="Explore Velora Suite (1 BHK)"
+                      >
+                        <img 
+                          src="/assets/images/velora/velora-05.jpg" 
+                          alt="Velora 1 BHK" 
+                          style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
+                        />
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
+                            <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
+                              Velora Suite
+                            </h4>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                              1 BHK
+                            </span>
+                          </div>
+                          <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            3 Mins to Yashobhoomi IICC &bull; 750 Sq Ft
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Stay 2: Azura 2 BHK */}
+                      <div 
+                        onClick={() => handleSelectStay('azura')}
+                        className="bcom-dropdown-stay-item"
+                        title="Explore Azura Residence (2 BHK)"
+                      >
+                        <img 
+                          src="/assets/images/azura/azura-10.jpg" 
+                          alt="Azura 2 BHK" 
+                          style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
+                        />
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
+                            <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
+                              Azura Residence
+                            </h4>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                              2 BHK
+                            </span>
+                          </div>
+                          <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            Aerocity Corridor &bull; 1,250 Sq Ft &bull; Balcony
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Stay 3: Verde 3 BHK */}
+                      <div 
+                        onClick={() => handleSelectStay('verde')}
+                        className="bcom-dropdown-stay-item"
+                        title="Explore Verde Signature (3 BHK)"
+                      >
+                        <img 
+                          src="/assets/images/verde/verde-02.jpg" 
+                          alt="Verde 3 BHK" 
+                          style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
+                        />
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
+                            <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
+                              Verde Signature
+                            </h4>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                              3 BHK
+                            </span>
+                          </div>
+                          <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            Prime Golf Belt &bull; 1,850 Sq Ft &bull; 3 En-Suite Baths
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bottom Action: View All Stays */}
+                      <button 
+                        type="button"
+                        onClick={() => handleSelectStay(null)}
+                        className="bcom-dropdown-all-btn"
+                      >
+                        <i className="fa-solid fa-arrow-down" style={{ fontSize: '11px' }}></i>
+                        <span>Scroll to Stays Section (All Flats)</span>
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Strategic Location / Yashobhoomi IICC */}
+                <a 
+                  href="#why-choose" 
+                  className={`bcom-pill ${activeTab === 'location' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('location')}
                   style={{
-                    position: 'absolute',
-                    top: 'calc(100% + 10px)',
-                    left: 0,
-                    zIndex: 9999,
-                    width: '320px',
-                    background: '#ffffff',
-                    borderRadius: '12px',
-                    boxShadow: '0 18px 45px rgba(0, 0, 0, 0.22)',
-                    border: '1.5px solid #fed7aa',
-                    padding: '10px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '6px'
+                    color: '#ffffff',
+                    border: activeTab === 'location' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'location' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'location' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
                   }}
                 >
-                  <div style={{ padding: '6px 8px 6px', borderBottom: '1px solid #fed7aa', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span className="bcom-dropdown-header-title" style={{ fontSize: '10.5px', fontWeight: 800, color: '#ea580c', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                      Select a Flat to Explore
-                    </span>
-                    <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
-                      0% Brokerage
-                    </span>
-                  </div>
+                  <i className="fa-solid fa-landmark"></i>
+                  <span>3 Mins Yashobhoomi IICC</span>
+                </a>
 
-                  {/* Stay 1: Velora 1 BHK */}
-                  <div 
-                    onClick={() => handleSelectStay('velora')}
-                    className="bcom-dropdown-stay-item"
-                    title="Explore Velora Suite (1 BHK)"
-                  >
-                    <img 
-                      src="/assets/images/velora/velora-05.jpg" 
-                      alt="Velora 1 BHK" 
-                      style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
-                    />
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                        <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
-                          Velora Suite
-                        </h4>
-                        <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
-                          1 BHK
-                        </span>
-                      </div>
-                      <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        3 Mins to Yashobhoomi IICC &bull; 750 Sq Ft
-                      </p>
-                    </div>
-                  </div>
+                {/* Address & Connectivity Matrix */}
+                <a 
+                  href="#why-choose" 
+                  className={`bcom-pill ${activeTab === 'address' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('address')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'address' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'address' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'address' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span>Dwarka Sector 23 Address</span>
+                </a>
 
-                  {/* Stay 2: Azura 2 BHK */}
-                  <div 
-                    onClick={() => handleSelectStay('azura')}
-                    className="bcom-dropdown-stay-item"
-                    title="Explore Azura Residence (2 BHK)"
-                  >
-                    <img 
-                      src="/assets/images/azura/azura-10.jpg" 
-                      alt="Azura 2 BHK" 
-                      style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
-                    />
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                        <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
-                          Azura Residence
-                        </h4>
-                        <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
-                          2 BHK
-                        </span>
-                      </div>
-                      <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        Aerocity Corridor &bull; 1,250 Sq Ft &bull; Balcony
-                      </p>
-                    </div>
-                  </div>
+                {/* Contact Concierge */}
+                <a 
+                  href="#contact" 
+                  className={`bcom-pill ${activeTab === 'contact' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('contact')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'contact' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'contact' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'contact' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-phone"></i>
+                  <span>Contact Host</span>
+                </a>
 
-                  {/* Stay 3: Verde 3 BHK */}
-                  <div 
-                    onClick={() => handleSelectStay('verde')}
-                    className="bcom-dropdown-stay-item"
-                    title="Explore Verde Signature (3 BHK)"
-                  >
-                    <img 
-                      src="/assets/images/verde/verde-02.jpg" 
-                      alt="Verde 3 BHK" 
-                      style={{ width: '46px', height: '46px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0 }}
-                    />
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px' }}>
-                        <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
-                          Verde Signature
-                        </h4>
-                        <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
-                          3 BHK
-                        </span>
-                      </div>
-                      <p className="bcom-stay-desc" style={{ margin: '2px 0 0', fontSize: '11.5px', color: '#374151', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                        Prime Golf Belt &bull; 1,850 Sq Ft &bull; 3 En-Suite Baths
-                      </p>
-                    </div>
-                  </div>
+                {/* Direct Switch to Property Listing */}
+                <button
+                  type="button"
+                  onClick={handleSwitchToListing}
+                  className="bcom-pill"
+                  style={{
+                    color: '#fed7aa',
+                    border: '1px dashed rgba(255, 255, 255, 0.6)',
+                    background: 'rgba(0, 0, 0, 0.15)',
+                    fontWeight: 700,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    fontSize: '13px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <i className="fa-solid fa-house-chimney-user"></i>
+                  <span>List Your Property &rarr;</span>
+                </button>
+              </>
+            ) : (
+              <>
+                {/* LISTING PORTAL (PATRON) PILLS */}
+                <a 
+                  href="#patron" 
+                  className={`bcom-pill ${activeTab === 'patron' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('patron')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'patron' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'patron' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'patron' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-house-chimney-user"></i>
+                  <span>Hostayy Patron Overview</span>
+                </a>
 
-                  {/* Bottom Action: View All Stays */}
-                  <button 
-                    type="button"
-                    onClick={() => handleSelectStay(null)}
-                    className="bcom-dropdown-all-btn"
-                  >
-                    <i className="fa-solid fa-arrow-down" style={{ fontSize: '11px' }}></i>
-                    <span>Scroll to Stays Section (All Flats)</span>
-                  </button>
-                </div>
-              )}
-            </div>
+                <a 
+                  href="#patron-calc" 
+                  className={`bcom-pill ${activeTab === 'calc' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('calc')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'calc' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'calc' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'calc' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-calculator"></i>
+                  <span>Yield Calculator</span>
+                </a>
 
-            {/* Strategic Location / Yashobhoomi IICC */}
-            <a 
-              href="#why-choose" 
-              className={`bcom-pill ${activeTab === 'location' ? 'active' : ''}`}
-              onClick={() => setActiveTab('location')}
-              style={{
-                color: '#ffffff',
-                border: activeTab === 'location' ? '1.5px solid #ffffff' : '1px solid transparent',
-                background: activeTab === 'location' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                fontWeight: activeTab === 'location' ? 800 : 600,
-                padding: '8px 16px',
-                borderRadius: '30px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                textDecoration: 'none',
-                fontSize: '13.5px'
-              }}
-            >
-              <i className="fa-solid fa-landmark"></i>
-              <span>3 Mins Yashobhoomi IICC</span>
-            </a>
+                <a 
+                  href="#process" 
+                  className={`bcom-pill ${activeTab === 'process' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('process')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'process' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'process' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'process' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-list-check"></i>
+                  <span>3-Step Onboarding</span>
+                </a>
 
-            {/* Amenities & Standards */}
-            <a 
-              href="#services" 
-              className={`bcom-pill ${activeTab === 'amenities' ? 'active' : ''}`}
-              onClick={() => setActiveTab('amenities')}
-              style={{
-                color: '#ffffff',
-                border: activeTab === 'amenities' ? '1.5px solid #ffffff' : '1px solid transparent',
-                background: activeTab === 'amenities' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                fontWeight: activeTab === 'amenities' ? 800 : 600,
-                padding: '8px 16px',
-                borderRadius: '30px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                textDecoration: 'none',
-                fontSize: '13.5px'
-              }}
-            >
-              <i className="fa-solid fa-kitchen-set"></i>
-              <span>Amenities</span>
-            </a>
+                <a 
+                  href="#comparison" 
+                  className={`bcom-pill ${activeTab === 'compare' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('compare')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'compare' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'compare' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'compare' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-solid fa-scale-balanced"></i>
+                  <span>Comparison Table</span>
+                </a>
 
-            {/* Hostayy Patron (Owners) */}
-            <a 
-              href="#patron" 
-              className={`bcom-pill ${activeTab === 'patron' ? 'active' : ''}`}
-              onClick={() => setActiveTab('patron')}
-              style={{
-                color: '#ffffff',
-                border: activeTab === 'patron' ? '1.5px solid #ffffff' : '1px solid transparent',
-                background: activeTab === 'patron' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                fontWeight: activeTab === 'patron' ? 800 : 600,
-                padding: '8px 16px',
-                borderRadius: '30px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                textDecoration: 'none',
-                fontSize: '13.5px'
-              }}
-            >
-              <i className="fa-solid fa-house-chimney-user"></i>
-              <span>Hostayy Patron</span>
-            </a>
+                <a 
+                  href="#faq" 
+                  className={`bcom-pill ${activeTab === 'faq' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('faq')}
+                  style={{
+                    color: '#ffffff',
+                    border: activeTab === 'faq' ? '1.5px solid #ffffff' : '1px solid transparent',
+                    background: activeTab === 'faq' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
+                    fontWeight: activeTab === 'faq' ? 800 : 600,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    textDecoration: 'none',
+                    fontSize: '13px'
+                  }}
+                >
+                  <i className="fa-regular fa-circle-question"></i>
+                  <span>Landlord FAQs</span>
+                </a>
 
-            {/* Contact Host */}
-            <a 
-              href="#contact" 
-              className={`bcom-pill ${activeTab === 'contact' ? 'active' : ''}`}
-              onClick={() => setActiveTab('contact')}
-              style={{
-                color: '#ffffff',
-                border: activeTab === 'contact' ? '1.5px solid #ffffff' : '1px solid transparent',
-                background: activeTab === 'contact' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                fontWeight: activeTab === 'contact' ? 800 : 600,
-                padding: '8px 16px',
-                borderRadius: '30px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                textDecoration: 'none',
-                fontSize: '13.5px'
-              }}
-            >
-              <i className="fa-solid fa-phone"></i>
-              <span>Contact</span>
-            </a>
+                {/* Direct Switch to Guest Booking */}
+                <button
+                  type="button"
+                  onClick={handleSwitchToBooking}
+                  className="bcom-pill"
+                  style={{
+                    color: '#ffffff',
+                    border: '1px dashed rgba(255, 255, 255, 0.6)',
+                    background: 'rgba(0, 0, 0, 0.15)',
+                    fontWeight: 700,
+                    padding: '7px 15px',
+                    borderRadius: '30px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                    fontSize: '13px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <i className="fa-solid fa-bed"></i>
+                  <span>&larr; Book Serviced Flats</span>
+                </button>
+              </>
+            )}
+
           </div>
         </div>
       </div>
@@ -411,61 +612,98 @@ export default function Navbar({ onSelectStay }) {
       {mobileOpen && (
         <div className="bcom-mobile-drawer" style={{ background: '#9a3412', padding: '20px' }}>
           <div className="bcom-mobile-drawer-inner">
+            {/* Mobile Portal Mode Switcher */}
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0,0,0,0.2)', padding: '4px', borderRadius: '8px' }}>
+              <button 
+                type="button" 
+                onClick={handleSwitchToBooking}
+                style={{ flex: 1, padding: '8px', borderRadius: '6px', border: 'none', background: portalMode === 'booking' ? '#ffffff' : 'transparent', color: portalMode === 'booking' ? '#ea580c' : '#ffffff', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
+              >
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px' }}></i> Book Flats
+              </button>
+              <button 
+                type="button" 
+                onClick={handleSwitchToListing}
+                style={{ flex: 1, padding: '8px', borderRadius: '6px', border: 'none', background: portalMode === 'listing' ? '#ffffff' : 'transparent', color: portalMode === 'listing' ? '#ea580c' : '#ffffff', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
+              >
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i> List Property
+              </button>
+            </div>
+
             <div className="bcom-mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
-              <a href="#home" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-house"></i> Home
-              </a>
-              <a href="#room" onClick={() => { setMobileOpen(false); handleSelectStay(null); }} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-bed"></i> Stays (All Serviced Flats)
-              </a>
-              <button 
-                type="button" 
-                onClick={() => { setMobileOpen(false); handleSelectStay('velora'); }}
-                className="mobile-sublink"
-                style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
-              >
-                &bull; 1 BHK Suite (Velora)
-              </button>
-              <button 
-                type="button" 
-                onClick={() => { setMobileOpen(false); handleSelectStay('azura'); }}
-                className="mobile-sublink"
-                style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
-              >
-                &bull; 2 BHK Executive (Azura)
-              </button>
-              <button 
-                type="button" 
-                onClick={() => { setMobileOpen(false); handleSelectStay('verde'); }}
-                className="mobile-sublink"
-                style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
-              >
-                &bull; 3 BHK Signature (Verde)
-              </button>
-              <a href="#services" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-kitchen-set"></i> Amenities &amp; Standards
-              </a>
-              <a href="#why-choose" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-map-location-dot"></i> Yashobhoomi Connectivity
-              </a>
-              <a href="#patron" onClick={() => setMobileOpen(false)} style={{ color: '#fed7aa', fontWeight: 700, fontSize: '15px', textDecoration: 'none' }}>
-                <i className="fa-solid fa-house-chimney-user"></i> Hostayy Patron (List Property)
-              </a>
-              <a href="#contact" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-envelope"></i> Contact Concierge
-              </a>
+              {portalMode === 'booking' ? (
+                <>
+                  <a href="#home" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-house"></i> Home
+                  </a>
+                  <a href="#room" onClick={() => { setMobileOpen(false); handleSelectStay(null); }} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-bed"></i> Stays (All Serviced Flats)
+                  </a>
+                  <button 
+                    type="button" 
+                    onClick={() => { setMobileOpen(false); handleSelectStay('velora'); }}
+                    className="mobile-sublink"
+                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
+                  >
+                    &bull; 1 BHK Suite (Velora)
+                  </button>
+                  <button 
+                    type="button" 
+                    onClick={() => { setMobileOpen(false); handleSelectStay('azura'); }}
+                    className="mobile-sublink"
+                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
+                  >
+                    &bull; 2 BHK Executive (Azura)
+                  </button>
+                  <button 
+                    type="button" 
+                    onClick={() => { setMobileOpen(false); handleSelectStay('verde'); }}
+                    className="mobile-sublink"
+                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '14px', paddingLeft: '20px', cursor: 'pointer' }}
+                  >
+                    &bull; 3 BHK Signature (Verde)
+                  </button>
+                  <a href="#why-choose" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-map-location-dot"></i> Yashobhoomi Location &amp; Address
+                  </a>
+                  <a href="#contact" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-envelope"></i> Contact Concierge
+                  </a>
+                </>
+              ) : (
+                <>
+                  <a href="#patron" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-house-chimney-user"></i> Hostayy Patron Overview
+                  </a>
+                  <a href="#patron-calc" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-calculator"></i> Yield Calculator
+                  </a>
+                  <a href="#process" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-list-check"></i> 3-Step Onboarding
+                  </a>
+                  <a href="#comparison" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-scale-balanced"></i> Comparison Table
+                  </a>
+                  <a href="#faq" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-regular fa-circle-question"></i> Landlord FAQs
+                  </a>
+                  <a href="#contact" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
+                    <i className="fa-solid fa-envelope"></i> Request Property Audit
+                  </a>
+                </>
+              )}
             </div>
 
             <div className="bcom-mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
+                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to inquire about Hostayy serviced residences / listing my property." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-drawer-btn wa-drawer-btn"
                 onClick={() => setMobileOpen(false)}
                 style={{ background: '#16a34a', color: '#ffffff', padding: '12px', borderRadius: '8px', textAlign: 'center', fontWeight: 700, textDecoration: 'none' }}
               >
-                <i className="fa-brands fa-whatsapp"></i> Book Flat on WhatsApp
+                <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp
               </a>
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}

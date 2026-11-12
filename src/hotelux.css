@@ -4544,3 +4544,39 @@ p {
     overflow: visible !important;
   }
 }
+
+/* Dual Portal Switcher (Booking vs Listing) */
+.bcom-portal-switcher {
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .bcom-portal-switcher button {
+    padding: 5px 11px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .bcom-top-inner {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+  .bcom-portal-switcher {
+    order: 3;
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+  .bcom-portal-switcher button {
+    flex: 1 !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+}

@@ -3,8 +3,12 @@
 import React, { useState } from 'react';
 import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
-export default function ContactSection() {
-  const [activeFormTab, setActiveFormTab] = useState('guest');
+export default function ContactSection({ initialTab = 'guest' }) {
+  const [activeFormTab, setActiveFormTab] = useState(initialTab);
+
+  React.useEffect(() => {
+    setActiveFormTab(initialTab);
+  }, [initialTab]);
 
   // Owner Form State
   const [ownerData, setOwnerData] = useState({
