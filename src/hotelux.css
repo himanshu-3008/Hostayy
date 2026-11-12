@@ -5198,3 +5198,326 @@ p {
   border-color: #ea580c !important;
   box-shadow: 0 16px 40px rgba(234, 88, 12, 0.12) !important;
 }
+
+/* ==========================================================================
+   AGODA-INSPIRED CLEAN WHITE HEADER & FLOATING SEARCH HERO WIDGET
+   ========================================================================== */
+
+/* Agoda Header Bar */
+.agoda-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #fed7aa;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+}
+
+.agoda-header-inner {
+  display: flex;
+  align-items: center;
+  justifyContent: space-between;
+  padding: 12px 0;
+  gap: 16px;
+}
+
+.agoda-nav-link {
+  color: #111827 !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.agoda-nav-link:hover,
+.agoda-nav-link.active {
+  color: #ea580c !important;
+  background: #fff7ed;
+}
+
+.agoda-micro-badge {
+  position: absolute;
+  top: -8px;
+  right: 2px;
+  background: #ef4444;
+  color: #ffffff !important;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.agoda-list-btn {
+  background: #ffffff !important;
+  border: 1.5px solid #ea580c !important;
+  color: #ea580c !important;
+  border-radius: 24px !important;
+  padding: 7px 18px !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.agoda-list-btn:hover {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25) !important;
+}
+
+/* Agoda Hero Scenic Banner */
+.agoda-scenic-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 65px 0 115px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.agoda-scenic-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.72) 100%);
+  z-index: 1;
+}
+
+.agoda-scenic-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Agoda Floating Search Card */
+.agoda-search-wrapper {
+  position: relative;
+  z-index: 30;
+  margin-top: -80px;
+  margin-bottom: 45px;
+}
+
+.agoda-top-tabs {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 14px 14px 0 0;
+  border: 1.5px solid #fed7aa;
+  border-bottom: none;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  max-width: 100%;
+  scrollbar-width: none;
+}
+
+.agoda-top-tab {
+  padding: 12px 20px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #374151;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.agoda-top-tab.active {
+  color: #ea580c !important;
+  border-bottom-color: #ea580c;
+  background: #fffaf5;
+}
+
+.agoda-top-tab:hover:not(.active) {
+  color: #ea580c;
+  background: #fafafa;
+}
+
+.agoda-search-box {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 0 20px 20px 20px;
+  padding: 26px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.agoda-sub-pills {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.agoda-sub-pill {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1.5px solid #fed7aa;
+  background: #ffffff;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.agoda-sub-pill.active {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #ea580c;
+}
+
+.agoda-input-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.agoda-input-item {
+  border: 1.5px solid #fed7aa;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.agoda-input-item:hover {
+  border-color: #ea580c;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.1);
+}
+
+.agoda-input-label {
+  display: block;
+  font-size: 10.5px;
+  color: #64748b;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.agoda-input-val {
+  display: block;
+  font-size: 14px;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.agoda-dest-row {
+  margin-bottom: 14px;
+}
+
+.agoda-dest-item {
+  border: 1.5px solid #fed7aa;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.agoda-dest-item:hover,
+.agoda-dest-item:focus-within {
+  border-color: #ea580c;
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.12);
+}
+
+.agoda-dates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.agoda-checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+  font-size: 13.5px;
+  color: #374151;
+}
+
+.agoda-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.agoda-checkbox-label input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #ea580c;
+  cursor: pointer;
+}
+
+.agoda-search-btn-wrap {
+  text-align: center;
+}
+
+.agoda-cta-btn {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  padding: 15px 56px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  border: none !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 8px 25px rgba(234, 88, 12, 0.35) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+}
+
+.agoda-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 30px rgba(234, 88, 12, 0.45) !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 991px) {
+  .agoda-dates-grid {
+    grid-template-columns: 1fr;
+  }
+  .agoda-search-box {
+    border-radius: 16px;
+    padding: 20px 16px;
+  }
+  .agoda-top-tabs {
+    border-radius: 12px 12px 0 0;
+  }
+  .agoda-cta-btn {
+    width: 100% !important;
+    padding: 14px 20px !important;
+  }
+}
