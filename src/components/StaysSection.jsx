@@ -158,12 +158,12 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <a 
-              href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out directly for a long-term / monthly serviced stay quotation near Yashobhoomi IICC." })} 
+              href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'm reaching out directly for a long-term / monthly serviced stay quotation near Yashobhoomi IICC." })} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="thm-btn thm-btn-wa" 
               style={{ padding: '12px 24px', fontSize: '13px' }}
-              title="Direct WhatsApp with Mohit"
+              title="Direct WhatsApp with Hostayy"
             >
               <i className="fa-brands fa-whatsapp" style={{ fontSize: '16px' }}></i>
               <span>Request Long-Term Quotation on WhatsApp</span>

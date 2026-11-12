@@ -82,7 +82,7 @@ export default function Footer({ onSelectStay }) {
                 <i className="fa-solid fa-user-tie" style={{ color: '#ea580c' }}></i>
                 <div>
                   <strong style={{ color: '#ffffff', display: 'block', fontSize: '15px', fontWeight: 700 }}>{HOSTAYY_CONFIG.contactName}</strong>
-                  <span style={{ fontSize: '12px', color: '#fed7aa', fontWeight: 600 }}>Founder &amp; Chief Hospitality Operator</span>
+                  <span style={{ fontSize: '12px', color: '#fed7aa', fontWeight: 600 }}>Hospitality &amp; Property Operations</span>
                 </div>
               </div>
 
@@ -104,7 +104,7 @@ export default function Footer({ onSelectStay }) {
 
               <div style={{ marginTop: '16px' }}>
                 <a 
-                  href={getGuestWhatsAppLink({ message: "Hello Mohit, I'm reaching out from the website footer to inquire about monthly stay rates near Yashobhoomi." })}
+                  href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'm reaching out from the website footer to inquire about monthly stay rates near Yashobhoomi." })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="thm-btn footer-wa-btn"
@@ -128,7 +128,7 @@ export default function Footer({ onSelectStay }) {
             </div>
             <div className="col-12 col-md-6 footer-bottom-right" style={{ padding: 0 }}>
               <p style={{ margin: 0, fontSize: '12.5px', color: '#ffffff', fontWeight: 500, lineHeight: 1.6 }}>
-                Managed by Mohit Chaudhary &bull; Zero Brokerage Guarantee
+                Managed by Hostayy Hospitality &bull; Zero Brokerage Guarantee
               </p>
             </div>
           </div>

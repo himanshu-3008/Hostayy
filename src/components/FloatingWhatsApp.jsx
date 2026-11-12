@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
 
   const handleGuestClick = () => {
     window.open(getGuestWhatsAppLink({
-      message: "Hello Mohit, I am reaching out via your 24/7 WhatsApp concierge to request a long-term / monthly serviced stay quotation near Yashobhoomi IICC."
+      message: "Hello Hostayy, I am reaching out via your 24/7 WhatsApp concierge to request a long-term / monthly serviced stay quotation near Yashobhoomi IICC."
     }), '_blank');
     setIsOpen(false);
   };
@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
   const handleOwnerClick = () => {
     window.open(getOwnerWhatsAppLink({
       location: "Delhi NCR",
-      message: "Hello Mohit, I am a property owner and I want to discuss partnering my property with Hostayy for turnkey short-term / corporate rental management."
+      message: "Hello Hostayy, I am a property owner and I want to discuss partnering my property with Hostayy for turnkey short-term / corporate rental management."
     }), '_blank');
     setIsOpen(false);
   };
@@ -58,7 +58,7 @@ export default function FloatingWhatsApp() {
               </div>
               <div>
                 <h4 style={{ margin: 0, fontSize: '14.5px', fontWeight: 800, color: '#ffffff' }}>Hostayy 24/7 Concierge</h4>
-                <span style={{ fontSize: '11px', color: '#fed7aa', letterSpacing: '0.04em', fontWeight: 600 }}>Mohit Chaudhary &bull; Online</span>
+                <span style={{ fontSize: '11px', color: '#fed7aa', letterSpacing: '0.04em', fontWeight: 600 }}>Hostayy Team &bull; Online</span>
               </div>
             </div>
             <button 

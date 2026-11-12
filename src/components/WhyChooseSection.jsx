@@ -6,7 +6,7 @@ import { HOSTAYY_CONFIG, getGuestWhatsAppLink } from '../data/properties';
 export default function WhyChooseSection() {
   const handleConsultation = () => {
     window.open(getGuestWhatsAppLink({
-      message: "Hello Mohit, I'm exploring long-term serviced apartments near Yashobhoomi IICC. I'd love to learn more about Hostayy's 1, 2, and 3 BHK residences."
+      message: "Hello Hostayy, I'm exploring long-term serviced apartments near Yashobhoomi IICC. I'd love to learn more about Hostayy's 1, 2, and 3 BHK residences."
     }), '_blank');
   };
 
@@ -202,7 +202,7 @@ export default function WhyChooseSection() {
               >
                 <div>
                   <h4 style={{ margin: '0 0 3px', color: '#ffffff', fontSize: '16px', fontWeight: 800 }}>
-                    Mohit Chaudhary &bull; Hostayy
+                    Hostayy Hospitality &bull; Concierge
                   </h4>
                   <p style={{ margin: 0, fontSize: '12.5px', color: '#fff7ed', fontWeight: 600 }}>
                     4.98 ★ Superhost &bull; Serving Yashobhoomi Delegates &amp; Expats

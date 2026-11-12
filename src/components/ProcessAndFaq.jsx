@@ -9,7 +9,7 @@ export default function ProcessAndFaq() {
     {
       num: '01',
       title: 'Consultation & Feasibility',
-      desc: 'Mohit Chaudhary conducts an on-site evaluation of your apartment or estate in Delhi NCR, reviews Yashobhoomi and corporate demand trends, and provides a clear monthly revenue projection.'
+      desc: 'Hostayy conducts an on-site evaluation of your apartment or estate in Delhi NCR, reviews Yashobhoomi and corporate demand trends, and provides a clear monthly revenue projection.'
     },
     {
       num: '02',
@@ -42,7 +42,7 @@ export default function ProcessAndFaq() {
     },
     {
       q: 'How do I request a custom long-stay quotation?',
-      a: 'Simply click "Request Long-Stay Quote" on any residence or message Mohit Chaudhary on WhatsApp at +91 9217680108 with your move-in date, expected duration, and team size. We share real-time quotations, floor layouts, and photos within minutes.'
+      a: 'Simply click "Request Long-Stay Quote" on any residence or message Hostayy on WhatsApp at +91 9217680108 with your move-in date, expected duration, and team size. We share real-time quotations, floor layouts, and photos within minutes.'
     }
   ];
 

@@ -59,7 +59,7 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
         <a 
           href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
           className="mobile-bar-item call-action"
-          title="Direct Call to Mohit Chaudhary"
+          title="Direct Call to Hostayy Concierge"
           style={{ textDecoration: 'none' }}
         >
           <div className="mobile-bar-icon" style={{ backgroundColor: '#f3f4f6', color: '#111827' }}>

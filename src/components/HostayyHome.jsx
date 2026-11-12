@@ -542,7 +542,7 @@ export default function HostayyHome() {
                 {/* Direct WhatsApp Callout */}
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <a 
-                    href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to inquire about Hostayy serviced residences." })}
+                    href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to inquire about Hostayy serviced residences." })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="thm-btn"

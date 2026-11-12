@@ -83,7 +83,7 @@ export default function ServicesSection() {
 
             <div style={{ marginTop: '20px' }}>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I'd like to request a long-term corporate / monthly serviced stay proposal near Yashobhoomi." })}
+                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'd like to request a long-term corporate / monthly serviced stay proposal near Yashobhoomi." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="thm-btn thm-btn-wa"

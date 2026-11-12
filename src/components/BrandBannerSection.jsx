@@ -5,7 +5,7 @@ import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
 
 export default function BrandBannerSection() {
   const handleWhatsAppInquiry = () => {
-    const msg = "Hi Mohit (Hostayy), I love the '(feel like home)' philosophy. I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
+    const msg = "Hi Hostayy, I love the '(feel like home)' philosophy. I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
     window.open(getHostayyWhatsAppLink(msg), '_blank');
   };
 

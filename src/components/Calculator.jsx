@@ -155,7 +155,7 @@ export default function Calculator() {
                   onClick={sendYieldToWhatsApp}
                 >
                   <i className="fa-brands fa-whatsapp"></i>
-                  <span>Send Projection &amp; Discuss Partnership with Mohit</span>
+                  <span>Send Projection &amp; Discuss Partnership with Hostayy</span>
                 </button>
               </div>
             )}

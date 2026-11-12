@@ -8,7 +8,7 @@ export default function Testimonials() {
       name: 'Aditya & Neha Malhotra',
       location: 'Corporate Relocation · Velora 1 BHK Suite',
       rating: 5,
-      text: 'Stayed at Velora for two months while transitioning to Delhi NCR. Having a fully equipped modular kitchen with microwave and RO made daily living so easy. Only 3 minutes from Yashobhoomi IICC and 10 mins to T3. Mohit’s team handled daily cleaning seamlessly!'
+      text: 'Stayed at Velora for two months while transitioning to Delhi NCR. Having a fully equipped modular kitchen with microwave and RO made daily living so easy. Only 3 minutes from Yashobhoomi IICC and 10 mins to T3. Hostayy’s team handled daily cleaning seamlessly!'
     },
     {
       name: 'Marcus Vance',

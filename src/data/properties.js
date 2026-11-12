@@ -1,17 +1,17 @@
 /**
  * Hostayy Luxury Serviced Residences & Hospitality Management
  * Curated 1, 2, and 3 BHK Serviced Apartments near Yashobhoomi (IICC) & IGI Airport, Delhi NCR
- * Official Contact: Mohit Chaudhary (+91 9217680108)
+ * Official Contact: Hostayy (+91 9217680108)
  * Address: Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077 (3 mins to Yashobhoomi IICC)
  */
 
 export const HOSTAYY_CONFIG = {
   whatsappNumber: "919217680108",
   displayPhone: "+91 9217680108",
-  contactName: "Mohit Chaudhary",
+  contactName: "Hostayy",
   address: "Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077",
   brandName: "Hostayy",
-  email: "C.mohit@hostayy.com",
+  email: "Hello@hostayy.com",
   bookingUrl: "https://www.booking.com/Share-OrxZmT",
   airbnbVeloraUrl: "https://www.airbnb.com/h/velorabyhostayy",
   airbnbAzuraUrl: "https://www.airbnb.com/h/azurabyhostayy",
@@ -46,7 +46,7 @@ export function getHostayyWhatsAppLink(customMsg = "") {
  * Generates a pre-filled WhatsApp link clearly focused on LONG-TERM & MONTHLY QUOTATIONS
  */
 export function getGuestWhatsAppLink({ property = "", moveInDate = "", checkIn = "", checkOut = "", duration = "", guests = "", purpose = "", message = "" } = {}) {
-  let text = `🏨 [LONG-TERM / SERVICED STAY QUOTATION - HOSTAYY]\nHello Mohit, I am inquiring about a serviced apartment stay near Yashobhoomi (IICC) with Hostayy:`;
+  let text = `🏨 [LONG-TERM / SERVICED STAY QUOTATION - HOSTAYY]\nHello Hostayy, I am inquiring about a serviced apartment stay near Yashobhoomi (IICC) with Hostayy:`;
 
   if (property) text += `\n• Preferred Residence: ${property}`;
   const effectiveMoveIn = moveInDate || checkIn;
@@ -68,7 +68,7 @@ export function getGuestWhatsAppLink({ property = "", moveInDate = "", checkIn =
  * Generates a pre-filled WhatsApp link for PROPERTY OWNERS looking to register/partner
  */
 export function getOwnerWhatsAppLink({ name = "", location = "", propertyType = "", bedrooms = "", monthlyYield = "", message = "" } = {}) {
-  let text = `🔑 [PROPERTY MANAGEMENT / OWNER PARTNERSHIP - HOSTAYY]\nHello Mohit, I am a property owner and I want to list/register my property with Hostayy for turnkey management:`;
+  let text = `🔑 [PROPERTY MANAGEMENT / OWNER PARTNERSHIP - HOSTAYY]\nHello Hostayy, I am a property owner and I want to list/register my property with Hostayy for turnkey management:`;
 
   if (name) text += `\n• Owner Name: ${name}`;
   if (location) text += `\n• Property Location: ${location}`;

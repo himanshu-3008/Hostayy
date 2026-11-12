@@ -67,7 +67,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
             Connect With Our <span style={{ color: '#ea580c' }}>Concierge</span>
           </h2>
           <p className="section-title__text" style={{ maxWidth: '640px', margin: '14px auto 0', color: '#374151' }}>
-            Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? Mohit Chaudhary responds directly on WhatsApp.
+            Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? Hostayy Concierge responds directly on WhatsApp.
           </p>
         </div>
 
@@ -327,7 +327,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                 <button type="submit" className="thm-btn" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
-                  <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to Mohit
+                  <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to Hostayy
                 </button>
               </div>
             </form>

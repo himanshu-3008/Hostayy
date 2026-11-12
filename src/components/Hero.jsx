@@ -63,7 +63,7 @@ export default function Hero({ onSelectStay }) {
                 </h1>
 
                 <p className="banner-one__text" style={{ color: '#374151', fontSize: '15.5px', lineHeight: 1.75, marginBottom: '24px' }}>
-                  Handcrafted private serviced apartments in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully furnished with modern modular kitchens, 300 Mbps Wi-Fi, sanitized hotel-grade bedding, and instant WhatsApp booking with Superhost Mohit Chaudhary.
+                  Handcrafted private serviced apartments in Dwarka Sector 23, just 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully furnished with modern modular kitchens, 300 Mbps Wi-Fi, sanitized hotel-grade bedding, and instant WhatsApp booking with Hostayy Concierge.
                 </p>
 
                 {/* Action Buttons */}
@@ -74,7 +74,7 @@ export default function Hero({ onSelectStay }) {
                       <i className="fa-solid fa-arrow-down" style={{ fontSize: '12px' }}></i>
                     </a>
                     <a 
-                      href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })} 
+                      href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="thm-btn thm-btn-wa"

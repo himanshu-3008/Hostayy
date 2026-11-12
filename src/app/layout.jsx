@@ -10,7 +10,7 @@ export const viewport = {
 export const metadata = {
   title: "Hostayy | 1, 2 & 3 BHK Serviced Apartments Near Yashobhoomi (IICC) Dwarka & Delhi — Long Term Stays",
   description: "Book fully furnished 1, 2 & 3 BHK serviced apartments near Yashobhoomi (IICC) Convention Centre (Sector 25 Dwarka) and IGI Airport Delhi. Tailored for corporate executives, exhibition delegates, and long-term monthly stays with modern modular kitchens, 300 Mbps Wi-Fi, and 0% brokerage.",
-  keywords: "serviced apartments near Yashobhoomi, Yashobhoomi IICC Dwarka accommodation, long term stays Delhi NCR, 1 BHK serviced apartment Dwarka, 2 BHK corporate stay Yashobhoomi, 3 BHK furnished apartment near IGI airport, monthly rental Dwarka Sector 23, corporate housing Yashobhoomi, exhibition stay Dwarka Sector 25, executive serviced residences Delhi, Hostayy long term stays, furnished apartments for rent Dwarka, serviced flats near Yashobhoomi metro, monthly corporate stays Delhi, Mohit Chaudhary Hostayy",
+  keywords: "serviced apartments near Yashobhoomi, Yashobhoomi IICC Dwarka accommodation, long term stays Delhi NCR, 1 BHK serviced apartment Dwarka, 2 BHK corporate stay Yashobhoomi, 3 BHK furnished apartment near IGI airport, monthly rental Dwarka Sector 23, corporate housing Yashobhoomi, exhibition stay Dwarka Sector 25, executive serviced residences Delhi, Hostayy long term stays, furnished apartments for rent Dwarka, serviced flats near Yashobhoomi metro, monthly corporate stays Delhi, Hostayy Hospitality",
   metadataBase: new URL('https://hostayy.com'),
   icons: {
     icon: '/assets/images/hostayy-logo-transparent.png',
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
         "image": "https://hostayy.com/assets/images/hostayy-banner.png",
         "description": "Premium 1, 2, and 3 BHK fully furnished serviced residences in Dwarka Sector 23, located 3 minutes from Yashobhoomi (IICC) Convention Centre and 10 minutes from IGI Airport. Tailored for corporate executives, exhibition attendees, and long-term monthly stays.",
         "telephone": "+91-92176-80108",
-        "email": "C.mohit@hostayy.com",
+        "email": "Hello@hostayy.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Block A, Dwarka Sector 23 (Near Yashobhoomi IICC)",

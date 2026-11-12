@@ -189,7 +189,7 @@ export default function PatronSection() {
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
               <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>02</div>
               <h4 style={{ color: '#111827', fontWeight: 800 }}>Free On-Site Audit &amp; Projection</h4>
-              <p style={{ color: '#374151' }}>Superhost Mohit Chaudhary conducts a personalized property audit and provides an exact revenue feasibility report.</p>
+              <p style={{ color: '#374151' }}>The Hostayy Hospitality team conducts a personalized property audit and provides an exact revenue feasibility report.</p>
             </div>
 
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
@@ -247,7 +247,7 @@ export default function PatronSection() {
                 Unlimited Personal Stays for Property Owners
               </h4>
               <p style={{ margin: '4px 0 0', fontSize: '13.5px', color: '#374151' }}>
-                Visiting Delhi with your family? Enjoy free personal stays in your own apartment anytime it isn't booked. Simply message Mohit on WhatsApp to block your dates.
+                Visiting Delhi with your family? Enjoy free personal stays in your own apartment anytime it isn't booked. Simply message Hostayy on WhatsApp to block your dates.
               </p>
             </div>
           </div>

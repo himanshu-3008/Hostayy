@@ -154,11 +154,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
               {/* Direct WhatsApp Concierge CTA */}
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
+                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-action-btn wa-btn"
-                title="Chat with Mohit on WhatsApp"
+                title="Chat with Hostayy on WhatsApp"
                 style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 12px', borderRadius: '4px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
               >
                 <i className="fa-brands fa-whatsapp"></i>
@@ -762,7 +762,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
             <div className="bcom-mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Mohit, I want to inquire about Hostayy serviced residences / listing my property." })}
+                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to inquire about Hostayy serviced residences / listing my property." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-drawer-btn wa-drawer-btn"
