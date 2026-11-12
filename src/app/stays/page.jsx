@@ -6,3 +6,4 @@ import BookingPageContent from '../../components/BookingPageContent';
 export default function StaysPage() {
   return <BookingPageContent />;
 }
+

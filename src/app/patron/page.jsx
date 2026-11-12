@@ -6,3 +6,4 @@ import ListingPageContent from '../../components/ListingPageContent';
 export default function PatronPage() {
   return <ListingPageContent />;
 }
+
