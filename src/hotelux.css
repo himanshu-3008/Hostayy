@@ -4420,3 +4420,127 @@ p {
     font-size: 12px !important;
   }
 }
+
+/* ==========================================================================
+   STAYS DROPDOWN MENU (BOOKING.COM SUB-NAV PILL)
+   ========================================================================== */
+.bcom-stays-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.bcom-stays-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 9999;
+  width: 320px;
+  max-width: calc(100vw - 24px);
+  background: #ffffff !important;
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  border: 1.5px solid #fed7aa;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: bcomFadeDown 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bcomFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Explicit high-contrast text rules inside the white dropdown */
+.bcom-stays-dropdown-menu,
+.bcom-stays-dropdown-menu div,
+.bcom-stays-dropdown-menu h4,
+.bcom-stays-dropdown-menu strong,
+.bcom-stays-dropdown-menu p {
+  color: #111827 !important;
+}
+
+.bcom-stays-dropdown-menu .bcom-dropdown-header-title {
+  color: #ea580c !important;
+}
+
+.bcom-dropdown-stay-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fffaf5 !important;
+  border: 1px solid #fed7aa;
+  transition: all 0.2s ease;
+}
+
+.bcom-dropdown-stay-item:hover {
+  background: #fff0e3 !important;
+  border-color: #ea580c !important;
+  transform: translateX(3px);
+}
+
+.bcom-dropdown-stay-item h4 {
+  color: #111827 !important;
+  margin: 0;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+}
+
+.bcom-dropdown-stay-item .bcom-stay-desc {
+  color: #374151 !important;
+  margin: 2px 0 0;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+}
+
+.bcom-dropdown-stay-item .bcom-stay-tag {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+.bcom-dropdown-all-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 9px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  background: #ea580c !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  border: none !important;
+  width: 100% !important;
+  transition: background 0.2s ease !important;
+  margin-top: 4px;
+}
+
+.bcom-dropdown-all-btn:hover {
+  background: #c2410c !important;
+}
+
+.bcom-dropdown-all-btn span,
+.bcom-dropdown-all-btn i {
+  color: #ffffff !important;
+}
+
+@media (min-width: 769px) {
+  .bcom-subnav-strip {
+    overflow: visible !important;
+  }
+}
