@@ -4580,3 +4580,47 @@ p {
     font-size: 12px !important;
   }
 }
+
+/* ==========================================================================
+   PORTAL SWITCH CARD (100% CONTRAST ON WHITE BACKGROUND)
+   ========================================================================== */
+.portal-switch-card {
+  background: #ffffff !important;
+  border: 2px solid #fed7aa !important;
+}
+
+.portal-switch-card h3 {
+  color: #111827 !important;
+  font-weight: 800 !important;
+}
+
+.portal-switch-card p {
+  color: #374151 !important;
+  font-weight: 500 !important;
+}
+
+.portal-switch-card .thm-btn,
+.portal-switch-card .thm-btn span,
+.portal-switch-card .thm-btn i {
+  color: #ffffff !important;
+  background-color: #ea580c !important;
+}
+
+.portal-switch-card .thm-btn:hover {
+  background-color: #c2410c !important;
+}
+
+@media (max-width: 768px) {
+  .portal-switch-card {
+    padding: 20px 16px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+  .portal-switch-card .thm-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 18px !important;
+  }
+}
