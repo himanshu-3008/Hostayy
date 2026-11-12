@@ -4094,41 +4094,293 @@ p {
   background-color: #ea580c !important;
   color: #ffffff !important;
 }
-.bcom-header a, 
-.bcom-header button, 
-.bcom-header span, 
-.bcom-header i {
+
+/* Base text and links on orange header bar are white by default */
+.bcom-top-inner,
+.bcom-subnav-strip,
+.bcom-header a,
+.bcom-header .bcom-util-btn,
+.bcom-header .bcom-pill {
   color: #ffffff !important;
 }
+
+.bcom-header .bcom-pill span,
+.bcom-header .bcom-pill i,
+.bcom-header .bcom-util-btn span,
+.bcom-header .bcom-util-btn i,
+.bcom-header .bcom-mobile-links a {
+  color: #ffffff !important;
+}
+
+/* PORTAL SWITCHER: BOOK FLATS vs LIST PROPERTY (100% CONTRAST ON CLICK/ACTIVE) */
+.bcom-portal-switcher {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: rgba(0, 0, 0, 0.22) !important;
+  padding: 4px !important;
+  border-radius: 30px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.bcom-portal-btn {
+  padding: 7px 18px !important;
+  border-radius: 24px !important;
+  border: none !important;
+  font-weight: 800 !important;
+  font-size: 13.5px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+}
+
+.bcom-portal-btn span,
+.bcom-portal-btn i {
+  color: #ffffff !important;
+  transition: color 0.2s ease !important;
+}
+
+.bcom-portal-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+.bcom-portal-btn:hover:not(.active) span,
+.bcom-portal-btn:hover:not(.active) i {
+  color: #ffffff !important;
+}
+
+/* ACTIVE STATE ON CLICK: PURE WHITE PILL WITH 100% VISIBLE VIBRANT ORANGE TEXT & ICON */
+.bcom-portal-btn.active,
+.bcom-header .bcom-portal-btn.active,
+.bcom-portal-switcher button.active,
+.bcom-header .bcom-portal-switcher button.active {
+  background: #ffffff !important;
+  color: #ea580c !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.bcom-portal-btn.active span,
+.bcom-portal-btn.active i,
+.bcom-header .bcom-portal-btn.active span,
+.bcom-header .bcom-portal-btn.active i,
+.bcom-portal-switcher button.active span,
+.bcom-portal-switcher button.active i,
+.bcom-header .bcom-portal-switcher button.active span,
+.bcom-header .bcom-portal-switcher button.active i {
+  color: #ea580c !important;
+  font-weight: 800 !important;
+}
+
+.bcom-portal-btn.active:hover,
+.bcom-header .bcom-portal-btn.active:hover,
+.bcom-portal-switcher button.active:hover,
+.bcom-header .bcom-portal-switcher button.active:hover {
+  background: #ffffff !important;
+  color: #c2410c !important;
+}
+.bcom-portal-btn.active:hover span,
+.bcom-portal-btn.active:hover i,
+.bcom-header .bcom-portal-btn.active:hover span,
+.bcom-header .bcom-portal-btn.active:hover i {
+  color: #c2410c !important;
+}
+
+/* MOBILE DRAWER PORTAL SWITCHER BUTTONS */
+.bcom-mobile-portal-btn {
+  flex: 1 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.bcom-mobile-portal-btn span,
+.bcom-mobile-portal-btn i {
+  color: #ffffff !important;
+}
+
+.bcom-mobile-portal-btn.active,
+.bcom-header .bcom-mobile-portal-btn.active {
+  background: #ffffff !important;
+  color: #ea580c !important;
+}
+
+.bcom-mobile-portal-btn.active span,
+.bcom-mobile-portal-btn.active i,
+.bcom-header .bcom-mobile-portal-btn.active span,
+.bcom-header .bcom-mobile-portal-btn.active i {
+  color: #ea580c !important;
+  font-weight: 800 !important;
+}
+
+/* HEADER ACTION BUTTON (WHITE PILL "BOOK FLAT") */
 .bcom-header .bcom-action-btn.register-btn {
   background: #ffffff !important;
   color: #ea580c !important;
   border: 1px solid #ffffff !important;
   font-weight: 800 !important;
 }
+.bcom-header .bcom-action-btn.register-btn span,
+.bcom-header .bcom-action-btn.register-btn i {
+  color: #ea580c !important;
+  font-weight: 800 !important;
+}
+
 .bcom-header .bcom-action-btn.register-btn:hover {
   background: #fff7ed !important;
   color: #c2410c !important;
 }
+.bcom-header .bcom-action-btn.register-btn:hover span,
+.bcom-header .bcom-action-btn.register-btn:hover i {
+  color: #c2410c !important;
+}
+
 .bcom-header .bcom-action-btn.wa-btn {
   background: #16a34a !important;
   color: #ffffff !important;
   border: 1px solid #16a34a !important;
 }
+.bcom-header .bcom-action-btn.wa-btn span,
+.bcom-header .bcom-action-btn.wa-btn i {
+  color: #ffffff !important;
+}
+
 .bcom-header .bcom-pill.active {
   border: 1.5px solid #ffffff !important;
   background: rgba(255, 255, 255, 0.22) !important;
   color: #ffffff !important;
   font-weight: 800 !important;
 }
+
 .bcom-header .bcom-mobile-drawer {
   background: #9a3412 !important;
 }
 
-/* Primary Theme Buttons - Solid Orange with Pure White Text */
+/* ==========================================================================
+   GLOBAL BUTTON & TAB CONTRAST & VISIBILITY ENFORCEMENT
+   Guarantees 100% visible text on click, hover, and active states everywhere.
+   ========================================================================== */
+
+/* 1. ROOM FILTER TABS & CONTACT DUAL TABS (.our-rooms-tab-btn) */
+.our-rooms-tab-btn {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1.5px solid #fed7aa !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+}
+.our-rooms-tab-btn i,
+.our-rooms-tab-btn span {
+  color: #111827 !important;
+  transition: color 0.2s ease !important;
+}
+.our-rooms-tab-btn:hover {
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+}
+.our-rooms-tab-btn:hover i,
+.our-rooms-tab-btn:hover span {
+  color: #ea580c !important;
+}
+.our-rooms-tab-btn.active,
+.our-rooms-tab-btn:active {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25) !important;
+}
+.our-rooms-tab-btn.active i,
+.our-rooms-tab-btn.active span,
+.our-rooms-tab-btn:active i,
+.our-rooms-tab-btn:active span {
+  color: #ffffff !important;
+}
+
+/* 2. CALCULATOR TABS (.tab-btn) */
+.tab-btn {
+  color: #374151 !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+}
+.tab-btn i,
+.tab-btn span {
+  color: #374151 !important;
+}
+.tab-btn:not(.active):hover {
+  color: #111827 !important;
+  background: #f1f5f9 !important;
+}
+.tab-btn:not(.active):hover i,
+.tab-btn:not(.active):hover span {
+  color: #111827 !important;
+}
+.tab-btn.active,
+.tab-btn:active {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(234, 88, 12, 0.25) !important;
+}
+.tab-btn.active i,
+.tab-btn.active span,
+.tab-btn:active i,
+.tab-btn:active span {
+  color: #ffffff !important;
+}
+
+/* 3. BHK BUTTONS IN CALCULATOR & PATRON (.calc-bhk-btn & .patron-bhk-btn) */
+.calc-bhk-btn,
+.patron-bhk-btn {
+  padding: 12px 14px !important;
+  border: 1.5px solid #fed7aa !important;
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  color: #374151 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+.calc-bhk-btn:hover,
+.patron-bhk-btn:hover {
+  border-color: #ea580c !important;
+  color: #ea580c !important;
+}
+.calc-bhk-btn.active,
+.calc-bhk-btn:active {
+  border: 2px solid #ea580c !important;
+  background: #fffaf5 !important;
+  color: #ea580c !important;
+  font-weight: 800 !important;
+}
+.patron-bhk-btn.active,
+.patron-bhk-btn:active {
+  background: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+/* 4. SOLID THEME BUTTONS (.thm-btn) */
 .thm-btn {
   background-color: #ea580c !important;
   border-color: #ea580c !important;
+  color: #ffffff !important;
+}
+.thm-btn span,
+.thm-btn i {
   color: #ffffff !important;
 }
 .thm-btn:hover {
@@ -4136,15 +4388,88 @@ p {
   border-color: #c2410c !important;
   color: #ffffff !important;
 }
+.thm-btn:hover span,
+.thm-btn:hover i {
+  color: #ffffff !important;
+}
+.thm-btn:active {
+  background-color: #9a3412 !important;
+  border-color: #9a3412 !important;
+  color: #ffffff !important;
+}
+.thm-btn:active span,
+.thm-btn:active i {
+  color: #ffffff !important;
+}
+
 .thm-btn-black {
   background-color: #111827 !important;
   border-color: #111827 !important;
+  color: #ffffff !important;
+}
+.thm-btn-black span,
+.thm-btn-black i {
   color: #ffffff !important;
 }
 .thm-btn-black:hover {
   background-color: #ea580c !important;
   border-color: #ea580c !important;
   color: #ffffff !important;
+}
+.thm-btn-black:hover span,
+.thm-btn-black:hover i {
+  color: #ffffff !important;
+}
+
+/* 5. WHATSAPP BUTTONS */
+.thm-btn-wa,
+.btn-hotelux-room-wa,
+.wa-btn,
+.footer-wa-btn {
+  background-color: #16a34a !important;
+  border-color: #16a34a !important;
+  color: #ffffff !important;
+}
+.thm-btn-wa span,
+.thm-btn-wa i,
+.btn-hotelux-room-wa span,
+.btn-hotelux-room-wa i,
+.wa-btn span,
+.wa-btn i,
+.footer-wa-btn span,
+.footer-wa-btn i {
+  color: #ffffff !important;
+}
+.thm-btn-wa:hover,
+.btn-hotelux-room-wa:hover,
+.wa-btn:hover,
+.footer-wa-btn:hover {
+  background-color: #15803d !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
+}
+
+/* 6. ROOM DETAILS & PHOTO BUTTONS */
+.btn-hotelux-details {
+  background-color: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+}
+.btn-hotelux-details span,
+.btn-hotelux-details i {
+  color: #ffffff !important;
+}
+.btn-hotelux-details:hover {
+  background-color: #c2410c !important;
+  border-color: #c2410c !important;
+  color: #ffffff !important;
+}
+
+/* 7. HERO ROOM OPTION HOVER & CLICK */
+.hero-room-option-item:hover {
+  background: #fff0e3 !important;
+  border-color: #ea580c !important;
+  transform: translateX(4px) !important;
 }
 
 /* High Contrast Headings and Text On Light Surfaces */

@@ -95,16 +95,7 @@ export default function Calculator() {
                         key={item.label}
                         type="button"
                         onClick={() => handleBhkChange(item.label, item.gross)}
-                        style={{
-                          padding: '12px 14px',
-                          border: bhkType === item.label ? '2px solid var(--hotelux-base)' : '1px solid #e2e8f0',
-                          background: bhkType === item.label ? '#fffaf5' : '#ffffff',
-                          borderRadius: '8px',
-                          fontWeight: 700,
-                          fontSize: '13.5px',
-                          color: bhkType === item.label ? 'var(--hotelux-base)' : '#334155',
-                          cursor: 'pointer'
-                        }}
+                        className={`calc-bhk-btn ${bhkType === item.label ? 'active' : ''}`}
                       >
                         {item.label}
                       </button>

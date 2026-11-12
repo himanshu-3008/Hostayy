@@ -88,52 +88,28 @@ export default function Navbar({ onSelectStay, portalMode = 'booking', setPortal
             </a>
 
             {/* Center: Dual-Portal Segment Switcher (Customers/Booking vs Property Listing) */}
-            <div className="bcom-portal-switcher" style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.22)', padding: '4px', borderRadius: '30px', border: '1.5px solid rgba(255, 255, 255, 0.4)' }}>
+            <div className="bcom-portal-switcher" role="tablist" aria-label="Portal Mode">
               <button
                 type="button"
                 onClick={handleSwitchToBooking}
+                className={`bcom-portal-btn ${portalMode === 'booking' ? 'active' : ''}`}
                 title="Explore and book 1, 2 & 3 BHK serviced flats"
-                style={{
-                  padding: '7px 16px',
-                  borderRadius: '24px',
-                  border: 'none',
-                  background: portalMode === 'booking' ? '#ffffff' : 'transparent',
-                  color: portalMode === 'booking' ? '#ea580c' : '#ffffff',
-                  fontWeight: 800,
-                  fontSize: '13px',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: portalMode === 'booking' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
-                  transition: 'all 0.2s ease'
-                }}
+                role="tab"
+                aria-selected={portalMode === 'booking'}
               >
-                <i className="fa-solid fa-bed" style={{ color: portalMode === 'booking' ? '#ea580c' : '#ffffff' }}></i>
+                <i className="fa-solid fa-bed"></i>
                 <span>Book Flats</span>
               </button>
               
               <button
                 type="button"
                 onClick={handleSwitchToListing}
+                className={`bcom-portal-btn ${portalMode === 'listing' ? 'active' : ''}`}
                 title="List your apartment with Hostayy Patron for guaranteed rental yields"
-                style={{
-                  padding: '7px 16px',
-                  borderRadius: '24px',
-                  border: 'none',
-                  background: portalMode === 'listing' ? '#ffffff' : 'transparent',
-                  color: portalMode === 'listing' ? '#ea580c' : '#ffffff',
-                  fontWeight: 800,
-                  fontSize: '13px',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  boxShadow: portalMode === 'listing' ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
-                  transition: 'all 0.2s ease'
-                }}
+                role="tab"
+                aria-selected={portalMode === 'listing'}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ color: portalMode === 'listing' ? '#ea580c' : '#ffffff' }}></i>
+                <i className="fa-solid fa-house-chimney-user"></i>
                 <span>List Property</span>
               </button>
             </div>
@@ -613,20 +589,22 @@ export default function Navbar({ onSelectStay, portalMode = 'booking', setPortal
         <div className="bcom-mobile-drawer" style={{ background: '#9a3412', padding: '20px' }}>
           <div className="bcom-mobile-drawer-inner">
             {/* Mobile Portal Mode Switcher */}
-            <div style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0,0,0,0.2)', padding: '4px', borderRadius: '8px' }}>
+            <div className="bcom-mobile-portal-switcher" style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0,0,0,0.2)', padding: '4px', borderRadius: '8px' }}>
               <button 
                 type="button" 
                 onClick={handleSwitchToBooking}
-                style={{ flex: 1, padding: '8px', borderRadius: '6px', border: 'none', background: portalMode === 'booking' ? '#ffffff' : 'transparent', color: portalMode === 'booking' ? '#ea580c' : '#ffffff', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
+                className={`bcom-mobile-portal-btn ${portalMode === 'booking' ? 'active' : ''}`}
               >
-                <i className="fa-solid fa-bed" style={{ marginRight: '6px' }}></i> Book Flats
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px' }}></i>
+                <span>Book Flats</span>
               </button>
               <button 
                 type="button" 
                 onClick={handleSwitchToListing}
-                style={{ flex: 1, padding: '8px', borderRadius: '6px', border: 'none', background: portalMode === 'listing' ? '#ffffff' : 'transparent', color: portalMode === 'listing' ? '#ea580c' : '#ffffff', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
+                className={`bcom-mobile-portal-btn ${portalMode === 'listing' ? 'active' : ''}`}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i> List Property
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i>
+                <span>List Property</span>
               </button>
             </div>
 
