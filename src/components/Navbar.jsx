@@ -584,28 +584,6 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 </a>
 
                 <a 
-                  href="#patron-calc" 
-                  className={`bcom-pill ${activeTab === 'calc' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('calc')}
-                  style={{
-                    color: '#ffffff',
-                    border: activeTab === 'calc' ? '1.5px solid #ffffff' : '1px solid transparent',
-                    background: activeTab === 'calc' ? 'rgba(255, 255, 255, 0.22)' : 'transparent',
-                    fontWeight: activeTab === 'calc' ? 800 : 600,
-                    padding: '7px 15px',
-                    borderRadius: '30px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '7px',
-                    textDecoration: 'none',
-                    fontSize: '13px'
-                  }}
-                >
-                  <i className="fa-solid fa-calculator"></i>
-                  <span>Yield Calculator</span>
-                </a>
-
-                <a 
                   href="#comparison" 
                   className={`bcom-pill ${activeTab === 'comparison' ? 'active' : ''}`}
                   onClick={() => setActiveTab('comparison')}
