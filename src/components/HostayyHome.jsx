@@ -228,12 +228,9 @@ export default function HostayyHome() {
                     
                     {/* Gradient Overlay & Info Pill */}
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.75) 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '18px 20px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <span style={{ fontSize: '11.5px', background: 'rgba(234, 56, 76, 0.95)', color: '#ffffff', padding: '4px 14px', borderRadius: '12px', fontWeight: 800 }}>
                           {activeSlide.bhk}
-                        </span>
-                        <span style={{ fontSize: '11px', color: '#ffffff', background: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(8px)', padding: '4px 12px', borderRadius: '12px', fontWeight: 700 }}>
-                          <i className="fa-solid fa-arrows-left-right" style={{ color: '#fecdd3', marginRight: '5px' }}></i> Swipe on mobile
                         </span>
                       </div>
 

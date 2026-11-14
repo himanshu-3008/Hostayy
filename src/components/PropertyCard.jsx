@@ -86,10 +86,9 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
           <i className="fa-solid fa-door-open" style={{ marginRight: '5px', color: '#ffffff' }}></i> {prop.bhk} Serviced Flat
         </div>
 
-        {/* Photo Counter Pill with Touch Swipe Indicator */}
+        {/* Photo Counter Pill */}
         <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(17, 24, 39, 0.88)', color: '#ffffff', fontSize: '11px', padding: '4px 10px', zIndex: 2, borderRadius: '12px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '5px', backdropFilter: 'blur(6px)' }}>
           <i className="fa-solid fa-camera" style={{ color: '#fecdd3' }}></i> {photoIndex + 1} / {totalPhotos}
-          <span className="d-md-none" style={{ color: '#fecdd3', fontSize: '9px', opacity: 0.85 }}>&bull; Swipe</span>
         </div>
 
         {/* Prev / Next Photo Arrow Buttons */}

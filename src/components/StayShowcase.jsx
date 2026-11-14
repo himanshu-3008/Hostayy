@@ -68,7 +68,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
       <div className="compact-showcase-grid">
         {/* Left: Compact Interactive Photo Stage with Touch Swipe */}
         <div className="compact-photo-stage">
-          {/* Main Photo (Click to open full lightbox, Swipe on mobile) */}
+          {/* Main Photo (Click to open full lightbox) */}
           <div 
             className="compact-main-photo-wrap" 
             onClick={() => onOpenLightbox(photos, activePhotoIndex)}
@@ -85,7 +85,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 {currentPhoto.title}
               </span>
               <span className="compact-expand-pill" style={{ borderRadius: '12px' }}>
-                <i className="fa-solid fa-expand"></i> Fullscreen &bull; Swipe on Mobile
+                <i className="fa-solid fa-expand"></i> Fullscreen
               </span>
             </div>
           </div>

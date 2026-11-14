@@ -91,9 +91,6 @@ export default function Lightbox({ isOpen = true, images, currentIndex = 0, setC
         <div className="lightbox-meta">
           <span className="lightbox-cat-badge">{currentPhoto.category || 'Photo'}</span>
           <span className="lightbox-counter-badge">Photo {activeIndex + 1} of {images.length}</span>
-          <span style={{ fontSize: '11px', color: '#fecdd3', background: 'rgba(234, 56, 76, 0.2)', padding: '2px 8px', borderRadius: '10px', marginLeft: '6px' }}>
-            <i className="fa-solid fa-arrows-left-right" style={{ marginRight: '4px' }}></i> Swipe on mobile
-          </span>
         </div>
         <button 
           className="lightbox-close" 
