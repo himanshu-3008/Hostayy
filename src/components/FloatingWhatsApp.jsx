@@ -43,13 +43,13 @@ export default function FloatingWhatsApp() {
           {/* Header */}
           <div 
             style={{
-              backgroundColor: '#ea580c',
+              backgroundColor: '#ea384c',
               color: '#ffffff',
               padding: '16px 20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderBottom: '2px solid #c2410c'
+              borderBottom: '2px solid #c41c33'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -58,7 +58,7 @@ export default function FloatingWhatsApp() {
               </div>
               <div>
                 <h4 style={{ margin: 0, fontSize: '14.5px', fontWeight: 800, color: '#ffffff' }}>Hostayy 24/7 Concierge</h4>
-                <span style={{ fontSize: '11px', color: '#fed7aa', letterSpacing: '0.04em', fontWeight: 600 }}>Hostayy Team &bull; Online</span>
+                <span style={{ fontSize: '11px', color: '#fecdd3', letterSpacing: '0.04em', fontWeight: 600 }}>Hostayy Team &bull; Online</span>
               </div>
             </div>
             <button 
@@ -121,17 +121,17 @@ export default function FloatingWhatsApp() {
                 alignItems: 'center',
                 gap: '12px',
                 padding: '12px 14px',
-                backgroundColor: '#fffaf5',
-                border: '1.5px solid #ea580c',
+                backgroundColor: '#fff5f6',
+                border: '1.5px solid #ea384c',
                 borderRadius: '10px',
                 cursor: 'pointer',
                 textAlign: 'left',
                 transition: 'transform 0.2s ease, box-shadow 0.2s ease'
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 15px rgba(234, 88, 12, 0.25)'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 15px rgba(234, 56, 76, 0.25)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
             >
-              <div style={{ width: '38px', height: '38px', borderRadius: '50%', backgroundColor: '#ea580c', border: '1px solid #ea580c', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '16px', flexShrink: 0 }}>
+              <div style={{ width: '38px', height: '38px', borderRadius: '50%', backgroundColor: '#ea384c', border: '1px solid #ea384c', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff', fontSize: '16px', flexShrink: 0 }}>
                 <i className="fas fa-key"></i>
               </div>
               <div>

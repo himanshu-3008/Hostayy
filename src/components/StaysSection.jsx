@@ -27,7 +27,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             <span 
               className="section-title__tagline" 
               style={{ 
-                color: '#ea580c', 
+                color: '#ea384c', 
                 fontWeight: 800, 
                 letterSpacing: '0.08em',
                 display: 'inline-flex',
@@ -36,8 +36,8 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
                 background: 'rgba(255, 247, 237, 0.95)',
                 padding: '7px 18px',
                 borderRadius: '30px',
-                border: '1.5px solid #fed7aa',
-                boxShadow: '0 4px 12px rgba(234, 88, 12, 0.08)'
+                border: '1.5px solid #fecdd3',
+                boxShadow: '0 4px 12px rgba(234, 56, 76, 0.08)'
               }}
             >
               <span className="pulse-dot-orange"></span>
@@ -45,7 +45,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             </span>
           </div>
           <h2 className="section-title__title" style={{ color: '#111827', fontSize: '34px', margin: '10px 0 12px', fontWeight: 800 }}>
-            1, 2 &amp; 3 BHK <span style={{ color: '#ea580c' }}>Serviced Residences</span>
+            1, 2 &amp; 3 BHK <span style={{ color: '#ea384c' }}>Serviced Residences</span>
           </h2>
           <p className="section-title__text" style={{ maxWidth: '740px', margin: '0 auto', color: '#374151', fontSize: '15px', lineHeight: 1.7 }}>
             Sanitised, 100% private turnkey residences located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3). Fully equipped with modular kitchens, 300 Mbps Wi-Fi, work desks, and instant WhatsApp booking with zero brokerage. Click any room option below to explore verified photos and floor specifications.
@@ -53,14 +53,14 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
 
           {/* Prominent Physical Address Strip with Verified Concierge Badge */}
           <div style={{ marginTop: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#fffaf5', border: '1.5px solid #fed7aa', padding: '8px 18px', borderRadius: '30px', fontSize: '13px', color: '#111827', boxShadow: '0 2px 8px rgba(234, 88, 12, 0.06)', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <i className="fa-solid fa-map-location-dot" style={{ color: '#ea580c', fontSize: '15px' }}></i>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#fff5f6', border: '1.5px solid #fecdd3', padding: '8px 18px', borderRadius: '30px', fontSize: '13px', color: '#111827', boxShadow: '0 2px 8px rgba(234, 56, 76, 0.06)', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <i className="fa-solid fa-map-location-dot" style={{ color: '#ea384c', fontSize: '15px' }}></i>
               <span><strong>Official Address:</strong> {HOSTAYY_CONFIG.address}</span>
               <a 
                 href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                style={{ color: '#ea580c', fontWeight: 800, marginLeft: '4px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                style={{ color: '#ea384c', fontWeight: 800, marginLeft: '4px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
               >
                 <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '11px' }}></i> View Map
               </a>
@@ -142,11 +142,11 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             padding: '36px 28px',
             marginTop: '20px', 
             textAlign: 'center',
-            boxShadow: '0 8px 30px rgba(234, 88, 12, 0.07)'
+            boxShadow: '0 8px 30px rgba(234, 56, 76, 0.07)'
           }}
         >
           <div style={{ marginBottom: '10px' }}>
-            <span style={{ fontSize: '11px', background: '#fff7ed', color: '#ea580c', border: '1px solid #fed7aa', padding: '4px 12px', borderRadius: '20px', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '11px', background: '#fff1f2', color: '#ea384c', border: '1px solid #fecdd3', padding: '4px 12px', borderRadius: '20px', fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
               Corporate &amp; Relocation Privileges
             </span>
           </div>
@@ -171,7 +171,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             <a 
               href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
               className="thm-btn thm-btn-outline" 
-              style={{ padding: '12px 22px', fontSize: '13px', borderColor: '#ea580c', color: '#ea580c', background: '#ffffff', fontWeight: 700 }}
+              style={{ padding: '12px 22px', fontSize: '13px', borderColor: '#ea384c', color: '#ea384c', background: '#ffffff', fontWeight: 700 }}
             >
               <i className="fa-solid fa-phone" style={{ marginRight: '6px' }}></i>
               <span>Call Host: {HOSTAYY_CONFIG.displayPhone}</span>

@@ -17,10 +17,10 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="Hostayy Home"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'home' ? '#ea580c' : '#f3f4f6', color: currentPage === 'home' ? '#ffffff' : '#111827' }}>
+          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'home' ? '#ea384c' : '#f3f4f6', color: currentPage === 'home' ? '#ffffff' : '#111827' }}>
             <i className="fa-solid fa-house"></i>
           </div>
-          <span style={{ color: currentPage === 'home' ? '#ea580c' : '#111827', fontWeight: currentPage === 'home' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'home' ? '#ea384c' : '#111827', fontWeight: currentPage === 'home' ? 800 : 600 }}>
             Home
           </span>
         </Link>
@@ -32,10 +32,10 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="Book 1, 2 & 3 BHK Serviced Flats"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'booking' ? '#ea580c' : '#f3f4f6', color: currentPage === 'booking' ? '#ffffff' : '#111827' }}>
+          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'booking' ? '#ea384c' : '#f3f4f6', color: currentPage === 'booking' ? '#ffffff' : '#111827' }}>
             <i className="fa-solid fa-bed"></i>
           </div>
-          <span style={{ color: currentPage === 'booking' ? '#ea580c' : '#111827', fontWeight: currentPage === 'booking' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#111827', fontWeight: currentPage === 'booking' ? 800 : 600 }}>
             Book Flats
           </span>
         </Link>
@@ -47,10 +47,10 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="List Property with Hostayy Patron"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'listing' ? '#ea580c' : '#f3f4f6', color: currentPage === 'listing' ? '#ffffff' : '#111827' }}>
+          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'listing' ? '#ea384c' : '#f3f4f6', color: currentPage === 'listing' ? '#ffffff' : '#111827' }}>
             <i className="fa-solid fa-house-chimney-user"></i>
           </div>
-          <span style={{ color: currentPage === 'listing' ? '#ea580c' : '#111827', fontWeight: currentPage === 'listing' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#111827', fontWeight: currentPage === 'listing' ? 800 : 600 }}>
             List Property
           </span>
         </Link>

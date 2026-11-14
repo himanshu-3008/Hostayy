@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TopBar from './TopBar';
 import Navbar from './Navbar';
@@ -9,7 +9,89 @@ import MobileBottomBar from './MobileBottomBar';
 import Footer from './Footer';
 import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
+const COVER_SLIDES = [
+  {
+    id: 'velora',
+    title: 'Velora Suite • 1 BHK Curated Residence',
+    tag: '3 Mins to Yashobhoomi (IICC) • 750 Sq Ft',
+    image: '/assets/images/velora/velora-01.jpg',
+    bhk: '1 BHK Suite',
+    rating: '4.98 ★'
+  },
+  {
+    id: 'azura',
+    title: 'Azura Residence • 2 BHK Executive Suite',
+    tag: 'Aerocity Corridor • 1,250 Sq Ft & Balcony',
+    image: '/assets/images/azura/azura-01.jpg',
+    bhk: '2 BHK Executive',
+    rating: '4.99 ★'
+  },
+  {
+    id: 'verde',
+    title: 'Verde Signature • 3 BHK Luxury Living',
+    tag: 'Prime Golf Belt Dwarka • 1,850 Sq Ft',
+    image: '/assets/images/verde/verde-01.jpg',
+    bhk: '3 BHK Signature',
+    rating: '4.97 ★'
+  },
+  {
+    id: 'kitchen',
+    title: 'Chef-Ready Modular Kitchen & Appliances',
+    tag: 'Induction, Gas Hob, Microwave, RO Purifier & Cookware',
+    image: '/assets/images/velora/velora-07.jpg',
+    bhk: 'Modular Kitchen',
+    rating: '100% Home Comfort'
+  },
+  {
+    id: 'bedroom',
+    title: 'Orthopedic King Bedding & Sanitized Linens',
+    tag: '400-TC Egyptian Cotton & Dedicated Workstation',
+    image: '/assets/images/azura/azura-05.jpg',
+    bhk: 'Master Bedroom',
+    rating: 'Five-Star Hygiene'
+  }
+];
+
 export default function HostayyHome() {
+  const [currentCoverIdx, setCurrentCoverIdx] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+
+  const minSwipeDistance = 35;
+
+  const nextCover = () => {
+    setCurrentCoverIdx((prev) => (prev + 1) % COVER_SLIDES.length);
+  };
+
+  const prevCover = () => {
+    setCurrentCoverIdx((prev) => (prev - 1 + COVER_SLIDES.length) % COVER_SLIDES.length);
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchEndX(null);
+    setTouchStartX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+    const distance = touchStartX - touchEndX;
+    if (distance > minSwipeDistance) {
+      // Swiped left -> next cover photo
+      nextCover();
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right -> prev cover photo
+      prevCover();
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
+  const activeSlide = COVER_SLIDES[currentCoverIdx];
+
   return (
     <div className="hostayy-app">
       {/* Top Bar & Booking.com-Inspired Header */}
@@ -25,7 +107,7 @@ export default function HostayyHome() {
           style={{ 
             backgroundColor: '#ffffff', 
             padding: '65px 0 45px',
-            borderBottom: '1px solid #fed7aa',
+            borderBottom: '1px solid #fecdd3',
             position: 'relative'
           }}
         >
@@ -38,16 +120,16 @@ export default function HostayyHome() {
                     style={{ 
                       fontSize: '12px', 
                       background: 'rgba(255, 247, 237, 0.95)', 
-                      color: '#ea580c', 
+                      color: '#ea384c', 
                       padding: '7px 18px', 
                       borderRadius: '30px', 
                       fontWeight: 800, 
                       letterSpacing: '0.08em',
-                      border: '1.5px solid #fed7aa',
+                      border: '1.5px solid #fecdd3',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      boxShadow: '0 4px 14px rgba(234, 88, 12, 0.08)'
+                      boxShadow: '0 4px 14px rgba(234, 56, 76, 0.08)'
                     }}
                   >
                     <span className="pulse-dot"></span>
@@ -66,7 +148,7 @@ export default function HostayyHome() {
                     letterSpacing: '-0.02em'
                   }}
                 >
-                  Welcome to <span style={{ color: '#ea580c' }}>Hostayy</span>
+                  Welcome to <span style={{ color: '#ea384c' }}>Hostayy</span>
                 </h1>
 
                 {/* Mission Subtitle */}
@@ -93,31 +175,135 @@ export default function HostayyHome() {
                   }}
                 >
                   <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
+                    <div style={{ fontSize: '22px', color: '#ea384c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-star" style={{ color: '#f59e0b', marginRight: '5px' }}></i>4.98★
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Superhost Hospitality</span>
                   </div>
 
                   <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
-                      <i className="fa-solid fa-shield-halved" style={{ color: '#ea580c', marginRight: '5px' }}></i>0%
+                    <div style={{ fontSize: '22px', color: '#ea384c', fontWeight: 800, marginBottom: '2px' }}>
+                      <i className="fa-solid fa-shield-halved" style={{ color: '#ea384c', marginRight: '5px' }}></i>0%
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Brokerage &amp; Hidden Fees</span>
                   </div>
 
                   <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
-                      <i className="fa-solid fa-location-dot" style={{ color: '#ea580c', marginRight: '5px' }}></i>3 Mins
+                    <div style={{ fontSize: '22px', color: '#ea384c', fontWeight: 800, marginBottom: '2px' }}>
+                      <i className="fa-solid fa-location-dot" style={{ color: '#ea384c', marginRight: '5px' }}></i>3 Mins
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>To Yashobhoomi IICC</span>
                   </div>
 
                   <div className="luxury-glass-card" style={{ borderRadius: '14px', padding: '16px 12px', textAlign: 'center' }}>
-                    <div style={{ fontSize: '22px', color: '#ea580c', fontWeight: 800, marginBottom: '2px' }}>
+                    <div style={{ fontSize: '22px', color: '#ea384c', fontWeight: 800, marginBottom: '2px' }}>
                       <i className="fa-solid fa-money-bill-trend-up" style={{ color: '#16a34a', marginRight: '5px' }}></i>40%+
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 700 }}>Higher Landlord Yield</span>
+                  </div>
+                </div>
+
+                {/* Swipeable Cover Photo Slider for Phone and Desktop */}
+                <div 
+                  className="hostayy-cover-slider luxury-glass-card"
+                  style={{
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    border: '2px solid #fecdd3',
+                    background: '#ffffff',
+                    boxShadow: '0 16px 45px rgba(234, 56, 76, 0.1)',
+                    position: 'relative',
+                    marginTop: '24px'
+                  }}
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  <div style={{ position: 'relative', height: 'clamp(260px, 45vw, 420px)', width: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src={activeSlide.image} 
+                      alt={activeSlide.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'all 0.4s ease' }}
+                    />
+                    
+                    {/* Gradient Overlay & Info Pill */}
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.75) 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '18px 20px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{ fontSize: '11.5px', background: 'rgba(234, 56, 76, 0.95)', color: '#ffffff', padding: '4px 14px', borderRadius: '12px', fontWeight: 800 }}>
+                          {activeSlide.bhk}
+                        </span>
+                        <span style={{ fontSize: '11px', color: '#ffffff', background: 'rgba(15, 23, 42, 0.7)', backdropFilter: 'blur(8px)', padding: '4px 12px', borderRadius: '12px', fontWeight: 700 }}>
+                          <i className="fa-solid fa-arrows-left-right" style={{ color: '#fecdd3', marginRight: '5px' }}></i> Swipe on mobile
+                        </span>
+                      </div>
+
+                      <div style={{ textAlign: 'left' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                          <span style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 800, background: 'rgba(0,0,0,0.6)', padding: '2px 8px', borderRadius: '8px' }}>
+                            {activeSlide.rating}
+                          </span>
+                          <span style={{ color: '#fecdd3', fontSize: '12px', fontWeight: 600 }}>
+                            {activeSlide.tag}
+                          </span>
+                        </div>
+                        <h3 style={{ color: '#ffffff', fontSize: 'clamp(17px, 2.8vw, 24px)', fontWeight: 800, margin: '0 0 12px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                          {activeSlide.title}
+                        </h3>
+                        <Link 
+                          href="/book" 
+                          className="thm-btn" 
+                          style={{ padding: '8px 20px', fontSize: '12.5px', borderRadius: '12px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                        >
+                          <span>Explore This Residence</span>
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Prev / Next Arrows */}
+                    <button 
+                      type="button" 
+                      onClick={prevCover}
+                      aria-label="Previous Cover Slide"
+                      style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.9)', border: 'none', color: '#111827', cursor: 'pointer', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    >
+                      <i className="fa-solid fa-chevron-left" style={{ fontSize: '14px' }}></i>
+                    </button>
+                    <button 
+                      type="button" 
+                      onClick={nextCover}
+                      aria-label="Next Cover Slide"
+                      style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.9)', border: 'none', color: '#111827', cursor: 'pointer', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                    >
+                      <i className="fa-solid fa-chevron-right" style={{ fontSize: '14px' }}></i>
+                    </button>
+                  </div>
+
+                  {/* Bottom Thumbnail Bar & Dots */}
+                  <div style={{ background: '#fff5f6', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      {COVER_SLIDES.map((slide, idx) => (
+                        <button
+                          key={slide.id}
+                          type="button"
+                          onClick={() => setCurrentCoverIdx(idx)}
+                          style={{
+                            width: idx === currentCoverIdx ? '28px' : '9px',
+                            height: '9px',
+                            borderRadius: '5px',
+                            background: idx === currentCoverIdx ? '#ea384c' : '#fecdd3',
+                            border: 'none',
+                            cursor: 'pointer',
+                            padding: 0,
+                            transition: 'all 0.25s ease'
+                          }}
+                          aria-label={`Slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <span style={{ fontSize: '12px', color: '#374151', fontWeight: 600 }}>
+                      Photo {currentCoverIdx + 1} of {COVER_SLIDES.length} &bull; Slide on screen to change
+                    </span>
                   </div>
                 </div>
               </div>
@@ -131,30 +317,30 @@ export default function HostayyHome() {
         <div className="hostayy-ticker-wrap">
           <div className="hostayy-ticker-track">
             <span className="hostayy-ticker-item"><i className="fa-solid fa-star" style={{ color: '#f59e0b' }}></i> 4.98★ Superhost Hospitality</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#ea580c' }}></i> 100% Guaranteed On-Time Payouts</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-location-dot" style={{ color: '#ea580c' }}></i> 3 Mins to Yashobhoomi (IICC)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-plane-departure" style={{ color: '#ea580c' }}></i> 10 Mins to IGI Airport (T3)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-bed" style={{ color: '#ea580c' }}></i> Velora (1 BHK) &bull; Azura (2 BHK) &bull; Verde (3 BHK)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#ea384c' }}></i> 100% Guaranteed On-Time Payouts</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-location-dot" style={{ color: '#ea384c' }}></i> 3 Mins to Yashobhoomi (IICC)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-plane-departure" style={{ color: '#ea384c' }}></i> 10 Mins to IGI Airport (T3)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-bed" style={{ color: '#ea384c' }}></i> Velora (1 BHK) &bull; Azura (2 BHK) &bull; Verde (3 BHK)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             <span className="hostayy-ticker-item"><i className="fa-solid fa-handshake" style={{ color: '#16a34a' }}></i> 0% Brokerage &bull; Direct WhatsApp Concierge</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-file-invoice-dollar" style={{ color: '#ea580c' }}></i> Official GST Tax Input Credit</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-file-invoice-dollar" style={{ color: '#ea384c' }}></i> Official GST Tax Input Credit</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             {/* Seamless duplicate loop */}
             <span className="hostayy-ticker-item"><i className="fa-solid fa-star" style={{ color: '#f59e0b' }}></i> 4.98★ Superhost Hospitality</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#ea580c' }}></i> 100% Guaranteed On-Time Payouts</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-location-dot" style={{ color: '#ea580c' }}></i> 3 Mins to Yashobhoomi (IICC)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-plane-departure" style={{ color: '#ea580c' }}></i> 10 Mins to IGI Airport (T3)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-bed" style={{ color: '#ea580c' }}></i> Velora (1 BHK) &bull; Azura (2 BHK) &bull; Verde (3 BHK)</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#ea384c' }}></i> 100% Guaranteed On-Time Payouts</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-location-dot" style={{ color: '#ea384c' }}></i> 3 Mins to Yashobhoomi (IICC)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-plane-departure" style={{ color: '#ea384c' }}></i> 10 Mins to IGI Airport (T3)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-bed" style={{ color: '#ea384c' }}></i> Velora (1 BHK) &bull; Azura (2 BHK) &bull; Verde (3 BHK)</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             <span className="hostayy-ticker-item"><i className="fa-solid fa-handshake" style={{ color: '#16a34a' }}></i> 0% Brokerage &bull; Direct WhatsApp Concierge</span>
           </div>
         </div>
@@ -167,7 +353,7 @@ export default function HostayyHome() {
         <section 
           className="hostayy-portal-options-section" 
           style={{ 
-            backgroundColor: '#fffaf5', 
+            backgroundColor: '#fff5f6', 
             padding: '60px 0 70px' 
           }}
         >
@@ -175,7 +361,7 @@ export default function HostayyHome() {
             <div className="text-center" style={{ marginBottom: '40px' }}>
               <span 
                 style={{ 
-                  color: '#ea580c', 
+                  color: '#ea384c', 
                   fontWeight: 800, 
                   letterSpacing: '0.08em', 
                   fontSize: '12px', 
@@ -216,14 +402,14 @@ export default function HostayyHome() {
                   className="portal-decision-card luxury-glass-card"
                   style={{
                     backgroundColor: '#ffffff',
-                    border: '2px solid #fed7aa',
+                    border: '2px solid #fecdd3',
                     borderRadius: '20px',
                     padding: '36px 30px',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 12px 36px rgba(234, 88, 12, 0.08)',
+                    boxShadow: '0 12px 36px rgba(234, 56, 76, 0.08)',
                     position: 'relative'
                   }}
                 >
@@ -234,19 +420,19 @@ export default function HostayyHome() {
                       <span 
                         style={{ 
                           fontSize: '11px', 
-                          background: '#fff7ed', 
-                          color: '#ea580c', 
+                          background: '#fff1f2', 
+                          color: '#ea384c', 
                           padding: '5px 14px', 
                           borderRadius: '20px', 
                           fontWeight: 800, 
                           letterSpacing: '0.06em',
-                          border: '1px solid #fed7aa',
+                          border: '1px solid #fecdd3',
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '6px'
                         }}
                       >
-                        <i className="fa-solid fa-bed" style={{ color: '#ea580c' }}></i>
+                        <i className="fa-solid fa-bed" style={{ color: '#ea384c' }}></i>
                         GUEST BOOKING PORTAL
                       </span>
                       <div 
@@ -255,13 +441,13 @@ export default function HostayyHome() {
                           width: '56px', 
                           height: '56px', 
                           borderRadius: '50%', 
-                          background: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)', 
+                          background: 'linear-gradient(135deg, #ea384c 0%, #c41c33 100%)', 
                           color: '#ffffff', 
                           display: 'flex', 
                           alignItems: 'center', 
                           justifyContent: 'center', 
                           fontSize: '24px',
-                          boxShadow: '0 6px 18px rgba(234, 88, 12, 0.35)'
+                          boxShadow: '0 6px 18px rgba(234, 56, 76, 0.35)'
                         }}
                       >
                         <i className="fa-solid fa-bed"></i>
@@ -275,13 +461,13 @@ export default function HostayyHome() {
 
                     {/* Suite Category Badges (Designer Element) */}
                     <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '14px' }}>
-                      <span style={{ fontSize: '11px', background: '#fff7ed', color: '#ea580c', border: '1px solid #fed7aa', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
+                      <span style={{ fontSize: '11px', background: '#fff1f2', color: '#ea384c', border: '1px solid #fecdd3', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
                         <i className="fa-solid fa-door-open" style={{ marginRight: '4px' }}></i>Velora 1 BHK
                       </span>
-                      <span style={{ fontSize: '11px', background: '#fff7ed', color: '#ea580c', border: '1px solid #fed7aa', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
+                      <span style={{ fontSize: '11px', background: '#fff1f2', color: '#ea384c', border: '1px solid #fecdd3', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
                         <i className="fa-solid fa-building" style={{ marginRight: '4px' }}></i>Azura 2 BHK
                       </span>
-                      <span style={{ fontSize: '11px', background: '#fff7ed', color: '#ea580c', border: '1px solid #fed7aa', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
+                      <span style={{ fontSize: '11px', background: '#fff1f2', color: '#ea384c', border: '1px solid #fecdd3', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
                         <i className="fa-solid fa-gem" style={{ marginRight: '4px' }}></i>Verde 3 BHK
                       </span>
                     </div>
@@ -325,14 +511,14 @@ export default function HostayyHome() {
                         textAlign: 'center',
                         justifyContent: 'center',
                         borderRadius: '10px',
-                        background: '#ea580c',
+                        background: '#ea384c',
                         color: '#ffffff',
                         border: 'none',
                         textDecoration: 'none',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px',
-                        boxShadow: '0 6px 20px rgba(234, 88, 12, 0.3)'
+                        boxShadow: '0 6px 20px rgba(234, 56, 76, 0.3)'
                       }}
                     >
                       <i className="fa-solid fa-bed" style={{ color: '#ffffff' }}></i>
@@ -351,14 +537,14 @@ export default function HostayyHome() {
                   className="portal-decision-card luxury-glass-card"
                   style={{
                     backgroundColor: '#ffffff',
-                    border: '2px solid #fed7aa',
+                    border: '2px solid #fecdd3',
                     borderRadius: '20px',
                     padding: '36px 30px',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 12px 36px rgba(234, 88, 12, 0.08)',
+                    boxShadow: '0 12px 36px rgba(234, 56, 76, 0.08)',
                     position: 'relative'
                   }}
                 >
@@ -369,19 +555,19 @@ export default function HostayyHome() {
                       <span 
                         style={{ 
                           fontSize: '11px', 
-                          background: '#fff7ed', 
-                          color: '#ea580c', 
+                          background: '#fff1f2', 
+                          color: '#ea384c', 
                           padding: '5px 14px', 
                           borderRadius: '20px', 
                           fontWeight: 800, 
                           letterSpacing: '0.06em',
-                          border: '1px solid #fed7aa',
+                          border: '1px solid #fecdd3',
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '6px'
                         }}
                       >
-                        <i className="fa-solid fa-house-chimney-user" style={{ color: '#ea580c' }}></i>
+                        <i className="fa-solid fa-house-chimney-user" style={{ color: '#ea384c' }}></i>
                         PROPERTY OWNER PORTAL
                       </span>
                       <div 
@@ -414,10 +600,10 @@ export default function HostayyHome() {
                         <i className="fa-solid fa-arrow-trend-up" style={{ color: '#16a34a', marginRight: '4px' }}></i>+40% Yield
                       </span>
                       <span style={{ fontSize: '11px', background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
-                        <i className="fa-solid fa-calendar-check" style={{ color: '#ea580c', marginRight: '4px' }}></i>1st-of-Month Payouts
+                        <i className="fa-solid fa-calendar-check" style={{ color: '#ea384c', marginRight: '4px' }}></i>1st-of-Month Payouts
                       </span>
                       <span style={{ fontSize: '11px', background: '#f3f4f6', color: '#111827', border: '1px solid #d1d5db', padding: '3px 10px', borderRadius: '12px', fontWeight: 700 }}>
-                        <i className="fa-solid fa-shield-halved" style={{ color: '#ea580c', marginRight: '4px' }}></i>Zero Vacancy Risk
+                        <i className="fa-solid fa-shield-halved" style={{ color: '#ea384c', marginRight: '4px' }}></i>Zero Vacancy Risk
                       </span>
                     </div>
 
@@ -492,14 +678,14 @@ export default function HostayyHome() {
           style={{ 
             backgroundColor: '#ffffff', 
             padding: '65px 0',
-            borderTop: '1px solid #fed7aa',
+            borderTop: '1px solid #fecdd3',
             position: 'relative'
           }}
         >
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <div className="row align-items-center">
               <div className="col-12 col-lg-6" style={{ marginBottom: '30px' }}>
-                <span style={{ color: '#ea580c', fontWeight: 800, fontSize: '12px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <span style={{ color: '#ea384c', fontWeight: 800, fontSize: '12px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   STRATEGIC PRIME LOCATION
                 </span>
                 <h2 style={{ fontSize: '30px', color: '#111827', fontWeight: 800, margin: '8px 0 14px' }}>
@@ -519,7 +705,7 @@ export default function HostayyHome() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                    <i className="fa-solid fa-map-location-dot" style={{ color: '#ea580c', fontSize: '22px', marginTop: '2px' }}></i>
+                    <i className="fa-solid fa-map-location-dot" style={{ color: '#ea384c', fontSize: '22px', marginTop: '2px' }}></i>
                     <div>
                       <strong style={{ color: '#111827', fontSize: '14.5px', display: 'block', fontWeight: 800 }}>
                         Official Verified Address
@@ -531,7 +717,7 @@ export default function HostayyHome() {
                         href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        style={{ color: '#ea580c', fontWeight: 800, fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '4px', marginTop: '6px', textDecoration: 'none' }}
+                        style={{ color: '#ea384c', fontWeight: 800, fontSize: '13px', display: 'inline-flex', alignItems: 'center', gap: '4px', marginTop: '6px', textDecoration: 'none' }}
                       >
                         <i className="fa-solid fa-arrow-up-right-from-square" style={{ fontSize: '11px' }}></i> Open in Google Maps
                       </a>
@@ -554,9 +740,9 @@ export default function HostayyHome() {
                   <a 
                     href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
                     className="thm-btn"
-                    style={{ background: '#ffffff', borderColor: '#fed7aa', color: '#111827', fontWeight: 700, padding: '12px 22px', fontSize: '13.5px', borderRadius: '8px' }}
+                    style={{ background: '#ffffff', borderColor: '#fecdd3', color: '#111827', fontWeight: 700, padding: '12px 22px', fontSize: '13.5px', borderRadius: '8px' }}
                   >
-                    <i className="fa-solid fa-phone" style={{ color: '#ea580c' }}></i>
+                    <i className="fa-solid fa-phone" style={{ color: '#ea384c' }}></i>
                     <span>Call Host Concierge</span>
                   </a>
                 </div>
@@ -573,39 +759,39 @@ export default function HostayyHome() {
                   }}
                 >
                   <h4 style={{ fontSize: '18px', color: '#111827', fontWeight: 800, marginBottom: '18px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i className="fa-solid fa-compass rotating-compass-icon" style={{ color: '#ea580c', fontSize: '20px' }}></i>
+                    <i className="fa-solid fa-compass rotating-compass-icon" style={{ color: '#ea384c', fontSize: '20px' }}></i>
                     Dwarka Sector 23 Connectivity Matrix
                   </h4>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>Yashobhoomi (IICC) Sec 25</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>3 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>3 Mins</span>
                     </div>
 
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>IGI Airport Terminal 3 (T3/T1)</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>10 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>10 Mins</span>
                     </div>
 
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>Sector 21 Metro Interchange</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>5 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>5 Mins</span>
                     </div>
 
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>18-Hole DDA Golf Course</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>6 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>6 Mins</span>
                     </div>
 
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>Aerocity Worldmark District</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>12 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>12 Mins</span>
                     </div>
 
-                    <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '10px', padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       <span style={{ fontSize: '13px', color: '#111827', fontWeight: 600 }}>Cyber City Gurugram (Expressway)</span>
-                      <span style={{ fontSize: '12px', background: '#ea580c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>15 Mins</span>
+                      <span style={{ fontSize: '12px', background: '#ea384c', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 800 }}>15 Mins</span>
                     </div>
                   </div>
                 </div>

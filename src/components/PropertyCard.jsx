@@ -5,8 +5,35 @@ import { getGuestPropertyWhatsAppLink } from '../data/properties';
 
 export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLightbox }) {
   const [photoIndex, setPhotoIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const photos = prop.images;
   const totalPhotos = photos.length;
+
+  const minSwipeDistance = 35;
+
+  const onTouchStartHandler = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMoveHandler = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndHandler = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      // Swiped left -> next photo
+      setPhotoIndex((prev) => (prev + 1) % totalPhotos);
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right -> prev photo
+      setPhotoIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos);
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
 
   const nextPhoto = (e) => {
     e.stopPropagation();
@@ -29,13 +56,16 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
   };
 
   return (
-    <div className="our-rooms-two__single oyo-property-card" data-estate-id={prop.id}>
-      {/* High-Resolution Photo Box with Carousel Controls */}
+    <div className="our-rooms-two__single oyo-property-card" data-estate-id={prop.id} style={{ borderRadius: '16px', overflow: 'hidden' }}>
+      {/* High-Resolution Photo Box with Carousel Controls & Touch Swipe */}
       <div 
         className="our-rooms-two__img-box" 
         onClick={handlePhotoClick}
-        title="Click to view full photo gallery"
-        style={{ position: 'relative', height: '240px', overflow: 'hidden', cursor: 'pointer', borderRadius: '12px 12px 0 0' }}
+        onTouchStart={onTouchStartHandler}
+        onTouchMove={onTouchMoveHandler}
+        onTouchEnd={onTouchEndHandler}
+        title="Click to view full photo gallery (Swipe on phone to change photo)"
+        style={{ position: 'relative', height: '240px', overflow: 'hidden', cursor: 'pointer', borderRadius: '16px 16px 0 0', touchAction: 'pan-y' }}
       >
         <img 
           src={currentPhoto.src} 
@@ -47,25 +77,26 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         />
         
         {/* Sanitised Stay Badge */}
-        <div className="oyo-sanitised-badge">
+        <div className="oyo-sanitised-badge" style={{ borderRadius: '10px' }}>
           <i className="fa-solid fa-shield-virus"></i> Sanitised Stay
         </div>
 
         {/* BHK Configuration Tag */}
-        <div className="our-rooms-former-badge" style={{ backgroundColor: '#ea580c', color: '#ffffff', border: '1px solid #ea580c', fontWeight: 800 }}>
+        <div className="our-rooms-former-badge" style={{ backgroundColor: '#ea384c', color: '#ffffff', border: '1px solid #ea384c', fontWeight: 800, borderRadius: '10px' }}>
           <i className="fa-solid fa-door-open" style={{ marginRight: '5px', color: '#ffffff' }}></i> {prop.bhk} Serviced Flat
         </div>
 
-        {/* Photo Counter Pill */}
-        <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(17, 24, 39, 0.85)', color: '#ffffff', fontSize: '11px', padding: '3px 8px', zIndex: 2, borderRadius: '4px', fontWeight: 600 }}>
-          <i className="fa-solid fa-camera" style={{ marginRight: '4px', color: '#fed7aa' }}></i> {photoIndex + 1} / {totalPhotos}
+        {/* Photo Counter Pill with Touch Swipe Indicator */}
+        <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'rgba(17, 24, 39, 0.88)', color: '#ffffff', fontSize: '11px', padding: '4px 10px', zIndex: 2, borderRadius: '12px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '5px', backdropFilter: 'blur(6px)' }}>
+          <i className="fa-solid fa-camera" style={{ color: '#fecdd3' }}></i> {photoIndex + 1} / {totalPhotos}
+          <span className="d-md-none" style={{ color: '#fecdd3', fontSize: '9px', opacity: 0.85 }}>&bull; Swipe</span>
         </div>
 
         {/* Prev / Next Photo Arrow Buttons */}
         <button 
           type="button"
           onClick={prevPhoto}
-          style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', width: '32px', height: '32px', background: 'rgba(255,255,255,0.9)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+          style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', background: 'rgba(255,255,255,0.92)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
           aria-label="Previous Photo"
         >
           <i className="fa-solid fa-chevron-left" style={{ fontSize: '12px' }}></i>
@@ -73,7 +104,7 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         <button 
           type="button"
           onClick={nextPhoto}
-          style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', width: '32px', height: '32px', background: 'rgba(255,255,255,0.9)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+          style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', width: '34px', height: '34px', background: 'rgba(255,255,255,0.92)', border: 'none', color: '#191628', cursor: 'pointer', zIndex: 3, display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', boxShadow: '0 2px 10px rgba(0,0,0,0.2)' }}
           aria-label="Next Photo"
         >
           <i className="fa-solid fa-chevron-right" style={{ fontSize: '12px' }}></i>
@@ -81,7 +112,7 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
       </div>
 
       {/* Hotelux Room Body with Specs & Actions */}
-      <div className="our-rooms-two__body" style={{ padding: '20px', background: '#ffffff' }}>
+      <div className="our-rooms-two__body" style={{ padding: '20px', background: '#ffffff', borderRadius: '0 0 16px 16px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6px' }}>
           <div>
             <h3 
@@ -92,11 +123,11 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
               {prop.name}
             </h3>
             <div className="our-rooms-location" style={{ fontSize: '12.5px', color: '#374151', fontWeight: 600 }}>
-              <i className="fa-solid fa-location-dot" style={{ color: '#ea580c', marginRight: '4px' }}></i> {prop.location}
+              <i className="fa-solid fa-location-dot" style={{ color: '#ea384c', marginRight: '4px' }}></i> {prop.location}
             </div>
           </div>
           <div style={{ textAlign: 'right', flexShrink: 0 }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', background: '#059669', padding: '3px 8px', borderRadius: '4px', display: 'inline-block' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', background: '#059669', padding: '3px 8px', borderRadius: '8px', display: 'inline-block' }}>
               {prop.rating} ★
             </span>
             <span style={{ display: 'block', fontSize: '10.5px', color: '#374151', fontWeight: 600, marginTop: '2px' }}>
@@ -106,8 +137,8 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         </div>
 
         {/* Proximity Pill */}
-        <div style={{ background: '#fff7ed', border: '1px solid #fed7aa', padding: '6px 10px', borderRadius: '6px', marginBottom: '12px', fontSize: '11.5px', color: '#c2410c', display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <i className="fa-solid fa-location-arrow" style={{ color: '#ea580c' }}></i>
+        <div style={{ background: '#fff1f2', border: '1px solid #fecdd3', padding: '6px 10px', borderRadius: '10px', marginBottom: '12px', fontSize: '11.5px', color: '#9f1239', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <i className="fa-solid fa-location-arrow" style={{ color: '#ea384c' }}></i>
           <span><strong>{prop.bhk === '1 BHK' ? '3 Mins' : prop.bhk === '2 BHK' ? '4 Mins' : '3 Mins'}</strong> to Yashobhoomi (IICC) &bull; 10 Mins to Airport T3</span>
         </div>
 
@@ -115,14 +146,14 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
 
         {/* OYO-Style Amenities Row */}
         <div className="oyo-amenities-row">
-          <span className="oyo-amenity-chip" title="Air Conditioning" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-snowflake" style={{ color: '#ea580c' }}></i> AC</span>
-          <span className="oyo-amenity-chip" title="300 Mbps Wi-Fi" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-wifi" style={{ color: '#ea580c' }}></i> 300 Mbps Wi-Fi</span>
-          <span className="oyo-amenity-chip" title="Modular Kitchen" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-kitchen-set" style={{ color: '#ea580c' }}></i> Kitchen</span>
-          <span className="oyo-amenity-chip" title="Power Backup" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-bolt" style={{ color: '#ea580c' }}></i> Power Backup</span>
-          <span className="oyo-amenity-chip" title="Daily Housekeeping" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-broom" style={{ color: '#ea580c' }}></i> Housekeeping</span>
-          <span className="oyo-amenity-chip" title="Geyser" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-temperature-arrow-up" style={{ color: '#ea580c' }}></i> Geyser</span>
-          <span className="oyo-amenity-chip" title="Smart TV" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-tv" style={{ color: '#ea580c' }}></i> Smart TV</span>
-          <span className="oyo-amenity-chip" title="Elevator" style={{ color: '#111827', background: '#fff7ed', border: '1px solid #fed7aa' }}><i className="fa-solid fa-elevator" style={{ color: '#ea580c' }}></i> Lift</span>
+          <span className="oyo-amenity-chip" title="Air Conditioning" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-snowflake" style={{ color: '#ea384c' }}></i> AC</span>
+          <span className="oyo-amenity-chip" title="300 Mbps Wi-Fi" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-wifi" style={{ color: '#ea384c' }}></i> 300 Mbps Wi-Fi</span>
+          <span className="oyo-amenity-chip" title="Modular Kitchen" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-kitchen-set" style={{ color: '#ea384c' }}></i> Kitchen</span>
+          <span className="oyo-amenity-chip" title="Power Backup" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-bolt" style={{ color: '#ea384c' }}></i> Power Backup</span>
+          <span className="oyo-amenity-chip" title="Daily Housekeeping" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-broom" style={{ color: '#ea384c' }}></i> Housekeeping</span>
+          <span className="oyo-amenity-chip" title="Geyser" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-temperature-arrow-up" style={{ color: '#ea384c' }}></i> Geyser</span>
+          <span className="oyo-amenity-chip" title="Smart TV" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-tv" style={{ color: '#ea384c' }}></i> Smart TV</span>
+          <span className="oyo-amenity-chip" title="Elevator" style={{ color: '#111827', background: '#fff1f2', border: '1px solid #fecdd3', borderRadius: '8px' }}><i className="fa-solid fa-elevator" style={{ color: '#ea384c' }}></i> Lift</span>
         </div>
 
         {/* OYO-Style Booking Trust Highlights */}
@@ -139,31 +170,31 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         </div>
 
         {/* Pricing / Monthly Quotation Strip */}
-        <div className="oyo-card-rate-box" style={{ background: '#fffaf5', border: '1px solid #fed7aa' }}>
+        <div className="oyo-card-rate-box" style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '12px' }}>
           <div>
-            <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+            <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
               DIRECT HOST RATE &bull; GST INVOICE INCLUDED
             </span>
             <strong style={{ fontSize: '14.5px', color: '#111827' }}>
               Monthly Corporate Quotation
             </strong>
           </div>
-          <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '3px 8px', borderRadius: '4px', fontWeight: 700 }}>
+          <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '3px 8px', borderRadius: '8px', fontWeight: 700 }}>
             Save 20% on Long Stays
           </span>
         </div>
 
-        {/* Action Buttons Row */}
-        <div className="our-rooms-actions-row" style={{ marginTop: '14px', display: 'flex', gap: '10px' }}>
+        {/* Action Buttons Row: Perfectly Equal in Shape and Width from Both Sides with Rounded Corners */}
+        <div className="our-rooms-actions-row" style={{ marginTop: '16px', display: 'flex', gap: '10px', alignItems: 'stretch' }}>
           <a 
             href={getGuestPropertyWhatsAppLink(prop.name)} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-hotelux-room-wa oyo-btn-book"
             title="Book this flat on WhatsApp"
-            style={{ flex: 1.4, justifyContent: 'center', background: '#16a34a', color: '#ffffff', fontWeight: 700 }}
+            style={{ flex: 1, minHeight: '46px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: '#16a34a', color: '#ffffff', fontWeight: 700, borderRadius: '12px', padding: '10px 14px', fontSize: '13px', textDecoration: 'none', border: 'none', boxShadow: '0 4px 14px rgba(22, 163, 74, 0.25)', transition: 'all 0.2s ease' }}
           >
-            <i className="fa-brands fa-whatsapp"></i> Book Flat on WhatsApp
+            <i className="fa-brands fa-whatsapp" style={{ marginRight: '6px' }}></i> Book on WhatsApp
           </a>
 
           <button 
@@ -171,9 +202,9 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
             className="btn-hotelux-details" 
             onClick={() => onOpenModal ? onOpenModal(prop) : onSelectStay && onSelectStay(prop.id)}
             title="View full apartment specifications, photos and amenities"
-            style={{ flex: 0.9, justifyContent: 'center', background: '#ea580c', color: '#ffffff', borderColor: '#ea580c', fontWeight: 700 }}
+            style={{ flex: 1, minHeight: '46px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: '#ea384c', color: '#ffffff', borderColor: '#ea384c', fontWeight: 700, borderRadius: '12px', padding: '10px 14px', fontSize: '13px', cursor: 'pointer', border: '1px solid #ea384c', boxShadow: '0 4px 14px rgba(234, 56, 76, 0.25)', transition: 'all 0.2s ease' }}
           >
-            <i className="fa-solid fa-images" style={{ color: '#ffffff' }}></i> Photos &amp; Specs
+            <i className="fa-solid fa-images" style={{ color: '#ffffff', marginRight: '6px' }}></i> Photos &amp; Specs
           </button>
         </div>
       </div>

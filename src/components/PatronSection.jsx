@@ -47,9 +47,9 @@ export default function PatronSection() {
             position: 'relative', 
             borderRadius: '24px', 
             padding: '48px 36px', 
-            background: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)',
-            border: '2px solid #fed7aa',
-            boxShadow: '0 20px 60px rgba(234, 88, 12, 0.28)',
+            background: 'linear-gradient(135deg, #ea384c 0%, #c41c33 100%)',
+            border: '2px solid #fecdd3',
+            boxShadow: '0 20px 60px rgba(234, 56, 76, 0.28)',
             textAlign: 'center'
           }}
         >
@@ -66,13 +66,13 @@ export default function PatronSection() {
               borderRadius: '30px'
             }}
           >
-            <i className="fa-solid fa-shield-halved badge-float" style={{ color: '#fed7aa', fontSize: '15px' }}></i>
+            <i className="fa-solid fa-shield-halved badge-float" style={{ color: '#fecdd3', fontSize: '15px' }}></i>
             <span style={{ color: '#ffffff', fontWeight: 800 }}>HOSTAYY PATRON &bull; OYO PATRON BENCHMARK &bull; PROPERTY OWNER PARTNERSHIP</span>
           </div>
 
           <h2 className="patron-hero-title" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.25, margin: '14px 0 16px', color: '#ffffff' }}>
             Partner Your Apartment With Hostayy <br />
-            <span style={{ color: '#fed7aa' }}>Earn Up to 2.5x Higher Rental Income</span>
+            <span style={{ color: '#fecdd3' }}>Earn Up to 2.5x Higher Rental Income</span>
           </h2>
 
           <p className="patron-hero-desc" style={{ color: 'rgba(255, 255, 255, 0.95)', fontSize: '15.5px', lineHeight: 1.7, maxWidth: '780px', margin: '0 auto 30px' }}>
@@ -83,19 +83,19 @@ export default function PatronSection() {
           <div className="patron-metrics-row">
             <div className="patron-metric-box">
               <strong style={{ color: '#ffffff' }}>1.8x – 2.5x</strong>
-              <span style={{ color: '#fed7aa' }}>Higher Net Yield vs 11-Mo Lease</span>
+              <span style={{ color: '#fecdd3' }}>Higher Net Yield vs 11-Mo Lease</span>
             </div>
             <div className="patron-metric-box">
               <strong style={{ color: '#ffffff' }}>100%</strong>
-              <span style={{ color: '#fed7aa' }}>Hands-Off Turnkey Operations</span>
+              <span style={{ color: '#fecdd3' }}>Hands-Off Turnkey Operations</span>
             </div>
             <div className="patron-metric-box">
               <strong style={{ color: '#ffffff' }}>0% Squatting</strong>
-              <span style={{ color: '#fed7aa' }}>Vetted Corporate &amp; Expat Guests</span>
+              <span style={{ color: '#fecdd3' }}>Vetted Corporate &amp; Expat Guests</span>
             </div>
             <div className="patron-metric-box">
               <strong style={{ color: '#ffffff' }}>1st of Month</strong>
-              <span style={{ color: '#fed7aa' }}>Guaranteed Direct Bank Payouts</span>
+              <span style={{ color: '#fecdd3' }}>Guaranteed Direct Bank Payouts</span>
             </div>
           </div>
         </div>
@@ -104,27 +104,27 @@ export default function PatronSection() {
         <div className="hostayy-ticker-wrap" style={{ margin: '30px 0 45px', borderRadius: '14px' }}>
           <div className="hostayy-ticker-track">
             <span className="hostayy-ticker-item"><i className="fa-solid fa-money-bill-trend-up" style={{ color: '#16a34a' }}></i> +40% Higher Rental Yield vs Traditional Lease</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-calendar-check" style={{ color: '#ea580c' }}></i> 100% Payouts Guaranteed on 1st of Every Month</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-calendar-check" style={{ color: '#ea384c' }}></i> 100% Payouts Guaranteed on 1st of Every Month</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#16a34a' }}></i> Zero Vacancy Loss &bull; Complete Damage Protection</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-hotel" style={{ color: '#ea580c' }}></i> Turnkey 5-Star Hotel Care &bull; 400TC Pressed Linens</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-umbrella-beach" style={{ color: '#ea580c' }}></i> Unlimited Free Personal Stays for Property Owners</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-hotel" style={{ color: '#ea384c' }}></i> Turnkey 5-Star Hotel Care &bull; 400TC Pressed Linens</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-umbrella-beach" style={{ color: '#ea384c' }}></i> Unlimited Free Personal Stays for Property Owners</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             {/* Seamless loop */}
             <span className="hostayy-ticker-item"><i className="fa-solid fa-money-bill-trend-up" style={{ color: '#16a34a' }}></i> +40% Higher Rental Yield vs Traditional Lease</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
-            <span className="hostayy-ticker-item"><i className="fa-solid fa-calendar-check" style={{ color: '#ea580c' }}></i> 100% Payouts Guaranteed on 1st of Every Month</span>
-            <span className="hostayy-ticker-item" style={{ color: '#ea580c' }}>&bull;</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
+            <span className="hostayy-ticker-item"><i className="fa-solid fa-calendar-check" style={{ color: '#ea384c' }}></i> 100% Payouts Guaranteed on 1st of Every Month</span>
+            <span className="hostayy-ticker-item" style={{ color: '#ea384c' }}>&bull;</span>
             <span className="hostayy-ticker-item"><i className="fa-solid fa-shield-halved" style={{ color: '#16a34a' }}></i> Zero Vacancy Loss &bull; Complete Damage Protection</span>
           </div>
         </div>
 
         {/* 4 Core Pillars of Hostayy Patron */}
         <div className="patron-pillars-header">
-          <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>WHY PROPERTY OWNERS CHOOSE HOSTAYY PATRON</span>
+          <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>WHY PROPERTY OWNERS CHOOSE HOSTAYY PATRON</span>
           <h3 style={{ color: '#111827', fontWeight: 800 }}>Engineered to Maximize Returns While Protecting Your Asset</h3>
         </div>
 
@@ -140,7 +140,7 @@ export default function PatronSection() {
           </div>
 
           <div className="patron-pillar-card luxury-glass-card" style={{ borderRadius: '14px', padding: '24px' }}>
-            <div className="pillar-icon-box" style={{ background: '#fff7ed', color: '#ea580c' }}>
+            <div className="pillar-icon-box" style={{ background: '#fff1f2', color: '#ea384c' }}>
               <i className="fa-solid fa-wand-magic-sparkles"></i>
             </div>
             <h4 style={{ color: '#111827', fontWeight: 800 }}>100% Hands-Off Operations</h4>
@@ -160,7 +160,7 @@ export default function PatronSection() {
           </div>
 
           <div className="patron-pillar-card luxury-glass-card" style={{ borderRadius: '14px', padding: '24px' }}>
-            <div className="pillar-icon-box" style={{ background: '#fff7ed', color: '#ea580c' }}>
+            <div className="pillar-icon-box" style={{ background: '#fff1f2', color: '#ea384c' }}>
               <i className="fa-solid fa-vault"></i>
             </div>
             <h4 style={{ color: '#111827', fontWeight: 800 }}>Guaranteed 1st-of-Month Payouts</h4>
@@ -173,7 +173,7 @@ export default function PatronSection() {
         {/* 3-Step Simple Onboarding Process (OYO Patron Pattern) */}
         <div className="patron-onboarding-wrap luxury-glass-card" id="process" style={{ borderRadius: '20px', padding: '40px 32px' }}>
           <div className="patron-pillars-header text-center" style={{ marginBottom: '32px' }}>
-            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+            <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <span className="pulse-dot"></span> 3-STEP SIMPLE ONBOARDING
             </span>
             <h3 style={{ color: '#111827', fontWeight: 800 }}>From Registration to First Monthly Payout in 48 Hours</h3>
@@ -181,19 +181,19 @@ export default function PatronSection() {
 
           <div className="patron-steps-grid">
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
-              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>01</div>
+              <div className="step-num-badge" style={{ background: '#ea384c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>01</div>
               <h4 style={{ color: '#111827', fontWeight: 800 }}>Share Property Details</h4>
               <p style={{ color: '#374151' }}>Tell us your apartment location in Delhi NCR/Dwarka and BHK configuration via WhatsApp or our online form.</p>
             </div>
 
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
-              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>02</div>
+              <div className="step-num-badge" style={{ background: '#ea384c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>02</div>
               <h4 style={{ color: '#111827', fontWeight: 800 }}>Free On-Site Audit &amp; Projection</h4>
               <p style={{ color: '#374151' }}>The Hostayy Hospitality team conducts a personalized property audit and provides an exact revenue feasibility report.</p>
             </div>
 
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
-              <div className="step-num-badge" style={{ background: '#ea580c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>03</div>
+              <div className="step-num-badge" style={{ background: '#ea384c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>03</div>
               <h4 style={{ color: '#111827', fontWeight: 800 }}>Go Live &amp; Start Earning</h4>
               <p style={{ color: '#374151' }}>We stage your flat, take architectural photography, onboard corporate clients, and transfer your first payout on the 1st.</p>
             </div>
@@ -203,28 +203,28 @@ export default function PatronSection() {
         {/* Traditional 11-Month Lease vs Hostayy Patron Comparison Table */}
         <div className="patron-comparison-wrap" id="comparison">
           <div className="patron-pillars-header text-center" style={{ marginBottom: '28px' }}>
-            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>PERFORMANCE BENCHMARK</span>
+            <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>PERFORMANCE BENCHMARK</span>
             <h3 style={{ color: '#111827', fontWeight: 800 }}>Traditional 11-Month Lease vs. Hostayy Patron Partnership</h3>
           </div>
 
-          <div className="compare-wrap" style={{ borderRadius: '16px', border: '2px solid #fed7aa', boxShadow: '0 8px 30px rgba(0,0,0,0.04)' }}>
-            <div className="compare-row head" style={{ background: '#ea580c', color: '#ffffff' }}>
-              <div className="compare-cell" style={{ color: '#ffffff', fontWeight: 800 }}>Operational Dimension</div>
-              <div className="compare-cell without" style={{ color: '#ffffff', fontWeight: 800 }}>Traditional 11-Month Tenant Lease</div>
-              <div className="compare-cell with" style={{ color: '#ffffff', fontWeight: 800, background: 'rgba(0, 0, 0, 0.15)' }}>
+          <div className="compare-wrap" style={{ borderRadius: '18px', border: '2px solid #fecdd3', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.04)' }}>
+            <div className="compare-row head" style={{ background: '#ea384c', color: '#ffffff', display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr' }}>
+              <div className="compare-cell" style={{ color: '#ffffff', fontWeight: 800, padding: '18px 24px' }}>Operational Dimension</div>
+              <div className="compare-cell without" style={{ color: '#ffffff', fontWeight: 800, padding: '18px 24px' }}>Traditional 11-Month Tenant Lease</div>
+              <div className="compare-cell with" style={{ color: '#ffffff', fontWeight: 800, background: 'rgba(0, 0, 0, 0.15)', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
                 <span>Hostayy Patron Partnership</span>
-                <span style={{ fontSize: '10px', background: '#ffffff', color: '#ea580c', padding: '2px 8px', borderRadius: '10px', marginLeft: '6px', fontWeight: 800 }}>★ RECOMMENDED</span>
+                <span style={{ fontSize: '10px', background: '#ffffff', color: '#ea384c', padding: '3px 8px', borderRadius: '10px', fontWeight: 800, whiteSpace: 'nowrap' }}>★ RECOMMENDED</span>
               </div>
             </div>
 
             {comparisonRows.map((row, idx) => (
-              <div key={idx} className="compare-row" style={{ borderBottom: idx < comparisonRows.length - 1 ? '1px solid #fed7aa' : 'none' }}>
-                <div className="compare-cell label" style={{ color: '#111827', fontWeight: 700 }}>{row.dimension}</div>
-                <div className="compare-cell without" style={{ color: '#4b5563' }}>
+              <div key={idx} className="compare-row" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', borderBottom: idx < comparisonRows.length - 1 ? '1px solid #fecdd3' : 'none' }}>
+                <div className="compare-cell label" style={{ color: '#111827', fontWeight: 700, padding: '16px 24px' }}>{row.dimension}</div>
+                <div className="compare-cell without" style={{ color: '#4b5563', padding: '16px 24px' }}>
                   <span className="compare-x" style={{ color: '#ef4444', fontWeight: 800, marginRight: '6px' }}>✕</span>
                   <span>{row.traditional}</span>
                 </div>
-                <div className="compare-cell with" style={{ color: '#111827', background: 'rgba(254, 215, 170, 0.12)' }}>
+                <div className="compare-cell with" style={{ color: '#111827', background: 'rgba(254, 205, 211, 0.2)', padding: '16px 24px' }}>
                   <span className="compare-check" style={{ color: '#16a34a', fontWeight: 800, marginRight: '6px' }}>✓</span>
                   <span><strong>{row.hostayy}</strong></span>
                 </div>
@@ -238,7 +238,7 @@ export default function PatronSection() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div 
               className="badge-float"
-              style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#fff7ed', border: '1.5px solid #fed7aa', color: '#ea580c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0 }}
+              style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#fff1f2', border: '1.5px solid #fecdd3', color: '#ea384c', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0 }}
             >
               <i className="fa-solid fa-umbrella-beach"></i>
             </div>

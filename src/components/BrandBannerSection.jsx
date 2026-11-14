@@ -120,7 +120,7 @@ export default function BrandBannerSection() {
               </div>
 
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#fff7ed', border: '1px solid #fed7aa', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', flexShrink: 0, marginTop: '2px' }}>
+                <div style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: '#fff1f2', border: '1px solid #fecdd3', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', flexShrink: 0, marginTop: '2px' }}>
                   <i className="fas fa-concierge-bell" style={{ fontSize: '15px' }}></i>
                 </div>
                 <div>

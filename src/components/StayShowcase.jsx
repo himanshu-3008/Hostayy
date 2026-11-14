@@ -5,24 +5,51 @@ import { HOSTAYY_CONFIG, getGuestPropertyWhatsAppLink } from '../data/properties
 
 export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const photos = prop.images;
   const previewPhotos = photos.slice(0, 6);
   const currentPhoto = photos[activePhotoIndex] || photos[0];
 
+  const minSwipeDistance = 35;
+
+  const onTouchStartHandler = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMoveHandler = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndHandler = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      // Swiped left -> next photo
+      setActivePhotoIndex((prev) => (prev + 1) % photos.length);
+    } else if (distance < -minSwipeDistance) {
+      // Swiped right -> prev photo
+      setActivePhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
-    <div className="stay-showcase-card compact-showcase-card">
+    <div className="stay-showcase-card compact-showcase-card" style={{ borderRadius: '18px', border: '2px solid #fecdd3' }}>
       {/* Top Header Row with Close Button */}
       <div className="compact-showcase-header">
         <div className="showcase-badge-row" style={{ margin: 0, display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-          <span className="showcase-badge" style={{ background: '#ea580c', color: '#ffffff', padding: '4px 12px', fontSize: '12px', fontWeight: 800, borderRadius: '4px' }}>
+          <span className="showcase-badge" style={{ background: '#ea384c', color: '#ffffff', padding: '4px 12px', fontSize: '12px', fontWeight: 800, borderRadius: '8px' }}>
             {prop.badge}
           </span>
-          <span className="showcase-tag-rooms" style={{ background: '#111827', color: '#ffffff', padding: '4px 10px', fontSize: '12px', borderRadius: '4px' }}>
-            <i className="fa-solid fa-door-open" style={{ marginRight: '5px', color: '#fed7aa' }}></i>
+          <span className="showcase-tag-rooms" style={{ background: '#111827', color: '#ffffff', padding: '4px 10px', fontSize: '12px', borderRadius: '8px' }}>
+            <i className="fa-solid fa-door-open" style={{ marginRight: '5px', color: '#fecdd3' }}></i>
             {prop.bhk} Serviced Residence
           </span>
-          <span style={{ fontSize: '12px', color: '#059669', background: '#ecfdf5', padding: '4px 10px', border: '1px solid #a7f3d0', fontWeight: 700, borderRadius: '4px' }}>
+          <span style={{ fontSize: '12px', color: '#059669', background: '#ecfdf5', padding: '4px 10px', border: '1px solid #a7f3d0', fontWeight: 700, borderRadius: '8px' }}>
             <i className="fa-solid fa-bolt" style={{ marginRight: '4px' }}></i> Long-Term &amp; Monthly Quotes Available
           </span>
         </div>
@@ -31,6 +58,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
           className="compact-close-btn" 
           onClick={onClose}
           title="Return to all stays overview"
+          style={{ borderRadius: '10px' }}
         >
           <i className="fa-solid fa-xmark"></i> <span>Close Preview</span>
         </button>
@@ -38,22 +66,26 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
 
       {/* 2-Column Compact Layout: Left Photo Stage + Right Key Details */}
       <div className="compact-showcase-grid">
-        {/* Left: Compact Interactive Photo Stage */}
+        {/* Left: Compact Interactive Photo Stage with Touch Swipe */}
         <div className="compact-photo-stage">
-          {/* Main Photo (Click to open full lightbox) */}
+          {/* Main Photo (Click to open full lightbox, Swipe on mobile) */}
           <div 
             className="compact-main-photo-wrap" 
             onClick={() => onOpenLightbox(photos, activePhotoIndex)}
-            title="Click to view full photo gallery in fullscreen"
+            onTouchStart={onTouchStartHandler}
+            onTouchMove={onTouchMoveHandler}
+            onTouchEnd={onTouchEndHandler}
+            title="Click to view in fullscreen or swipe on phone screen"
+            style={{ borderRadius: '14px', overflow: 'hidden', touchAction: 'pan-y' }}
           >
             <img src={currentPhoto.src} alt={currentPhoto.title} />
             <div className="compact-photo-overlay">
               <span className="compact-photo-title">
-                <i className="fa-solid fa-camera text-coral" style={{ marginRight: '6px' }}></i>
+                <i className="fa-solid fa-camera text-coral" style={{ marginRight: '6px', color: '#ea384c' }}></i>
                 {currentPhoto.title}
               </span>
-              <span className="compact-expand-pill">
-                <i className="fa-solid fa-expand"></i> Fullscreen Lightbox
+              <span className="compact-expand-pill" style={{ borderRadius: '12px' }}>
+                <i className="fa-solid fa-expand"></i> Fullscreen &bull; Swipe on Mobile
               </span>
             </div>
           </div>
@@ -67,6 +99,7 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 className={`compact-thumb-btn ${idx === activePhotoIndex ? 'active' : ''}`}
                 onClick={() => setActivePhotoIndex(idx)}
                 title={photo.title}
+                style={{ borderRadius: '8px', overflow: 'hidden' }}
               >
                 <img src={photo.src} alt={photo.title} />
                 <span className="thumb-num">#{idx + 1}</span>
@@ -82,10 +115,10 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
             <button 
               type="button"
               className="btn-outline-charcoal"
-              style={{ padding: '6px 14px', fontSize: '12px' }}
+              style={{ padding: '6px 14px', fontSize: '12px', borderRadius: '10px' }}
               onClick={() => onOpenLightbox(photos, activePhotoIndex)}
             >
-              <i className="fa-solid fa-images" style={{ color: 'var(--coral-primary)' }}></i>
+              <i className="fa-solid fa-images" style={{ color: '#ea384c' }}></i>
               <span>View All {photos.length} Photos</span>
             </button>
           </div>
@@ -98,12 +131,12 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
               {prop.name}
             </h2>
             <p style={{ color: '#374151', fontSize: '0.88rem', marginBottom: '8px', fontWeight: 600 }}>
-              <i className="fa-solid fa-location-dot" style={{ color: '#ea580c', marginRight: '5px' }}></i>
+              <i className="fa-solid fa-location-dot" style={{ color: '#ea384c', marginRight: '5px' }}></i>
               {prop.location}
             </p>
             {/* Proximity / Landmarks Pill */}
-            <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', padding: '8px 12px', borderRadius: '6px', marginBottom: '14px', fontSize: '12px', color: '#c2410c', lineHeight: 1.4 }}>
-              <strong><i className="fa-solid fa-compass" style={{ color: '#ea580c' }}></i> Proximity:</strong> {prop.nearbyLandmarks}
+            <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', padding: '8px 12px', borderRadius: '6px', marginBottom: '14px', fontSize: '12px', color: '#c41c33', lineHeight: 1.4 }}>
+              <strong><i className="fa-solid fa-compass" style={{ color: '#ea384c' }}></i> Proximity:</strong> {prop.nearbyLandmarks}
             </div>
             <p style={{ color: '#374151', fontSize: '0.9rem', lineHeight: 1.5, marginBottom: '16px' }}>
               {prop.shortDescription}
@@ -112,26 +145,26 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
 
           {/* Quick Specs Chips */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
-            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fffaf5', border: '1px solid #fed7aa', color: '#111827', fontWeight: 700 }}>
-              <i className="fa-solid fa-door-open" style={{ color: '#ea580c' }}></i>
+            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fff5f6', border: '1px solid #fecdd3', color: '#111827', fontWeight: 700 }}>
+              <i className="fa-solid fa-door-open" style={{ color: '#ea384c' }}></i>
               <span>{prop.bhk} Configuration</span>
             </div>
-            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fffaf5', border: '1px solid #fed7aa', color: '#111827', fontWeight: 700 }}>
-              <i className="fa-solid fa-kitchen-set" style={{ color: '#ea580c' }}></i>
+            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fff5f6', border: '1px solid #fecdd3', color: '#111827', fontWeight: 700 }}>
+              <i className="fa-solid fa-kitchen-set" style={{ color: '#ea384c' }}></i>
               <span>Modular Kitchen</span>
             </div>
-            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fffaf5', border: '1px solid #fed7aa', color: '#111827', fontWeight: 700 }}>
-              <i className="fa-solid fa-vector-square" style={{ color: '#ea580c' }}></i>
+            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fff5f6', border: '1px solid #fecdd3', color: '#111827', fontWeight: 700 }}>
+              <i className="fa-solid fa-vector-square" style={{ color: '#ea384c' }}></i>
               <span>{prop.areaSqFt}</span>
             </div>
-            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fffaf5', border: '1px solid #fed7aa', color: '#111827', fontWeight: 700 }}>
-              <i className="fa-solid fa-wifi" style={{ color: '#ea580c' }}></i>
+            <div className="spec-pill" style={{ justifyContent: 'center', background: '#fff5f6', border: '1px solid #fecdd3', color: '#111827', fontWeight: 700 }}>
+              <i className="fa-solid fa-wifi" style={{ color: '#ea384c' }}></i>
               <span>300 Mbps Mesh Wi-Fi</span>
             </div>
           </div>
 
           {/* Long-Term Tariff / Quotation Box (Solid Orange with Pure White Text) */}
-          <div className="showcase-quotation-box" style={{ background: '#ea580c', border: '1px solid #c2410c', borderRadius: '10px', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#ffffff' }}>
+          <div className="showcase-quotation-box" style={{ background: '#ea384c', border: '1px solid #c41c33', borderRadius: '10px', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#ffffff' }}>
             <div>
               <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#ffffff', opacity: 0.9, display: 'block', fontWeight: 700 }}>
                 Long-Term &amp; Monthly Quotation
@@ -139,11 +172,11 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
               <strong style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '1.45rem', color: '#ffffff', lineHeight: 1.15, display: 'block', marginTop: '2px' }}>
                 Custom Quote on Request
               </strong>
-              <span style={{ fontSize: '11.5px', color: '#fed7aa', display: 'block', marginTop: '3px', fontWeight: 600 }}>
+              <span style={{ fontSize: '11.5px', color: '#fecdd3', display: 'block', marginTop: '3px', fontWeight: 600 }}>
                 0% Brokerage &bull; 0% Platform Fees &bull; GST Invoicing
               </span>
             </div>
-            <span style={{ fontSize: '13px', color: '#ea580c', fontWeight: 800, background: '#ffffff', padding: '6px 14px', borderRadius: '20px', border: '1px solid #ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+            <span style={{ fontSize: '13px', color: '#ea384c', fontWeight: 800, background: '#ffffff', padding: '6px 14px', borderRadius: '20px', border: '1px solid #ffffff', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
               <i className="fa-solid fa-star" style={{ color: '#f59e0b' }}></i> {prop.rating} Superhost
             </span>
           </div>

@@ -62,9 +62,9 @@ npm run start
 
 ## 📞 Official Host & Concierge Contacts
 
-* **Founder & Chief Hospitality Operator**: Mohit Chaudhary
+* **Hostayy Hospitality Concierge**: Hostayy Team
 * **Direct Phone / WhatsApp**: `+91 9217680108` ([wa.me/919217680108](https://wa.me/919217680108))
-* **Email**: `C.mohit@hostayy.com`
+* **Email**: `Hello@hostayy.com`
 * **Address**: Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077 (3 mins to Yashobhoomi IICC)
 
 ---

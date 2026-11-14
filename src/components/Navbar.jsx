@@ -50,7 +50,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
   };
 
   return (
-    <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea580c' }}>
+    <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea384c' }}>
       {/* Top Tier: Logo & Dual-Portal Mode Switcher & User Utility Bar */}
       <div className="bcom-header-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.22)', padding: '10px 0' }}>
         <div className="container">
@@ -67,7 +67,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </div>
               <div className="bcom-logo-text-wrap" style={{ lineHeight: 1.15 }}>
                 <span className="bcom-logo-text" style={{ fontSize: '25px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif' }}>
-                  Hostayy<span className="bcom-logo-dot" style={{ color: '#fed7aa' }}>.com</span>
+                  Hostayy<span className="bcom-logo-dot" style={{ color: '#fecdd3' }}>.com</span>
                 </span>
                 <span className="bcom-logo-slogan" style={{ display: 'block', fontSize: '11px', color: '#ffffff', fontStyle: 'italic', fontWeight: 500, opacity: 0.9 }}>
                   (feel like home)
@@ -86,11 +86,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 style={{ 
                   textDecoration: 'none',
                   background: currentPage === 'booking' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'booking' ? '#ea580c' : '#ffffff'
+                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}>Book Flats</span>
               </Link>
               
               <Link
@@ -102,11 +102,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 style={{ 
                   textDecoration: 'none',
                   background: currentPage === 'listing' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'listing' ? '#ea580c' : '#ffffff'
+                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}>List Property</span>
               </Link>
             </div>
 
@@ -137,17 +137,17 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 href="/list-property"
                 className="bcom-list-prop-link"
                 title="List your apartment with Hostayy Patron"
-                style={{ background: 'transparent', color: '#ffffff', fontSize: '13.5px', fontWeight: 700, textDecoration: 'none', padding: '6px 12px', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.4)' }}
+                style={{ background: 'transparent', color: '#ffffff', fontSize: '13.5px', fontWeight: 700, textDecoration: 'none', padding: '6px 14px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.45)' }}
               >
                 <span>List your property</span>
               </Link>
 
-              {/* Booking CTA Button (Solid White Button with Orange Text) */}
+              {/* Booking CTA Button (Solid White Button with Coral Red Text) */}
               <Link 
                 href="/book"
                 className="bcom-action-btn register-btn"
                 title="Explore 1, 2 &amp; 3 BHK Serviced Flats"
-                style={{ background: '#ffffff', color: '#ea580c', fontWeight: 800, padding: '7px 16px', borderRadius: '4px', textDecoration: 'none', fontSize: '13.5px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
+                style={{ background: '#ffffff', color: '#ea384c', fontWeight: 800, padding: '7px 18px', borderRadius: '12px', textDecoration: 'none', fontSize: '13.5px', boxShadow: '0 2px 10px rgba(0,0,0,0.12)' }}
               >
                 Book Flat
               </Link>
@@ -159,7 +159,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 rel="noopener noreferrer"
                 className="bcom-action-btn wa-btn"
                 title="Chat with Hostayy on WhatsApp"
-                style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 12px', borderRadius: '4px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 14px', borderRadius: '12px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
               >
                 <i className="fa-brands fa-whatsapp"></i>
                 <span className="d-none-sm">WhatsApp</span>
@@ -255,7 +255,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   className="bcom-pill"
                   title="Official Physical Address"
                   style={{
-                    color: '#fed7aa',
+                    color: '#fecdd3',
                     border: '1px solid rgba(255, 255, 255, 0.35)',
                     background: 'rgba(0, 0, 0, 0.12)',
                     fontWeight: 700,
@@ -267,7 +267,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     fontSize: '12.5px'
                   }}
                 >
-                  <i className="fa-solid fa-map-location-dot" style={{ color: '#fed7aa' }}></i>
+                  <i className="fa-solid fa-map-location-dot" style={{ color: '#fecdd3' }}></i>
                   <span>Dwarka Sector 23 Address</span>
                 </div>
 
@@ -347,15 +347,15 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                         background: '#ffffff',
                         borderRadius: '12px',
                         boxShadow: '0 18px 45px rgba(0, 0, 0, 0.22)',
-                        border: '1.5px solid #fed7aa',
+                        border: '1.5px solid #fecdd3',
                         padding: '10px',
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '6px'
                       }}
                     >
-                      <div style={{ padding: '6px 8px 6px', borderBottom: '1px solid #fed7aa', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span className="bcom-dropdown-header-title" style={{ fontSize: '10.5px', fontWeight: 800, color: '#ea580c', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      <div style={{ padding: '6px 8px 6px', borderBottom: '1px solid #fecdd3', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span className="bcom-dropdown-header-title" style={{ fontSize: '10.5px', fontWeight: 800, color: '#ea384c', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                           Select a Flat to Explore
                         </span>
                         <span style={{ fontSize: '11px', background: '#ecfdf5', color: '#059669', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
@@ -379,7 +379,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                             <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
                               Velora Suite
                             </h4>
-                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea384c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
                               1 BHK
                             </span>
                           </div>
@@ -405,7 +405,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                             <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
                               Azura Residence
                             </h4>
-                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea384c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
                               2 BHK
                             </span>
                           </div>
@@ -431,7 +431,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                             <h4 style={{ margin: 0, fontSize: '13.5px', fontWeight: 800, color: '#111827' }}>
                               Verde Signature
                             </h4>
-                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea580c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
+                            <span className="bcom-stay-tag" style={{ fontSize: '11px', background: '#ea384c', color: '#ffffff', padding: '2px 6px', borderRadius: '4px', fontWeight: 700 }}>
                               3 BHK
                             </span>
                           </div>
@@ -451,7 +451,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                           padding: '9px',
                           borderRadius: '6px',
                           border: 'none',
-                          background: '#ea580c',
+                          background: '#ea384c',
                           color: '#ffffff',
                           fontWeight: 800,
                           fontSize: '12px',
@@ -502,7 +502,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   className="bcom-pill"
                   title="Official Physical Address: Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077"
                   style={{
-                    color: '#fed7aa',
+                    color: '#fecdd3',
                     border: '1px solid rgba(255, 255, 255, 0.35)',
                     background: 'rgba(0, 0, 0, 0.12)',
                     fontWeight: 700,
@@ -515,7 +515,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     fontSize: '12.5px'
                   }}
                 >
-                  <i className="fa-solid fa-map-location-dot" style={{ color: '#fed7aa' }}></i>
+                  <i className="fa-solid fa-map-location-dot" style={{ color: '#fecdd3' }}></i>
                   <span>Dwarka Sector 23 Address</span>
                 </a>
 
@@ -547,7 +547,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   href="/list-property"
                   className="bcom-pill"
                   style={{
-                    color: '#fed7aa',
+                    color: '#fecdd3',
                     border: '1px dashed rgba(255, 255, 255, 0.6)',
                     background: 'rgba(0, 0, 0, 0.15)',
                     fontWeight: 700,
@@ -687,7 +687,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
-        <div className="bcom-mobile-drawer" style={{ background: '#9a3412', padding: '20px' }}>
+        <div className="bcom-mobile-drawer" style={{ background: '#9f1239', padding: '20px' }}>
           <div className="bcom-mobile-drawer-inner">
             {/* Mobile Portal Mode Switcher */}
             <div className="bcom-mobile-portal-switcher" style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0,0,0,0.2)', padding: '4px', borderRadius: '8px' }}>
@@ -698,11 +698,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 style={{ 
                   textDecoration: 'none',
                   background: currentPage === 'booking' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'booking' ? '#ea580c' : '#ffffff'
+                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea580c' : '#ffffff' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}>Book Flats</span>
               </Link>
               <Link 
                 href="/list-property"
@@ -711,11 +711,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 style={{ 
                   textDecoration: 'none',
                   background: currentPage === 'listing' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'listing' ? '#ea580c' : '#ffffff'
+                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea580c' : '#ffffff' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}>List Property</span>
               </Link>
             </div>
 
@@ -731,12 +731,12 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </Link>
 
               {currentPage === 'booking' && (
-                <div style={{ paddingLeft: '14px', borderLeft: '2px solid #fed7aa', display: 'flex', flexDirection: 'column', gap: '8px', margin: '4px 0' }}>
+                <div style={{ paddingLeft: '14px', borderLeft: '2px solid #fecdd3', display: 'flex', flexDirection: 'column', gap: '8px', margin: '4px 0' }}>
                   <button 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('velora'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
                   >
                     &bull; Velora Suite (1 BHK)
                   </button>
@@ -744,7 +744,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('azura'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
                   >
                     &bull; Azura Residence (2 BHK)
                   </button>
@@ -752,7 +752,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('verde'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fed7aa', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
                   >
                     &bull; Verde Signature (3 BHK)
                   </button>
@@ -775,7 +775,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
                 className="bcom-drawer-btn call-drawer-btn"
                 onClick={() => setMobileOpen(false)}
-                style={{ background: '#ffffff', color: '#ea580c', padding: '12px', borderRadius: '8px', textAlign: 'center', fontWeight: 800, textDecoration: 'none' }}
+                style={{ background: '#ffffff', color: '#ea384c', padding: '12px', borderRadius: '8px', textAlign: 'center', fontWeight: 800, textDecoration: 'none' }}
               >
                 <i className="fa-solid fa-phone"></i> Call Host ({HOSTAYY_CONFIG.displayPhone})
               </a>

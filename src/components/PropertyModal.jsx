@@ -23,9 +23,9 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
 
         <div className="property-modal-body">
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap' }}>
-            <span className="showcase-badge" style={{ background: '#ea580c', color: '#ffffff', padding: '4px 12px', fontSize: '12px', fontWeight: 800, borderRadius: '4px' }}>{prop.badge}</span>
+            <span className="showcase-badge" style={{ background: '#ea384c', color: '#ffffff', padding: '4px 12px', fontSize: '12px', fontWeight: 800, borderRadius: '4px' }}>{prop.badge}</span>
             <span className="showcase-former-tag" style={{ background: '#111827', color: '#ffffff', border: '1px solid #111827', padding: '4px 10px', fontSize: '12px', borderRadius: '4px', fontWeight: 700 }}>
-              <i className="fa-solid fa-door-open" style={{ color: '#fed7aa', marginRight: '4px' }}></i> {prop.bhk} Serviced Apartment
+              <i className="fa-solid fa-door-open" style={{ color: '#fecdd3', marginRight: '4px' }}></i> {prop.bhk} Serviced Apartment
             </span>
             <span style={{ fontSize: '0.85rem', color: '#B45309', fontWeight: 700 }}>
               <i className="fa-solid fa-star" style={{ color: '#F59E0B' }}></i> {prop.rating} ★ ({prop.reviewsCount} verified reviews)
@@ -41,8 +41,8 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           </p>
 
           {/* Landmarks Box */}
-          <div style={{ background: '#fffaf5', border: '1px solid #fed7aa', padding: '10px 14px', borderRadius: '8px', marginBottom: '24px', fontSize: '13px', color: '#374151' }}>
-            <strong style={{ color: '#ea580c', display: 'block', marginBottom: '2px', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em', fontWeight: 800 }}>
+          <div style={{ background: '#fff5f6', border: '1px solid #fecdd3', padding: '10px 14px', borderRadius: '8px', marginBottom: '24px', fontSize: '13px', color: '#374151' }}>
+            <strong style={{ color: '#ea384c', display: 'block', marginBottom: '2px', textTransform: 'uppercase', fontSize: '11px', letterSpacing: '0.05em', fontWeight: 800 }}>
               <i className="fa-solid fa-compass" style={{ marginRight: '4px' }}></i> Proximity &amp; Landmarks:
             </strong>
             {prop.nearbyLandmarks}
@@ -66,7 +66,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           <div style={{ textAlign: 'right', marginBottom: '24px' }}>
             <button 
               className="thm-btn" 
-              style={{ fontSize: '0.84rem', padding: '8px 18px', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff', borderRadius: '6px', fontWeight: 700 }}
+              style={{ fontSize: '0.84rem', padding: '8px 18px', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff', borderRadius: '6px', fontWeight: 700 }}
               onClick={() => onOpenLightbox(prop.images, 0)}
             >
               <i className="fa-solid fa-images" style={{ color: '#ffffff' }}></i> View All {prop.images.length} Photos in Fullscreen
@@ -76,8 +76,8 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           {/* Specs Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '12px', marginBottom: '28px' }}>
             {prop.specs.map((spec, idx) => (
-              <div key={idx} style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '14px', padding: '14px', textAlign: 'center' }}>
-                <i className={`fa-solid ${spec.icon}`} style={{ fontSize: '1.2rem', marginBottom: '6px', display: 'block', color: '#ea580c' }}></i>
+              <div key={idx} style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '14px', padding: '14px', textAlign: 'center' }}>
+                <i className={`fa-solid ${spec.icon}`} style={{ fontSize: '1.2rem', marginBottom: '6px', display: 'block', color: '#ea384c' }}></i>
                 <div style={{ fontSize: '0.74rem', color: '#374151', textTransform: 'uppercase', fontWeight: 600 }}>{spec.label}</div>
                 <strong style={{ fontSize: '0.94rem', color: '#111827', fontWeight: 800 }}>{spec.value}</strong>
               </div>
@@ -87,11 +87,11 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           {/* Room Breakdown */}
           <div style={{ marginBottom: '28px' }}>
             <h4 style={{ fontSize: '1.15rem', color: '#111827', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800 }}>
-              <i className="fa-solid fa-door-closed" style={{ color: '#ea580c' }}></i> Detailed Room &amp; Living Breakdown
+              <i className="fa-solid fa-door-closed" style={{ color: '#ea384c' }}></i> Detailed Room &amp; Living Breakdown
             </h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
               {prop.roomBreakdown.map((room, idx) => (
-                <div key={idx} style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '12px', padding: '14px' }}>
+                <div key={idx} style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '12px', padding: '14px' }}>
                   <strong style={{ fontSize: '0.92rem', color: '#111827', display: 'block', marginBottom: '4px', fontWeight: 800 }}>
                     {room.title}
                   </strong>
@@ -106,7 +106,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           {/* Key Features */}
           <div style={{ marginBottom: '32px' }}>
             <h4 style={{ fontSize: '1.15rem', color: '#111827', marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 800 }}>
-              <i className="fa-solid fa-sparkles" style={{ color: '#ea580c' }}></i> Key Residence Highlights
+              <i className="fa-solid fa-sparkles" style={{ color: '#ea384c' }}></i> Key Residence Highlights
             </h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px' }}>
               {prop.features.map((feature, idx) => (
@@ -119,9 +119,9 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
           </div>
 
           {/* Action Row */}
-          <div className="property-modal-action-row" style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '12px', padding: '16px 20px' }}>
+          <div className="property-modal-action-row" style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '12px', padding: '16px 20px' }}>
             <div>
-              <span style={{ fontSize: '0.74rem', color: '#ea580c', textTransform: 'uppercase', display: 'block', fontWeight: 800 }}>Stay Arrangement</span>
+              <span style={{ fontSize: '0.74rem', color: '#ea384c', textTransform: 'uppercase', display: 'block', fontWeight: 800 }}>Stay Arrangement</span>
               <strong className="property-modal-quote-val" style={{ color: '#111827', fontWeight: 800, fontSize: '1.15rem' }}>Monthly &amp; Long-Term Quotation</strong>
               <span style={{ fontSize: '0.82rem', color: '#374151', display: 'block', marginTop: '2px' }}>
                 All-inclusive utilities, 300 Mbps Wi-Fi, housekeeping &amp; 0% brokerage
@@ -143,7 +143,7 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="thm-btn thm-btn-outline"
-                style={{ padding: '11px 18px', textAlign: 'center', borderColor: '#ea580c', color: '#ea580c', background: '#ffffff', fontWeight: 700 }}
+                style={{ padding: '11px 18px', textAlign: 'center', borderColor: '#ea384c', color: '#ea384c', background: '#ffffff', fontWeight: 700 }}
               >
                 <i className="fa-brands fa-google-drive"></i> Drive Photos
               </a>

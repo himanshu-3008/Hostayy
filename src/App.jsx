@@ -110,16 +110,16 @@ export default function App() {
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
                   gap: '20px',
-                  border: '2px solid #fed7aa',
-                  boxShadow: '0 14px 40px rgba(234, 88, 12, 0.09)'
+                  border: '2px solid #fecdd3',
+                  boxShadow: '0 14px 40px rgba(234, 56, 76, 0.09)'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '18px', maxWidth: '720px' }}>
-                  <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: '#fff7ed', border: '1.5px solid #fed7aa', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', fontSize: '22px', flexShrink: 0 }}>
+                  <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: '#fff1f2', border: '1.5px solid #fecdd3', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', fontSize: '22px', flexShrink: 0 }}>
                     <i className="fa-solid fa-house-chimney-user"></i>
                   </div>
                   <div>
-                    <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                    <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
                       FOR APARTMENT OWNERS &bull; HOSTAYY PATRON
                     </span>
                     <h3 style={{ margin: '4px 0 6px', color: '#111827', fontSize: '23px', fontWeight: 800 }}>
@@ -137,7 +137,7 @@ export default function App() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="thm-btn"
-                  style={{ background: '#ea580c', color: '#ffffff', borderColor: '#ea580c', fontWeight: 800, padding: '13px 26px', fontSize: '14px', cursor: 'pointer', borderRadius: '8px' }}
+                  style={{ background: '#ea384c', color: '#ffffff', borderColor: '#ea384c', fontWeight: 800, padding: '13px 26px', fontSize: '14px', cursor: 'pointer', borderRadius: '12px' }}
                 >
                   <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '8px', color: '#ffffff' }}></i>
                   <span style={{ color: '#ffffff' }}>Switch to Property Listing Portal</span>
@@ -176,16 +176,16 @@ export default function App() {
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
                   gap: '20px',
-                  border: '2px solid #fed7aa',
-                  boxShadow: '0 14px 40px rgba(234, 88, 12, 0.09)'
+                  border: '2px solid #fecdd3',
+                  boxShadow: '0 14px 40px rgba(234, 56, 76, 0.09)'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '18px', maxWidth: '720px' }}>
-                  <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: '#fff7ed', border: '1.5px solid #fed7aa', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', fontSize: '22px', flexShrink: 0 }}>
+                  <div style={{ width: '52px', height: '52px', borderRadius: '50%', background: '#fff1f2', border: '1.5px solid #fecdd3', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', fontSize: '22px', flexShrink: 0 }}>
                     <i className="fa-solid fa-bed"></i>
                   </div>
                   <div>
-                    <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                    <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
                       TRAVELERS &amp; CORPORATE EXECUTIVES
                     </span>
                     <h3 style={{ margin: '4px 0 6px', color: '#111827', fontSize: '23px', fontWeight: 800 }}>
@@ -203,7 +203,7 @@ export default function App() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   className="thm-btn"
-                  style={{ background: '#ea580c', color: '#ffffff', borderColor: '#ea580c', fontWeight: 800, padding: '13px 26px', fontSize: '14px', cursor: 'pointer', borderRadius: '8px' }}
+                  style={{ background: '#ea384c', color: '#ffffff', borderColor: '#ea384c', fontWeight: 800, padding: '13px 26px', fontSize: '14px', cursor: 'pointer', borderRadius: '12px' }}
                 >
                   <i className="fa-solid fa-bed" style={{ marginRight: '8px', color: '#ffffff' }}></i>
                   <span style={{ color: '#ffffff' }}>Switch to Guest Booking Portal</span>

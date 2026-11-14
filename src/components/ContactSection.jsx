@@ -61,10 +61,10 @@ export default function ContactSection({ initialTab = 'guest' }) {
       <div className="container" style={{ maxWidth: '960px' }}>
         <div className="section-title text-center">
           <div className="section-title__tagline-box">
-            <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>CONNECT &amp; INQUIRE</span>
+            <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>CONNECT &amp; INQUIRE</span>
           </div>
           <h2 className="section-title__title" style={{ color: '#111827' }}>
-            Connect With Our <span style={{ color: '#ea580c' }}>Concierge</span>
+            Connect With Our <span style={{ color: '#ea384c' }}>Concierge</span>
           </h2>
           <p className="section-title__text" style={{ maxWidth: '640px', margin: '14px auto 0', color: '#374151' }}>
             Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? Hostayy Concierge responds directly on WhatsApp.
@@ -73,13 +73,13 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
         {/* Dual Tab Toggle */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '36px' }}>
-          <div className="our-rooms-tabs" style={{ background: '#ffffff', border: '1px solid #fed7aa', borderRadius: '30px', padding: '4px' }}>
+          <div className="our-rooms-tabs" style={{ background: '#ffffff', border: '1px solid #fecdd3', borderRadius: '30px', padding: '4px' }}>
             <button 
               type="button" 
               className={`our-rooms-tab-btn ${activeFormTab === 'guest' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('guest')}
               style={{
-                background: activeFormTab === 'guest' ? '#ea580c' : 'transparent',
+                background: activeFormTab === 'guest' ? '#ea384c' : 'transparent',
                 color: activeFormTab === 'guest' ? '#ffffff' : '#111827',
                 border: 'none',
                 fontWeight: 700,
@@ -95,7 +95,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
               className={`our-rooms-tab-btn ${activeFormTab === 'owner' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('owner')}
               style={{
-                background: activeFormTab === 'owner' ? '#ea580c' : 'transparent',
+                background: activeFormTab === 'owner' ? '#ea384c' : 'transparent',
                 color: activeFormTab === 'owner' ? '#ffffff' : '#111827',
                 border: 'none',
                 fontWeight: 700,
@@ -111,9 +111,9 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
         {/* Guest Long-Stay Form */}
         {activeFormTab === 'guest' && (
-          <div className="form-box" style={{ background: '#fffaf5', border: '1.5px solid #fed7aa', borderRadius: '16px', padding: '32px' }}>
+          <div className="form-box" style={{ background: '#fff5f6', border: '1.5px solid #fecdd3', borderRadius: '16px', padding: '32px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <span style={{ color: '#ea580c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <span style={{ color: '#ea384c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 For Corporate Guests &amp; Relocating Families
               </span>
               <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
@@ -213,7 +213,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
                 </div>
               </div>
 
-              <button type="submit" className="thm-btn" style={{ padding: '14px 34px', fontSize: '1rem', cursor: 'pointer', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
+              <button type="submit" className="thm-btn" style={{ padding: '14px 34px', fontSize: '1rem', cursor: 'pointer', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
                 <i className="fa-brands fa-whatsapp"></i> Request Custom Quotation on WhatsApp
               </button>
             </form>
@@ -222,9 +222,9 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
         {/* Owner Form */}
         {activeFormTab === 'owner' && (
-          <div className="form-box" style={{ background: '#fffaf5', border: '1.5px solid #fed7aa', borderRadius: '16px', padding: '32px' }}>
+          <div className="form-box" style={{ background: '#fff5f6', border: '1.5px solid #fecdd3', borderRadius: '16px', padding: '32px' }}>
             <div style={{ marginBottom: '24px' }}>
-              <span style={{ color: '#ea580c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
+              <span style={{ color: '#ea384c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
                 For Property Owners
               </span>
               <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
@@ -326,7 +326,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
               </div>
 
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-                <button type="submit" className="thm-btn" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
+                <button type="submit" className="thm-btn" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
                   <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to Hostayy
                 </button>
               </div>

@@ -55,10 +55,10 @@ export default function ServicesSection() {
           <div className="col-xl-4 col-lg-5">
             <div className="section-title text-left" style={{ marginBottom: '20px' }}>
               <div className="section-title__tagline-box">
-                <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>COMPREHENSIVE SERVICES</span>
+                <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>COMPREHENSIVE SERVICES</span>
               </div>
               <h2 className="section-title__title" style={{ color: '#111827' }}>
-                Turnkey Living For <span style={{ color: '#ea580c' }}>Long-Term &amp; Corporate Stays</span>
+                Turnkey Living For <span style={{ color: '#ea384c' }}>Long-Term &amp; Corporate Stays</span>
               </h2>
             </div>
             <p className="services-two__text-1" style={{ fontSize: '15px', color: '#374151', lineHeight: '1.75' }}>
@@ -68,15 +68,15 @@ export default function ServicesSection() {
             {/* Quick Benefits Bullet Points */}
             <div style={{ marginTop: '20px', marginBottom: '25px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea384c' }}></i>
                 <span>Zero Brokerage &amp; Zero Hidden Fees</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea384c' }}></i>
                 <span>Flexible Leases (1 to 12+ Months)</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', color: '#111827', fontWeight: 700 }}>
-                <i className="fa-solid fa-circle-check" style={{ color: '#ea580c' }}></i>
+                <i className="fa-solid fa-circle-check" style={{ color: '#ea384c' }}></i>
                 <span>Walking/Short Drive to Yashobhoomi IICC</span>
               </div>
             </div>
@@ -100,8 +100,8 @@ export default function ServicesSection() {
             <div className="row">
               {services.map((srv, idx) => (
                 <div key={idx} className="col-md-6" style={{ marginBottom: '24px' }}>
-                  <div className="services-two__single" style={{ height: '100%', background: '#ffffff', border: '1.5px solid #fed7aa', borderRadius: '12px', padding: '28px 24px' }}>
-                    <div className="services-two__icon" style={{ background: '#fff7ed', color: '#ea580c', border: '1.5px solid #fed7aa' }}>
+                  <div className="services-two__single" style={{ height: '100%', background: '#ffffff', border: '1.5px solid #fecdd3', borderRadius: '12px', padding: '28px 24px' }}>
+                    <div className="services-two__icon" style={{ background: '#fff1f2', color: '#ea384c', border: '1.5px solid #fecdd3' }}>
                       <i className={srv.icon}></i>
                     </div>
                     <h3 className="services-two__title" style={{ fontSize: '18px', marginBottom: '8px', color: '#111827', fontWeight: 800 }}>{srv.title}</h3>

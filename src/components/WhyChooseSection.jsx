@@ -28,11 +28,11 @@ export default function WhyChooseSection() {
             <div className="why-choose-one__left">
               <div className="section-title text-left sec-title-animation animation-style2">
                 <div className="section-title__tagline-box">
-                  <span className="section-title__tagline" style={{ color: '#ea580c', fontWeight: 800 }}>STRATEGIC LOCATION &amp; ADVANTAGES</span>
+                  <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>STRATEGIC LOCATION &amp; ADVANTAGES</span>
                 </div>
                 <h2 className="section-title__title title-animation" style={{ color: '#111827' }}>
                   The Preferred Choice Near <br />
-                  <span style={{ color: '#ea580c' }}>Yashobhoomi (IICC)</span>
+                  <span style={{ color: '#ea384c' }}>Yashobhoomi (IICC)</span>
                 </h2>
               </div>
               <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: '#374151', marginBottom: '24px' }}>
@@ -42,7 +42,7 @@ export default function WhyChooseSection() {
               <ul className="why-choose-one__list list-unstyled" style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-location-dot" style={{ color: '#ea580c', fontSize: '26px' }}></i>
+                    <i className="fas fa-location-dot" style={{ color: '#ea384c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
                     <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
@@ -56,7 +56,7 @@ export default function WhyChooseSection() {
 
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-percent" style={{ color: '#ea580c', fontSize: '26px' }}></i>
+                    <i className="fas fa-percent" style={{ color: '#ea384c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
                     <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
@@ -70,7 +70,7 @@ export default function WhyChooseSection() {
 
                 <li style={{ display: 'flex', gap: '18px', marginBottom: '20px', alignItems: 'flex-start' }}>
                   <div className="icon" style={{ flexShrink: 0 }}>
-                    <i className="fas fa-kitchen-set" style={{ color: '#ea580c', fontSize: '26px' }}></i>
+                    <i className="fas fa-kitchen-set" style={{ color: '#ea384c', fontSize: '26px' }}></i>
                   </div>
                   <div className="content">
                     <h3 style={{ fontFamily: 'var(--hotelux-font-two)', fontSize: '19px', color: '#111827', marginBottom: '6px', fontWeight: 700 }}>
@@ -84,7 +84,7 @@ export default function WhyChooseSection() {
               </ul>
 
               <div className="why-choose-one__btn-box" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '20px' }}>
-                <a href="#room" className="thm-btn" style={{ background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
+                <a href="#room" className="thm-btn" style={{ background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
                   Explore 1, 2 &amp; 3 BHK Stays
                 </a>
                 <button 
@@ -102,20 +102,20 @@ export default function WhyChooseSection() {
                 className="why-choose-address-card"
                 style={{
                   background: '#ffffff',
-                  border: '1.5px solid #fed7aa',
+                  border: '1.5px solid #fecdd3',
                   borderRadius: '12px',
                   padding: '16px 18px',
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '14px',
-                  boxShadow: '0 6px 18px rgba(234, 88, 12, 0.06)'
+                  boxShadow: '0 6px 18px rgba(234, 56, 76, 0.06)'
                 }}
               >
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#ea580c', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#ea384c', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', flexShrink: 0 }}>
                   <i className="fa-solid fa-map-location-dot"></i>
                 </div>
                 <div>
-                  <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                  <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
                     OFFICIAL HOSTAYY RESIDENCE ADDRESS
                   </span>
                   <strong style={{ fontSize: '15px', color: '#111827', display: 'block', margin: '3px 0 4px', fontWeight: 800 }}>
@@ -129,7 +129,7 @@ export default function WhyChooseSection() {
                       href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      style={{ fontSize: '12.5px', color: '#ea580c', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                      style={{ fontSize: '12.5px', color: '#ea384c', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                     >
                       <i className="fa-solid fa-arrow-up-right-from-square"></i> Open Location in Google Maps
                     </a>
@@ -147,15 +147,15 @@ export default function WhyChooseSection() {
                 className="why-choose-connectivity-card"
                 style={{
                   background: '#ffffff',
-                  border: '1.5px solid #fed7aa',
+                  border: '1.5px solid #fecdd3',
                   borderRadius: '12px',
-                  boxShadow: '0 20px 50px rgba(234, 88, 12, 0.08)',
+                  boxShadow: '0 20px 50px rgba(234, 56, 76, 0.08)',
                   marginBottom: '20px',
                   padding: '24px 22px'
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #fed7aa', paddingBottom: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', fontSize: '18px', flexShrink: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid #fecdd3', paddingBottom: '14px' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff1f2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', fontSize: '18px', flexShrink: 0 }}>
                     <i className="fa-solid fa-map-location-dot"></i>
                   </div>
                   <div>
@@ -166,16 +166,16 @@ export default function WhyChooseSection() {
 
                 <div className="why-choose-connectivity-grid">
                   {landmarkItems.map((lm, idx) => (
-                    <div key={idx} className="why-choose-connectivity-item" style={{ background: '#fffaf5', border: '1px solid #fed7aa', borderRadius: '8px', padding: '10px 12px' }}>
+                    <div key={idx} className="why-choose-connectivity-item" style={{ background: '#fff5f6', border: '1px solid #fecdd3', borderRadius: '8px', padding: '10px 12px' }}>
                       <div className="why-choose-lm-left" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                          <i className={`fa-solid ${lm.icon}`} style={{ color: '#ea580c', fontSize: '13px' }}></i>
+                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#fff1f2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`fa-solid ${lm.icon}`} style={{ color: '#ea384c', fontSize: '13px' }}></i>
                         </div>
                         <span style={{ fontSize: '13px', fontWeight: 700, color: '#111827', lineHeight: 1.3 }}>
                           {lm.name}
                         </span>
                       </div>
-                      <span className="why-choose-lm-time" style={{ fontSize: '11.5px', fontWeight: 800, color: '#ffffff', background: '#ea580c', padding: '4px 10px', borderRadius: '12px', border: '1px solid #ea580c', flexShrink: 0, whiteSpace: 'nowrap' }}>
+                      <span className="why-choose-lm-time" style={{ fontSize: '11.5px', fontWeight: 800, color: '#ffffff', background: '#ea384c', padding: '4px 10px', borderRadius: '12px', border: '1px solid #ea384c', flexShrink: 0, whiteSpace: 'nowrap' }}>
                         {lm.time}
                       </span>
                     </div>
@@ -187,33 +187,33 @@ export default function WhyChooseSection() {
               <div 
                 className="why-choose-host-strip"
                 style={{
-                  background: '#ea580c',
+                  background: '#ea384c',
                   color: '#ffffff',
                   borderRadius: '10px',
-                  border: '1px solid #c2410c',
+                  border: '1px solid #c41c33',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
                   gap: '12px',
                   padding: '16px 20px',
-                  boxShadow: '0 8px 24px rgba(234, 88, 12, 0.25)'
+                  boxShadow: '0 8px 24px rgba(234, 56, 76, 0.25)'
                 }}
               >
                 <div>
                   <h4 style={{ margin: '0 0 3px', color: '#ffffff', fontSize: '16px', fontWeight: 800 }}>
                     Hostayy Hospitality &bull; Concierge
                   </h4>
-                  <p style={{ margin: 0, fontSize: '12.5px', color: '#fff7ed', fontWeight: 600 }}>
+                  <p style={{ margin: 0, fontSize: '12.5px', color: '#fff1f2', fontWeight: 600 }}>
                     4.98 ★ Superhost &bull; Serving Yashobhoomi Delegates &amp; Expats
                   </p>
                 </div>
                 <a 
                   href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
                   className="thm-btn"
-                  style={{ padding: '8px 18px', fontSize: '12px', background: '#ffffff', color: '#ea580c', borderColor: '#ffffff', fontWeight: 800 }}
+                  style={{ padding: '8px 18px', fontSize: '12px', background: '#ffffff', color: '#ea384c', borderColor: '#ffffff', fontWeight: 800 }}
                 >
-                  <i className="fa-solid fa-phone" style={{ marginRight: '6px', color: '#ea580c' }}></i>
+                  <i className="fa-solid fa-phone" style={{ marginRight: '6px', color: '#ea384c' }}></i>
                   <span>Call {HOSTAYY_CONFIG.displayPhone}</span>
                 </a>
               </div>

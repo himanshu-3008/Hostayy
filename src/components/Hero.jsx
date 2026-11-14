@@ -45,7 +45,7 @@ export default function Hero({ onSelectStay }) {
             {/* Left Content Column with High Contrast Text */}
             <div className="col-12 col-lg-6 col-xl-6">
               <div className="banner-one__content-box">
-                <div className="banner-one__sub-title" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#fff7ed', border: '1px solid #fed7aa', padding: '5px 14px', borderRadius: '24px', marginBottom: '16px' }}>
+                <div className="banner-one__sub-title" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#fff1f2', border: '1px solid #fecdd3', padding: '5px 14px', borderRadius: '24px', marginBottom: '16px' }}>
                   <div style={{ width: '22px', height: '22px', borderRadius: '50%', backgroundColor: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2px', boxShadow: '0 2px 6px rgba(0,0,0,0.08)' }}>
                     <img 
                       src="/assets/images/hostayy-logo-transparent.png" 
@@ -53,13 +53,13 @@ export default function Hero({ onSelectStay }) {
                       style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
                     />
                   </div>
-                  <span style={{ fontSize: '12.5px', color: '#ea580c', fontWeight: 700 }}>
-                    hostayy <em style={{ color: '#c2410c', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</em> &bull; Instant Flat Booking &bull; 0% Brokerage
+                  <span style={{ fontSize: '12.5px', color: '#ea384c', fontWeight: 700 }}>
+                    hostayy <em style={{ color: '#c41c33', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</em> &bull; Instant Flat Booking &bull; 0% Brokerage
                   </span>
                 </div>
 
                 <h1 className="banner-one__title" style={{ color: '#111827', fontSize: '38px', lineHeight: 1.2, fontWeight: 800, marginBottom: '16px' }}>
-                  Book 1, 2 &amp; 3 BHK <span style={{ color: '#ea580c' }}>Serviced Flats Near Yashobhoomi (IICC)</span> With Zero Brokerage.
+                  Book 1, 2 &amp; 3 BHK <span style={{ color: '#ea384c' }}>Serviced Flats Near Yashobhoomi (IICC)</span> With Zero Brokerage.
                 </h1>
 
                 <p className="banner-one__text" style={{ color: '#374151', fontSize: '15.5px', lineHeight: 1.75, marginBottom: '24px' }}>
@@ -69,7 +69,7 @@ export default function Hero({ onSelectStay }) {
                 {/* Action Buttons */}
                 <div className="banner-one__btn-and-review-box">
                   <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                    <a href="#room" className="thm-btn" style={{ background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
+                    <a href="#room" className="thm-btn" style={{ background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
                       <span>Explore 1, 2 &amp; 3 BHK Stays</span>
                       <i className="fa-solid fa-arrow-down" style={{ fontSize: '12px' }}></i>
                     </a>
@@ -113,15 +113,15 @@ export default function Hero({ onSelectStay }) {
                 className="hero-residences-card"
                 style={{
                   background: '#ffffff',
-                  border: '1.5px solid #fed7aa',
+                  border: '1.5px solid #fecdd3',
                   borderRadius: '16px',
                   padding: '28px 24px',
-                  boxShadow: '0 20px 45px rgba(234, 88, 12, 0.08)'
+                  boxShadow: '0 20px 45px rgba(234, 56, 76, 0.08)'
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', borderBottom: '1px solid #fed7aa', paddingBottom: '14px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', borderBottom: '1px solid #fecdd3', paddingBottom: '14px' }}>
                   <div>
-                    <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                    <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
                       CURATED FLATS FOR EXTENDED STAYS
                     </span>
                     <h3 style={{ margin: '2px 0 0', fontSize: '20px', color: '#111827', fontWeight: 800 }}>
@@ -139,8 +139,8 @@ export default function Hero({ onSelectStay }) {
                   <div 
                     onClick={() => handleRoomClick('velora')}
                     style={{
-                      background: '#fffaf5',
-                      border: '1px solid #fed7aa',
+                      background: '#fff5f6',
+                      border: '1px solid #fecdd3',
                       borderRadius: '10px',
                       padding: '12px 14px',
                       cursor: 'pointer',
@@ -166,7 +166,7 @@ export default function Hero({ onSelectStay }) {
                         </span>
                       </div>
                     </div>
-                    <span style={{ fontSize: '12px', color: '#ea580c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+                    <span style={{ fontSize: '12px', color: '#ea384c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
                       <span>View Photos</span>
                       <i className="fa-solid fa-chevron-right" style={{ fontSize: '10px' }}></i>
                     </span>
@@ -176,8 +176,8 @@ export default function Hero({ onSelectStay }) {
                   <div 
                     onClick={() => handleRoomClick('azura')}
                     style={{
-                      background: '#fffaf5',
-                      border: '1px solid #fed7aa',
+                      background: '#fff5f6',
+                      border: '1px solid #fecdd3',
                       borderRadius: '10px',
                       padding: '12px 14px',
                       cursor: 'pointer',
@@ -203,7 +203,7 @@ export default function Hero({ onSelectStay }) {
                         </span>
                       </div>
                     </div>
-                    <span style={{ fontSize: '12px', color: '#ea580c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+                    <span style={{ fontSize: '12px', color: '#ea384c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
                       <span>View Photos</span>
                       <i className="fa-solid fa-chevron-right" style={{ fontSize: '10px' }}></i>
                     </span>
@@ -213,8 +213,8 @@ export default function Hero({ onSelectStay }) {
                   <div 
                     onClick={() => handleRoomClick('verde')}
                     style={{
-                      background: '#fffaf5',
-                      border: '1px solid #fed7aa',
+                      background: '#fff5f6',
+                      border: '1px solid #fecdd3',
                       borderRadius: '10px',
                       padding: '12px 14px',
                       cursor: 'pointer',
@@ -240,7 +240,7 @@ export default function Hero({ onSelectStay }) {
                         </span>
                       </div>
                     </div>
-                    <span style={{ fontSize: '12px', color: '#ea580c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+                    <span style={{ fontSize: '12px', color: '#ea384c', fontWeight: 800, display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
                       <span>View Photos</span>
                       <i className="fa-solid fa-chevron-right" style={{ fontSize: '10px' }}></i>
                     </span>
@@ -251,7 +251,7 @@ export default function Hero({ onSelectStay }) {
                 <a 
                   href="#room" 
                   className="thm-btn"
-                  style={{ width: '100%', justifyContent: 'center', padding: '13px 20px', fontSize: '13px', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}
+                  style={{ width: '100%', justifyContent: 'center', padding: '13px 20px', fontSize: '13px', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}
                 >
                   <i className="fa-solid fa-door-open"></i>
                   <span>View All 1, 2 &amp; 3 BHK Flats</span>
@@ -264,7 +264,7 @@ export default function Hero({ onSelectStay }) {
 
       {/* Horizontal OYO / Booking.com Style Flat Search & Instant Booking Bar */}
       <div className="container">
-        <div className="about-two__booking" style={{ background: '#ffffff', border: '1.5px solid #fed7aa', boxShadow: '0 10px 30px rgba(234, 88, 12, 0.08)' }}>
+        <div className="about-two__booking" style={{ background: '#ffffff', border: '1.5px solid #fecdd3', boxShadow: '0 10px 30px rgba(234, 56, 76, 0.08)' }}>
           <form onSubmit={handleBookingSubmit}>
             <div className="row" style={{ alignItems: 'flex-end' }}>
               <div className="col-12 col-xl-2 col-lg-3 col-md-6">
@@ -273,7 +273,7 @@ export default function Hero({ onSelectStay }) {
                     <i className="fa-solid fa-circle-check"></i> Instant Booking
                   </span>
                   <h3 className="about-two-booking__title" style={{ fontSize: '18px', margin: '2px 0 0', color: '#111827', fontWeight: 800 }}>Search Flats</h3>
-                  <span style={{ fontSize: '12px', color: '#ea580c', fontWeight: 700 }}>0% Brokerage &bull; Direct Host</span>
+                  <span style={{ fontSize: '12px', color: '#ea384c', fontWeight: 700 }}>0% Brokerage &bull; Direct Host</span>
                 </div>
               </div>
 
@@ -281,9 +281,9 @@ export default function Hero({ onSelectStay }) {
               <div className="col-12 col-xl-2 col-lg-3 col-md-6">
                 <div className="about-two-booking__input-box">
                   <label style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#111827', fontWeight: 800, marginBottom: '4px' }}>
-                    <i className="fa-solid fa-location-dot" style={{ color: '#ea580c', marginRight: '4px' }}></i> Location / Hub
+                    <i className="fa-solid fa-location-dot" style={{ color: '#ea384c', marginRight: '4px' }}></i> Location / Hub
                   </label>
-                  <div style={{ padding: '11px 14px', border: '1px solid #fed7aa', borderRadius: '6px', background: '#fffaf5', fontSize: '13px', fontWeight: 700, color: '#111827' }}>
+                  <div style={{ padding: '11px 14px', border: '1px solid #fecdd3', borderRadius: '6px', background: '#fff5f6', fontSize: '13px', fontWeight: 700, color: '#111827' }}>
                     Dwarka Sector 23 (IICC)
                   </div>
                 </div>
@@ -293,13 +293,13 @@ export default function Hero({ onSelectStay }) {
               <div className="col-12 col-xl-2 col-lg-2 col-md-6">
                 <div className="about-two-booking__input-box">
                   <label style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#111827', fontWeight: 800, marginBottom: '4px' }}>
-                    <i className="fa-solid fa-calendar-days" style={{ color: '#ea580c', marginRight: '4px' }}></i> Move-in Date
+                    <i className="fa-solid fa-calendar-days" style={{ color: '#ea384c', marginRight: '4px' }}></i> Move-in Date
                   </label>
                   <input 
                     type="date" 
                     value={moveInDate}
                     onChange={(e) => setMoveInDate(e.target.value)}
-                    style={{ width: '100%', padding: '10px 12px', border: '1px solid #fed7aa', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
+                    style={{ width: '100%', padding: '10px 12px', border: '1px solid #fecdd3', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
                   />
                 </div>
               </div>
@@ -308,12 +308,12 @@ export default function Hero({ onSelectStay }) {
               <div className="col-12 col-xl-2 col-lg-2 col-md-6">
                 <div className="about-two-booking__input-box">
                   <label style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#111827', fontWeight: 800, marginBottom: '4px' }}>
-                    <i className="fa-solid fa-clock" style={{ color: '#ea580c', marginRight: '4px' }}></i> Stay Duration
+                    <i className="fa-solid fa-clock" style={{ color: '#ea384c', marginRight: '4px' }}></i> Stay Duration
                   </label>
                   <select 
                     value={stayDuration}
                     onChange={(e) => setStayDuration(e.target.value)}
-                    style={{ width: '100%', padding: '11px 12px', border: '1px solid #fed7aa', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
+                    style={{ width: '100%', padding: '11px 12px', border: '1px solid #fecdd3', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
                   >
                     <option value="1 - 3 Months (Corporate Monthly)">1 - 3 Months (Corporate)</option>
                     <option value="3 - 6 Months (Extended Project)">3 - 6 Months (Extended)</option>
@@ -328,12 +328,12 @@ export default function Hero({ onSelectStay }) {
               <div className="col-12 col-xl-2 col-lg-2 col-md-6">
                 <div className="about-two-booking__input-box">
                   <label style={{ display: 'block', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#111827', fontWeight: 800, marginBottom: '4px' }}>
-                    <i className="fa-solid fa-door-open" style={{ color: '#ea580c', marginRight: '4px' }}></i> Flat / BHK
+                    <i className="fa-solid fa-door-open" style={{ color: '#ea384c', marginRight: '4px' }}></i> Flat / BHK
                   </label>
                   <select 
                     value={selectedProperty}
                     onChange={(e) => setSelectedProperty(e.target.value)}
-                    style={{ width: '100%', padding: '11px 12px', border: '1px solid #fed7aa', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
+                    style={{ width: '100%', padding: '11px 12px', border: '1px solid #fecdd3', borderRadius: '6px', fontSize: '13px', background: '#ffffff', color: '#111827', fontWeight: 600 }}
                   >
                     <option value="Velora (1-BHK Luxury Suite · 3 mins Yashobhoomi)">Velora (1 BHK Suite)</option>
                     <option value="Azura (2-BHK Executive · Aerocity Corridor)">Azura (2 BHK Executive)</option>
@@ -346,7 +346,7 @@ export default function Hero({ onSelectStay }) {
               {/* Search & Book CTA Button */}
               <div className="col-12 col-xl-2 col-lg-12 col-md-6">
                 <div className="about-two-booking__btn-box">
-                  <button type="submit" className="thm-btn" style={{ width: '100%', height: '48px', padding: '0 16px', fontSize: '13px', justifyContent: 'center', background: '#ea580c', borderColor: '#ea580c', color: '#ffffff' }}>
+                  <button type="submit" className="thm-btn" style={{ width: '100%', height: '48px', padding: '0 16px', fontSize: '13px', justifyContent: 'center', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
                     <i className="fa-brands fa-whatsapp" style={{ fontSize: '15px' }}></i>
                     <span>Search &amp; Book</span>
                   </button>
@@ -368,25 +368,25 @@ export default function Hero({ onSelectStay }) {
             WebkitOverflowScrolling: 'touch'
           }}
         >
-          <a href="#room" onClick={() => onSelectStay && onSelectStay(null)} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fed7aa', background: '#ffffff' }}>
-            <i className="fa-solid fa-layer-group" style={{ color: '#ea580c' }}></i> All Residences
+          <a href="#room" onClick={() => onSelectStay && onSelectStay(null)} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fecdd3', background: '#ffffff' }}>
+            <i className="fa-solid fa-layer-group" style={{ color: '#ea384c' }}></i> All Residences
           </a>
-          <a href="#room" onClick={() => handleRoomClick('velora')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fed7aa', background: '#ffffff' }}>
-            <i className="fa-solid fa-door-open" style={{ color: '#ea580c' }}></i> 1 BHK Suite (Velora)
+          <a href="#room" onClick={() => handleRoomClick('velora')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fecdd3', background: '#ffffff' }}>
+            <i className="fa-solid fa-door-open" style={{ color: '#ea384c' }}></i> 1 BHK Suite (Velora)
           </a>
-          <a href="#room" onClick={() => handleRoomClick('azura')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fed7aa', background: '#ffffff' }}>
-            <i className="fa-solid fa-building" style={{ color: '#ea580c' }}></i> 2 BHK Executive (Azura)
+          <a href="#room" onClick={() => handleRoomClick('azura')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fecdd3', background: '#ffffff' }}>
+            <i className="fa-solid fa-building" style={{ color: '#ea384c' }}></i> 2 BHK Executive (Azura)
           </a>
-          <a href="#room" onClick={() => handleRoomClick('verde')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fed7aa', background: '#ffffff' }}>
-            <i className="fa-solid fa-gem" style={{ color: '#ea580c' }}></i> 3 BHK Signature (Verde)
+          <a href="#room" onClick={() => handleRoomClick('verde')} className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fecdd3', background: '#ffffff' }}>
+            <i className="fa-solid fa-gem" style={{ color: '#ea384c' }}></i> 3 BHK Signature (Verde)
           </a>
-          <a href="#why-choose" className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fed7aa', background: '#ffffff' }}>
-            <i className="fa-solid fa-location-dot" style={{ color: '#ea580c' }}></i> 3 Mins to Yashobhoomi IICC
+          <a href="#why-choose" className="quick-filter-chip" style={{ color: '#111827', fontWeight: 700, border: '1px solid #fecdd3', background: '#ffffff' }}>
+            <i className="fa-solid fa-location-dot" style={{ color: '#ea384c' }}></i> 3 Mins to Yashobhoomi IICC
           </a>
           <span className="quick-filter-chip" style={{ background: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0', fontWeight: 700 }}>
             <i className="fa-solid fa-shield-virus"></i> Sanitised Stays
           </span>
-          <span className="quick-filter-chip" style={{ background: '#fff7ed', color: '#c2410c', borderColor: '#fed7aa', fontWeight: 700 }}>
+          <span className="quick-filter-chip" style={{ background: '#fff1f2', color: '#c41c33', borderColor: '#fecdd3', fontWeight: 700 }}>
             <i className="fa-solid fa-badge-percent"></i> 0% Brokerage
           </span>
         </div>
@@ -397,10 +397,10 @@ export default function Hero({ onSelectStay }) {
           style={{ 
             marginTop: '22px', 
             background: '#ffffff', 
-            border: '1.5px solid #fed7aa', 
+            border: '1.5px solid #fecdd3', 
             borderRadius: '12px', 
             padding: '16px 20px',
-            boxShadow: '0 4px 20px rgba(234, 88, 12, 0.04)',
+            boxShadow: '0 4px 20px rgba(234, 56, 76, 0.04)',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))',
             gap: '16px',
@@ -418,7 +418,7 @@ export default function Hero({ onSelectStay }) {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', flexShrink: 0, fontSize: '15px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: '#fff1f2', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', flexShrink: 0, fontSize: '15px' }}>
               <i className="fa-solid fa-kitchen-set"></i>
             </div>
             <div>

@@ -33,12 +33,12 @@
   --charcoal-light: #2E2E34;
 
   /* Refined Editorial Palette */
-  --coral-primary: #ea580c;    /* Warm Saffron Terracotta — grounded Indian luxury */
-  --coral-hover: #c2410c;
+  --coral-primary: #ea384c;    /* Warm Saffron Terracotta — grounded Indian luxury */
+  --coral-hover: #c41c33;
   --coral-light: rgba(195, 94, 59, 0.08);
   --coral-subtle: rgba(195, 94, 59, 0.04);
   --coral-glow: rgba(195, 94, 59, 0.20);
-  --coral-gradient: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  --coral-gradient: linear-gradient(135deg, #ea384c 0%, #c41c33 100%);
   --indigo-gradient: linear-gradient(135deg, #C35E3B 0%, #6366F1 100%);
 
   /* Warm Brass / Champagne Accents */
@@ -58,8 +58,8 @@
   --text-dark: #121316;
 
   /* Whispering Architectural Borders */
-  --border-subtle: #fed7aa;    /* Fine Limestone Hairline */
-  --border-medium: #fdba74;    /* Structural Divider */
+  --border-subtle: #fecdd3;    /* Fine Limestone Hairline */
+  --border-medium: #fda4af;    /* Structural Divider */
   --border-glow: rgba(195, 94, 59, 0.22);
   --border-gold: #E2CFB4;
 
@@ -4108,19 +4108,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
 }
 .btn-hotelux-details {
-  background-color: #ea580c !important;
+  background-color: #ea384c !important;
   color: #ffffff !important;
-  border-color: #ea580c !important;
+  border-color: #ea384c !important;
 }
 .btn-hotelux-details:hover {
-  background-color: #c2410c !important;
-  border-color: #c2410c !important;
+  background-color: #c41c33 !important;
+  border-color: #c41c33 !important;
 }
 .text-coral {
-  color: #ea580c !important;
+  color: #ea384c !important;
 }
 .compare-row.head {
-  background: #ea580c !important;
+  background: #ea384c !important;
   color: #ffffff !important;
 }
 .compare-row.head .compare-cell {

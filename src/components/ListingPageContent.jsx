@@ -40,18 +40,18 @@ export default function ListingPageContent() {
               justifyContent: 'space-between',
               flexWrap: 'wrap',
               gap: '20px',
-              boxShadow: '0 14px 40px rgba(234, 88, 12, 0.09)'
+              boxShadow: '0 14px 40px rgba(234, 56, 76, 0.09)'
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '18px', maxWidth: '720px' }}>
               <div 
                 className="badge-float"
-                style={{ width: '56px', height: '56px', borderRadius: '50%', background: '#fff7ed', border: '1.5px solid #fed7aa', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea580c', fontSize: '24px', flexShrink: 0, boxShadow: '0 4px 14px rgba(234, 88, 12, 0.15)' }}
+                style={{ width: '56px', height: '56px', borderRadius: '50%', background: '#fff1f2', border: '1.5px solid #fecdd3', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ea384c', fontSize: '24px', flexShrink: 0, boxShadow: '0 4px 14px rgba(234, 56, 76, 0.15)' }}
               >
                 <i className="fa-solid fa-bed"></i>
               </div>
               <div>
-                <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea580c', fontWeight: 800, display: 'block' }}>
+                <span style={{ fontSize: '11.5px', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#ea384c', fontWeight: 800, display: 'block' }}>
                   TRAVELERS &amp; CORPORATE EXECUTIVES
                 </span>
                 <h3 style={{ margin: '4px 0 6px', color: '#111827', fontSize: '24px', fontWeight: 800 }}>
@@ -65,7 +65,7 @@ export default function ListingPageContent() {
             <Link
               href="/book"
               className="thm-btn"
-              style={{ background: '#ea580c', color: '#ffffff', borderColor: '#ea580c', fontWeight: 800, padding: '14px 28px', fontSize: '14.5px', cursor: 'pointer', borderRadius: '10px', textDecoration: 'none', boxShadow: '0 6px 18px rgba(234, 88, 12, 0.25)' }}
+              style={{ background: '#ea384c', color: '#ffffff', borderColor: '#ea384c', fontWeight: 800, padding: '14px 28px', fontSize: '14.5px', cursor: 'pointer', borderRadius: '10px', textDecoration: 'none', boxShadow: '0 6px 18px rgba(234, 56, 76, 0.25)' }}
             >
               <i className="fa-solid fa-bed" style={{ marginRight: '8px', color: '#ffffff' }}></i>
               <span style={{ color: '#ffffff' }}>Switch to Guest Booking Page &rarr;</span>
