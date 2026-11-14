@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TopBar from './TopBar';
 import Navbar from './Navbar';
-import FloatingWhatsApp from './FloatingWhatsApp';
 import MobileBottomBar from './MobileBottomBar';
 import Footer from './Footer';
 import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
@@ -799,9 +798,6 @@ export default function HostayyHome() {
           </div>
         </section>
       </main>
-
-      {/* Floating WhatsApp Quick Action */}
-      <FloatingWhatsApp />
 
       {/* Sticky Mobile Bottom Navigation */}
       <MobileBottomBar activePage="home" />

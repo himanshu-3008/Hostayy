@@ -7,7 +7,6 @@ import Navbar from './Navbar';
 import PatronSection from './PatronSection';
 import ProcessAndFaq from './ProcessAndFaq';
 import ContactSection from './ContactSection';
-import FloatingWhatsApp from './FloatingWhatsApp';
 import MobileBottomBar from './MobileBottomBar';
 import Footer from './Footer';
 
@@ -73,9 +72,6 @@ export default function ListingPageContent() {
           </div>
         </div>
       </main>
-
-      {/* Floating WhatsApp Quick Action */}
-      <FloatingWhatsApp />
 
       {/* Sticky Mobile Bottom Navigation */}
       <MobileBottomBar activePage="listing" />

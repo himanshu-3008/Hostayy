@@ -11,7 +11,6 @@ import ProcessAndFaq from './components/ProcessAndFaq';
 import ContactSection from './components/ContactSection';
 import PropertyModal from './components/PropertyModal';
 import Lightbox from './components/Lightbox';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
 import MobileBottomBar from './components/MobileBottomBar';
 import Footer from './components/Footer';
 
@@ -221,9 +220,6 @@ export default function App() {
         const el = document.getElementById('room');
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }} />
-
-      {/* Floating 24/7 WhatsApp Concierge */}
-      <FloatingWhatsApp />
 
       {/* Sticky Bottom Quick Action Bar for Mobile Devices */}
       <MobileBottomBar portalMode={portalMode} setPortalMode={setPortalMode} />

@@ -9,7 +9,6 @@ import WhyChooseSection from './WhyChooseSection';
 import ContactSection from './ContactSection';
 import PropertyModal from './PropertyModal';
 import Lightbox from './Lightbox';
-import FloatingWhatsApp from './FloatingWhatsApp';
 import MobileBottomBar from './MobileBottomBar';
 import Footer from './Footer';
 
@@ -141,9 +140,6 @@ export default function BookingPageContent() {
         setCurrentIndex={(idx) => setLightboxState(prev => ({ ...prev, currentIndex: typeof idx === 'function' ? idx(prev.currentIndex) : idx }))}
         onClose={handleCloseLightbox}
       />
-
-      {/* Floating WhatsApp Quick Action */}
-      <FloatingWhatsApp />
 
       {/* Sticky Mobile Bottom Navigation */}
       <MobileBottomBar activePage="booking" />
