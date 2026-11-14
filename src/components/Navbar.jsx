@@ -798,9 +798,25 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
                 className="bcom-drawer-btn call-drawer-btn"
                 onClick={() => setMobileOpen(false)}
-                style={{ background: '#ffffff', color: '#ea384c', padding: '12px', borderRadius: '12px', textAlign: 'center', fontWeight: 800, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                style={{ 
+                  background: '#ffffff', 
+                  color: '#ea384c', 
+                  padding: '12px 16px', 
+                  borderRadius: '12px', 
+                  textAlign: 'center', 
+                  fontWeight: 800, 
+                  textDecoration: 'none', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  gap: '10px',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.16)'
+                }}
               >
-                <i className="fa-solid fa-phone" style={{ fontSize: '16px' }}></i> Call Host ({HOSTAYY_CONFIG.displayPhone})
+                <i className="fa-solid fa-phone" style={{ fontSize: '16px', color: '#ea384c' }}></i>
+                <span style={{ color: '#ea384c', fontWeight: 800, fontSize: '15px', letterSpacing: '0.2px' }}>
+                  Call Host ({HOSTAYY_CONFIG.displayPhone})
+                </span>
               </a>
             </div>
           </div>

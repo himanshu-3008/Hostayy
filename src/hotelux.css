@@ -4095,9 +4095,45 @@ p {
   color: #ffffff;
 }
 
-.bcom-drawer-btn.call-drawer-btn {
-  background: #ffffff;
-  color: #ea384c;
+.bcom-drawer-btn.call-drawer-btn,
+.bcom-header a.bcom-drawer-btn.call-drawer-btn,
+.bcom-header .bcom-drawer-btn.call-drawer-btn,
+.call-drawer-btn {
+  background: #ffffff !important;
+  color: #ea384c !important;
+  border: 1.5px solid #ffffff !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
+}
+
+.bcom-drawer-btn.call-drawer-btn span,
+.bcom-header a.bcom-drawer-btn.call-drawer-btn span,
+.bcom-header .bcom-drawer-btn.call-drawer-btn span,
+.call-drawer-btn span {
+  color: #ea384c !important;
+  font-weight: 800 !important;
+}
+
+.bcom-drawer-btn.call-drawer-btn i,
+.bcom-header a.bcom-drawer-btn.call-drawer-btn i,
+.bcom-header .bcom-drawer-btn.call-drawer-btn i,
+.call-drawer-btn i {
+  color: #ea384c !important;
+}
+
+.bcom-drawer-btn.call-drawer-btn:hover,
+.bcom-header a.bcom-drawer-btn.call-drawer-btn:hover,
+.bcom-drawer-btn.call-drawer-btn:active,
+.bcom-header a.bcom-drawer-btn.call-drawer-btn:active {
+  background: #fff1f2 !important;
+  color: #c41c33 !important;
+}
+
+.bcom-drawer-btn.call-drawer-btn:hover span,
+.bcom-drawer-btn.call-drawer-btn:hover i,
+.bcom-drawer-btn.call-drawer-btn:active span,
+.bcom-drawer-btn.call-drawer-btn:active i {
+  color: #c41c33 !important;
 }
 
 @media (max-width: 991px) {
