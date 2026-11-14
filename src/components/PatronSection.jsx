@@ -202,34 +202,54 @@ export default function PatronSection() {
 
         {/* Traditional 11-Month Lease vs Hostayy Patron Comparison Table */}
         <div className="patron-comparison-wrap" id="comparison">
-          <div className="patron-pillars-header text-center" style={{ marginBottom: '28px' }}>
+          <div className="patron-pillars-header text-center" style={{ marginBottom: '24px' }}>
             <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>PERFORMANCE BENCHMARK</span>
             <h3 style={{ color: '#111827', fontWeight: 800 }}>Traditional 11-Month Lease vs. Hostayy Patron Partnership</h3>
           </div>
 
-          <div className="compare-wrap" style={{ borderRadius: '18px', border: '2px solid #fecdd3', overflow: 'hidden', boxShadow: '0 8px 30px rgba(0,0,0,0.04)' }}>
-            <div className="compare-row head" style={{ background: '#ea384c', color: '#ffffff', display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr' }}>
-              <div className="compare-cell" style={{ color: '#ffffff', fontWeight: 800, padding: '18px 24px' }}>Operational Dimension</div>
-              <div className="compare-cell without" style={{ color: '#ffffff', fontWeight: 800, padding: '18px 24px' }}>Traditional 11-Month Tenant Lease</div>
-              <div className="compare-cell with" style={{ color: '#ffffff', fontWeight: 800, background: 'rgba(0, 0, 0, 0.15)', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                <span>Hostayy Patron Partnership</span>
-                <span style={{ fontSize: '10px', background: '#ffffff', color: '#ea384c', padding: '3px 8px', borderRadius: '10px', fontWeight: 800, whiteSpace: 'nowrap' }}>★ RECOMMENDED</span>
-              </div>
-            </div>
+          {/* Swipe indicator pill for mobile view */}
+          <div 
+            style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'flex-end', 
+              gap: '6px', 
+              fontSize: '12px', 
+              color: '#ea384c', 
+              fontWeight: 700, 
+              marginBottom: '8px',
+              paddingRight: '4px'
+            }}
+          >
+            <i className="fa-solid fa-arrows-left-right"></i>
+            <span>Scroll horizontally to view full table &rarr;</span>
+          </div>
 
-            {comparisonRows.map((row, idx) => (
-              <div key={idx} className="compare-row" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', borderBottom: idx < comparisonRows.length - 1 ? '1px solid #fecdd3' : 'none' }}>
-                <div className="compare-cell label" style={{ color: '#111827', fontWeight: 700, padding: '16px 24px' }}>{row.dimension}</div>
-                <div className="compare-cell without" style={{ color: '#4b5563', padding: '16px 24px' }}>
-                  <span className="compare-x" style={{ color: '#ef4444', fontWeight: 800, marginRight: '6px' }}>✕</span>
-                  <span>{row.traditional}</span>
-                </div>
-                <div className="compare-cell with" style={{ color: '#111827', background: 'rgba(254, 205, 211, 0.2)', padding: '16px 24px' }}>
-                  <span className="compare-check" style={{ color: '#16a34a', fontWeight: 800, marginRight: '6px' }}>✓</span>
-                  <span><strong>{row.hostayy}</strong></span>
+          <div className="compare-scroll-wrapper">
+            <div className="compare-wrap">
+              <div className="compare-row head">
+                <div className="compare-cell" style={{ color: '#ffffff', fontWeight: 800 }}>Operational Dimension</div>
+                <div className="compare-cell without" style={{ color: '#ffffff', fontWeight: 800 }}>Traditional 11-Month Tenant Lease</div>
+                <div className="compare-cell with" style={{ color: '#ffffff', fontWeight: 800, background: 'rgba(0, 0, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
+                  <span>Hostayy Patron Partnership</span>
+                  <span style={{ fontSize: '10px', background: '#ffffff', color: '#ea384c', padding: '3px 8px', borderRadius: '10px', fontWeight: 800, whiteSpace: 'nowrap' }}>★ RECOMMENDED</span>
                 </div>
               </div>
-            ))}
+
+              {comparisonRows.map((row, idx) => (
+                <div key={idx} className="compare-row" style={{ borderBottom: idx < comparisonRows.length - 1 ? '1px solid #fecdd3' : 'none' }}>
+                  <div className="compare-cell label" style={{ color: '#111827', fontWeight: 700 }}>{row.dimension}</div>
+                  <div className="compare-cell without" style={{ color: '#4b5563' }}>
+                    <span className="compare-x" style={{ color: '#ef4444', fontWeight: 800, marginRight: '6px' }}>✕</span>
+                    <span>{row.traditional}</span>
+                  </div>
+                  <div className="compare-cell with" style={{ color: '#111827', background: 'rgba(254, 205, 211, 0.2)' }}>
+                    <span className="compare-check" style={{ color: '#16a34a', fontWeight: 800, marginRight: '6px' }}>✓</span>
+                    <span><strong>{row.hostayy}</strong></span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

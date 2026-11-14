@@ -4521,13 +4521,39 @@ button[type="submit"] {
   color: #ffffff !important;
 }
 
-/* PATRON COMPARISON TABLE - BALANCED & SYMMETRIC ON BOTH SIDES */
-.compare-wrap {
+/* PATRON COMPARISON TABLE - BALANCED, SYMMETRIC & FULLY SCROLLABLE ON MOBILE */
+.compare-scroll-wrapper {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x pan-y !important;
   border-radius: 18px !important;
   border: 2px solid #fecdd3 !important;
-  overflow: hidden !important;
   background: #ffffff !important;
   box-shadow: 0 10px 35px rgba(234, 56, 76, 0.06) !important;
+  position: relative !important;
+}
+
+.compare-scroll-wrapper::-webkit-scrollbar {
+  height: 6px !important;
+}
+
+.compare-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #fecdd3 !important;
+  border-radius: 4px !important;
+}
+
+.compare-scroll-wrapper::-webkit-scrollbar-track {
+  background: #fff1f2 !important;
+}
+
+.compare-wrap {
+  min-width: 660px !important;
+  width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
 }
 
 .compare-row {
@@ -4551,13 +4577,23 @@ button[type="submit"] {
   font-weight: 800 !important;
 }
 
+.compare-cell.without::before,
+.compare-cell.with::before {
+  display: none !important;
+  content: none !important;
+}
+
 @media (max-width: 768px) {
-  .compare-row {
-    grid-template-columns: 1.2fr 1fr 1fr !important;
-    font-size: 12px !important;
+  .compare-wrap {
+    min-width: 620px !important;
   }
   .compare-cell {
-    padding: 12px 14px !important;
+    padding: 14px 18px !important;
+    font-size: 13px !important;
+  }
+  .compare-row.head .compare-cell {
+    padding: 14px 18px !important;
+    font-size: 13px !important;
   }
 }
 

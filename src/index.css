@@ -3523,29 +3523,10 @@ h1, h2, h3, h4, h5, h6 {
   .hero-exceed-wrapper {
     padding: 32px 24px;
   }
-  .compare-row {
-    grid-template-columns: 1fr;
-  }
-  .compare-row.head .compare-cell:not(:first-child) {
-    display: none;
-  }
-  .compare-cell.without::before {
-    content: "Without Hostayy — ";
-    font-weight: 700;
-    font-size: 10.5px;
-    color: #64748B;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2px;
-  }
+  .compare-cell.without::before,
   .compare-cell.with::before {
-    content: "With Hostayy — ";
-    font-weight: 700;
-    font-size: 10.5px;
-    color: var(--coral-primary);
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 2px;
+    display: none !important;
+    content: none !important;
   }
   .chip-grid--ota {
     grid-template-columns: repeat(3, 1fr);

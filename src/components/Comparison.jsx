@@ -56,27 +56,29 @@ export default function Comparison() {
           </p>
         </div>
 
-        <div className="compare-wrap">
-          {/* Table Header */}
-          <div className="compare-row head">
-            <div className="compare-cell">Core Operational Dimension</div>
-            <div className="compare-cell without">Traditional Lease / Self-Managing</div>
-            <div className="compare-cell with">Turnkey Hostayy Management</div>
-          </div>
-
-          {comparisonRows.map((row, idx) => (
-            <div key={idx} className="compare-row">
-              <div className="compare-cell label">{row.label}</div>
-              <div className="compare-cell without">
-                <span className="compare-x">✕</span>
-                <span>{row.without}</span>
-              </div>
-              <div className="compare-cell with">
-                <span className="compare-check">✓</span>
-                <span><strong>{row.withText}</strong></span>
-              </div>
+        <div className="compare-scroll-wrapper">
+          <div className="compare-wrap">
+            {/* Table Header */}
+            <div className="compare-row head">
+              <div className="compare-cell">Core Operational Dimension</div>
+              <div className="compare-cell without">Traditional Lease / Self-Managing</div>
+              <div className="compare-cell with">Turnkey Hostayy Management</div>
             </div>
-          ))}
+
+            {comparisonRows.map((row, idx) => (
+              <div key={idx} className="compare-row">
+                <div className="compare-cell label">{row.label}</div>
+                <div className="compare-cell without">
+                  <span className="compare-x">✕</span>
+                  <span>{row.without}</span>
+                </div>
+                <div className="compare-cell with">
+                  <span className="compare-check">✓</span>
+                  <span><strong>{row.withText}</strong></span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
