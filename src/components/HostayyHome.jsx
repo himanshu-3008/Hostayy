@@ -53,10 +53,11 @@ const COVER_SLIDES = [
 
 export default function HostayyHome() {
   const [currentCoverIdx, setCurrentCoverIdx] = useState(0);
-  const [touchStartX, setTouchStartX] = useState(null);
-  const [touchEndX, setTouchEndX] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const minSwipeDistance = 35;
+  const minSwipeDistance = 40;
 
   const nextCover = () => {
     setCurrentCoverIdx((prev) => (prev + 1) % COVER_SLIDES.length);
@@ -67,26 +68,27 @@ export default function HostayyHome() {
   };
 
   const handleTouchStart = (e) => {
-    setTouchEndX(null);
+    setIsDragging(true);
     setTouchStartX(e.targetTouches[0].clientX);
+    setDragOffset(0);
   };
 
   const handleTouchMove = (e) => {
-    setTouchEndX(e.targetTouches[0].clientX);
+    if (!isDragging) return;
+    const currentX = e.targetTouches[0].clientX;
+    const diff = currentX - touchStartX;
+    setDragOffset(diff);
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartX || !touchEndX) return;
-    const distance = touchStartX - touchEndX;
-    if (distance > minSwipeDistance) {
-      // Swiped left -> next cover photo
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (dragOffset < -minSwipeDistance) {
       nextCover();
-    } else if (distance < -minSwipeDistance) {
-      // Swiped right -> prev cover photo
+    } else if (dragOffset > minSwipeDistance) {
       prevCover();
     }
-    setTouchStartX(null);
-    setTouchEndX(null);
+    setDragOffset(0);
   };
 
   const activeSlide = COVER_SLIDES[currentCoverIdx];
@@ -212,71 +214,149 @@ export default function HostayyHome() {
                     background: '#ffffff',
                     boxShadow: '0 16px 45px rgba(234, 56, 76, 0.1)',
                     position: 'relative',
-                    marginTop: '24px'
+                    marginTop: '24px',
+                    userSelect: 'none'
                   }}
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
                   onTouchEnd={handleTouchEnd}
                 >
-                  <div style={{ position: 'relative', height: 'clamp(260px, 45vw, 420px)', width: '100%', overflow: 'hidden' }}>
-                    <img 
-                      src={activeSlide.image} 
-                      alt={activeSlide.title}
-                      className="hostayy-cover-img"
-                      style={{ 
-                        width: '100%', 
-                        height: '100%', 
-                        objectFit: 'cover', 
-                        transition: 'all 0.4s ease',
-                        imageRendering: '-webkit-optimize-contrast',
-                        filter: 'contrast(1.05) brightness(1.03) saturate(1.05)'
+                  <div 
+                    style={{ 
+                      position: 'relative', 
+                      height: 'clamp(260px, 45vw, 420px)', 
+                      width: '100%', 
+                      overflow: 'hidden',
+                      touchAction: 'pan-y'
+                    }}
+                  >
+                    {/* The Full Sliding Track with Real-Time Touch Drag & Vanishing Slide Transitions */}
+                    <div 
+                      className="hostayy-slider-track"
+                      style={{
+                        display: 'flex',
+                        width: '100%',
+                        height: '100%',
+                        transform: `translateX(calc(-${currentCoverIdx * 100}% + ${dragOffset}px))`,
+                        transition: isDragging ? 'none' : 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1)',
+                        willChange: 'transform'
                       }}
-                    />
+                    >
+                      {COVER_SLIDES.map((slide, idx) => {
+                        const isCurrent = idx === currentCoverIdx;
+                        return (
+                          <div 
+                            key={slide.id}
+                            style={{
+                              minWidth: '100%',
+                              width: '100%',
+                              height: '100%',
+                              flexShrink: 0,
+                              position: 'relative',
+                              overflow: 'hidden'
+                            }}
+                          >
+                            <img 
+                              src={slide.image} 
+                              alt={slide.title}
+                              className="hostayy-cover-img"
+                              style={{ 
+                                width: '100%', 
+                                height: '100%', 
+                                objectFit: 'cover', 
+                                imageRendering: '-webkit-optimize-contrast',
+                                filter: 'contrast(1.05) brightness(1.03) saturate(1.05)',
+                                transform: isCurrent ? 'scale(1)' : 'scale(0.96)',
+                                opacity: isCurrent ? 1 : 0.4,
+                                transition: isDragging ? 'none' : 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.48s ease'
+                              }}
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
                     
                     {/* Clean Unobstructed Photo - No Text Overlays */}
                     {/* Prev / Next Arrows */}
                     <button 
                       type="button" 
-                      onClick={prevCover}
+                      onClick={(e) => { e.stopPropagation(); prevCover(); }}
                       aria-label="Previous Cover Slide"
-                      style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.9)', border: 'none', color: '#111827', cursor: 'pointer', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                      style={{ 
+                        position: 'absolute', 
+                        left: '12px', 
+                        top: '50%', 
+                        transform: 'translateY(-50%)', 
+                        width: '40px', 
+                        height: '40px', 
+                        borderRadius: '12px', 
+                        background: 'rgba(255, 255, 255, 0.92)', 
+                        border: 'none', 
+                        color: '#111827', 
+                        cursor: 'pointer', 
+                        zIndex: 5, 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        boxShadow: '0 4px 14px rgba(0,0,0,0.2)',
+                        transition: 'all 0.2s ease'
+                      }}
                     >
-                      <i className="fa-solid fa-chevron-left" style={{ fontSize: '14px' }}></i>
+                      <i className="fa-solid fa-chevron-left" style={{ fontSize: '15px' }}></i>
                     </button>
                     <button 
                       type="button" 
-                      onClick={nextCover}
+                      onClick={(e) => { e.stopPropagation(); nextCover(); }}
                       aria-label="Next Cover Slide"
-                      style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(255, 255, 255, 0.9)', border: 'none', color: '#111827', cursor: 'pointer', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+                      style={{ 
+                        position: 'absolute', 
+                        right: '12px', 
+                        top: '50%', 
+                        transform: 'translateY(-50%)', 
+                        width: '40px', 
+                        height: '40px', 
+                        borderRadius: '12px', 
+                        background: 'rgba(255, 255, 255, 0.92)', 
+                        border: 'none', 
+                        color: '#111827', 
+                        cursor: 'pointer', 
+                        zIndex: 5, 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center', 
+                        boxShadow: '0 4px 14px rgba(0,0,0,0.2)',
+                        transition: 'all 0.2s ease'
+                      }}
                     >
-                      <i className="fa-solid fa-chevron-right" style={{ fontSize: '14px' }}></i>
+                      <i className="fa-solid fa-chevron-right" style={{ fontSize: '15px' }}></i>
                     </button>
                   </div>
 
-                  {/* Bottom Thumbnail Bar & Dots */}
+                  {/* Bottom Thumbnail Bar & Dots with Swipe Transitions Between Buttons */}
                   <div style={{ background: '#fff5f6', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', flexWrap: 'wrap' }}>
-                    <div style={{ display: 'flex', gap: '8px' }}>
+                    <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                       {COVER_SLIDES.map((slide, idx) => (
                         <button
                           key={slide.id}
                           type="button"
                           onClick={() => setCurrentCoverIdx(idx)}
                           style={{
-                            width: idx === currentCoverIdx ? '28px' : '9px',
-                            height: '9px',
+                            width: idx === currentCoverIdx ? '32px' : '10px',
+                            height: '10px',
                             borderRadius: '5px',
                             background: idx === currentCoverIdx ? '#ea384c' : '#fecdd3',
                             border: 'none',
                             cursor: 'pointer',
                             padding: 0,
-                            transition: 'all 0.25s ease'
+                            transition: 'all 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                            boxShadow: idx === currentCoverIdx ? '0 2px 8px rgba(234, 56, 76, 0.35)' : 'none'
                           }}
                           aria-label={`Slide ${idx + 1}`}
                         />
                       ))}
                     </div>
                     <span style={{ fontSize: '12px', color: '#374151', fontWeight: 600 }}>
-                      Photo {currentCoverIdx + 1} of {COVER_SLIDES.length} &bull; Slide on screen to change
+                      Photo {currentCoverIdx + 1} of {COVER_SLIDES.length} &bull; Swipe on screen to change
                     </span>
                   </div>
                 </div>

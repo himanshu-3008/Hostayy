@@ -4217,14 +4217,19 @@ p {
   color: #ffffff !important;
 }
 
-/* ACTIVE STATE ON CLICK: PURE WHITE PILL WITH 100% VISIBLE VIBRANT ORANGE TEXT & ICON */
+/* ACTIVE STATE ON CLICK: SMOOTH SLIDING PILL TRANSITION WITH HIGH CONTRAST CORAL RED TEXT */
+.portal-sliding-pill {
+  background: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
 .bcom-portal-btn.active,
 .bcom-header .bcom-portal-btn.active,
 .bcom-portal-switcher button.active,
 .bcom-header .bcom-portal-switcher button.active {
-  background: #ffffff !important;
+  background: transparent !important;
   color: #ea384c !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important;
+  box-shadow: none !important;
 }
 
 .bcom-portal-btn.active span,
@@ -4243,7 +4248,7 @@ p {
 .bcom-header .bcom-portal-btn.active:hover,
 .bcom-portal-switcher button.active:hover,
 .bcom-header .bcom-portal-switcher button.active:hover {
-  background: #ffffff !important;
+  background: transparent !important;
   color: #c41c33 !important;
 }
 .bcom-portal-btn.active:hover span,
@@ -4253,7 +4258,12 @@ p {
   color: #c41c33 !important;
 }
 
-/* MOBILE DRAWER PORTAL SWITCHER BUTTONS */
+/* MOBILE DRAWER PORTAL SWITCHER BUTTONS WITH SWIPE TRANSITION */
+.mobile-portal-sliding-pill {
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
 .bcom-mobile-portal-btn {
   flex: 1 !important;
   padding: 8px 12px !important;
@@ -4277,7 +4287,7 @@ p {
 
 .bcom-mobile-portal-btn.active,
 .bcom-header .bcom-mobile-portal-btn.active {
-  background: #ffffff !important;
+  background: transparent !important;
   color: #ea384c !important;
 }
 
@@ -5423,4 +5433,48 @@ p {
 .compact-main-photo-wrap:hover img,
 .hostayy-cover-img:hover {
   filter: contrast(1.07) brightness(1.04) saturate(1.08) !important;
+}
+
+/* ==========================================================================
+   PHOTO CAROUSEL & BUTTON SWIPE TRANSITIONS
+   Fluid hardware-accelerated transitions for touch swipe and button clicks
+   ========================================================================== */
+@keyframes hostayyFadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hostayy-slider-track,
+.showcase-photo-track {
+  display: flex !important;
+  will-change: transform !important;
+}
+
+/* Smooth active state glide for tabs and buttons */
+.our-rooms-tab-btn {
+  transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.our-rooms-tab-btn:hover {
+  transform: translateY(-1px) !important;
+}
+
+.our-rooms-tab-btn:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.compact-thumb-btn {
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.compact-thumb-btn.active {
+  border-color: #ea384c !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(234, 56, 76, 0.3) !important;
 }

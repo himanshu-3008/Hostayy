@@ -5,36 +5,47 @@ import { HOSTAYY_CONFIG, getGuestPropertyWhatsAppLink } from '../data/properties
 
 export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   const photos = prop.images;
   const previewPhotos = photos.slice(0, 6);
   const currentPhoto = photos[activePhotoIndex] || photos[0];
 
-  const minSwipeDistance = 35;
+  const minSwipeDistance = 40;
+
+  const nextPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setActivePhotoIndex((prev) => (prev + 1) % photos.length);
+  };
+
+  const prevPhoto = (e) => {
+    if (e) e.stopPropagation();
+    setActivePhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
+  };
 
   const onTouchStartHandler = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    setTouchStartX(e.targetTouches[0].clientX);
+    setDragOffset(0);
   };
 
   const onTouchMoveHandler = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!isDragging) return;
+    const currentX = e.targetTouches[0].clientX;
+    setDragOffset(currentX - touchStartX);
   };
 
   const onTouchEndHandler = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    if (distance > minSwipeDistance) {
-      // Swiped left -> next photo
-      setActivePhotoIndex((prev) => (prev + 1) % photos.length);
-    } else if (distance < -minSwipeDistance) {
-      // Swiped right -> prev photo
-      setActivePhotoIndex((prev) => (prev - 1 + photos.length) % photos.length);
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (dragOffset < -minSwipeDistance) {
+      nextPhoto();
+    } else if (dragOffset > minSwipeDistance) {
+      prevPhoto();
     }
-    setTouchStart(null);
-    setTouchEnd(null);
+    setDragOffset(0);
   };
 
   return (
@@ -66,9 +77,9 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
 
       {/* 2-Column Compact Layout: Left Photo Stage + Right Key Details */}
       <div className="compact-showcase-grid">
-        {/* Left: Compact Interactive Photo Stage with Touch Swipe */}
+        {/* Left: Compact Interactive Photo Stage with Touch Swipe Track */}
         <div className="compact-photo-stage">
-          {/* Main Photo (Click to open full lightbox) */}
+          {/* Main Photo Stage with Real-Time Swipe & Vanishing Slide Transitions */}
           <div 
             className="compact-main-photo-wrap" 
             onClick={() => onOpenLightbox(photos, activePhotoIndex)}
@@ -76,20 +87,107 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
             onTouchMove={onTouchMoveHandler}
             onTouchEnd={onTouchEndHandler}
             title="Click to view in fullscreen or swipe on phone screen"
-            style={{ borderRadius: '14px', overflow: 'hidden', touchAction: 'pan-y' }}
+            style={{ borderRadius: '14px', overflow: 'hidden', touchAction: 'pan-y', position: 'relative' }}
           >
-            <img 
-              src={currentPhoto.src} 
-              alt={currentPhoto.title} 
+            <div 
+              className="showcase-photo-track"
+              style={{
+                display: 'flex',
+                width: '100%',
+                height: '100%',
+                transform: `translateX(calc(-${activePhotoIndex * 100}% + ${dragOffset}px))`,
+                transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
+                willChange: 'transform'
+              }}
+            >
+              {photos.map((photo, idx) => {
+                const isCur = idx === activePhotoIndex;
+                return (
+                  <div 
+                    key={photo.id || idx}
+                    style={{
+                      minWidth: '100%',
+                      width: '100%',
+                      height: '100%',
+                      flexShrink: 0,
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    <img 
+                      src={photo.src} 
+                      alt={photo.title} 
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover', 
+                        imageRendering: '-webkit-optimize-contrast', 
+                        filter: 'contrast(1.05) brightness(1.02) saturate(1.05)',
+                        transform: isCur ? 'scale(1)' : 'scale(0.96)',
+                        opacity: isCur ? 1 : 0.4,
+                        transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease'
+                      }} 
+                    />
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Prev / Next Chevrons on Photo */}
+            <button 
+              type="button" 
+              onClick={prevPhoto}
+              aria-label="Previous Photo"
               style={{ 
-                width: '100%', 
-                height: '100%', 
-                objectFit: 'cover', 
-                imageRendering: '-webkit-optimize-contrast', 
-                filter: 'contrast(1.05) brightness(1.02) saturate(1.05)' 
-              }} 
-            />
-            <div className="compact-photo-overlay">
+                position: 'absolute', 
+                left: '10px', 
+                top: '50%', 
+                transform: 'translateY(-50%)', 
+                width: '36px', 
+                height: '36px', 
+                borderRadius: '10px', 
+                background: 'rgba(255, 255, 255, 0.92)', 
+                border: 'none', 
+                color: '#111827', 
+                cursor: 'pointer', 
+                zIndex: 6, 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <i className="fa-solid fa-chevron-left" style={{ fontSize: '14px' }}></i>
+            </button>
+            <button 
+              type="button" 
+              onClick={nextPhoto}
+              aria-label="Next Photo"
+              style={{ 
+                position: 'absolute', 
+                right: '10px', 
+                top: '50%', 
+                transform: 'translateY(-50%)', 
+                width: '36px', 
+                height: '36px', 
+                borderRadius: '10px', 
+                background: 'rgba(255, 255, 255, 0.92)', 
+                border: 'none', 
+                color: '#111827', 
+                cursor: 'pointer', 
+                zIndex: 6, 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center', 
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <i className="fa-solid fa-chevron-right" style={{ fontSize: '14px' }}></i>
+            </button>
+
+            <div className="compact-photo-overlay" style={{ pointerEvents: 'none' }}>
               <span className="compact-photo-title">
                 <i className="fa-solid fa-camera text-coral" style={{ marginRight: '6px', color: '#ea384c' }}></i>
                 {currentPhoto.title}
@@ -109,7 +207,11 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 className={`compact-thumb-btn ${idx === activePhotoIndex ? 'active' : ''}`}
                 onClick={() => setActivePhotoIndex(idx)}
                 title={photo.title}
-                style={{ borderRadius: '8px', overflow: 'hidden' }}
+                style={{ 
+                  borderRadius: '8px', 
+                  overflow: 'hidden',
+                  transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)'
+                }}
               >
                 <img 
                   src={photo.src} 

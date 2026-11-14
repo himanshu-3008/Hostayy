@@ -115,7 +115,24 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
             </Link>
 
             {/* Center: Dual-Portal Segment Switcher (Customers/Booking vs Property Listing) */}
-            <div className="bcom-portal-switcher" role="tablist" aria-label="Portal Navigation">
+            <div className="bcom-portal-switcher" role="tablist" aria-label="Portal Navigation" style={{ position: 'relative' }}>
+              {/* Sliding Pill Background with Smooth Swipe Transition */}
+              <div 
+                className="portal-sliding-pill" 
+                style={{
+                  position: 'absolute',
+                  top: '3px',
+                  bottom: '3px',
+                  left: currentPage === 'listing' ? 'calc(50% + 2px)' : '3px',
+                  width: 'calc(50% - 5px)',
+                  background: '#ffffff',
+                  borderRadius: '26px',
+                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                  zIndex: 1,
+                  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+                  pointerEvents: 'none'
+                }}
+              />
               <Link
                 href="/book"
                 className={`bcom-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
@@ -123,13 +140,16 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 role="tab"
                 aria-selected={currentPage === 'booking'}
                 style={{ 
+                  position: 'relative',
+                  zIndex: 2,
                   textDecoration: 'none',
-                  background: currentPage === 'booking' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff'
+                  background: 'transparent',
+                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff',
+                  transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
               </Link>
               
               <Link
@@ -139,13 +159,16 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 role="tab"
                 aria-selected={currentPage === 'listing'}
                 style={{ 
+                  position: 'relative',
+                  zIndex: 2,
                   textDecoration: 'none',
-                  background: currentPage === 'listing' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff'
+                  background: 'transparent',
+                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff',
+                  transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
               </Link>
             </div>
 
@@ -709,36 +732,61 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
         <div className="bcom-mobile-drawer" style={{ background: '#c41c33', padding: '22px 18px', borderTop: '1px solid rgba(255, 255, 255, 0.2)' }}>
           <div className="bcom-mobile-drawer-inner">
             {/* Mobile Portal Mode Switcher */}
-            <div className="bcom-mobile-portal-switcher" style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0, 0, 0, 0.22)', padding: '5px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.25)' }}>
+            <div className="bcom-mobile-portal-switcher" style={{ position: 'relative', display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0, 0, 0, 0.22)', padding: '5px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.25)' }}>
+              {/* Sliding Pill on Mobile */}
+              <div 
+                className="mobile-portal-sliding-pill"
+                style={{
+                  position: 'absolute',
+                  top: '5px',
+                  bottom: '5px',
+                  left: currentPage === 'listing' ? 'calc(50% + 4px)' : '5px',
+                  width: 'calc(50% - 9px)',
+                  background: '#ffffff',
+                  borderRadius: '10px',
+                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                  zIndex: 1,
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                  pointerEvents: 'none'
+                }}
+              />
               <Link 
                 href="/book"
                 onClick={() => setMobileOpen(false)}
                 className={`bcom-mobile-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
                 style={{ 
+                  position: 'relative',
+                  zIndex: 2,
+                  flex: 1,
                   textDecoration: 'none',
                   borderRadius: '10px',
-                  background: currentPage === 'booking' ? '#ffffff' : 'transparent',
+                  background: 'transparent',
                   color: currentPage === 'booking' ? '#ea384c' : '#ffffff',
-                  fontWeight: 800
+                  fontWeight: 800,
+                  transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
               </Link>
               <Link 
                 href="/list-property"
                 onClick={() => setMobileOpen(false)}
                 className={`bcom-mobile-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
                 style={{ 
+                  position: 'relative',
+                  zIndex: 2,
+                  flex: 1,
                   textDecoration: 'none',
                   borderRadius: '10px',
-                  background: currentPage === 'listing' ? '#ffffff' : 'transparent',
+                  background: 'transparent',
                   color: currentPage === 'listing' ? '#ea384c' : '#ffffff',
-                  fontWeight: 800
+                  fontWeight: 800,
+                  transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
               </Link>
             </div>
 

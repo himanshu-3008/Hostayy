@@ -17,10 +17,19 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="hostayy Home"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'home' ? '#ea384c' : '#f3f4f6', color: currentPage === 'home' ? '#ffffff' : '#111827' }}>
+          <div 
+            className="mobile-bar-icon" 
+            style={{ 
+              backgroundColor: currentPage === 'home' ? '#ea384c' : '#f3f4f6', 
+              color: currentPage === 'home' ? '#ffffff' : '#111827',
+              transform: currentPage === 'home' ? 'scale(1.08) translateY(-2px)' : 'scale(1)',
+              transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
+              boxShadow: currentPage === 'home' ? '0 4px 12px rgba(234, 56, 76, 0.28)' : 'none'
+            }}
+          >
             <i className="fa-solid fa-house"></i>
           </div>
-          <span style={{ color: currentPage === 'home' ? '#ea384c' : '#111827', fontWeight: currentPage === 'home' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'home' ? '#ea384c' : '#111827', fontWeight: currentPage === 'home' ? 800 : 600, transition: 'all 0.25s ease' }}>
             Home
           </span>
         </Link>
@@ -32,10 +41,19 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="Book 1, 2 & 3 BHK Serviced Flats"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'booking' ? '#ea384c' : '#f3f4f6', color: currentPage === 'booking' ? '#ffffff' : '#111827' }}>
+          <div 
+            className="mobile-bar-icon" 
+            style={{ 
+              backgroundColor: currentPage === 'booking' ? '#ea384c' : '#f3f4f6', 
+              color: currentPage === 'booking' ? '#ffffff' : '#111827',
+              transform: currentPage === 'booking' ? 'scale(1.08) translateY(-2px)' : 'scale(1)',
+              transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
+              boxShadow: currentPage === 'booking' ? '0 4px 12px rgba(234, 56, 76, 0.28)' : 'none'
+            }}
+          >
             <i className="fa-solid fa-bed"></i>
           </div>
-          <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#111827', fontWeight: currentPage === 'booking' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#111827', fontWeight: currentPage === 'booking' ? 800 : 600, transition: 'all 0.25s ease' }}>
             Book Flats
           </span>
         </Link>
@@ -47,10 +65,19 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="List Property with hostayy Patron"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'listing' ? '#ea384c' : '#f3f4f6', color: currentPage === 'listing' ? '#ffffff' : '#111827' }}>
+          <div 
+            className="mobile-bar-icon" 
+            style={{ 
+              backgroundColor: currentPage === 'listing' ? '#ea384c' : '#f3f4f6', 
+              color: currentPage === 'listing' ? '#ffffff' : '#111827',
+              transform: currentPage === 'listing' ? 'scale(1.08) translateY(-2px)' : 'scale(1)',
+              transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
+              boxShadow: currentPage === 'listing' ? '0 4px 12px rgba(234, 56, 76, 0.28)' : 'none'
+            }}
+          >
             <i className="fa-solid fa-house-chimney-user"></i>
           </div>
-          <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#111827', fontWeight: currentPage === 'listing' ? 800 : 600 }}>
+          <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#111827', fontWeight: currentPage === 'listing' ? 800 : 600, transition: 'all 0.25s ease' }}>
             List Property
           </span>
         </Link>
@@ -62,10 +89,17 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
           title="Direct Call to hostayy Concierge"
           style={{ textDecoration: 'none' }}
         >
-          <div className="mobile-bar-icon" style={{ backgroundColor: '#f3f4f6', color: '#111827' }}>
+          <div 
+            className="mobile-bar-icon" 
+            style={{ 
+              backgroundColor: '#f3f4f6', 
+              color: '#111827',
+              transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)'
+            }}
+          >
             <i className="fa-solid fa-phone"></i>
           </div>
-          <span style={{ color: '#111827', fontWeight: 600 }}>
+          <span style={{ color: '#111827', fontWeight: 600, transition: 'all 0.25s ease' }}>
             Call Host
           </span>
         </a>

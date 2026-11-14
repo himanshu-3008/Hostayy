@@ -78,7 +78,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === null ? 'active' : ''}`}
               onClick={() => setSelectedStayId(null)}
-              style={{ transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)' }}
+              style={{ transition: 'all 0.32s cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <i className="fa-solid fa-layer-group" style={{ marginRight: '6px' }}></i> All Residences (3)
             </button>
@@ -86,7 +86,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'velora' ? 'active' : ''}`}
               onClick={() => handleSelectStay('velora')}
-              style={{ transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)' }}
+              style={{ transition: 'all 0.32s cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <i className="fa-solid fa-door-open" style={{ marginRight: '6px' }}></i> 1 BHK Suite (Velora &bull; 3 Mins Yashobhoomi)
             </button>
@@ -94,7 +94,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'azura' ? 'active' : ''}`}
               onClick={() => handleSelectStay('azura')}
-              style={{ transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)' }}
+              style={{ transition: 'all 0.32s cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <i className="fa-solid fa-building" style={{ marginRight: '6px' }}></i> 2 BHK Residence (Azura &bull; Aerocity Corridor)
             </button>
@@ -102,7 +102,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
               type="button"
               className={`our-rooms-tab-btn ${selectedStayId === 'verde' ? 'active' : ''}`}
               onClick={() => handleSelectStay('verde')}
-              style={{ transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)' }}
+              style={{ transition: 'all 0.32s cubic-bezier(0.22, 1, 0.36, 1)' }}
             >
               <i className="fa-solid fa-gem" style={{ marginRight: '6px' }}></i> 3 BHK Signature (Verde &bull; Prime Golf Belt)
             </button>
@@ -111,7 +111,7 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
 
         {/* Dynamic Photo Luxury Showcase Container (Appears when room option is clicked) */}
         {activeProp && (
-          <div id="stay-showcase-container" style={{ marginBottom: '45px', scrollMarginTop: '100px' }}>
+          <div key={activeProp.id} id="stay-showcase-container" style={{ marginBottom: '45px', scrollMarginTop: '100px', animation: 'hostayyFadeSlide 0.4s cubic-bezier(0.22, 1, 0.36, 1) both' }}>
             <StayShowcase 
               prop={activeProp} 
               onOpenLightbox={onOpenLightbox} 

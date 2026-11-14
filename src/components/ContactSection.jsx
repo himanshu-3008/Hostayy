@@ -73,19 +73,39 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
         {/* Dual Tab Toggle */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '36px' }}>
-          <div className="our-rooms-tabs" style={{ background: '#ffffff', border: '1px solid #fecdd3', borderRadius: '30px', padding: '4px' }}>
+          <div className="our-rooms-tabs" style={{ position: 'relative', background: '#ffffff', border: '1.5px solid #fecdd3', borderRadius: '30px', padding: '4px', display: 'inline-flex' }}>
+            {/* Sliding Pill Indicator */}
+            <div 
+              className="contact-tab-sliding-pill"
+              style={{
+                position: 'absolute',
+                top: '4px',
+                bottom: '4px',
+                left: activeFormTab === 'owner' ? 'calc(50% + 2px)' : '4px',
+                width: 'calc(50% - 6px)',
+                background: '#ea384c',
+                borderRadius: '26px',
+                transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                zIndex: 1,
+                boxShadow: '0 4px 12px rgba(234, 56, 76, 0.25)',
+                pointerEvents: 'none'
+              }}
+            />
             <button 
               type="button" 
               className={`our-rooms-tab-btn ${activeFormTab === 'guest' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('guest')}
               style={{
-                background: activeFormTab === 'guest' ? '#ea384c' : 'transparent',
+                position: 'relative',
+                zIndex: 2,
+                background: 'transparent',
                 color: activeFormTab === 'guest' ? '#ffffff' : '#111827',
                 border: 'none',
                 fontWeight: 700,
-                padding: '8px 18px',
+                padding: '9px 20px',
                 borderRadius: '30px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transition: 'color 0.25s ease'
               }}
             >
               <i className="fa-solid fa-suitcase" style={{ marginRight: '6px' }}></i> Long-Stay Quotation (Guest)
@@ -95,13 +115,16 @@ export default function ContactSection({ initialTab = 'guest' }) {
               className={`our-rooms-tab-btn ${activeFormTab === 'owner' ? 'active' : ''}`}
               onClick={() => setActiveFormTab('owner')}
               style={{
-                background: activeFormTab === 'owner' ? '#ea384c' : 'transparent',
+                position: 'relative',
+                zIndex: 2,
+                background: 'transparent',
                 color: activeFormTab === 'owner' ? '#ffffff' : '#111827',
                 border: 'none',
                 fontWeight: 700,
-                padding: '8px 18px',
+                padding: '9px 20px',
                 borderRadius: '30px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                transition: 'color 0.25s ease'
               }}
             >
               <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i> Partner Property (Owner)
