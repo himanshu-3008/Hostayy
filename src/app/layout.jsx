@@ -1,4 +1,5 @@
 import './globals.css';
+import SplashScreen from '../components/SplashScreen';
 
 export const viewport = {
   width: 'device-width',
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <SplashScreen />
         {children}
       </body>
     </html>

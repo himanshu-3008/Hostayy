@@ -11,11 +11,14 @@
   --hotelux-font-two: "Playfair Display", Georgia, serif;
   --hotelux-gray: #374151;
   --hotelux-gray-rgb: 55, 65, 81;
-  --hotelux-base: #ea384c;          /* Hotelux Signature Gold Sand Dune */
+  --hotelux-base: #ea384c;
+  /* Hotelux Signature Gold Sand Dune */
   --hotelux-base-rgb: 234, 56, 76;
-  --hotelux-primary: #f6f3ee;       /* Hotelux Warm Linen Surface */
+  --hotelux-primary: #f6f3ee;
+  /* Hotelux Warm Linen Surface */
   --hotelux-primary-rgb: 246, 243, 238;
-  --hotelux-black: #111827;         /* Hotelux Deep Royal Midnight Charcoal */
+  --hotelux-black: #111827;
+  /* Hotelux Deep Royal Midnight Charcoal */
   --hotelux-black-rgb: 17, 24, 39;
   --hotelux-white: #ffffff;
   --hotelux-white-rgb: 255, 255, 255;
@@ -46,7 +49,9 @@
 /* ==========================================================================
    BASE RESET
    ========================================================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -128,29 +133,94 @@ ul {
 }
 
 @media (min-width: 768px) {
-  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-md-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
-  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 992px) {
-  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
-  .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
-  .col-lg-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
-  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-lg-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
-  .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .col-lg-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  .col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
 }
 
 @media (min-width: 1200px) {
-  .col-xl-2 { flex: 0 0 16.666667%; max-width: 16.666667%; }
-  .col-xl-3 { flex: 0 0 25%; max-width: 25%; }
-  .col-xl-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
-  .col-xl-5 { flex: 0 0 41.666667%; max-width: 41.666667%; }
-  .col-xl-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-xl-7 { flex: 0 0 58.333333%; max-width: 58.333333%; }
-  .col-xl-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
-  .col-xl-10 { flex: 0 0 83.333333%; max-width: 83.333333%; }
+  .col-xl-2 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+
+  .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-xl-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .col-xl-5 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .col-xl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-xl-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  .col-xl-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .col-xl-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
 }
 
 /* ==========================================================================
@@ -534,7 +604,10 @@ ul {
 }
 
 @media (max-width: 991px) {
-  .mobile-nav-toggle { display: block; }
+  .mobile-nav-toggle {
+    display: block;
+  }
+
   .main-menu__list {
     display: none;
     position: absolute;
@@ -548,6 +621,7 @@ ul {
     border-bottom: 2px solid var(--hotelux-base);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
+
   .main-menu__list.mobile-open {
     display: flex;
   }
@@ -756,8 +830,13 @@ ul {
   color: var(--hotelux-white);
 }
 
-.banner-slider-nav-btn.prev { left: 16px; }
-.banner-slider-nav-btn.next { right: 16px; }
+.banner-slider-nav-btn.prev {
+  left: 16px;
+}
+
+.banner-slider-nav-btn.next {
+  right: 16px;
+}
 
 /* Global OTA Links in Hero */
 .banner-ota-links {
@@ -1349,8 +1428,13 @@ ul {
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================================================
@@ -1561,14 +1645,30 @@ ul {
    ANIMATIONS
    ========================================================================== */
 @keyframes topBottom {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-16px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-16px);
+  }
 }
 
 @keyframes pulseDot {
-  0% { transform: scale(0.9); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
-  100% { transform: scale(0.9); opacity: 0.8; }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
 }
 
 
@@ -2450,6 +2550,7 @@ ul {
   .call-action {
     color: #ffffff;
   }
+
   .call-action .mobile-bar-icon {
     background-color: rgba(255, 255, 255, 0.12);
     color: #ffffff;
@@ -2459,6 +2560,7 @@ ul {
   .guest-action {
     color: #25D366;
   }
+
   .guest-action .mobile-bar-icon {
     background-color: #25D366;
     color: #ffffff;
@@ -2468,6 +2570,7 @@ ul {
   .owner-action {
     color: var(--hotelux-base);
   }
+
   .owner-action .mobile-bar-icon {
     background-color: var(--hotelux-base);
     color: #ffffff;
@@ -2672,6 +2775,7 @@ ul {
 
 /* Sections & Cards Mobile Optimizations */
 @media (max-width: 768px) {
+
   .section-pad,
   .services-two,
   .about-two,
@@ -2748,6 +2852,7 @@ ul {
    PHONE VIEW (< 768px & < 480px) COMPREHENSIVE RESPONSIVE STYLES
    ========================================================================== */
 @media (max-width: 768px) {
+
   /* Global Typography & Section Headers */
   .section-title__title {
     font-size: clamp(21px, 5.5vw, 26px) !important;
@@ -3076,7 +3181,8 @@ ul {
     font-size: 12.5px !important;
   }
 
-  .form-input, .form-select {
+  .form-input,
+  .form-select {
     height: 44px !important;
     padding: 10px 14px !important;
     font-size: 13.5px !important;
@@ -3132,6 +3238,7 @@ ul {
     padding: 10px 8px !important;
     font-size: 12px !important;
   }
+
   .why-choose-one__btn-box {
     display: flex !important;
     flex-direction: column !important;
@@ -3212,7 +3319,7 @@ ul {
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .quick-filter-chip:hover {
@@ -3644,21 +3751,27 @@ ul {
   .patron-hero-card {
     padding: 30px 20px;
   }
+
   .patron-hero-title {
     font-size: 26px;
   }
+
   .patron-metrics-row {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .patron-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .patron-steps-grid {
     grid-template-columns: 1fr;
   }
+
   .patron-calculator-lead-grid {
     grid-template-columns: 1fr;
   }
+
   .patron-bhk-pills {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3668,26 +3781,33 @@ ul {
   .patron-section {
     padding: 45px 0 50px;
   }
+
   .patron-hero-title {
     font-size: 22px;
   }
+
   .patron-hero-desc {
     font-size: 14px;
   }
+
   .patron-metrics-row {
     grid-template-columns: 1fr;
     gap: 10px;
   }
+
   .patron-pillars-grid {
     grid-template-columns: 1fr;
   }
+
   .patron-calc-card,
   .patron-lead-card {
     padding: 20px 16px;
   }
+
   .patron-calc-results {
     grid-template-columns: 1fr;
   }
+
   .topbar-patron-badge {
     display: none;
   }
@@ -3709,7 +3829,12 @@ body {
 }
 
 /* Proper Text Coloring for Headings & Paragraphs */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #191628;
   letter-spacing: -0.015em;
 }
@@ -4137,12 +4262,14 @@ p {
 }
 
 @media (max-width: 991px) {
+
   .bcom-list-prop-link,
   .bcom-currency-tag,
   .bcom-flag-wrap,
   .bcom-help-btn {
     display: none;
   }
+
   .bcom-mobile-toggle {
     display: block;
   }
@@ -4215,6 +4342,7 @@ p {
   background: transparent !important;
   color: #ffffff !important;
 }
+
 .bcom-portal-btn:not(.active) span,
 .bcom-portal-btn:not(.active) i,
 .bcom-header .bcom-portal-btn:not(.active) span,
@@ -4230,6 +4358,7 @@ p {
   background: rgba(255, 255, 255, 0.18) !important;
   color: #ffffff !important;
 }
+
 .bcom-portal-btn:hover:not(.active) span,
 .bcom-portal-btn:hover:not(.active) i {
   color: #ffffff !important;
@@ -4269,6 +4398,7 @@ p {
   background: transparent !important;
   color: #c41c33 !important;
 }
+
 .bcom-portal-btn.active:hover span,
 .bcom-portal-btn.active:hover i,
 .bcom-header .bcom-portal-btn.active:hover span,
@@ -4324,6 +4454,7 @@ p {
   border: 1px solid #ffffff !important;
   font-weight: 800 !important;
 }
+
 .bcom-header .bcom-action-btn.register-btn span,
 .bcom-header .bcom-action-btn.register-btn i {
   color: #ea384c !important;
@@ -4334,6 +4465,7 @@ p {
   background: #fff1f2 !important;
   color: #c41c33 !important;
 }
+
 .bcom-header .bcom-action-btn.register-btn:hover span,
 .bcom-header .bcom-action-btn.register-btn:hover i {
   color: #c41c33 !important;
@@ -4344,6 +4476,7 @@ p {
   color: #ffffff !important;
   border: 1px solid #16a34a !important;
 }
+
 .bcom-header .bcom-action-btn.wa-btn span,
 .bcom-header .bcom-action-btn.wa-btn i {
   color: #ffffff !important;
@@ -4373,19 +4506,23 @@ p {
   font-weight: 700 !important;
   transition: all 0.2s ease !important;
 }
+
 .our-rooms-tab-btn i,
 .our-rooms-tab-btn span {
   color: #111827 !important;
   transition: color 0.2s ease !important;
 }
+
 .our-rooms-tab-btn:hover {
   border-color: #ea384c !important;
   color: #ea384c !important;
 }
+
 .our-rooms-tab-btn:hover i,
 .our-rooms-tab-btn:hover span {
   color: #ea384c !important;
 }
+
 .our-rooms-tab-btn.active,
 .our-rooms-tab-btn:active {
   background: #ea384c !important;
@@ -4393,6 +4530,7 @@ p {
   border-color: #ea384c !important;
   box-shadow: 0 4px 14px rgba(234, 56, 76, 0.25) !important;
 }
+
 .our-rooms-tab-btn.active i,
 .our-rooms-tab-btn.active span,
 .our-rooms-tab-btn:active i,
@@ -4406,24 +4544,29 @@ p {
   font-weight: 700 !important;
   transition: all 0.2s ease !important;
 }
+
 .tab-btn i,
 .tab-btn span {
   color: #374151 !important;
 }
+
 .tab-btn:not(.active):hover {
   color: #111827 !important;
   background: #f1f5f9 !important;
 }
+
 .tab-btn:not(.active):hover i,
 .tab-btn:not(.active):hover span {
   color: #111827 !important;
 }
+
 .tab-btn.active,
 .tab-btn:active {
   background: #ea384c !important;
   color: #ffffff !important;
   box-shadow: 0 4px 15px rgba(234, 56, 76, 0.25) !important;
 }
+
 .tab-btn.active i,
 .tab-btn.active span,
 .tab-btn:active i,
@@ -4444,11 +4587,13 @@ p {
   cursor: pointer !important;
   transition: all 0.2s ease !important;
 }
+
 .calc-bhk-btn:hover,
 .patron-bhk-btn:hover {
   border-color: #ea384c !important;
   color: #ea384c !important;
 }
+
 .calc-bhk-btn.active,
 .calc-bhk-btn:active {
   border: 2px solid #ea384c !important;
@@ -4456,6 +4601,7 @@ p {
   color: #ea384c !important;
   font-weight: 800 !important;
 }
+
 .patron-bhk-btn.active,
 .patron-bhk-btn:active {
   background: #ea384c !important;
@@ -4499,24 +4645,29 @@ button[type="submit"] {
   color: #ffffff !important;
   border-radius: 12px !important;
 }
+
 .thm-btn span,
 .thm-btn i {
   color: #ffffff !important;
 }
+
 .thm-btn:hover {
   background-color: #c41c33 !important;
   border-color: #c41c33 !important;
   color: #ffffff !important;
 }
+
 .thm-btn:hover span,
 .thm-btn:hover i {
   color: #ffffff !important;
 }
+
 .thm-btn:active {
   background-color: #9f1239 !important;
   border-color: #9f1239 !important;
   color: #ffffff !important;
 }
+
 .thm-btn:active span,
 .thm-btn:active i {
   color: #ffffff !important;
@@ -4527,15 +4678,18 @@ button[type="submit"] {
   border-color: #111827 !important;
   color: #ffffff !important;
 }
+
 .thm-btn-black span,
 .thm-btn-black i {
   color: #ffffff !important;
 }
+
 .thm-btn-black:hover {
   background-color: #ea384c !important;
   border-color: #ea384c !important;
   color: #ffffff !important;
 }
+
 .thm-btn-black:hover span,
 .thm-btn-black:hover i {
   color: #ffffff !important;
@@ -4550,6 +4704,7 @@ button[type="submit"] {
   border-color: #16a34a !important;
   color: #ffffff !important;
 }
+
 .thm-btn-wa span,
 .thm-btn-wa i,
 .btn-hotelux-room-wa span,
@@ -4560,6 +4715,7 @@ button[type="submit"] {
 .footer-wa-btn i {
   color: #ffffff !important;
 }
+
 .thm-btn-wa:hover,
 .btn-hotelux-room-wa:hover,
 .wa-btn:hover,
@@ -4576,10 +4732,12 @@ button[type="submit"] {
   color: #ffffff !important;
   border-radius: 12px !important;
 }
+
 .btn-hotelux-details span,
 .btn-hotelux-details i {
   color: #ffffff !important;
 }
+
 .btn-hotelux-details:hover {
   background-color: #c41c33 !important;
   border-color: #c41c33 !important;
@@ -4652,10 +4810,12 @@ button[type="submit"] {
   .compare-wrap {
     min-width: 620px !important;
   }
+
   .compare-cell {
     padding: 14px 18px !important;
     font-size: 13px !important;
   }
+
   .compare-row.head .compare-cell {
     padding: 14px 18px !important;
     font-size: 13px !important;
@@ -4670,16 +4830,24 @@ button[type="submit"] {
 }
 
 /* High Contrast Headings and Text On Light Surfaces */
-body, html {
+body,
+html {
   overflow-x: hidden !important;
   max-width: 100vw !important;
   color: #111827;
   background-color: #ffffff;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #111827 !important;
   letter-spacing: -0.015em;
 }
+
 p {
   color: #374151 !important;
 }
@@ -4711,6 +4879,7 @@ p {
   border-color: #ea384c !important;
   color: #ffffff !important;
 }
+
 .patron-bhk-btn {
   color: #111827 !important;
   background: #ffffff;
@@ -4723,12 +4892,14 @@ p {
   color: #ffffff !important;
   border-color: #ea384c !important;
 }
+
 .our-rooms-tab-btn {
   background: #ffffff !important;
   color: #111827 !important;
   border: 1.5px solid #fecdd3 !important;
   font-weight: 700 !important;
 }
+
 .our-rooms-tab-btn:hover {
   border-color: #ea384c !important;
   color: #ea384c !important;
@@ -4741,24 +4912,30 @@ p {
     border-top: 1.5px solid #fecdd3 !important;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
   }
+
   .call-action {
     color: #111827 !important;
   }
+
   .call-action .mobile-bar-icon {
     background-color: #f3f4f6 !important;
     color: #111827 !important;
     border: 1px solid #e5e7eb !important;
   }
+
   .guest-action {
     color: #15803d !important;
   }
+
   .guest-action .mobile-bar-icon {
     background-color: #16a34a !important;
     color: #ffffff !important;
   }
+
   .owner-action {
     color: #ea384c !important;
   }
+
   .owner-action .mobile-bar-icon {
     background-color: #ea384c !important;
     color: #ffffff !important;
@@ -4817,6 +4994,7 @@ p {
    PHONE VIEW COMPREHENSIVE RESPONSIVE ENHANCEMENTS (< 768px & < 480px)
    ========================================================================== */
 @media (max-width: 768px) {
+
   /* Header Mobile Compact Tuning */
   .bcom-util-btn,
   .bcom-currency-tag,
@@ -4826,32 +5004,39 @@ p {
   .bcom-list-prop-link {
     display: none !important;
   }
+
   .bcom-header-top {
     padding: 10px 0 !important;
   }
+
   .bcom-brand-logo-highlighted {
     padding: 4px 14px 4px 5px !important;
     gap: 10px !important;
   }
+
   .bcom-logo-emblem {
     width: 46px !important;
     height: 46px !important;
     padding: 3.5px !important;
   }
+
   .bcom-logo-text {
     font-size: 26px !important;
     font-weight: 900 !important;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     letter-spacing: -0.03em !important;
   }
+
   .bcom-logo-slogan {
     display: none !important;
   }
+
   .bcom-action-btn.wa-btn {
     padding: 7px 12px !important;
     font-size: 13px !important;
     border-radius: 12px !important;
   }
+
   .bcom-mobile-toggle {
     display: inline-flex !important;
     align-items: center !important;
@@ -4863,22 +5048,27 @@ p {
   .banner-one {
     padding: 35px 0 25px !important;
   }
+
   .banner-ota-links {
     margin-top: 14px !important;
     gap: 6px !important;
   }
+
   .banner-ota-pill {
     font-size: 11px !important;
     padding: 4px 8px !important;
   }
+
   .hero-residences-card {
     padding: 18px 14px !important;
     margin-top: 24px !important;
     border-radius: 12px !important;
   }
+
   .hero-room-option-item {
     padding: 10px 10px !important;
   }
+
   .hero-room-option-item img {
     width: 44px !important;
     height: 44px !important;
@@ -4886,30 +5076,37 @@ p {
 
   /* Site Footer Mobile Layout & Spacing */
   .site-footer-two {
-    padding: 44px 0 115px !important; /* Extra bottom clearance for fixed mobile bar */
+    padding: 44px 0 115px !important;
+    /* Extra bottom clearance for fixed mobile bar */
   }
+
   .site-footer-two__top {
     padding-bottom: 24px !important;
   }
+
   .footer-col {
     margin-bottom: 24px !important;
   }
+
   .site-footer-two .footer-widget-title {
     font-size: 17.5px !important;
     margin-bottom: 14px !important;
     padding-bottom: 8px !important;
   }
+
   .site-footer-two p {
     font-size: 13.5px !important;
     line-height: 1.65 !important;
     color: #ffffff !important;
   }
+
   .site-footer-two .footer-links-list li a {
     font-size: 13.5px !important;
     padding: 3px 0 !important;
     display: inline-block !important;
     color: #ffffff !important;
   }
+
   .site-footer-two .footer-wa-btn {
     width: 100% !important;
     justify-content: center !important;
@@ -4917,17 +5114,20 @@ p {
     padding: 12px 18px !important;
     font-size: 13.5px !important;
   }
+
   .site-footer-two__bottom {
     flex-direction: column !important;
     text-align: center !important;
     gap: 8px !important;
     padding-top: 18px !important;
   }
+
   .footer-bottom-left,
   .footer-bottom-right {
     text-align: center !important;
     width: 100% !important;
   }
+
   .footer-bottom-left p,
   .footer-bottom-right p {
     text-align: center !important;
@@ -4938,11 +5138,13 @@ p {
 }
 
 @media (max-width: 480px) {
+
   /* Extra Small Phone (< 480px) Room Card Action Stacking */
   .our-rooms-actions-row {
     flex-direction: column !important;
     gap: 8px !important;
   }
+
   .our-rooms-actions-row .btn-hotelux-room-wa,
   .our-rooms-actions-row .btn-hotelux-details {
     width: 100% !important;
@@ -4952,9 +5154,11 @@ p {
     padding: 11px 14px !important;
     font-size: 13px !important;
   }
+
   .bcom-subnav-strip {
     padding: 6px 0 !important;
   }
+
   .bcom-pill {
     padding: 6px 12px !important;
     font-size: 12px !important;
@@ -4992,6 +5196,7 @@ p {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -5093,6 +5298,7 @@ p {
 }
 
 @media (max-width: 768px) {
+
   .bcom-portal-switcher .bcom-portal-btn,
   .bcom-portal-switcher button {
     padding: 6px 12px !important;
@@ -5109,12 +5315,15 @@ p {
     align-items: center !important;
     gap: 8px !important;
   }
+
   .bcom-brand-logo {
     order: 1 !important;
   }
+
   .bcom-utility-row {
     order: 2 !important;
   }
+
   .bcom-portal-switcher {
     order: 3 !important;
     width: 100% !important;
@@ -5125,6 +5334,7 @@ p {
     border-radius: 20px !important;
     padding: 3px !important;
   }
+
   .bcom-portal-switcher .bcom-portal-btn,
   .bcom-portal-switcher button {
     flex: 1 !important;
@@ -5171,6 +5381,7 @@ p {
     align-items: stretch !important;
     gap: 16px !important;
   }
+
   .portal-switch-card .thm-btn {
     width: 100% !important;
     justify-content: center !important;
@@ -5241,20 +5452,42 @@ p {
 }
 
 @keyframes hostayyFloatOrb {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.45; }
-  50% { transform: translate3d(60px, 40px, 0) scale(1.15); opacity: 0.65; }
-  100% { transform: translate3d(-30px, 70px, 0) scale(0.95); opacity: 0.5; }
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate3d(60px, 40px, 0) scale(1.15);
+    opacity: 0.65;
+  }
+
+  100% {
+    transform: translate3d(-30px, 70px, 0) scale(0.95);
+    opacity: 0.5;
+  }
 }
 
 @keyframes hostayyFloatOrbAlt {
-  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.5; }
-  50% { transform: translate3d(-50px, -40px, 0) scale(1.12); opacity: 0.7; }
-  100% { transform: translate3d(40px, -60px, 0) scale(0.9); opacity: 0.45; }
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate3d(-50px, -40px, 0) scale(1.12);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate3d(40px, -60px, 0) scale(0.9);
+    opacity: 0.45;
+  }
 }
 
 /* 2. Delicate Architectural Background Grid Pattern */
 .luxury-grid-bg {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(254, 215, 170, 0.16) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(254, 215, 170, 0.16) 1px, transparent 1px);
   background-size: 52px 52px;
@@ -5286,15 +5519,31 @@ p {
 }
 
 @keyframes pulseDotGreen {
-  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
-  70% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(22, 163, 74, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
 }
 
 @keyframes pulseDotOrange {
-  0% { box-shadow: 0 0 0 0 rgba(234, 56, 76, 0.7); }
-  70% { box-shadow: 0 0 0 8px rgba(234, 56, 76, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(234, 56, 76, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(234, 56, 76, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(234, 56, 76, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(234, 56, 76, 0);
+  }
 }
 
 /* 4. Shimmering Gradient Top Accent on Cards (Positioned flush at top with perfect corner alignment) */
@@ -5325,6 +5574,7 @@ p {
 }
 
 @media (max-width: 768px) {
+
   .card-accent-bar-orange,
   .card-accent-bar-dark {
     position: absolute;
@@ -5337,8 +5587,13 @@ p {
 }
 
 @keyframes shimmerGradient {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 /* 5. Smooth Floating Badge */
@@ -5347,8 +5602,13 @@ p {
 }
 
 @keyframes badgeFloatAnim {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-4px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-4px);
+  }
 }
 
 /* 6. Rotating Compass Motif */
@@ -5358,8 +5618,13 @@ p {
 }
 
 @keyframes compassSubtleSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* 7. Animated Performance Marquee / Ticker Strip */
@@ -5389,8 +5654,13 @@ p {
 }
 
 @keyframes tickerSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* 8. Showcase Smooth Reveal Animation */
@@ -5403,6 +5673,7 @@ p {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -5462,6 +5733,7 @@ p {
     opacity: 0;
     transform: translateY(14px) scale(0.99);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -5484,6 +5756,7 @@ p {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -5494,6 +5767,7 @@ p {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -5504,6 +5778,7 @@ p {
     opacity: 0;
     transform: translateX(-24px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -5515,6 +5790,7 @@ p {
     opacity: 0;
     transform: translateY(-10px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -5533,9 +5809,18 @@ p {
 .bcom-mobile-drawer .bcom-mobile-links a {
   animation: bcomMenuItemSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both !important;
 }
-.bcom-mobile-drawer .bcom-mobile-links a:nth-child(1) { animation-delay: 0.08s !important; }
-.bcom-mobile-drawer .bcom-mobile-links a:nth-child(2) { animation-delay: 0.12s !important; }
-.bcom-mobile-drawer .bcom-mobile-links a:nth-child(3) { animation-delay: 0.16s !important; }
+
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(1) {
+  animation-delay: 0.08s !important;
+}
+
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(2) {
+  animation-delay: 0.12s !important;
+}
+
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(3) {
+  animation-delay: 0.16s !important;
+}
 
 .bcom-mobile-drawer .bcom-mobile-actions {
   animation: bcomMenuItemSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both !important;
@@ -5585,10 +5870,12 @@ p {
 .bcom-dropdown-stay-item {
   transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
+
 .bcom-dropdown-stay-item:hover {
   background: #fff1f2 !important;
   transform: translateX(4px) !important;
 }
+
 .bcom-dropdown-stay-item:active {
   transform: scale(0.98) !important;
 }
@@ -5660,9 +5947,11 @@ p {
     -ms-overflow-style: none !important;
     scroll-behavior: smooth !important;
   }
+
   .patron-metrics-row::-webkit-scrollbar {
     display: none !important;
   }
+
   .patron-metric-box {
     flex: 0 0 76% !important;
     min-width: 220px !important;
@@ -5816,9 +6105,11 @@ p {
   .contact-tab-full {
     display: none !important;
   }
+
   .contact-tab-compact {
     display: inline !important;
   }
+
   .contact-tab-btn {
     padding: 9px 8px !important;
     font-size: 12.5px !important;
@@ -5842,6 +6133,7 @@ p {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -5853,6 +6145,7 @@ p {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -5878,13 +6171,72 @@ p {
     padding-bottom: 10px !important;
     scrollbar-width: none !important;
   }
+
   .hostayy-pillars-strip::-webkit-scrollbar {
     display: none !important;
   }
-  .hostayy-pillars-strip > div {
+
+  .hostayy-pillars-strip>div {
     flex: 0 0 160px !important;
     scroll-snap-align: start !important;
   }
 }
 
+/* ==========================================================================
+   HOSTAYY SPLASH SCREEN TRANSITIONS (APP LAUNCH ON WHITE PAGE)
+   ========================================================================== */
+@keyframes hostayySplashPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
 
+@keyframes hostayyLogoPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 14px 40px rgba(234, 56, 76, 0.2), 0 2px 10px rgba(0, 0, 0, 0.04);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 18px 50px rgba(234, 56, 76, 0.32), 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@keyframes hostayyAuraPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes hostayyProgressFill {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 65%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.hostayy-splash-overlay {
+  will-change: opacity, transform, filter;
+}
+
+.hostayy-splash-overlay.splash-fade-out {
+  opacity: 0 !important;
+  transform: scale(1.03) !important;
+  filter: blur(4px) !important;
+  pointer-events: none !important;
+}
