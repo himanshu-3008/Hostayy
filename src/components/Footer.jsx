@@ -22,7 +22,6 @@ export default function Footer({ onSelectStay }) {
                 </div>
                 <div className="brand-text-hotelux">
                   <h2 style={{ color: '#ffffff', fontWeight: 800, margin: 0, fontSize: '24px' }}>hostayy</h2>
-                  <span className="brand-slogan" style={{ color: '#fecdd3', fontWeight: 600, fontSize: '12px' }}>(feel like home)</span>
                 </div>
               </Link>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#ffffff', marginBottom: '18px', fontWeight: 400 }}>

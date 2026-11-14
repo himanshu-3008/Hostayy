@@ -56,21 +56,18 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
         <div className="container">
           <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
             
-            {/* Left: Hostayy Logo */}
-            <Link href="/" className="bcom-brand-logo" aria-label="Hostayy.com" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-              <div className="bcom-logo-emblem" style={{ width: '38px', height: '38px', borderRadius: '50%', background: '#ffffff', padding: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+            {/* Left: Hostayy Logo (Enlarged, lowercase 'hostayy', without .com or slogan) */}
+            <Link href="/" className="bcom-brand-logo" aria-label="Hostayy" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+              <div className="bcom-logo-emblem" style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#ffffff', padding: '5px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 3px 12px rgba(0,0,0,0.2)', flexShrink: 0 }}>
                 <img 
                   src="/assets/images/hostayy-logo-transparent.png" 
                   alt="Hostayy Logo" 
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
-              <div className="bcom-logo-text-wrap" style={{ lineHeight: 1.15 }}>
-                <span className="bcom-logo-text" style={{ fontSize: '25px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif' }}>
-                  Hostayy<span className="bcom-logo-dot" style={{ color: '#fecdd3' }}>.com</span>
-                </span>
-                <span className="bcom-logo-slogan" style={{ display: 'block', fontSize: '11px', color: '#ffffff', fontStyle: 'italic', fontWeight: 500, opacity: 0.9 }}>
-                  (feel like home)
+              <div className="bcom-logo-text-wrap" style={{ lineHeight: 1 }}>
+                <span className="bcom-logo-text" style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif', textTransform: 'lowercase' }}>
+                  hostayy
                 </span>
               </div>
             </Link>

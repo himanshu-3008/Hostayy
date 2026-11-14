@@ -18,7 +18,7 @@ export const metadata = {
   },
   openGraph: {
     title: "Hostayy — 1, 2 & 3 BHK Serviced Apartments Near Yashobhoomi (IICC) Dwarka",
-    description: "Feel like home in Delhi NCR. Fully furnished 1, 2, and 3 BHK serviced apartments for long-term and monthly corporate stays near Yashobhoomi IICC and IGI Airport.",
+    description: "Premium serviced residences in Delhi NCR. Fully furnished 1, 2, and 3 BHK serviced apartments for long-term and monthly corporate stays near Yashobhoomi IICC and IGI Airport.",
     url: "https://hostayy.com",
     siteName: "Hostayy",
     images: [

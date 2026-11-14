@@ -5,7 +5,7 @@ import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
 
 export default function BrandBannerSection() {
   const handleWhatsAppInquiry = () => {
-    const msg = "Hi Hostayy, I love the '(feel like home)' philosophy. I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
+    const msg = "Hi Hostayy, I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
     window.open(getHostayyWhatsAppLink(msg), '_blank');
   };
 
@@ -50,7 +50,7 @@ export default function BrandBannerSection() {
             >
               <img 
                 src="/assets/images/hostayy-banner.png" 
-                alt="Hostayy (feel like home) Brand Banner" 
+                alt="Hostayy Brand Banner" 
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -81,7 +81,7 @@ export default function BrandBannerSection() {
                 style={{ width: '22px', height: '22px', objectFit: 'contain' }}
               />
               <span style={{ fontSize: '13px', fontWeight: 700, color: '#191628', letterSpacing: '0.04em' }}>
-                hostayy <span style={{ color: '#FF4D4D', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</span>
+                hostayy
               </span>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function BrandBannerSection() {
               </div>
               <h2 className="section-title__title brand-experience-title" style={{ lineHeight: '1.25' }}>
                 Every Stay Should Truly <br />
-                <span>Feel Like Home.</span>
+                <span>Deliver Exceptional Comfort.</span>
               </h2>
             </div>
 

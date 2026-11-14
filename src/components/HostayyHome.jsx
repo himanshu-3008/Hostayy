@@ -133,7 +133,7 @@ export default function HostayyHome() {
                     }}
                   >
                     <span className="pulse-dot"></span>
-                    FEEL LIKE HOME &bull; PRIME DWARKA SECTOR 23 NEAR YASHOBHOOMI (IICC)
+                    PRIME DWARKA SECTOR 23 NEAR YASHOBHOOMI (IICC)
                   </span>
                 </div>
 
@@ -407,7 +407,8 @@ export default function HostayyHome() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     boxShadow: '0 12px 36px rgba(234, 56, 76, 0.08)',
-                    position: 'relative'
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
                   <div className="card-accent-bar-orange"></div>
@@ -542,7 +543,8 @@ export default function HostayyHome() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     boxShadow: '0 12px 36px rgba(234, 56, 76, 0.08)',
-                    position: 'relative'
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
                   <div className="card-accent-bar-dark"></div>

@@ -3832,40 +3832,37 @@ p {
 }
 
 .bcom-logo-emblem {
-  width: 38px;
-  height: 38px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #ffffff;
-  padding: 4px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
 .bcom-logo-text-wrap {
-  line-height: 1.15;
+  line-height: 1;
 }
 
 .bcom-logo-text {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.03em;
   font-family: var(--hotelux-font-two), sans-serif;
+  text-transform: lowercase;
 }
 
 .bcom-logo-dot {
-  color: #fecdd3;
+  display: none !important;
 }
 
 .bcom-logo-slogan {
-  display: block;
-  font-size: 11px;
-  color: #cbd5e1;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  display: none !important;
 }
 
 .bcom-utility-row {
@@ -4715,15 +4712,15 @@ p {
     padding: 8px 0 !important;
   }
   .bcom-logo-emblem {
-    width: 34px !important;
-    height: 34px !important;
-    padding: 3px !important;
+    width: 42px !important;
+    height: 42px !important;
+    padding: 4px !important;
   }
   .bcom-logo-text {
-    font-size: 21px !important;
+    font-size: 24px !important;
   }
   .bcom-logo-slogan {
-    font-size: 10px !important;
+    display: none !important;
   }
   .bcom-action-btn.register-btn {
     padding: 6px 12px !important;
@@ -5045,6 +5042,8 @@ p {
    ========================================================================== */
 .portal-decision-card {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
 .portal-decision-card:hover {
@@ -5156,29 +5155,42 @@ p {
   100% { box-shadow: 0 0 0 0 rgba(234, 56, 76, 0); }
 }
 
-/* 4. Shimmering Gradient Top Accent on Cards */
+/* 4. Shimmering Gradient Top Accent on Cards (Positioned flush at top with perfect corner alignment) */
 .card-accent-bar-orange {
-  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
   background: linear-gradient(90deg, #ea384c 0%, #fda4af 50%, #ea384c 100%);
   background-size: 200% 100%;
   animation: shimmerGradient 4s linear infinite;
-  border-radius: 20px 20px 0 0;
-  margin: -36px -30px 24px;
+  z-index: 2;
+  margin: 0;
 }
 
 .card-accent-bar-dark {
-  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
   background: linear-gradient(90deg, #111827 0%, #ea384c 50%, #111827 100%);
   background-size: 200% 100%;
   animation: shimmerGradient 4s linear infinite;
-  border-radius: 20px 20px 0 0;
-  margin: -36px -30px 24px;
+  z-index: 2;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .card-accent-bar-orange,
   .card-accent-bar-dark {
-    margin: -24px -20px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    margin: 0 !important;
   }
 }
 

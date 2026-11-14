@@ -1,6 +1,6 @@
 # Hostayy — 1, 2 & 3 BHK Serviced Apartments & Turnkey Hospitality
 
-> **"(feel like home)"** — Fully furnished 1, 2, and 3 BHK serviced apartments located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3), Dwarka, New Delhi.
+> Fully furnished 1, 2, and 3 BHK serviced apartments located 3 to 10 minutes from Yashobhoomi (IICC) Convention Centre and IGI Airport (T3), Dwarka, New Delhi.
 
 ---
 

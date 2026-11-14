@@ -54,7 +54,7 @@ export default function Hero({ onSelectStay }) {
                     />
                   </div>
                   <span style={{ fontSize: '12.5px', color: '#ea384c', fontWeight: 700 }}>
-                    hostayy <em style={{ color: '#c41c33', fontStyle: 'italic', fontWeight: 600 }}>(feel like home)</em> &bull; Instant Flat Booking &bull; 0% Brokerage
+                    hostayy &bull; Instant Flat Booking &bull; 0% Brokerage
                   </span>
                 </div>
 
