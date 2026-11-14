@@ -59,10 +59,10 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
   };
 
   return (
-    <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea384c', position: 'relative' }}>
-      {/* Faded Luxury Calendar Watermark Across Entire Header Bar */}
+    <header className="bcom-header" id="booking-header" style={{ position: 'relative', backgroundColor: '#940e1f' }}>
+      {/* Stylish Global Travel World Map & Radar Network in Coral Red (Matching Reference Photo) */}
       <div 
-        className="bcom-header-calendar-bg" 
+        className="bcom-header-stylish-bg" 
         aria-hidden="true" 
         style={{
           position: 'absolute',
@@ -70,11 +70,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url('/assets/images/header-calendar-pattern.svg')`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '260px 130px',
-          backgroundPosition: 'center top',
-          opacity: 0.15,
+          backgroundImage: `url('/assets/images/header-worldmap-bg.svg')`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.96,
           pointerEvents: 'none',
           zIndex: 0
         }}
@@ -233,36 +233,54 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 Book Flat
               </Link>
 
-              {/* Direct WhatsApp Concierge CTA */}
+              {/* Direct WhatsApp Concierge CTA with Stylish Boundary */}
               <a 
                 href={getGuestWhatsAppLink({ message: "Hello hostayy, I want to book a serviced flat near Yashobhoomi IICC with hostayy." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-action-btn wa-btn"
                 title="Chat with hostayy on WhatsApp"
-                style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 14px', borderRadius: '12px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                style={{ 
+                  background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)', 
+                  color: '#ffffff', 
+                  fontWeight: 800, 
+                  padding: '7px 16px', 
+                  borderRadius: '24px', 
+                  border: '1.5px solid rgba(255, 255, 255, 0.85)',
+                  boxShadow: '0 3px 12px rgba(0, 0, 0, 0.25), 0 0 10px rgba(34, 197, 94, 0.4)',
+                  textDecoration: 'none', 
+                  fontSize: '13.5px', 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '7px',
+                  transition: 'all 0.25s ease'
+                }}
               >
-                <i className="fa-brands fa-whatsapp"></i>
+                <i className="fa-brands fa-whatsapp" style={{ fontSize: '15px' }}></i>
                 <span className="d-none-sm">WhatsApp</span>
               </a>
 
-              {/* Mobile Hamburger Toggle */}
+              {/* Mobile Hamburger Toggle with Stylish Boundary Capsule */}
               <button 
                 type="button" 
                 className="bcom-mobile-toggle"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle navigation menu"
                 style={{ 
-                  background: 'transparent', 
-                  border: 'none', 
+                  background: 'rgba(255, 255, 255, 0.18)', 
+                  border: '1.5px solid rgba(255, 255, 255, 0.85)', 
+                  borderRadius: '10px',
+                  boxShadow: '0 3px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.35)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   color: '#ffffff', 
-                  fontSize: '24px', 
+                  fontSize: '19px', 
                   cursor: 'pointer', 
-                  padding: '6px 8px', 
-                  display: 'flex', 
+                  padding: '7px 11px', 
+                  display: 'inline-flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  transition: 'transform 0.25s ease'
+                  transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
               >
                 <i 
