@@ -56,11 +56,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
         <div className="container">
           <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
             
-            {/* Left: Hostayy Logo (Highlighted Luxury Capsule, Crisp Wordmark) */}
+            {/* Left: hostayy Logo (Highlighted Luxury Capsule, Crisp Wordmark) */}
             <Link 
               href="/" 
               className="bcom-brand-logo bcom-brand-logo-highlighted" 
-              aria-label="Hostayy" 
+              aria-label="hostayy" 
               style={{ 
                 display: 'inline-flex', 
                 alignItems: 'center', 
@@ -92,7 +92,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               >
                 <img 
                   src="/assets/images/hostayy-logo-transparent.png" 
-                  alt="Hostayy Logo" 
+                  alt="hostayy Logo" 
                   style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.1)' }}
                 />
               </div>
@@ -135,7 +135,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               <Link
                 href="/list-property"
                 className={`bcom-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
-                title="List your apartment with Hostayy Patron for guaranteed rental yields"
+                title="List your apartment with hostayy Patron for guaranteed rental yields"
                 role="tab"
                 aria-selected={currentPage === 'listing'}
                 style={{ 
@@ -151,11 +151,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
             {/* Right: Actions, Direct WhatsApp & Mobile Menu */}
             <div className="bcom-utility-row" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              {/* Toggle to Property Listing (Hostayy Patron) - Desktop */}
+              {/* Toggle to Property Listing (hostayy Patron) - Desktop */}
               <Link 
                 href="/list-property"
                 className="bcom-list-prop-link d-none-mobile"
-                title="List your apartment with Hostayy Patron"
+                title="List your apartment with hostayy Patron"
                 style={{ background: 'transparent', color: '#ffffff', fontSize: '13.5px', fontWeight: 700, textDecoration: 'none', padding: '6px 14px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.45)' }}
               >
                 <span>List your property</span>
@@ -173,11 +173,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
               {/* Direct WhatsApp Concierge CTA */}
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to book a serviced flat near Yashobhoomi IICC with Hostayy." })}
+                href={getGuestWhatsAppLink({ message: "Hello hostayy, I want to book a serviced flat near Yashobhoomi IICC with hostayy." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-action-btn wa-btn"
-                title="Chat with Hostayy on WhatsApp"
+                title="Chat with hostayy on WhatsApp"
                 style={{ background: '#16a34a', color: '#ffffff', fontWeight: 700, padding: '7px 14px', borderRadius: '12px', textDecoration: 'none', fontSize: '13.5px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
               >
                 <i className="fa-brands fa-whatsapp"></i>
@@ -225,7 +225,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   }}
                 >
                   <i className="fa-solid fa-house-chimney"></i>
-                  <span>About Hostayy</span>
+                  <span>About hostayy</span>
                 </Link>
 
                 <Link 
@@ -519,7 +519,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bcom-pill"
-                  title="Official Physical Address: Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077"
+                  title="Official Physical Address: hostayy, Block A, Dwarka Sector 23, New Delhi - 110077"
                   style={{
                     color: '#fecdd3',
                     border: '1px solid rgba(255, 255, 255, 0.35)',
@@ -607,7 +607,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   }}
                 >
                   <i className="fa-solid fa-house-chimney-user"></i>
-                  <span>Hostayy Patron</span>
+                  <span>hostayy Patron</span>
                 </a>
 
                 <a 
@@ -744,7 +744,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
             <div className="bcom-mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '22px' }}>
               <Link href="/" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                <i className="fa-solid fa-house" style={{ marginRight: '10px', width: '20px' }}></i> Home (About Hostayy)
+                <i className="fa-solid fa-house" style={{ marginRight: '10px', width: '20px' }}></i> Home (About hostayy)
               </Link>
               <Link href="/book" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                 <i className="fa-solid fa-bed" style={{ marginRight: '10px', width: '20px' }}></i> Book Serviced Flats
@@ -785,7 +785,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
             <div className="bcom-mobile-actions" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to inquire about Hostayy serviced residences / listing my property." })}
+                href={getGuestWhatsAppLink({ message: "Hello hostayy, I want to inquire about hostayy serviced residences / listing my property." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bcom-drawer-btn wa-drawer-btn"

@@ -71,7 +71,7 @@ export default function PatronSection() {
           </div>
 
           <h2 className="patron-hero-title" style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, lineHeight: 1.25, margin: '14px 0 16px', color: '#ffffff' }}>
-            Partner Your Apartment With Hostayy <br />
+            Partner Your Apartment With hostayy <br />
             <span style={{ color: '#fecdd3' }}>Earn Up to 2.5x Higher Rental Income</span>
           </h2>
 
@@ -122,7 +122,7 @@ export default function PatronSection() {
           </div>
         </div>
 
-        {/* 4 Core Pillars of Hostayy Patron */}
+        {/* 4 Core Pillars of hostayy Patron */}
         <div className="patron-pillars-header">
           <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>WHY PROPERTY OWNERS CHOOSE HOSTAYY PATRON</span>
           <h3 style={{ color: '#111827', fontWeight: 800 }}>Engineered to Maximize Returns While Protecting Your Asset</h3>
@@ -189,7 +189,7 @@ export default function PatronSection() {
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
               <div className="step-num-badge" style={{ background: '#ea384c', color: '#ffffff', width: '42px', height: '42px', fontSize: '18px' }}>02</div>
               <h4 style={{ color: '#111827', fontWeight: 800 }}>Free On-Site Audit &amp; Projection</h4>
-              <p style={{ color: '#374151' }}>The Hostayy Hospitality team conducts a personalized property audit and provides an exact revenue feasibility report.</p>
+              <p style={{ color: '#374151' }}>The hostayy Hospitality team conducts a personalized property audit and provides an exact revenue feasibility report.</p>
             </div>
 
             <div className="patron-step-card luxury-glass-card" style={{ borderRadius: '14px', padding: '26px 22px' }}>
@@ -200,11 +200,11 @@ export default function PatronSection() {
           </div>
         </div>
 
-        {/* Traditional 11-Month Lease vs Hostayy Patron Comparison Table */}
+        {/* Traditional 11-Month Lease vs hostayy Patron Comparison Table */}
         <div className="patron-comparison-wrap" id="comparison">
           <div className="patron-pillars-header text-center" style={{ marginBottom: '24px' }}>
             <span className="section-title__tagline" style={{ color: '#ea384c', fontWeight: 800 }}>PERFORMANCE BENCHMARK</span>
-            <h3 style={{ color: '#111827', fontWeight: 800 }}>Traditional 11-Month Lease vs. Hostayy Patron Partnership</h3>
+            <h3 style={{ color: '#111827', fontWeight: 800 }}>Traditional 11-Month Lease vs. hostayy Patron Partnership</h3>
           </div>
 
           {/* Swipe indicator pill for mobile view */}
@@ -231,7 +231,7 @@ export default function PatronSection() {
                 <div className="compare-cell" style={{ color: '#ffffff', fontWeight: 800 }}>Operational Dimension</div>
                 <div className="compare-cell without" style={{ color: '#ffffff', fontWeight: 800 }}>Traditional 11-Month Tenant Lease</div>
                 <div className="compare-cell with" style={{ color: '#ffffff', fontWeight: 800, background: 'rgba(0, 0, 0, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
-                  <span>Hostayy Patron Partnership</span>
+                  <span>hostayy Patron Partnership</span>
                   <span style={{ fontSize: '10px', background: '#ffffff', color: '#ea384c', padding: '3px 8px', borderRadius: '10px', fontWeight: 800, whiteSpace: 'nowrap' }}>★ RECOMMENDED</span>
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function PatronSection() {
                 Unlimited Personal Stays for Property Owners
               </h4>
               <p style={{ margin: '4px 0 0', fontSize: '13.5px', color: '#374151' }}>
-                Visiting Delhi with your family? Enjoy free personal stays in your own apartment anytime it isn't booked. Simply message Hostayy on WhatsApp to block your dates.
+                Visiting Delhi with your family? Enjoy free personal stays in your own apartment anytime it isn't booked. Simply message hostayy on WhatsApp to block your dates.
               </p>
             </div>
           </div>

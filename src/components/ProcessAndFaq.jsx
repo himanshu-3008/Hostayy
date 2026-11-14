@@ -9,7 +9,7 @@ export default function ProcessAndFaq() {
     {
       num: '01',
       title: 'Consultation & Feasibility',
-      desc: 'Hostayy conducts an on-site evaluation of your apartment or estate in Delhi NCR, reviews Yashobhoomi and corporate demand trends, and provides a clear monthly revenue projection.'
+      desc: 'hostayy conducts an on-site evaluation of your apartment or estate in Delhi NCR, reviews Yashobhoomi and corporate demand trends, and provides a clear monthly revenue projection.'
     },
     {
       num: '02',
@@ -25,11 +25,11 @@ export default function ProcessAndFaq() {
 
   const faqs = [
     {
-      q: 'How close are Hostayy serviced residences to Yashobhoomi (IICC)?',
+      q: 'How close are hostayy serviced residences to Yashobhoomi (IICC)?',
       a: 'All our residences are located in Dwarka Sector 23, situated just 3 to 5 minutes by car or short walk from Yashobhoomi (IICC - India International Convention & Expo Centre) in Sector 25, and only 10 minutes from IGI Airport Terminal 3.'
     },
     {
-      q: 'Are Hostayy apartments available for monthly and long-term corporate leases?',
+      q: 'Are hostayy apartments available for monthly and long-term corporate leases?',
       a: 'Yes! We specialize in flexible monthly, multi-month, and annual corporate leases for 1, 2, and 3 BHK apartments. All-inclusive quotations cover modular kitchen appliances, 300 Mbps mesh Wi-Fi, regular housekeeping, power backup, and utility management with zero brokerage.'
     },
     {
@@ -42,7 +42,7 @@ export default function ProcessAndFaq() {
     },
     {
       q: 'How do I request a custom long-stay quotation?',
-      a: 'Simply click "Request Long-Stay Quote" on any residence or message Hostayy on WhatsApp at +91 9217680108 with your move-in date, expected duration, and team size. We share real-time quotations, floor layouts, and photos within minutes.'
+      a: 'Simply click "Request Long-Stay Quote" on any residence or message hostayy on WhatsApp at +91 9217680108 with your move-in date, expected duration, and team size. We share real-time quotations, floor layouts, and photos within minutes.'
     }
   ];
 
@@ -83,7 +83,7 @@ export default function ProcessAndFaq() {
               Frequently Asked Questions
             </h3>
             <p className="section-subtitle" style={{ color: 'var(--hotelux-gray)', fontSize: '15px' }}>
-              Everything you need to know about reserving a 1, 2, or 3 BHK residence near Yashobhoomi or partnering your property with Hostayy.
+              Everything you need to know about reserving a 1, 2, or 3 BHK residence near Yashobhoomi or partnering your property with hostayy.
             </p>
           </div>
 

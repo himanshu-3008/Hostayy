@@ -62,7 +62,7 @@ export default function ServicesSection() {
               </h2>
             </div>
             <p className="services-two__text-1" style={{ fontSize: '15px', color: '#374151', lineHeight: '1.75' }}>
-              Hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Experience fully serviced 1, 2, and 3 BHK residences with complete home comfort, five-star hotel hygiene, and 0% brokerage.
+              hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Experience fully serviced 1, 2, and 3 BHK residences with complete home comfort, five-star hotel hygiene, and 0% brokerage.
             </p>
 
             {/* Quick Benefits Bullet Points */}
@@ -83,7 +83,7 @@ export default function ServicesSection() {
 
             <div style={{ marginTop: '20px' }}>
               <a 
-                href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'd like to request a long-term corporate / monthly serviced stay proposal near Yashobhoomi." })}
+                href={getGuestWhatsAppLink({ message: "Hello hostayy, I'd like to request a long-term corporate / monthly serviced stay proposal near Yashobhoomi." })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="thm-btn thm-btn-wa"

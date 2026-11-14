@@ -49,7 +49,7 @@ export default function Comparison() {
             <span className="section-title__tagline">Performance Comparison</span>
           </div>
           <h2 className="section-title__title title-animation">
-            Traditional Leasing versus <span>Hostayy Partnership</span>
+            Traditional Leasing versus <span>hostayy Partnership</span>
           </h2>
           <p style={{ maxWidth: '680px', margin: '15px auto 0', color: 'var(--hotelux-gray)', fontSize: '15.5px', lineHeight: '1.7' }}>
             See how turnkey hospitality outperforms traditional 11-month tenant leases and unmanaged vacation rentals in Delhi NCR.
@@ -62,7 +62,7 @@ export default function Comparison() {
             <div className="compare-row head">
               <div className="compare-cell">Core Operational Dimension</div>
               <div className="compare-cell without">Traditional Lease / Self-Managing</div>
-              <div className="compare-cell with">Turnkey Hostayy Management</div>
+              <div className="compare-cell with">Turnkey hostayy Management</div>
             </div>
 
             {comparisonRows.map((row, idx) => (

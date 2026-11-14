@@ -18,7 +18,7 @@ export default function ListingPageContent() {
       <Navbar activePage="listing" />
 
       <main>
-        {/* Hostayy Patron - All About Listing Property on the Platform */}
+        {/* hostayy Patron - All About Listing Property on the Platform */}
         <PatronSection />
 
         {/* Landlord Onboarding Process & FAQs */}

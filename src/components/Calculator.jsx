@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, gethostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function Calculator() {
   const [activeTab, setActiveTab] = useState('calc');
@@ -24,7 +24,7 @@ export default function Calculator() {
       location: "Delhi NCR / Dwarka",
       propertyType: bhkType,
       monthlyYield: `Est. Gross: ₹${estMonthlyGross.toLocaleString('en-IN')}/mo (Net Payout: ₹${netOwnerPayout.toLocaleString('en-IN')}/mo)`,
-      message: `Projected Annual Net Payout: ₹${annualNet.toLocaleString('en-IN')}/yr. I would like an official feasibility assessment to partner my property with Hostayy.`
+      message: `Projected Annual Net Payout: ₹${annualNet.toLocaleString('en-IN')}/yr. I would like an official feasibility assessment to partner my property with hostayy.`
     }), '_blank');
   };
 
@@ -155,7 +155,7 @@ export default function Calculator() {
                   onClick={sendYieldToWhatsApp}
                 >
                   <i className="fa-brands fa-whatsapp"></i>
-                  <span>Send Projection &amp; Discuss Partnership with Hostayy</span>
+                  <span>Send Projection &amp; Discuss Partnership with hostayy</span>
                 </button>
               </div>
             )}

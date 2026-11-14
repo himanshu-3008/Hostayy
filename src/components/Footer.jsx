@@ -16,13 +16,13 @@ export default function Footer({ onSelectStay }) {
                 <div className="brand-emblem-wrap" style={{ backgroundColor: '#ffffff', borderRadius: '50%', padding: '4px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.85), 0 4px 16px rgba(0, 0, 0, 0.4)' }}>
                   <img 
                     src="/assets/images/hostayy-logo-transparent.png" 
-                    alt="Hostayy Logo" 
+                    alt="hostayy Logo" 
                     className="brand-logo-img"
                     style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.08)' }}
                   />
                 </div>
                 <div className="brand-text-hotelux">
-                  <h2 style={{ color: '#ffffff', fontWeight: 900, margin: 0, fontSize: '26px', letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>hostayy</h2>
+                  <h2 style={{ color: '#ffffff', fontWeight: 900, margin: 0, fontSize: '26px', letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.5)', textTransform: 'lowercase' }}>hostayy</h2>
                 </div>
               </Link>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#ffffff', marginBottom: '18px', fontWeight: 400 }}>
@@ -42,9 +42,9 @@ export default function Footer({ onSelectStay }) {
             <div className="col-12 col-md-6 col-lg-2 col-xl-2 footer-col" style={{ marginBottom: '28px' }}>
               <h4 className="footer-widget-title" style={{ color: '#ffffff', fontWeight: 700 }}>Pages &amp; Portals</h4>
               <ul className="footer-links-list">
-                <li><Link href="/" style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>About Hostayy (Home)</Link></li>
+                <li><Link href="/" style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>About hostayy (Home)</Link></li>
                 <li><Link href="/book" style={{ color: '#fecdd3', fontWeight: 700, textDecoration: 'none' }}>Book Serviced Flats &rarr;</Link></li>
-                <li><Link href="/list-property" style={{ color: '#ea384c', fontWeight: 700, textDecoration: 'none' }}>Hostayy Patron (List Property) &rarr;</Link></li>
+                <li><Link href="/list-property" style={{ color: '#ea384c', fontWeight: 700, textDecoration: 'none' }}>hostayy Patron (List Property) &rarr;</Link></li>
                 <li><a href={`https://maps.google.com/?q=${encodeURIComponent(HOSTAYY_CONFIG.address)}`} target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>Dwarka Sector 23 Map</a></li>
                 <li><a href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} style={{ color: '#ffffff', fontWeight: 500, textDecoration: 'none' }}>Concierge Hotline</a></li>
               </ul>
@@ -104,7 +104,7 @@ export default function Footer({ onSelectStay }) {
 
               <div style={{ marginTop: '16px' }}>
                 <a 
-                  href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'm reaching out from the website footer to inquire about monthly stay rates near Yashobhoomi." })}
+                  href={getGuestWhatsAppLink({ message: "Hello hostayy, I'm reaching out from the website footer to inquire about monthly stay rates near Yashobhoomi." })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="thm-btn footer-wa-btn"
@@ -123,12 +123,12 @@ export default function Footer({ onSelectStay }) {
           <div className="row" style={{ alignItems: 'center', width: '100%', margin: 0 }}>
             <div className="col-12 col-md-6 footer-bottom-left" style={{ padding: 0 }}>
               <p style={{ margin: 0, fontSize: '12.5px', color: '#ffffff', fontWeight: 500, lineHeight: 1.6 }}>
-                &copy; {new Date().getFullYear()} Hostayy Hospitality. All rights reserved. Serviced Apartments near Yashobhoomi IICC &amp; Delhi NCR.
+                &copy; {new Date().getFullYear()} hostayy Hospitality. All rights reserved. Serviced Apartments near Yashobhoomi IICC &amp; Delhi NCR.
               </p>
             </div>
             <div className="col-12 col-md-6 footer-bottom-right" style={{ padding: 0 }}>
               <p style={{ margin: 0, fontSize: '12.5px', color: '#ffffff', fontWeight: 500, lineHeight: 1.6 }}>
-                Managed by Hostayy Hospitality &bull; Zero Brokerage Guarantee
+                Managed by hostayy Hospitality &bull; Zero Brokerage Guarantee
               </p>
             </div>
           </div>

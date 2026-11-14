@@ -14,7 +14,7 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
         <Link 
           href="/" 
           className={`mobile-bar-item ${currentPage === 'home' ? 'active-bar-tab' : ''}`}
-          title="Hostayy Home"
+          title="hostayy Home"
           style={{ textDecoration: 'none' }}
         >
           <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'home' ? '#ea384c' : '#f3f4f6', color: currentPage === 'home' ? '#ffffff' : '#111827' }}>
@@ -44,7 +44,7 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
         <Link 
           href="/list-property"
           className={`mobile-bar-item owner-action ${currentPage === 'listing' ? 'active-bar-tab' : ''}`}
-          title="List Property with Hostayy Patron"
+          title="List Property with hostayy Patron"
           style={{ textDecoration: 'none' }}
         >
           <div className="mobile-bar-icon" style={{ backgroundColor: currentPage === 'listing' ? '#ea384c' : '#f3f4f6', color: currentPage === 'listing' ? '#ffffff' : '#111827' }}>
@@ -59,7 +59,7 @@ export default function MobileBottomBar({ activePage = 'home', portalMode }) {
         <a 
           href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
           className="mobile-bar-item call-action"
-          title="Direct Call to Hostayy Concierge"
+          title="Direct Call to hostayy Concierge"
           style={{ textDecoration: 'none' }}
         >
           <div className="mobile-bar-icon" style={{ backgroundColor: '#f3f4f6', color: '#111827' }}>

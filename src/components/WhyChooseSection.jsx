@@ -6,7 +6,7 @@ import { HOSTAYY_CONFIG, getGuestWhatsAppLink } from '../data/properties';
 export default function WhyChooseSection() {
   const handleConsultation = () => {
     window.open(getGuestWhatsAppLink({
-      message: "Hello Hostayy, I'm exploring long-term serviced apartments near Yashobhoomi IICC. I'd love to learn more about Hostayy's 1, 2, and 3 BHK residences."
+      message: "Hello hostayy, I'm exploring long-term serviced apartments near Yashobhoomi IICC. I'd love to learn more about hostayy's 1, 2, and 3 BHK residences."
     }), '_blank');
   };
 
@@ -36,7 +36,7 @@ export default function WhyChooseSection() {
                 </h2>
               </div>
               <p className="why-choose-one__text" style={{ fontSize: '15.5px', lineHeight: '1.8', color: '#374151', marginBottom: '24px' }}>
-                Located in prime Dwarka Sector 23, Hostayy provides turnkey 1, 2, and 3 BHK serviced residences engineered for corporate executives, exhibition delegates, and relocating families seeking extended stays without hotel constraints.
+                Located in prime Dwarka Sector 23, hostayy provides turnkey 1, 2, and 3 BHK serviced residences engineered for corporate executives, exhibition delegates, and relocating families seeking extended stays without hotel constraints.
               </p>
 
               <ul className="why-choose-one__list list-unstyled" style={{ listStyle: 'none', padding: 0, margin: '0 0 24px' }}>
@@ -202,7 +202,7 @@ export default function WhyChooseSection() {
               >
                 <div>
                   <h4 style={{ margin: '0 0 3px', color: '#ffffff', fontSize: '16px', fontWeight: 800 }}>
-                    Hostayy Hospitality &bull; Concierge
+                    hostayy Hospitality &bull; Concierge
                   </h4>
                   <p style={{ margin: 0, fontSize: '12.5px', color: '#fff1f2', fontWeight: 600 }}>
                     4.98 ★ Superhost &bull; Serving Yashobhoomi Delegates &amp; Expats

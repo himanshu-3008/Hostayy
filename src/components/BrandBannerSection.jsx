@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { HOSTAYY_CONFIG, getHostayyWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, gethostayyWhatsAppLink } from '../data/properties';
 
 export default function BrandBannerSection() {
   const handleWhatsAppInquiry = () => {
-    const msg = "Hi Hostayy, I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
-    window.open(getHostayyWhatsAppLink(msg), '_blank');
+    const msg = "Hi hostayy, I'd like to inquire about booking a 1, 2, or 3 BHK serviced apartment for an extended / monthly stay near Yashobhoomi.";
+    window.open(gethostayyWhatsAppLink(msg), '_blank');
   };
 
   return (
@@ -24,7 +24,7 @@ export default function BrandBannerSection() {
             overflow: 'hidden'
           }}
         >
-          {/* Left Column: Official Hostayy Brand Banner Artwork */}
+          {/* Left Column: Official hostayy Brand Banner Artwork */}
           <div 
             className="brand-experience-visual"
             style={{
@@ -50,7 +50,7 @@ export default function BrandBannerSection() {
             >
               <img 
                 src="/assets/images/hostayy-banner.png" 
-                alt="Hostayy Brand Banner" 
+                alt="hostayy Brand Banner" 
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -77,7 +77,7 @@ export default function BrandBannerSection() {
             >
               <img 
                 src="/assets/images/hostayy-logo-transparent.png" 
-                alt="Hostayy Logo" 
+                alt="hostayy Logo" 
                 style={{ width: '22px', height: '22px', objectFit: 'contain' }}
               />
               <span style={{ fontSize: '13px', fontWeight: 700, color: '#191628', letterSpacing: '0.04em' }}>
@@ -95,7 +95,7 @@ export default function BrandBannerSection() {
           >
             <div className="section-title text-left sec-title-animation" style={{ marginBottom: '22px' }}>
               <div className="section-title__tagline-box">
-                <span className="section-title__tagline">The Hostayy Philosophy</span>
+                <span className="section-title__tagline">The hostayy Philosophy</span>
               </div>
               <h2 className="section-title__title brand-experience-title" style={{ lineHeight: '1.25' }}>
                 Every Stay Should Truly <br />
@@ -104,7 +104,7 @@ export default function BrandBannerSection() {
             </div>
 
             <p style={{ fontSize: '15.5px', color: 'var(--hotelux-gray)', lineHeight: '1.75', marginBottom: '25px' }}>
-              True hospitality is more than a room — it is the comforting peace of an entire residence where you can cook your own meals, work seamlessly on high-speed mesh Wi-Fi, and rest with total privacy. From corporate assignments near Yashobhoomi IICC to extended family visits, Hostayy blends genuine home warmth with five-star hotel care.
+              True hospitality is more than a room — it is the comforting peace of an entire residence where you can cook your own meals, work seamlessly on high-speed mesh Wi-Fi, and rest with total privacy. From corporate assignments near Yashobhoomi IICC to extended family visits, hostayy blends genuine home warmth with five-star hotel care.
             </p>
 
             {/* Value Highlights */}

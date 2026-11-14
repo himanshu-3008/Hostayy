@@ -154,16 +154,16 @@ export default function StaysSection({ selectedStayId, setSelectedStayId, onOpen
             Exhibition Delegates, Expat Relocations &amp; Extended Corporate Stays
           </h3>
           <p style={{ color: '#374151', fontSize: '14.5px', maxWidth: '720px', margin: '0 auto 20px', lineHeight: 1.65 }}>
-            Attending an exhibition or conference at Yashobhoomi (IICC)? Relocating to Delhi NCR? Hostayy offers flexible monthly and multi-month serviced apartments with zero brokerage, GST input credit, daily housekeeping, and 24/7 dedicated host assistance.
+            Attending an exhibition or conference at Yashobhoomi (IICC)? Relocating to Delhi NCR? hostayy offers flexible monthly and multi-month serviced apartments with zero brokerage, GST input credit, daily housekeeping, and 24/7 dedicated host assistance.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
             <a 
-              href={getGuestWhatsAppLink({ message: "Hello Hostayy, I'm reaching out directly for a long-term / monthly serviced stay quotation near Yashobhoomi IICC." })} 
+              href={getGuestWhatsAppLink({ message: "Hello hostayy, I'm reaching out directly for a long-term / monthly serviced stay quotation near Yashobhoomi IICC." })} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="thm-btn thm-btn-wa" 
               style={{ padding: '12px 24px', fontSize: '13px' }}
-              title="Direct WhatsApp with Hostayy"
+              title="Direct WhatsApp with hostayy"
             >
               <i className="fa-brands fa-whatsapp" style={{ fontSize: '16px' }}></i>
               <span>Request Long-Term Quotation on WhatsApp</span>

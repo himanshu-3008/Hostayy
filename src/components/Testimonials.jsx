@@ -8,13 +8,13 @@ export default function Testimonials() {
       name: 'Aditya & Neha Malhotra',
       location: 'Corporate Relocation · Velora 1 BHK Suite',
       rating: 5,
-      text: 'Stayed at Velora for two months while transitioning to Delhi NCR. Having a fully equipped modular kitchen with microwave and RO made daily living so easy. Only 3 minutes from Yashobhoomi IICC and 10 mins to T3. Hostayy’s team handled daily cleaning seamlessly!'
+      text: 'Stayed at Velora for two months while transitioning to Delhi NCR. Having a fully equipped modular kitchen with microwave and RO made daily living so easy. Only 3 minutes from Yashobhoomi IICC and 10 mins to T3. hostayy’s team handled daily cleaning seamlessly!'
     },
     {
       name: 'Marcus Vance',
       location: 'International Trade Exhibitor · Azura 2 BHK Executive',
       rating: 5,
-      text: 'Our delegation booked Azura for a major 3-week conference at Yashobhoomi. The 300 Mbps mesh Wi-Fi was rock-solid for remote presentations, the two king en-suite bedrooms gave us complete privacy, and booking directly with Hostayy saved us over 18% in fees.'
+      text: 'Our delegation booked Azura for a major 3-week conference at Yashobhoomi. The 300 Mbps mesh Wi-Fi was rock-solid for remote presentations, the two king en-suite bedrooms gave us complete privacy, and booking directly with hostayy saved us over 18% in fees.'
     },
     {
       name: 'Dr. Sameer & Shalini Kapoor',

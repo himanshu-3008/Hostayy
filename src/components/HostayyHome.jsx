@@ -10,44 +10,44 @@ import { HOSTAYY_CONFIG, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../d
 
 const COVER_SLIDES = [
   {
-    id: 'velora',
-    title: 'Velora Suite • 1 BHK Curated Residence',
+    id: 'bedroom',
+    title: 'Executive Master Bedroom Suite • Orthopedic King Bed',
+    tag: '400-TC Egyptian Cotton & Dedicated Workstation',
+    image: '/assets/images/velora/velora-02.jpg',
+    bhk: 'Master Bedroom',
+    rating: '4.99 ★'
+  },
+  {
+    id: 'living',
+    title: 'Velora Living Lounge • 4K Cinema Entertainment',
     tag: '3 Mins to Yashobhoomi (IICC) • 750 Sq Ft',
-    image: '/assets/images/velora/velora-01.jpg',
+    image: '/assets/images/velora/velora-05.jpg',
     bhk: '1 BHK Suite',
     rating: '4.98 ★'
   },
   {
     id: 'azura',
-    title: 'Azura Residence • 2 BHK Executive Suite',
+    title: 'Azura Executive Suite • Royal Blue Sectional Living',
     tag: 'Aerocity Corridor • 1,250 Sq Ft & Balcony',
-    image: '/assets/images/azura/azura-01.jpg',
+    image: '/assets/images/azura/azura-02.jpg',
     bhk: '2 BHK Executive',
     rating: '4.99 ★'
   },
   {
-    id: 'verde',
-    title: 'Verde Signature • 3 BHK Luxury Living',
-    tag: 'Prime Golf Belt Dwarka • 1,850 Sq Ft',
-    image: '/assets/images/verde/verde-01.jpg',
-    bhk: '3 BHK Signature',
-    rating: '4.97 ★'
+    id: 'bathroom',
+    title: 'Spa-Grade Bathroom • Sanitized Designer Fixtures',
+    tag: 'Glass Enclosure, Anti-Fog Mirror & Hot Rain Shower',
+    image: '/assets/images/velora/velora-01.jpg',
+    bhk: 'Spa Bathroom',
+    rating: 'Five-Star Hygiene'
   },
   {
     id: 'kitchen',
-    title: 'Chef-Ready Modular Kitchen & Appliances',
+    title: 'Chef-Ready Modular Kitchen & Modern Appliances',
     tag: 'Induction, Gas Hob, Microwave, RO Purifier & Cookware',
-    image: '/assets/images/velora/velora-07.jpg',
+    image: '/assets/images/velora/velora-13.jpg',
     bhk: 'Modular Kitchen',
     rating: '100% Home Comfort'
-  },
-  {
-    id: 'bedroom',
-    title: 'Orthopedic King Bedding & Sanitized Linens',
-    tag: '400-TC Egyptian Cotton & Dedicated Workstation',
-    image: '/assets/images/azura/azura-05.jpg',
-    bhk: 'Master Bedroom',
-    rating: 'Five-Star Hygiene'
   }
 ];
 
@@ -147,7 +147,7 @@ export default function HostayyHome() {
                     letterSpacing: '-0.02em'
                   }}
                 >
-                  Welcome to <span style={{ color: '#ea384c' }}>Hostayy</span>
+                  Welcome to <span style={{ color: '#ea384c', textTransform: 'lowercase', fontWeight: 900 }}>hostayy</span>
                 </h1>
 
                 {/* Mission Subtitle */}
@@ -161,7 +161,7 @@ export default function HostayyHome() {
                     margin: '0 auto 28px'
                   }}
                 >
-                  Hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Headquartered in Dwarka Sector 23, New Delhi, we engineer five-star turnkey serviced residences for extended stays and deliver guaranteed high-yield property management for residential apartment owners.
+                  hostayy bridges the gap between cramped hotel rooms and unmanaged rental apartments. Headquartered in Dwarka Sector 23, New Delhi, we engineer five-star turnkey serviced residences for extended stays and deliver guaranteed high-yield property management for residential apartment owners.
                 </p>
 
                 {/* 4 Brand Pillars with Glassmorphism & Hover Lift */}
@@ -585,7 +585,7 @@ export default function HostayyHome() {
 
                     {/* Description */}
                     <p style={{ color: '#374151', fontSize: '14.5px', lineHeight: 1.65, marginBottom: '22px' }}>
-                      Partner your residential apartment with Hostayy Patron. Transform your home into a high-yield hospitality asset with 100% on-time guaranteed monthly payouts and turnkey care.
+                      Partner your residential apartment with hostayy Patron. Transform your home into a high-yield hospitality asset with 100% on-time guaranteed monthly payouts and turnkey care.
                     </p>
 
                     {/* Feature Checklist */}
@@ -668,7 +668,7 @@ export default function HostayyHome() {
                   Positioned in Prime Dwarka Sector 23
                 </h2>
                 <p style={{ color: '#374151', fontSize: '15px', lineHeight: 1.7, marginBottom: '20px' }}>
-                  Whether traveling for global exhibitions at Yashobhoomi (IICC) or partnering your real estate asset in Delhi NCR, Hostayy places you at the epicenter of southwest Delhi’s most connected corridor.
+                  Whether traveling for global exhibitions at Yashobhoomi (IICC) or partnering your real estate asset in Delhi NCR, hostayy places you at the epicenter of southwest Delhi’s most connected corridor.
                 </p>
 
                 {/* Official Address Strip */}
@@ -704,7 +704,7 @@ export default function HostayyHome() {
                 {/* Direct WhatsApp Callout */}
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <a 
-                    href={getGuestWhatsAppLink({ message: "Hello Hostayy, I want to inquire about Hostayy serviced residences." })}
+                    href={getGuestWhatsAppLink({ message: "Hello hostayy, I want to inquire about hostayy serviced residences." })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="thm-btn"

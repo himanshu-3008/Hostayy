@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getHostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
+import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, gethostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function ContactSection({ initialTab = 'guest' }) {
   const [activeFormTab, setActiveFormTab] = useState(initialTab);
@@ -40,7 +40,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
       location: ownerData.location,
       propertyType: ownerData.furnishing,
       bedrooms: ownerData.config,
-      message: `Current Arrangement: ${ownerData.arrangement}. Notes: ${ownerData.notes || 'None'}. I would like to partner my property with Hostayy for turnkey short-term / corporate rental management.`
+      message: `Current Arrangement: ${ownerData.arrangement}. Notes: ${ownerData.notes || 'None'}. I would like to partner my property with hostayy for turnkey short-term / corporate rental management.`
     }), '_blank');
   };
 
@@ -67,7 +67,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
             Connect With Our <span style={{ color: '#ea384c' }}>Concierge</span>
           </h2>
           <p className="section-title__text" style={{ maxWidth: '640px', margin: '14px auto 0', color: '#374151' }}>
-            Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? Hostayy Concierge responds directly on WhatsApp.
+            Looking for a 1, 2, or 3 BHK long-term serviced apartment near Yashobhoomi (IICC) or seeking turnkey property management for your residence? hostayy Concierge responds directly on WhatsApp.
           </p>
         </div>
 
@@ -231,7 +231,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
                 List Your Property for Turnkey Hospitality
               </h3>
               <p style={{ color: '#374151', fontSize: '0.92rem' }}>
-                Partner your 1, 2, 3 BHK or luxury villa with Hostayy. Enjoy performance-based 15% revenue share, 0% fixed setup fees, and 40%–80% higher net yield than traditional tenants.
+                Partner your 1, 2, 3 BHK or luxury villa with hostayy. Enjoy performance-based 15% revenue share, 0% fixed setup fees, and 40%–80% higher net yield than traditional tenants.
               </p>
             </div>
 
@@ -327,7 +327,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
 
               <div style={{ display: 'flex', gap: '16px', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                 <button type="submit" className="thm-btn" style={{ padding: '14px 32px', fontSize: '1rem', cursor: 'pointer', background: '#ea384c', borderColor: '#ea384c', color: '#ffffff' }}>
-                  <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to Hostayy
+                  <i className="fa-brands fa-whatsapp"></i> Submit Feasibility Request to hostayy
                 </button>
               </div>
             </form>

@@ -8,9 +8,9 @@
 export const HOSTAYY_CONFIG = {
   whatsappNumber: "919217680108",
   displayPhone: "+91 9217680108",
-  contactName: "Hostayy",
-  address: "Hostayy, Block A, Dwarka Sector 23, New Delhi - 110077",
-  brandName: "Hostayy",
+  contactName: "hostayy",
+  address: "hostayy, Block A, Dwarka Sector 23, New Delhi - 110077",
+  brandName: "hostayy",
   email: "Hello@hostayy.com",
   bookingUrl: "https://www.booking.com/Share-OrxZmT",
   airbnbVeloraUrl: "https://www.airbnb.com/h/velorabyhostayy",
@@ -46,7 +46,7 @@ export function getHostayyWhatsAppLink(customMsg = "") {
  * Generates a pre-filled WhatsApp link clearly focused on LONG-TERM & MONTHLY QUOTATIONS
  */
 export function getGuestWhatsAppLink({ property = "", moveInDate = "", checkIn = "", checkOut = "", duration = "", guests = "", purpose = "", message = "" } = {}) {
-  let text = `🏨 [LONG-TERM / SERVICED STAY QUOTATION - HOSTAYY]\nHello Hostayy, I am inquiring about a serviced apartment stay near Yashobhoomi (IICC) with Hostayy:`;
+  let text = `🏨 [LONG-TERM / SERVICED STAY QUOTATION - hostayy]\nHello hostayy, I am inquiring about a serviced apartment stay near Yashobhoomi (IICC) with hostayy:`;
 
   if (property) text += `\n• Preferred Residence: ${property}`;
   const effectiveMoveIn = moveInDate || checkIn;
@@ -68,7 +68,7 @@ export function getGuestWhatsAppLink({ property = "", moveInDate = "", checkIn =
  * Generates a pre-filled WhatsApp link for PROPERTY OWNERS looking to register/partner
  */
 export function getOwnerWhatsAppLink({ name = "", location = "", propertyType = "", bedrooms = "", monthlyYield = "", message = "" } = {}) {
-  let text = `🔑 [PROPERTY MANAGEMENT / OWNER PARTNERSHIP - HOSTAYY]\nHello Hostayy, I am a property owner and I want to list/register my property with Hostayy for turnkey management:`;
+  let text = `🔑 [PROPERTY MANAGEMENT / OWNER PARTNERSHIP - hostayy]\nHello hostayy, I am a property owner and I want to list/register my property with hostayy for turnkey management:`;
 
   if (name) text += `\n• Owner Name: ${name}`;
   if (location) text += `\n• Property Location: ${location}`;
@@ -88,7 +88,7 @@ export function getGuestPropertyWhatsAppLink(propertyName) {
 export const HOSTAYY_PROPERTIES = [
   {
     id: "velora",
-    name: "Velora by Hostayy",
+    name: "Velora by hostayy",
     bhk: "1 BHK",
     brandSubtitle: "Curated 1 BHK Luxury Serviced Residence",
     tagline: "Modern Smart Living, Dedicated Workstation & 4K Cinema",
@@ -150,7 +150,7 @@ export const HOSTAYY_PROPERTIES = [
   },
   {
     id: "azura",
-    name: "Azura by Hostayy",
+    name: "Azura by hostayy",
     bhk: "2 BHK",
     brandSubtitle: "Premium 2 BHK Executive Serviced Residence",
     tagline: "Chic Contemporary Comfort, Sky Terrace & Dual Workstations",
@@ -210,7 +210,7 @@ export const HOSTAYY_PROPERTIES = [
   },
   {
     id: "verde",
-    name: "Verde by Hostayy",
+    name: "Verde by hostayy",
     bhk: "3 BHK",
     brandSubtitle: "Palatial 3 BHK Signature Serviced Residence",
     tagline: "Expansive Living Hall, Wrap-around Balconies & Chef's Kitchen",
