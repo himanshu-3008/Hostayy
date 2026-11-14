@@ -147,7 +147,7 @@ export default function HostayyHome() {
                     letterSpacing: '-0.02em'
                   }}
                 >
-                  Welcome to <span style={{ color: '#ea384c', textTransform: 'lowercase', fontWeight: 900 }}>hostayy</span>
+                  Welcome to <span style={{ color: '#ea384c', textTransform: 'lowercase', fontWeight: 900, fontFamily: "'Plus Jakarta Sans', sans-serif", letterSpacing: '-0.03em' }}>hostayy</span>
                 </h1>
 
                 {/* Mission Subtitle */}

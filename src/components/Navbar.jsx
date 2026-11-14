@@ -64,12 +64,12 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               style={{ 
                 display: 'inline-flex', 
                 alignItems: 'center', 
-                gap: '11px', 
+                gap: '12px', 
                 textDecoration: 'none',
                 background: 'rgba(255, 255, 255, 0.18)',
                 border: '1.5px solid rgba(255, 255, 255, 0.5)',
-                padding: '4px 16px 4px 5px',
-                borderRadius: '36px',
+                padding: '5px 18px 5px 6px',
+                borderRadius: '40px',
                 boxShadow: '0 4px 18px rgba(0, 0, 0, 0.18)',
                 backdropFilter: 'blur(10px)',
                 transition: 'all 0.25s ease'
@@ -78,33 +78,33 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               <div 
                 className="bcom-logo-emblem" 
                 style={{ 
-                  width: '46px', 
-                  height: '46px', 
+                  width: '52px', 
+                  height: '52px', 
                   borderRadius: '50%', 
                   background: '#ffffff', 
-                  padding: '3px', 
+                  padding: '4px', 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center', 
-                  boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(0, 0, 0, 0.25)', 
+                  boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.95), 0 4px 14px rgba(0, 0, 0, 0.25)', 
                   flexShrink: 0 
                 }}
               >
                 <img 
                   src="/assets/images/hostayy-logo-transparent.png" 
                   alt="hostayy Logo" 
-                  style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.1)' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
               <div className="bcom-logo-text-wrap" style={{ lineHeight: 1 }}>
                 <span 
                   className="bcom-logo-text" 
                   style={{ 
-                    fontSize: '27px', 
+                    fontSize: '30px', 
                     fontWeight: 900, 
                     color: '#ffffff', 
-                    letterSpacing: '-0.02em', 
-                    fontFamily: 'var(--hotelux-font-two), sans-serif', 
+                    letterSpacing: '-0.03em', 
+                    fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", 
                     textTransform: 'lowercase',
                     textShadow: '0 2px 10px rgba(0, 0, 0, 0.35)'
                   }}

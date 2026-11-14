@@ -13,16 +13,16 @@ export default function Footer({ onSelectStay }) {
             {/* Column 1: Brand Info & Badges */}
             <div className="col-12 col-md-6 col-lg-4 col-xl-4 footer-col" style={{ marginBottom: '28px' }}>
               <Link href="/" className="brand-logo-hotelux" style={{ marginBottom: '18px', display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-                <div className="brand-emblem-wrap" style={{ backgroundColor: '#ffffff', borderRadius: '50%', padding: '4px', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.85), 0 4px 16px rgba(0, 0, 0, 0.4)' }}>
+                <div className="brand-emblem-wrap" style={{ backgroundColor: '#ffffff', borderRadius: '50%', padding: '4px', width: '52px', height: '52px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.85), 0 4px 16px rgba(0, 0, 0, 0.4)' }}>
                   <img 
                     src="/assets/images/hostayy-logo-transparent.png" 
                     alt="hostayy Logo" 
                     className="brand-logo-img"
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.08)' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                 </div>
                 <div className="brand-text-hotelux">
-                  <h2 style={{ color: '#ffffff', fontWeight: 900, margin: 0, fontSize: '26px', letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.5)', textTransform: 'lowercase' }}>hostayy</h2>
+                  <h2 style={{ color: '#ffffff', fontWeight: 900, margin: 0, fontSize: '28px', letterSpacing: '-0.03em', fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif", textShadow: '0 2px 10px rgba(0,0,0,0.5)', textTransform: 'lowercase' }}>hostayy</h2>
                 </div>
               </Link>
               <p style={{ fontSize: '14px', lineHeight: '1.75', color: '#ffffff', marginBottom: '18px', fontWeight: 400 }}>
