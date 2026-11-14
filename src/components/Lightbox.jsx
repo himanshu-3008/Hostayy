@@ -4,9 +4,10 @@ import React, { useState, useEffect, useRef } from 'react';
 
 export default function Lightbox({ isOpen = true, images, currentIndex = 0, setCurrentIndex, onClose }) {
   const [internalIndex, setInternalIndex] = useState(currentIndex || 0);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const ribbonRef = useRef(null);
-  const touchStartX = useRef(null);
-  const touchEndX = useRef(null);
 
   // Sync internal index when prop changes
   useEffect(() => {
@@ -58,26 +59,27 @@ export default function Lightbox({ isOpen = true, images, currentIndex = 0, setC
 
   // Touch swipe support for mobile
   const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchEndX.current = null;
+    setIsDragging(true);
+    setTouchStartX(e.touches[0].clientX);
+    setDragOffset(0);
   };
 
   const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
+    if (!isDragging) return;
+    setDragOffset(e.touches[0].clientX - touchStartX);
   };
 
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current === null || touchEndX.current === null) return;
-    const distance = touchStartX.current - touchEndX.current;
-    if (distance > 35) {
+  const handleTouchEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (dragOffset < -40) {
       // Swiped left -> Next photo
-      nextPhoto(e);
-    } else if (distance < -35) {
+      nextPhoto();
+    } else if (dragOffset > 40) {
       // Swiped right -> Previous photo
-      prevPhoto(e);
+      prevPhoto();
     }
-    touchStartX.current = null;
-    touchEndX.current = null;
+    setDragOffset(0);
   };
 
   if (!isOpen || !images || !images.length) return null;
@@ -109,31 +111,74 @@ export default function Lightbox({ isOpen = true, images, currentIndex = 0, setC
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        style={{ position: 'relative', overflow: 'hidden', touchAction: 'pan-y' }}
       >
         <button 
           className="lightbox-nav lightbox-prev" 
           onClick={prevPhoto} 
           aria-label="Previous photo"
-          style={{ borderRadius: '12px', width: '44px', height: '44px' }}
+          style={{ borderRadius: '12px', width: '44px', height: '44px', zIndex: 10 }}
         >
           <i className="fa-solid fa-chevron-left"></i>
         </button>
 
-        <img 
-          src={currentPhoto.src} 
-          alt={currentPhoto.title} 
-          className="lightbox-img" 
-          style={{ 
-            imageRendering: '-webkit-optimize-contrast', 
-            filter: 'contrast(1.05) brightness(1.02) saturate(1.04)' 
-          }} 
-        />
+        {/* Multi-Slide Flex Track for Fullscreen Swipe */}
+        <div 
+          className="lightbox-slider-track"
+          style={{
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            alignItems: 'center',
+            transform: isDragging 
+              ? `translateX(calc(-${activeIndex * 100}% + ${dragOffset}px))` 
+              : `translateX(-${activeIndex * 100}%)`,
+            transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
+            willChange: 'transform'
+          }}
+        >
+          {images.map((img, idx) => {
+            const isCur = idx === activeIndex;
+            return (
+              <div 
+                key={img.id || idx}
+                style={{
+                  minWidth: '100%',
+                  width: '100%',
+                  height: '100%',
+                  flexShrink: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                  position: 'relative'
+                }}
+              >
+                <img 
+                  src={img.src} 
+                  alt={img.title} 
+                  className="lightbox-img" 
+                  style={{ 
+                    maxHeight: '100%',
+                    maxWidth: '100%',
+                    objectFit: 'contain',
+                    imageRendering: '-webkit-optimize-contrast', 
+                    filter: 'contrast(1.05) brightness(1.02) saturate(1.04)',
+                    transform: isCur ? 'scale(1)' : 'scale(0.94)',
+                    opacity: isCur ? 1 : 0.25,
+                    transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease'
+                  }} 
+                />
+              </div>
+            );
+          })}
+        </div>
 
         <button 
           className="lightbox-nav lightbox-next" 
           onClick={nextPhoto} 
           aria-label="Next photo"
-          style={{ borderRadius: '12px', width: '44px', height: '44px' }}
+          style={{ borderRadius: '12px', width: '44px', height: '44px', zIndex: 10 }}
         >
           <i className="fa-solid fa-chevron-right"></i>
         </button>

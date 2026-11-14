@@ -5,34 +5,37 @@ import { getGuestPropertyWhatsAppLink } from '../data/properties';
 
 export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLightbox }) {
   const [photoIndex, setPhotoIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const photos = prop.images;
   const totalPhotos = photos.length;
 
   const minSwipeDistance = 35;
 
   const onTouchStartHandler = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    setTouchStartX(e.targetTouches[0].clientX);
+    setDragOffset(0);
   };
 
   const onTouchMoveHandler = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!isDragging) return;
+    const currentX = e.targetTouches[0].clientX;
+    setDragOffset(currentX - touchStartX);
   };
 
   const onTouchEndHandler = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    if (distance > minSwipeDistance) {
+    if (!isDragging) return;
+    setIsDragging(false);
+    if (dragOffset < -minSwipeDistance) {
       // Swiped left -> next photo
       setPhotoIndex((prev) => (prev + 1) % totalPhotos);
-    } else if (distance < -minSwipeDistance) {
+    } else if (dragOffset > minSwipeDistance) {
       // Swiped right -> prev photo
       setPhotoIndex((prev) => (prev - 1 + totalPhotos) % totalPhotos);
     }
-    setTouchStart(null);
-    setTouchEnd(null);
+    setDragOffset(0);
   };
 
   const nextPhoto = (e) => {
@@ -65,31 +68,57 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         onTouchMove={onTouchMoveHandler}
         onTouchEnd={onTouchEndHandler}
         title="Click to view full photo gallery (Swipe on phone to change photo)"
-        style={{ position: 'relative', height: '240px', overflow: 'hidden', cursor: 'pointer', borderRadius: '16px 16px 0 0', touchAction: 'pan-y' }}
+        style={{ position: 'relative', height: '240px', overflow: 'hidden', cursor: 'pointer', borderRadius: '16px 16px 0 0', touchAction: 'pan-y', userSelect: 'none' }}
       >
-        <img 
-          src={currentPhoto.src} 
-          alt={currentPhoto.title || prop.name} 
-          loading="eager" 
-          className="property-card-photo"
-          style={{ 
-            width: '100%', 
-            height: '100%', 
-            objectFit: 'cover', 
-            display: 'block', 
-            transition: 'transform 0.4s ease, filter 0.3s ease',
-            imageRendering: '-webkit-optimize-contrast',
-            filter: 'contrast(1.05) brightness(1.02) saturate(1.05)'
+        {/* Multi-Slide Flex Track with Real-Time Drag and Vanishing Slide Transitions */}
+        <div 
+          className="property-card-photo-track"
+          style={{
+            display: 'flex',
+            width: '100%',
+            height: '100%',
+            transform: isDragging 
+              ? `translateX(calc(-${photoIndex * 100}% + ${dragOffset}px))` 
+              : `translateX(-${photoIndex * 100}%)`,
+            transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
+            willChange: 'transform'
           }}
-          onMouseEnter={(e) => { 
-            e.currentTarget.style.transform = 'scale(1.04)'; 
-            e.currentTarget.style.filter = 'contrast(1.07) brightness(1.04) saturate(1.07)';
-          }}
-          onMouseLeave={(e) => { 
-            e.currentTarget.style.transform = 'scale(1)'; 
-            e.currentTarget.style.filter = 'contrast(1.05) brightness(1.02) saturate(1.05)';
-          }}
-        />
+        >
+          {photos.map((photo, idx) => {
+            const isCur = idx === photoIndex;
+            return (
+              <div 
+                key={photo.id || idx}
+                style={{
+                  minWidth: '100%',
+                  width: '100%',
+                  height: '100%',
+                  flexShrink: 0,
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                <img 
+                  src={photo.src} 
+                  alt={photo.title || prop.name} 
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  className="property-card-photo"
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover', 
+                    display: 'block', 
+                    imageRendering: '-webkit-optimize-contrast',
+                    filter: 'contrast(1.05) brightness(1.02) saturate(1.05)',
+                    transform: isCur ? 'scale(1)' : 'scale(0.96)',
+                    opacity: isCur ? 1 : 0.35,
+                    transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease'
+                  }}
+                />
+              </div>
+            );
+          })}
+        </div>
         
         {/* Sanitised Stay Badge */}
         <div className="oyo-sanitised-badge" style={{ borderRadius: '10px' }}>

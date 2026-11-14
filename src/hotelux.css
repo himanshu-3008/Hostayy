@@ -5469,9 +5469,128 @@ p {
 }
 
 .hostayy-slider-track,
-.showcase-photo-track {
+.showcase-photo-track,
+.property-card-photo-track,
+.lightbox-slider-track {
   display: flex !important;
   will-change: transform !important;
+}
+
+/* ==========================================================================
+   MOBILE DRAWER SLIDE TRANSITION (LEFT TO RIGHT)
+   ========================================================================== */
+@keyframes bcomDrawerSlideLeftToRight {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bcomBackdropFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bcomMenuItemSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bcomDropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bcom-mobile-drawer {
+  animation: bcomDrawerSlideLeftToRight 0.36s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity !important;
+}
+
+.bcom-mobile-drawer .bcom-mobile-portal-switcher {
+  animation: bcomMenuItemSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both !important;
+}
+
+.bcom-mobile-drawer .bcom-mobile-links a {
+  animation: bcomMenuItemSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+}
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(1) { animation-delay: 0.08s !important; }
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(2) { animation-delay: 0.12s !important; }
+.bcom-mobile-drawer .bcom-mobile-links a:nth-child(3) { animation-delay: 0.16s !important; }
+
+.bcom-mobile-drawer .bcom-mobile-actions {
+  animation: bcomMenuItemSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both !important;
+}
+
+/* ==========================================================================
+   SMOOTH TRANSITIONS ON ALL HEADER BUTTONS & PILLS
+   ========================================================================== */
+.bcom-header a,
+.bcom-header button,
+.bcom-pill,
+.bcom-portal-btn,
+.bcom-action-btn,
+.bcom-util-btn,
+.bcom-list-prop-link,
+.bcom-mobile-toggle,
+.bcom-drawer-btn {
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  user-select: none !important;
+}
+
+.bcom-header a:active,
+.bcom-header button:active,
+.bcom-pill:active,
+.bcom-portal-btn:active,
+.bcom-action-btn:active,
+.bcom-util-btn:active,
+.bcom-list-prop-link:active,
+.bcom-mobile-toggle:active,
+.bcom-drawer-btn:active {
+  transform: scale(0.96) !important;
+}
+
+.bcom-header a:hover,
+.bcom-pill:hover,
+.bcom-action-btn:hover,
+.bcom-util-btn:hover,
+.bcom-list-prop-link:hover {
+  transform: translateY(-1.5px);
+}
+
+.bcom-stays-dropdown-menu {
+  animation: bcomDropdownSlide 0.26s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+  transform-origin: top center !important;
+}
+
+.bcom-dropdown-stay-item {
+  transition: all 0.22s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.bcom-dropdown-stay-item:hover {
+  background: #fff1f2 !important;
+  transform: translateX(4px) !important;
+}
+.bcom-dropdown-stay-item:active {
+  transform: scale(0.98) !important;
 }
 
 /* Smooth active state glide for tabs and buttons */

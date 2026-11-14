@@ -217,9 +217,26 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 className="bcom-mobile-toggle"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle navigation menu"
-                style={{ background: 'transparent', border: 'none', color: '#ffffff', fontSize: '24px', cursor: 'pointer', padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  background: 'transparent', 
+                  border: 'none', 
+                  color: '#ffffff', 
+                  fontSize: '24px', 
+                  cursor: 'pointer', 
+                  padding: '6px 8px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  transition: 'transform 0.25s ease'
+                }}
               >
-                <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+                <i 
+                  className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'}`}
+                  style={{ 
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                    transform: mobileOpen ? 'rotate(90deg) scale(1.1)' : 'rotate(0deg) scale(1)'
+                  }}
+                ></i>
               </button>
             </div>
           </div>
@@ -731,9 +748,42 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu with Left-to-Right Slide Transition & Dim Backdrop */}
       {mobileOpen && (
-        <div className="bcom-mobile-drawer" style={{ background: '#c41c33', padding: '22px 18px', borderTop: '1px solid rgba(255, 255, 255, 0.2)' }}>
+        <>
+          <div 
+            className="bcom-drawer-backdrop" 
+            onClick={() => setMobileOpen(false)}
+            aria-hidden="true"
+            style={{ 
+              position: 'fixed', 
+              inset: 0, 
+              top: '68px', 
+              background: 'rgba(0, 0, 0, 0.5)', 
+              backdropFilter: 'blur(3px)', 
+              WebkitBackdropFilter: 'blur(3px)',
+              zIndex: 998,
+              animation: 'bcomBackdropFade 0.28s ease both'
+            }} 
+          />
+          <div 
+            className="bcom-mobile-drawer open" 
+            style={{ 
+              background: '#c41c33', 
+              padding: '24px 18px', 
+              borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              width: '100%',
+              maxWidth: '380px',
+              borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '0 0 16px 0',
+              boxShadow: '8px 12px 35px rgba(0, 0, 0, 0.35)',
+              zIndex: 1000,
+              animation: 'bcomDrawerSlideLeftToRight 0.36s cubic-bezier(0.16, 1, 0.3, 1) both'
+            }}
+          >
           <div className="bcom-mobile-drawer-inner">
             {/* Mobile Portal Mode Switcher */}
             <div className="bcom-mobile-portal-switcher" style={{ position: 'relative', display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0, 0, 0, 0.22)', padding: '5px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.25)' }}>
@@ -874,6 +924,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
             </div>
           </div>
         </div>
+        </>
       )}
     </header>
   );
