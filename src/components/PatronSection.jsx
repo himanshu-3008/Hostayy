@@ -1,9 +1,52 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { HOSTAYY_CONFIG, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function PatronSection() {
+  const [activeMetricIdx, setActiveMetricIdx] = useState(0);
+  const metricsRowRef = useRef(null);
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
+  const scrollToMetric = (idx) => {
+    setActiveMetricIdx(idx);
+    if (metricsRowRef.current) {
+      const items = metricsRowRef.current.children;
+      if (items[idx]) {
+        items[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  };
+
+  const handleMetricsScroll = () => {
+    if (!metricsRowRef.current) return;
+    const el = metricsRowRef.current;
+    const scrollLeft = el.scrollLeft;
+    const cardWidth = el.offsetWidth * 0.76;
+    const newIdx = Math.round(scrollLeft / cardWidth);
+    if (newIdx >= 0 && newIdx < 4 && newIdx !== activeMetricIdx) {
+      setActiveMetricIdx(newIdx);
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+      if (deltaX < 0) {
+        scrollToMetric(Math.min(3, activeMetricIdx + 1));
+      } else {
+        scrollToMetric(Math.max(0, activeMetricIdx - 1));
+      }
+    }
+  };
+
   const comparisonRows = [
     {
       dimension: 'Monthly Rental Yield',
@@ -79,8 +122,42 @@ export default function PatronSection() {
             Modelled on the world-class OYO Patron benchmark. Transform your 1, 2, or 3 BHK flat into a premium corporate serviced residence near Yashobhoomi (IICC) and IGI Airport. We handle 100% of guest management, cleaning, and maintenance while you receive guaranteed monthly payouts.
           </p>
 
-          {/* Quick Metrics Bar */}
-          <div className="patron-metrics-row">
+          {/* Mobile Swipe Hint Bar with Arrows for Smooth Swiping After 100% Box */}
+          <div className="patron-swipe-hint-bar">
+            <div className="patron-swipe-hint-txt">
+              <i className="fa-solid fa-arrows-left-right" style={{ color: '#ffffff' }}></i>
+              <span>Swipe cards to see all 4 guarantees &rarr;</span>
+            </div>
+            <div className="patron-swipe-arrows">
+              <button 
+                type="button" 
+                onClick={() => scrollToMetric(Math.max(0, activeMetricIdx - 1))}
+                aria-label="Previous guarantee"
+                disabled={activeMetricIdx === 0}
+                style={{ opacity: activeMetricIdx === 0 ? 0.35 : 1 }}
+              >
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+              <button 
+                type="button" 
+                onClick={() => scrollToMetric(Math.min(3, activeMetricIdx + 1))}
+                aria-label="Next guarantee"
+                disabled={activeMetricIdx === 3}
+                style={{ opacity: activeMetricIdx === 3 ? 0.35 : 1 }}
+              >
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* Quick Metrics Bar with Touch Drag & Real-Time Swiping */}
+          <div 
+            className="patron-metrics-row"
+            ref={metricsRowRef}
+            onScroll={handleMetricsScroll}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
             <div className="patron-metric-box">
               <strong style={{ color: '#ffffff' }}>1.8x – 2.5x</strong>
               <span style={{ color: '#fecdd3' }}>Higher Net Yield vs 11-Mo Lease</span>
@@ -97,6 +174,19 @@ export default function PatronSection() {
               <strong style={{ color: '#ffffff' }}>1st of Month</strong>
               <span style={{ color: '#fecdd3' }}>Guaranteed Direct Bank Payouts</span>
             </div>
+          </div>
+
+          {/* Mobile Pagination Indicator Dots */}
+          <div className="patron-metric-dots" aria-label="Guarantees pagination">
+            {[0, 1, 2, 3].map((dotIdx) => (
+              <button
+                key={dotIdx}
+                type="button"
+                onClick={() => scrollToMetric(dotIdx)}
+                className={`patron-metric-dot ${activeMetricIdx === dotIdx ? 'active' : ''}`}
+                aria-label={`Go to guarantee ${dotIdx + 1}`}
+              />
+            ))}
           </div>
         </div>
 

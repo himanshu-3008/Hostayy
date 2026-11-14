@@ -5615,3 +5615,276 @@ p {
   transform: scale(1.05) !important;
   box-shadow: 0 4px 12px rgba(234, 56, 76, 0.3) !important;
 }
+
+/* ==========================================================================
+   FADED CALENDAR WATERMARK IN HEADER BAR (ACROSS WHOLE BAR)
+   ========================================================================== */
+.bcom-header {
+  position: relative !important;
+}
+
+.bcom-header-calendar-bg {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-image: url('/assets/images/header-calendar-pattern.svg') !important;
+  background-repeat: repeat !important;
+  background-size: 260px 130px !important;
+  background-position: center top !important;
+  opacity: 0.15 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.bcom-header-top,
+.bcom-subnav-strip {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* ==========================================================================
+   SWIPEABLE PATRON GUARANTEE METRIC BOXES ON MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .patron-metrics-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding: 16px 4px 12px !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    scroll-behavior: smooth !important;
+  }
+  .patron-metrics-row::-webkit-scrollbar {
+    display: none !important;
+  }
+  .patron-metric-box {
+    flex: 0 0 76% !important;
+    min-width: 220px !important;
+    max-width: 280px !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+.patron-swipe-hint-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+@media (max-width: 768px) {
+  .patron-swipe-hint-bar {
+    display: flex !important;
+  }
+}
+
+.patron-swipe-hint-txt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: #fecdd3;
+  font-weight: 700;
+}
+
+.patron-swipe-arrows {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.patron-swipe-arrows button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.patron-swipe-arrows button:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.patron-metric-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+  .patron-metric-dots {
+    display: flex !important;
+  }
+}
+
+.patron-metric-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.patron-metric-dot.active {
+  width: 24px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   CONTACT SECTION RESPONSIVE TAB TOGGLE & SWIPE SUPPORT (NO CUT-OFF)
+   ========================================================================== */
+.contact-tab-outer-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.contact-tab-track {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #fecdd3;
+  border-radius: 32px;
+  padding: 4px;
+  display: flex;
+  width: 100%;
+  max-width: 530px;
+  box-shadow: 0 4px 18px rgba(234, 56, 76, 0.08);
+  user-select: none;
+  touch-action: pan-y;
+  box-sizing: border-box;
+}
+
+.contact-tab-btn {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 50%;
+  background: transparent;
+  border: none;
+  font-weight: 800;
+  padding: 10px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: color 0.25s ease, transform 0.2s ease;
+  white-space: nowrap;
+  font-size: 13.5px;
+  box-sizing: border-box;
+}
+
+.contact-tab-btn:active {
+  transform: scale(0.98);
+}
+
+.contact-tab-full {
+  display: inline;
+}
+
+.contact-tab-compact {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .contact-tab-full {
+    display: none !important;
+  }
+  .contact-tab-compact {
+    display: inline !important;
+  }
+  .contact-tab-btn {
+    padding: 9px 8px !important;
+    font-size: 12.5px !important;
+    gap: 5px !important;
+  }
+}
+
+.contact-swipe-hint-pill {
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: #ea384c;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Contact form directional sliding swipe animations */
+@keyframes contactSlideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes contactSlideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-form-slide-right {
+  animation: contactSlideFromRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.contact-form-slide-left {
+  animation: contactSlideFromLeft 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (max-width: 640px) {
+  .hostayy-pillars-strip {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 10px !important;
+    padding-bottom: 10px !important;
+    scrollbar-width: none !important;
+  }
+  .hostayy-pillars-strip::-webkit-scrollbar {
+    display: none !important;
+  }
+  .hostayy-pillars-strip > div {
+    flex: 0 0 160px !important;
+    scroll-snap-align: start !important;
+  }
+}
+
+

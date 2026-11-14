@@ -5,11 +5,17 @@ import Link from 'next/link';
 import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function Navbar({ onSelectStay, activePage = 'home', portalMode, setPortalMode }) {
-  // Support both activePage and legacy portalMode
-  const currentPage = activePage || (portalMode === 'listing' ? 'listing' : 'booking');
+  // Optimistic portal state for immediate, silky smooth swipe transitions
+  const [optimisticPortal, setOptimisticPortal] = useState(null);
+  const currentPage = optimisticPortal || activePage || (portalMode === 'listing' ? 'listing' : 'booking');
   const isBookingActive = currentPage === 'booking';
   const isListingActive = currentPage === 'listing';
   const isPortalActive = isBookingActive || isListingActive;
+
+  useEffect(() => {
+    setOptimisticPortal(null);
+  }, [activePage, portalMode]);
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('stays');
   const [staysDropdownOpen, setStaysDropdownOpen] = useState(false);
@@ -53,9 +59,29 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
   };
 
   return (
-    <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea384c' }}>
+    <header className="bcom-header" id="booking-header" style={{ backgroundColor: '#ea384c', position: 'relative' }}>
+      {/* Faded Luxury Calendar Watermark Across Entire Header Bar */}
+      <div 
+        className="bcom-header-calendar-bg" 
+        aria-hidden="true" 
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url('/assets/images/header-calendar-pattern.svg')`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '260px 130px',
+          backgroundPosition: 'center top',
+          opacity: 0.15,
+          pointerEvents: 'none',
+          zIndex: 0
+        }}
+      />
+
       {/* Top Tier: Logo & Dual-Portal Mode Switcher & User Utility Bar */}
-      <div className="bcom-header-top" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.22)', padding: '10px 0' }}>
+      <div className="bcom-header-top" style={{ position: 'relative', zIndex: 2, borderBottom: '1px solid rgba(255, 255, 255, 0.22)', padding: '10px 0' }}>
         <div className="container">
           <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
             
@@ -126,11 +152,12 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   position: 'absolute',
                   top: '3px',
                   bottom: '3px',
-                  left: isListingActive ? 'calc(50% + 2px)' : '3px',
-                  width: 'calc(50% - 5px)',
+                  left: '3px',
+                  width: 'calc(50% - 3px)',
                   background: '#ffffff',
                   borderRadius: '26px',
-                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease',
+                  transform: `translateX(${isListingActive ? '100%' : '0%'})`,
+                  transition: 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
                   zIndex: 1,
                   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
                   opacity: isPortalActive ? 1 : 0,
@@ -143,6 +170,10 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 title="Explore and book 1, 2 & 3 BHK serviced flats"
                 role="tab"
                 aria-selected={isBookingActive}
+                onClick={() => {
+                  setOptimisticPortal('booking');
+                  if (setPortalMode) setPortalMode('booking');
+                }}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
@@ -162,6 +193,10 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 title="List your apartment with hostayy Patron for guaranteed rental yields"
                 role="tab"
                 aria-selected={isListingActive}
+                onClick={() => {
+                  setOptimisticPortal('listing');
+                  if (setPortalMode) setPortalMode('listing');
+                }}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
@@ -794,11 +829,12 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   position: 'absolute',
                   top: '5px',
                   bottom: '5px',
-                  left: isListingActive ? 'calc(50% + 4px)' : '5px',
-                  width: 'calc(50% - 9px)',
+                  left: '5px',
+                  width: 'calc(50% - 5px)',
                   background: '#ffffff',
                   borderRadius: '10px',
-                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease',
+                  transform: `translateX(${isListingActive ? '100%' : '0%'})`,
+                  transition: 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
                   zIndex: 1,
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
                   opacity: isPortalActive ? 1 : 0,
@@ -807,7 +843,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               />
               <Link 
                 href="/book"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  setOptimisticPortal('booking');
+                  if (setPortalMode) setPortalMode('booking');
+                  setMobileOpen(false);
+                }}
                 className={`bcom-mobile-portal-btn ${isBookingActive ? 'active' : ''}`}
                 style={{ 
                   position: 'relative',
@@ -826,7 +866,11 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </Link>
               <Link 
                 href="/list-property"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  setOptimisticPortal('listing');
+                  if (setPortalMode) setPortalMode('listing');
+                  setMobileOpen(false);
+                }}
                 className={`bcom-mobile-portal-btn ${isListingActive ? 'active' : ''}`}
                 style={{ 
                   position: 'relative',

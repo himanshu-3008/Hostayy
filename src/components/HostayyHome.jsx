@@ -168,6 +168,7 @@ export default function HostayyHome() {
 
                 {/* 4 Brand Pillars with Glassmorphism & Hover Lift */}
                 <div 
+                  className="hostayy-pillars-strip"
                   style={{ 
                     display: 'grid', 
                     gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', 

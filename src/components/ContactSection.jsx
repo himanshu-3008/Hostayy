@@ -1,14 +1,46 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, gethostayyWhatsAppLink, getGuestWhatsAppLink, getOwnerWhatsAppLink } from '../data/properties';
 
 export default function ContactSection({ initialTab = 'guest' }) {
   const [activeFormTab, setActiveFormTab] = useState(initialTab);
+  const [slideDirection, setSlideDirection] = useState('from-right');
 
-  React.useEffect(() => {
+  useEffect(() => {
     setActiveFormTab(initialTab);
   }, [initialTab]);
+
+  const handleTabChange = (newTab) => {
+    if (newTab === activeFormTab) return;
+    setSlideDirection(newTab === 'owner' ? 'from-right' : 'from-left');
+    setActiveFormTab(newTab);
+  };
+
+  // Touch Swipe Gesture Detection for smooth mobile form switching
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+
+    // Trigger swipe if horizontal displacement is significant and dominates vertical scroll
+    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.3) {
+      if (deltaX < 0) {
+        // Swiped Left -> switch to Owner tab
+        handleTabChange('owner');
+      } else {
+        // Swiped Right -> switch to Guest tab
+        handleTabChange('guest');
+      }
+    }
+  };
 
   // Owner Form State
   const [ownerData, setOwnerData] = useState({
@@ -71,81 +103,85 @@ export default function ContactSection({ initialTab = 'guest' }) {
           </p>
         </div>
 
-        {/* Dual Tab Toggle */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '36px' }}>
-          <div className="our-rooms-tabs" style={{ position: 'relative', background: '#ffffff', border: '1.5px solid #fecdd3', borderRadius: '30px', padding: '4px', display: 'inline-flex' }}>
-            {/* Sliding Pill Indicator */}
+        {/* Dual Tab Toggle with Horizontal Touch Swiping & No Mobile Cutoff */}
+        <div className="contact-tab-outer-wrap">
+          <div 
+            className="contact-tab-track"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Sliding Pill Indicator with Smooth Spring Swipe Animation */}
             <div 
               className="contact-tab-sliding-pill"
               style={{
                 position: 'absolute',
                 top: '4px',
                 bottom: '4px',
-                left: activeFormTab === 'owner' ? 'calc(50% + 2px)' : '4px',
-                width: 'calc(50% - 6px)',
+                left: '4px',
+                width: 'calc(50% - 4px)',
                 background: '#ea384c',
-                borderRadius: '26px',
-                transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                borderRadius: '28px',
+                transform: `translateX(${activeFormTab === 'owner' ? '100%' : '0%'})`,
+                transition: 'transform 0.38s cubic-bezier(0.16, 1, 0.3, 1)',
                 zIndex: 1,
-                boxShadow: '0 4px 12px rgba(234, 56, 76, 0.25)',
+                boxShadow: '0 4px 14px rgba(234, 56, 76, 0.28)',
                 pointerEvents: 'none'
               }}
             />
             <button 
               type="button" 
-              className={`our-rooms-tab-btn ${activeFormTab === 'guest' ? 'active' : ''}`}
-              onClick={() => setActiveFormTab('guest')}
+              className={`contact-tab-btn ${activeFormTab === 'guest' ? 'active' : ''}`}
+              onClick={() => handleTabChange('guest')}
               style={{
-                position: 'relative',
-                zIndex: 2,
-                background: 'transparent',
-                color: activeFormTab === 'guest' ? '#ffffff' : '#111827',
-                border: 'none',
-                fontWeight: 700,
-                padding: '9px 20px',
-                borderRadius: '30px',
-                cursor: 'pointer',
-                transition: 'color 0.25s ease'
+                color: activeFormTab === 'guest' ? '#ffffff' : '#111827'
               }}
             >
-              <i className="fa-solid fa-suitcase" style={{ marginRight: '6px' }}></i> Long-Stay Quotation (Guest)
+              <i className="fa-solid fa-suitcase" style={{ color: activeFormTab === 'guest' ? '#ffffff' : '#ea384c', transition: 'color 0.25s ease' }}></i>
+              <span className="contact-tab-full">Long-Stay Quotation (Guest)</span>
+              <span className="contact-tab-compact">Long-Stay (Guest)</span>
             </button>
             <button 
               type="button" 
-              className={`our-rooms-tab-btn ${activeFormTab === 'owner' ? 'active' : ''}`}
-              onClick={() => setActiveFormTab('owner')}
+              className={`contact-tab-btn ${activeFormTab === 'owner' ? 'active' : ''}`}
+              onClick={() => handleTabChange('owner')}
               style={{
-                position: 'relative',
-                zIndex: 2,
-                background: 'transparent',
-                color: activeFormTab === 'owner' ? '#ffffff' : '#111827',
-                border: 'none',
-                fontWeight: 700,
-                padding: '9px 20px',
-                borderRadius: '30px',
-                cursor: 'pointer',
-                transition: 'color 0.25s ease'
+                color: activeFormTab === 'owner' ? '#ffffff' : '#111827'
               }}
             >
-              <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px' }}></i> Partner Property (Owner)
+              <i className="fa-solid fa-house-chimney-user" style={{ color: activeFormTab === 'owner' ? '#ffffff' : '#ea384c', transition: 'color 0.25s ease' }}></i>
+              <span className="contact-tab-full">Partner Property (Owner)</span>
+              <span className="contact-tab-compact">Partner (Owner)</span>
             </button>
+          </div>
+
+          {/* Swipe Hint Indicator for Mobile Phone */}
+          <div className="contact-swipe-hint-pill">
+            <i className="fa-solid fa-arrows-left-right"></i>
+            <span>Swipe left / right or tap to toggle between Guest &amp; Owner</span>
           </div>
         </div>
 
-        {/* Guest Long-Stay Form */}
-        {activeFormTab === 'guest' && (
-          <div className="form-box" style={{ background: '#fff5f6', border: '1.5px solid #fecdd3', borderRadius: '16px', padding: '32px' }}>
-            <div style={{ marginBottom: '24px' }}>
-              <span style={{ color: '#ea384c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
-                For Corporate Guests &amp; Relocating Families
-              </span>
-              <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
-                Request Custom Long-Stay Quotation
-              </h3>
-              <p style={{ color: '#374151', fontSize: '0.92rem' }}>
-                Select your preferred 1, 2, or 3 BHK residence near Yashobhoomi. We will prepare an all-inclusive monthly quotation with zero brokerage and send photos directly to your WhatsApp.
-              </p>
-            </div>
+        {/* Animated Form Container with Swipe Transitions */}
+        <div 
+          key={activeFormTab}
+          className={`contact-form-animated-wrap ${slideDirection === 'from-right' ? 'contact-form-slide-right' : 'contact-form-slide-left'}`}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Guest Long-Stay Form */}
+          {activeFormTab === 'guest' && (
+            <div className="form-box" style={{ background: '#fff5f6', border: '1.5px solid #fecdd3', borderRadius: '16px', padding: '32px' }}>
+              <div style={{ marginBottom: '24px' }}>
+                <span style={{ color: '#ea384c', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                  For Corporate Guests &amp; Relocating Families
+                </span>
+                <h3 style={{ fontSize: '1.6rem', color: '#111827', marginTop: '4px', fontWeight: 800 }}>
+                  Request Custom Long-Stay Quotation
+                </h3>
+                <p style={{ color: '#374151', fontSize: '0.92rem' }}>
+                  Select your preferred 1, 2, or 3 BHK residence near Yashobhoomi. We will prepare an all-inclusive monthly quotation with zero brokerage and send photos directly to your WhatsApp.
+                </p>
+              </div>
 
             <form onSubmit={handleGuestSubmit}>
               <div className="form-grid">
@@ -356,6 +392,7 @@ export default function ContactSection({ initialTab = 'guest' }) {
             </form>
           </div>
         )}
+        </div>
       </div>
     </section>
   );
