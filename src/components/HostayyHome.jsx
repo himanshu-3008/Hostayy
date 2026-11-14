@@ -233,37 +233,7 @@ export default function HostayyHome() {
                       }}
                     />
                     
-                    {/* Clear-view Gradient Overlay & Info Pill (Top half 100% crystal clear) */}
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.65) 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '18px 20px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
-                        <span style={{ fontSize: '11.5px', background: 'rgba(234, 56, 76, 0.95)', color: '#ffffff', padding: '4px 14px', borderRadius: '12px', fontWeight: 800 }}>
-                          {activeSlide.bhk}
-                        </span>
-                      </div>
-
-                      <div style={{ textAlign: 'left' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-                          <span style={{ color: '#f59e0b', fontSize: '12px', fontWeight: 800, background: 'rgba(0,0,0,0.6)', padding: '2px 8px', borderRadius: '8px' }}>
-                            {activeSlide.rating}
-                          </span>
-                          <span style={{ color: '#fecdd3', fontSize: '12px', fontWeight: 600 }}>
-                            {activeSlide.tag}
-                          </span>
-                        </div>
-                        <h3 style={{ color: '#ffffff', fontSize: 'clamp(17px, 2.8vw, 24px)', fontWeight: 800, margin: '0 0 12px', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-                          {activeSlide.title}
-                        </h3>
-                        <Link 
-                          href="/book" 
-                          className="thm-btn" 
-                          style={{ padding: '8px 20px', fontSize: '12.5px', borderRadius: '12px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                        >
-                          <span>Explore This Residence</span>
-                          <i className="fa-solid fa-arrow-right"></i>
-                        </Link>
-                      </div>
-                    </div>
-
+                    {/* Clean Unobstructed Photo - No Text Overlays */}
                     {/* Prev / Next Arrows */}
                     <button 
                       type="button" 
