@@ -7,6 +7,9 @@ import { HOSTAYY_CONFIG, HOSTAYY_PROPERTIES, getGuestWhatsAppLink, getOwnerWhats
 export default function Navbar({ onSelectStay, activePage = 'home', portalMode, setPortalMode }) {
   // Support both activePage and legacy portalMode
   const currentPage = activePage || (portalMode === 'listing' ? 'listing' : 'booking');
+  const isBookingActive = currentPage === 'booking';
+  const isListingActive = currentPage === 'listing';
+  const isPortalActive = isBookingActive || isListingActive;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('stays');
   const [staysDropdownOpen, setStaysDropdownOpen] = useState(false);
@@ -123,52 +126,53 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   position: 'absolute',
                   top: '3px',
                   bottom: '3px',
-                  left: currentPage === 'listing' ? 'calc(50% + 2px)' : '3px',
+                  left: isListingActive ? 'calc(50% + 2px)' : '3px',
                   width: 'calc(50% - 5px)',
                   background: '#ffffff',
                   borderRadius: '26px',
-                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease',
                   zIndex: 1,
                   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
+                  opacity: isPortalActive ? 1 : 0,
                   pointerEvents: 'none'
                 }}
               />
               <Link
                 href="/book"
-                className={`bcom-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
+                className={`bcom-portal-btn ${isBookingActive ? 'active' : ''}`}
                 title="Explore and book 1, 2 & 3 BHK serviced flats"
                 role="tab"
-                aria-selected={currentPage === 'booking'}
+                aria-selected={isBookingActive}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
                   textDecoration: 'none',
                   background: 'transparent',
-                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff',
+                  color: isBookingActive ? '#ea384c' : '#ffffff',
                   transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ color: isBookingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: isBookingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
               </Link>
               
               <Link
                 href="/list-property"
-                className={`bcom-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
+                className={`bcom-portal-btn ${isListingActive ? 'active' : ''}`}
                 title="List your apartment with hostayy Patron for guaranteed rental yields"
                 role="tab"
-                aria-selected={currentPage === 'listing'}
+                aria-selected={isListingActive}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
                   textDecoration: 'none',
                   background: 'transparent',
-                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff',
+                  color: isListingActive ? '#ea384c' : '#ffffff',
                   transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ color: isListingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: isListingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
               </Link>
             </div>
 
@@ -740,20 +744,21 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   position: 'absolute',
                   top: '5px',
                   bottom: '5px',
-                  left: currentPage === 'listing' ? 'calc(50% + 4px)' : '5px',
+                  left: isListingActive ? 'calc(50% + 4px)' : '5px',
                   width: 'calc(50% - 9px)',
                   background: '#ffffff',
                   borderRadius: '10px',
-                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
+                  transition: 'left 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease',
                   zIndex: 1,
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                  opacity: isPortalActive ? 1 : 0,
                   pointerEvents: 'none'
                 }}
               />
               <Link 
                 href="/book"
                 onClick={() => setMobileOpen(false)}
-                className={`bcom-mobile-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
+                className={`bcom-mobile-portal-btn ${isBookingActive ? 'active' : ''}`}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
@@ -761,18 +766,18 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   textDecoration: 'none',
                   borderRadius: '10px',
                   background: 'transparent',
-                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff',
+                  color: isBookingActive ? '#ea384c' : '#ffffff',
                   fontWeight: 800,
                   transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
-                <span style={{ color: currentPage === 'booking' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
+                <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: isBookingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: isBookingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>Book Flats</span>
               </Link>
               <Link 
                 href="/list-property"
                 onClick={() => setMobileOpen(false)}
-                className={`bcom-mobile-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
+                className={`bcom-mobile-portal-btn ${isListingActive ? 'active' : ''}`}
                 style={{ 
                   position: 'relative',
                   zIndex: 2,
@@ -780,13 +785,13 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                   textDecoration: 'none',
                   borderRadius: '10px',
                   background: 'transparent',
-                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff',
+                  color: isListingActive ? '#ea384c' : '#ffffff',
                   fontWeight: 800,
                   transition: 'color 0.25s ease'
                 }}
               >
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
-                <span style={{ color: currentPage === 'listing' ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: isListingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}></i>
+                <span style={{ color: isListingActive ? '#ea384c' : '#ffffff', transition: 'color 0.25s ease' }}>List Property</span>
               </Link>
             </div>
 

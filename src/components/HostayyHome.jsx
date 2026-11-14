@@ -237,7 +237,9 @@ export default function HostayyHome() {
                         display: 'flex',
                         width: '100%',
                         height: '100%',
-                        transform: `translateX(calc(-${currentCoverIdx * 100}% + ${dragOffset}px))`,
+                        transform: isDragging 
+                          ? `translateX(calc(-${currentCoverIdx * 100}% + ${dragOffset}px))` 
+                          : `translateX(-${currentCoverIdx * 100}%)`,
                         transition: isDragging ? 'none' : 'transform 0.48s cubic-bezier(0.22, 1, 0.36, 1)',
                         willChange: 'transform'
                       }}

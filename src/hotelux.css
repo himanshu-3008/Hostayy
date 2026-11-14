@@ -4208,6 +4208,24 @@ p {
   transition: color 0.2s ease !important;
 }
 
+.bcom-portal-btn:not(.active),
+.bcom-header .bcom-portal-btn:not(.active),
+.bcom-mobile-portal-btn:not(.active),
+.bcom-header .bcom-mobile-portal-btn:not(.active) {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+.bcom-portal-btn:not(.active) span,
+.bcom-portal-btn:not(.active) i,
+.bcom-header .bcom-portal-btn:not(.active) span,
+.bcom-header .bcom-portal-btn:not(.active) i,
+.bcom-mobile-portal-btn:not(.active) span,
+.bcom-mobile-portal-btn:not(.active) i,
+.bcom-header .bcom-mobile-portal-btn:not(.active) span,
+.bcom-header .bcom-mobile-portal-btn:not(.active) i {
+  color: #ffffff !important;
+}
+
 .bcom-portal-btn:hover:not(.active) {
   background: rgba(255, 255, 255, 0.18) !important;
   color: #ffffff !important;

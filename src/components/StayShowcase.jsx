@@ -95,7 +95,9 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 display: 'flex',
                 width: '100%',
                 height: '100%',
-                transform: `translateX(calc(-${activePhotoIndex * 100}% + ${dragOffset}px))`,
+                transform: isDragging 
+                  ? `translateX(calc(-${activePhotoIndex * 100}% + ${dragOffset}px))` 
+                  : `translateX(-${activePhotoIndex * 100}%)`,
                 transition: isDragging ? 'none' : 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
                 willChange: 'transform'
               }}
