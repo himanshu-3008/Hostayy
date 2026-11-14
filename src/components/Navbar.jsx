@@ -56,17 +56,59 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
         <div className="container">
           <div className="bcom-top-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
             
-            {/* Left: Hostayy Logo (Enlarged, lowercase 'hostayy', without .com or slogan) */}
-            <Link href="/" className="bcom-brand-logo" aria-label="Hostayy" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-              <div className="bcom-logo-emblem" style={{ width: '48px', height: '48px', borderRadius: '50%', background: '#ffffff', padding: '5px', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 3px 12px rgba(0,0,0,0.2)', flexShrink: 0 }}>
+            {/* Left: Hostayy Logo (Highlighted Luxury Capsule, Crisp Wordmark) */}
+            <Link 
+              href="/" 
+              className="bcom-brand-logo bcom-brand-logo-highlighted" 
+              aria-label="Hostayy" 
+              style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '11px', 
+                textDecoration: 'none',
+                background: 'rgba(255, 255, 255, 0.18)',
+                border: '1.5px solid rgba(255, 255, 255, 0.5)',
+                padding: '4px 16px 4px 5px',
+                borderRadius: '36px',
+                boxShadow: '0 4px 18px rgba(0, 0, 0, 0.18)',
+                backdropFilter: 'blur(10px)',
+                transition: 'all 0.25s ease'
+              }}
+            >
+              <div 
+                className="bcom-logo-emblem" 
+                style={{ 
+                  width: '46px', 
+                  height: '46px', 
+                  borderRadius: '50%', 
+                  background: '#ffffff', 
+                  padding: '3px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  boxShadow: '0 0 0 2.5px rgba(255, 255, 255, 0.95), 0 4px 12px rgba(0, 0, 0, 0.25)', 
+                  flexShrink: 0 
+                }}
+              >
                 <img 
                   src="/assets/images/hostayy-logo-transparent.png" 
                   alt="Hostayy Logo" 
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain', transform: 'scale(1.1)' }}
                 />
               </div>
               <div className="bcom-logo-text-wrap" style={{ lineHeight: 1 }}>
-                <span className="bcom-logo-text" style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', fontFamily: 'var(--hotelux-font-two), sans-serif', textTransform: 'lowercase' }}>
+                <span 
+                  className="bcom-logo-text" 
+                  style={{ 
+                    fontSize: '27px', 
+                    fontWeight: 900, 
+                    color: '#ffffff', 
+                    letterSpacing: '-0.02em', 
+                    fontFamily: 'var(--hotelux-font-two), sans-serif', 
+                    textTransform: 'lowercase',
+                    textShadow: '0 2px 10px rgba(0, 0, 0, 0.35)'
+                  }}
+                >
                   hostayy
                 </span>
               </div>

@@ -78,7 +78,17 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
             title="Click to view in fullscreen or swipe on phone screen"
             style={{ borderRadius: '14px', overflow: 'hidden', touchAction: 'pan-y' }}
           >
-            <img src={currentPhoto.src} alt={currentPhoto.title} />
+            <img 
+              src={currentPhoto.src} 
+              alt={currentPhoto.title} 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover', 
+                imageRendering: '-webkit-optimize-contrast', 
+                filter: 'contrast(1.05) brightness(1.02) saturate(1.05)' 
+              }} 
+            />
             <div className="compact-photo-overlay">
               <span className="compact-photo-title">
                 <i className="fa-solid fa-camera text-coral" style={{ marginRight: '6px', color: '#ea384c' }}></i>
@@ -101,7 +111,17 @@ export default function StayShowcase({ prop, onOpenLightbox, onClose }) {
                 title={photo.title}
                 style={{ borderRadius: '8px', overflow: 'hidden' }}
               >
-                <img src={photo.src} alt={photo.title} />
+                <img 
+                  src={photo.src} 
+                  alt={photo.title} 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover', 
+                    imageRendering: '-webkit-optimize-contrast', 
+                    filter: 'contrast(1.04) brightness(1.02)' 
+                  }} 
+                />
                 <span className="thumb-num">#{idx + 1}</span>
               </button>
             ))}

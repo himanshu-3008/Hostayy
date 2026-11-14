@@ -222,11 +222,19 @@ export default function HostayyHome() {
                     <img 
                       src={activeSlide.image} 
                       alt={activeSlide.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'all 0.4s ease' }}
+                      className="hostayy-cover-img"
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'cover', 
+                        transition: 'all 0.4s ease',
+                        imageRendering: '-webkit-optimize-contrast',
+                        filter: 'contrast(1.05) brightness(1.03) saturate(1.05)'
+                      }}
                     />
                     
-                    {/* Gradient Overlay & Info Pill */}
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.75) 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '18px 20px' }}>
+                    {/* Clear-view Gradient Overlay & Info Pill (Top half 100% crystal clear) */}
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.65) 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '18px 20px' }}>
                       <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <span style={{ fontSize: '11.5px', background: 'rgba(234, 56, 76, 0.95)', color: '#ffffff', padding: '4px 14px', borderRadius: '12px', fontWeight: 800 }}>
                           {activeSlide.bhk}

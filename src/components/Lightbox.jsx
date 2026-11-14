@@ -119,7 +119,15 @@ export default function Lightbox({ isOpen = true, images, currentIndex = 0, setC
           <i className="fa-solid fa-chevron-left"></i>
         </button>
 
-        <img src={currentPhoto.src} alt={currentPhoto.title} className="lightbox-img" />
+        <img 
+          src={currentPhoto.src} 
+          alt={currentPhoto.title} 
+          className="lightbox-img" 
+          style={{ 
+            imageRendering: '-webkit-optimize-contrast', 
+            filter: 'contrast(1.05) brightness(1.02) saturate(1.04)' 
+          }} 
+        />
 
         <button 
           className="lightbox-nav lightbox-next" 

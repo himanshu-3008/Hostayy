@@ -57,7 +57,17 @@ export default function PropertyModal({ prop, onClose, onOpenLightbox }) {
                 onClick={() => onOpenLightbox(prop.images, idx)}
                 title={img.title}
               >
-                <img src={img.src} alt={img.title} />
+                <img 
+                  src={img.src} 
+                  alt={img.title} 
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover', 
+                    imageRendering: '-webkit-optimize-contrast', 
+                    filter: 'contrast(1.05) brightness(1.02)' 
+                  }} 
+                />
                 <div className="modal-photo-caption">#{idx + 1}</div>
               </div>
             ))}

@@ -70,10 +70,25 @@ export default function PropertyCard({ prop, onSelectStay, onOpenModal, onOpenLi
         <img 
           src={currentPhoto.src} 
           alt={currentPhoto.title || prop.name} 
-          loading="lazy" 
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s ease' }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.04)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+          loading="eager" 
+          className="property-card-photo"
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            objectFit: 'cover', 
+            display: 'block', 
+            transition: 'transform 0.4s ease, filter 0.3s ease',
+            imageRendering: '-webkit-optimize-contrast',
+            filter: 'contrast(1.05) brightness(1.02) saturate(1.05)'
+          }}
+          onMouseEnter={(e) => { 
+            e.currentTarget.style.transform = 'scale(1.04)'; 
+            e.currentTarget.style.filter = 'contrast(1.07) brightness(1.04) saturate(1.07)';
+          }}
+          onMouseLeave={(e) => { 
+            e.currentTarget.style.transform = 'scale(1)'; 
+            e.currentTarget.style.filter = 'contrast(1.05) brightness(1.02) saturate(1.05)';
+          }}
         />
         
         {/* Sanitised Stay Badge */}
