@@ -107,42 +107,22 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </Link>
             </div>
 
-            {/* Right: Booking.com Style Utility Items (White on Orange) */}
-            <div className="bcom-utility-row" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              {/* Currency Pill */}
-              <button type="button" className="bcom-util-btn" title="Currency: Indian Rupee" style={{ background: 'transparent', border: 'none', color: '#ffffff', padding: '6px 8px', borderRadius: '4px', cursor: 'pointer', fontWeight: 700, fontSize: '13.5px' }}>
-                <span className="bcom-currency-tag" style={{ color: '#ffffff' }}>INR</span>
-              </button>
-
-              {/* Country Flag */}
-              <div className="bcom-flag-wrap" title="India (Dwarka Sector 23 / Delhi NCR)" style={{ display: 'inline-flex', alignItems: 'center', fontSize: '19px' }}>
-                <span className="bcom-flag-icon" role="img" aria-label="India Flag">🇮🇳</span>
-              </div>
-
-              {/* Help & 24/7 Support */}
-              <a 
-                href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`} 
-                className="bcom-util-btn bcom-help-btn"
-                title={`24/7 Concierge Support: ${HOSTAYY_CONFIG.displayPhone}`}
-                style={{ color: '#ffffff', fontSize: '17px', display: 'inline-flex', alignItems: 'center' }}
-              >
-                <i className="fa-regular fa-circle-question"></i>
-              </a>
-
-              {/* Toggle to Property Listing (Hostayy Patron) */}
+            {/* Right: Actions, Direct WhatsApp & Mobile Menu */}
+            <div className="bcom-utility-row" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              {/* Toggle to Property Listing (Hostayy Patron) - Desktop */}
               <Link 
                 href="/list-property"
-                className="bcom-list-prop-link"
+                className="bcom-list-prop-link d-none-mobile"
                 title="List your apartment with Hostayy Patron"
                 style={{ background: 'transparent', color: '#ffffff', fontSize: '13.5px', fontWeight: 700, textDecoration: 'none', padding: '6px 14px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.45)' }}
               >
                 <span>List your property</span>
               </Link>
 
-              {/* Booking CTA Button (Solid White Button with Coral Red Text) */}
+              {/* Booking CTA Button (Solid White Button with Coral Red Text) - Desktop */}
               <Link 
                 href="/book"
-                className="bcom-action-btn register-btn"
+                className="bcom-action-btn register-btn d-none-mobile"
                 title="Explore 1, 2 &amp; 3 BHK Serviced Flats"
                 style={{ background: '#ffffff', color: '#ea384c', fontWeight: 800, padding: '7px 18px', borderRadius: '12px', textDecoration: 'none', fontSize: '13.5px', boxShadow: '0 2px 10px rgba(0,0,0,0.12)' }}
               >
@@ -168,7 +148,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 className="bcom-mobile-toggle"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle navigation menu"
-                style={{ background: 'transparent', border: 'none', color: '#ffffff', fontSize: '22px', cursor: 'pointer', padding: '6px' }}
+                style={{ background: 'transparent', border: 'none', color: '#ffffff', fontSize: '24px', cursor: 'pointer', padding: '6px 8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <i className={`fa-solid ${mobileOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
               </button>
@@ -684,18 +664,20 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
 
       {/* Mobile Drawer Menu */}
       {mobileOpen && (
-        <div className="bcom-mobile-drawer" style={{ background: '#9f1239', padding: '20px' }}>
+        <div className="bcom-mobile-drawer" style={{ background: '#c41c33', padding: '22px 18px', borderTop: '1px solid rgba(255, 255, 255, 0.2)' }}>
           <div className="bcom-mobile-drawer-inner">
             {/* Mobile Portal Mode Switcher */}
-            <div className="bcom-mobile-portal-switcher" style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0,0,0,0.2)', padding: '4px', borderRadius: '8px' }}>
+            <div className="bcom-mobile-portal-switcher" style={{ display: 'flex', gap: '8px', marginBottom: '18px', background: 'rgba(0, 0, 0, 0.22)', padding: '5px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.25)' }}>
               <Link 
                 href="/book"
                 onClick={() => setMobileOpen(false)}
                 className={`bcom-mobile-portal-btn ${currentPage === 'booking' ? 'active' : ''}`}
                 style={{ 
                   textDecoration: 'none',
+                  borderRadius: '10px',
                   background: currentPage === 'booking' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff'
+                  color: currentPage === 'booking' ? '#ea384c' : '#ffffff',
+                  fontWeight: 800
                 }}
               >
                 <i className="fa-solid fa-bed" style={{ marginRight: '6px', color: currentPage === 'booking' ? '#ea384c' : '#ffffff' }}></i>
@@ -707,8 +689,10 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 className={`bcom-mobile-portal-btn ${currentPage === 'listing' ? 'active' : ''}`}
                 style={{ 
                   textDecoration: 'none',
+                  borderRadius: '10px',
                   background: currentPage === 'listing' ? '#ffffff' : 'transparent',
-                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff'
+                  color: currentPage === 'listing' ? '#ea384c' : '#ffffff',
+                  fontWeight: 800
                 }}
               >
                 <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '6px', color: currentPage === 'listing' ? '#ea384c' : '#ffffff' }}></i>
@@ -716,15 +700,15 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </Link>
             </div>
 
-            <div className="bcom-mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
-              <Link href="/" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-house" style={{ marginRight: '8px' }}></i> Home (About Hostayy)
+            <div className="bcom-mobile-links" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '22px' }}>
+              <Link href="/" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <i className="fa-solid fa-house" style={{ marginRight: '10px', width: '20px' }}></i> Home (About Hostayy)
               </Link>
-              <Link href="/book" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-bed" style={{ marginRight: '8px' }}></i> Book Serviced Flats
+              <Link href="/book" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <i className="fa-solid fa-bed" style={{ marginRight: '10px', width: '20px' }}></i> Book Serviced Flats
               </Link>
-              <Link href="/list-property" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, textDecoration: 'none' }}>
-                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '8px' }}></i> List Your Property (Patron)
+              <Link href="/list-property" onClick={() => setMobileOpen(false)} style={{ color: '#ffffff', fontSize: '15px', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+                <i className="fa-solid fa-house-chimney-user" style={{ marginRight: '10px', width: '20px' }}></i> List Your Property (Patron)
               </Link>
 
               {currentPage === 'booking' && (
@@ -733,7 +717,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('velora'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer', fontWeight: 600 }}
                   >
                     &bull; Velora Suite (1 BHK)
                   </button>
@@ -741,7 +725,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('azura'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer', fontWeight: 600 }}
                   >
                     &bull; Azura Residence (2 BHK)
                   </button>
@@ -749,7 +733,7 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                     type="button" 
                     onClick={() => { setMobileOpen(false); handleSelectStay('verde'); }}
                     className="mobile-sublink"
-                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer' }}
+                    style={{ background: 'none', border: 'none', color: '#fecdd3', textAlign: 'left', fontSize: '13.5px', cursor: 'pointer', fontWeight: 600 }}
                   >
                     &bull; Verde Signature (3 BHK)
                   </button>
@@ -764,17 +748,17 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
                 rel="noopener noreferrer"
                 className="bcom-drawer-btn wa-drawer-btn"
                 onClick={() => setMobileOpen(false)}
-                style={{ background: '#16a34a', color: '#ffffff', padding: '12px', borderRadius: '8px', textAlign: 'center', fontWeight: 700, textDecoration: 'none' }}
+                style={{ background: '#16a34a', color: '#ffffff', padding: '12px', borderRadius: '12px', textAlign: 'center', fontWeight: 700, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
               >
-                <i className="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                <i className="fa-brands fa-whatsapp" style={{ fontSize: '18px' }}></i> Chat on WhatsApp
               </a>
               <a 
                 href={`tel:${HOSTAYY_CONFIG.whatsappNumber}`}
                 className="bcom-drawer-btn call-drawer-btn"
                 onClick={() => setMobileOpen(false)}
-                style={{ background: '#ffffff', color: '#ea384c', padding: '12px', borderRadius: '8px', textAlign: 'center', fontWeight: 800, textDecoration: 'none' }}
+                style={{ background: '#ffffff', color: '#ea384c', padding: '12px', borderRadius: '12px', textAlign: 'center', fontWeight: 800, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
               >
-                <i className="fa-solid fa-phone"></i> Call Host ({HOSTAYY_CONFIG.displayPhone})
+                <i className="fa-solid fa-phone" style={{ fontSize: '16px' }}></i> Call Host ({HOSTAYY_CONFIG.displayPhone})
               </a>
             </div>
           </div>

@@ -4705,30 +4705,38 @@ p {
    ========================================================================== */
 @media (max-width: 768px) {
   /* Header Mobile Compact Tuning */
-  .bcom-util-btn {
+  .bcom-util-btn,
+  .bcom-currency-tag,
+  .bcom-flag-wrap,
+  .bcom-help-btn,
+  .d-none-mobile,
+  .bcom-list-prop-link {
     display: none !important;
   }
   .bcom-header-top {
-    padding: 8px 0 !important;
+    padding: 10px 0 !important;
   }
   .bcom-logo-emblem {
-    width: 42px !important;
-    height: 42px !important;
+    width: 44px !important;
+    height: 44px !important;
     padding: 4px !important;
   }
   .bcom-logo-text {
-    font-size: 24px !important;
+    font-size: 26px !important;
   }
   .bcom-logo-slogan {
     display: none !important;
   }
-  .bcom-action-btn.register-btn {
-    padding: 6px 12px !important;
-    font-size: 12.5px !important;
-  }
   .bcom-action-btn.wa-btn {
-    padding: 6px 10px !important;
-    font-size: 12.5px !important;
+    padding: 7px 12px !important;
+    font-size: 13px !important;
+    border-radius: 12px !important;
+  }
+  .bcom-mobile-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 24px !important;
   }
 
   /* Banner & Hero Overview Mobile Spacing */
@@ -4965,30 +4973,44 @@ p {
 }
 
 @media (max-width: 768px) {
+  .bcom-portal-switcher .bcom-portal-btn,
   .bcom-portal-switcher button {
-    padding: 5px 11px !important;
-    font-size: 12px !important;
+    padding: 6px 12px !important;
+    font-size: 12.5px !important;
   }
 }
 
 @media (max-width: 575px) {
   .bcom-top-inner {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: space-between !important;
+    align-items: center !important;
     gap: 8px !important;
   }
+  .bcom-brand-logo {
+    order: 1 !important;
+  }
+  .bcom-utility-row {
+    order: 2 !important;
+  }
   .bcom-portal-switcher {
-    order: 3;
+    order: 3 !important;
     width: 100% !important;
     justify-content: center !important;
-    margin-top: 4px !important;
+    margin-top: 6px !important;
+    display: flex !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+    border-radius: 20px !important;
+    padding: 3px !important;
   }
+  .bcom-portal-switcher .bcom-portal-btn,
   .bcom-portal-switcher button {
     flex: 1 !important;
     justify-content: center !important;
     text-align: center !important;
-    padding: 6px 10px !important;
+    padding: 7px 8px !important;
     font-size: 12px !important;
   }
 }
