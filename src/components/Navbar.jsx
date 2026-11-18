@@ -59,10 +59,10 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
   };
 
   return (
-    <header className="bcom-header" id="booking-header" style={{ position: 'relative', backgroundColor: '#940e1f' }}>
-      {/* Stylish Global Travel World Map & Radar Network in Coral Red (Matching Reference Photo) */}
+    <header className="bcom-header" id="booking-header" style={{ position: 'relative', backgroundColor: '#ea384c' }}>
+      {/* Travel & Stay Line Art Background in Coral Red (Matching User Photo: House, Luggage, Airplane, Clouds) */}
       <div 
-        className="bcom-header-stylish-bg" 
+        className="bcom-header-travel-bg" 
         aria-hidden="true" 
         style={{
           position: 'absolute',
@@ -70,11 +70,12 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url('/assets/images/header-worldmap-bg.svg')`,
+          backgroundColor: '#ea384c',
+          backgroundImage: `url('/assets/images/header-travel-lineart.png')`,
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.96,
+          backgroundSize: 'auto 100%',
+          backgroundPosition: 'right center',
+          opacity: 0.95,
           pointerEvents: 'none',
           zIndex: 0
         }}

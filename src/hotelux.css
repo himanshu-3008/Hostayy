@@ -5904,13 +5904,14 @@ p {
 }
 
 /* ==========================================================================
-   STYLISH WORLD MAP & RADAR NETWORK IN CORAL RED (MATCHING USER PHOTO)
+   TRAVEL & STAY LINE ART IN CORAL RED (MATCHING USER PHOTO)
    ========================================================================== */
 .bcom-header {
   position: relative !important;
-  background-color: #940e1f !important;
+  background-color: #ea384c !important;
 }
 
+.bcom-header-travel-bg,
 .bcom-header-stylish-bg,
 .bcom-header-calendar-bg {
   position: absolute !important;
@@ -5918,11 +5919,12 @@ p {
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  background-image: url('/assets/images/header-worldmap-bg.svg') !important;
+  background-color: #ea384c !important;
+  background-image: url('/assets/images/header-travel-lineart.png') !important;
   background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center !important;
-  opacity: 0.96 !important;
+  background-size: auto 100% !important;
+  background-position: right center !important;
+  opacity: 0.95 !important;
   pointer-events: none !important;
   z-index: 0 !important;
 }
