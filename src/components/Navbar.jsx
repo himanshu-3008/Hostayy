@@ -144,6 +144,18 @@ export default function Navbar({ onSelectStay, activePage = 'home', portalMode, 
               </div>
             </Link>
 
+            {/* Center Graphic on Mobile: Travel & Stay Illustration (House, Luggage, Plane, Clouds) */}
+            <div 
+              className="bcom-top-middle-art" 
+              aria-hidden="true"
+            >
+              <img 
+                src="/assets/images/header-middle-art.png" 
+                alt="Travel and Stay Illustration" 
+                className="bcom-top-middle-art-img"
+              />
+            </div>
+
             {/* Center: Dual-Portal Segment Switcher (Customers/Booking vs Property Listing) */}
             <div className="bcom-portal-switcher" role="tablist" aria-label="Portal Navigation" style={{ position: 'relative' }}>
               {/* Sliding Pill Background with Smooth Swipe Transition */}
